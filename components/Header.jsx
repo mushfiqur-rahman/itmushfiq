@@ -44,7 +44,6 @@ const Header = () => {
               href="mailto:victoriaeceku110922@gmail.com"
               rel="noreferrer"
               target="_blank"
-              aria-label="Email"
             >
               <MdEmail />
             </a>
@@ -54,7 +53,6 @@ const Header = () => {
               href="https://www.linkedin.com/in/itmushfiq"
               rel="noreferrer"
               target="_blank"
-              aria-label="LinkedIn"
             >
               <FaLinkedinIn />
             </a>
@@ -63,7 +61,6 @@ const Header = () => {
               href="https://github.com/mushfiqur-rahman"
               rel="noreferrer"
               target="_blank"
-              aria-label="Github"
             >
               <FaGithub />
             </a>
@@ -72,7 +69,6 @@ const Header = () => {
               href="https://www.youtube.com/@itmushfiq"
               rel="noreferrer"
               target="_blank"
-              aria-label="Youtube"
             >
               <FaYoutube />
             </a>
@@ -81,7 +77,6 @@ const Header = () => {
               href="https://wa.me/8801737760068"
               rel="noreferrer"
               target="_blank"
-              aria-label="WhatsApp"
             >
               <FaWhatsapp />
             </a>
@@ -90,7 +85,6 @@ const Header = () => {
               href="https://www.upwork.com/freelancers/itmushfiq"
               rel="noreferrer"
               target="_blank"
-              aria-label="Upwork"
             >
               <FaUpwork />
             </a>
@@ -99,7 +93,6 @@ const Header = () => {
               href="https://learn.microsoft.com/en-us/users/mushfiqurrahman-0871/training/modules"
               rel="noreferrer"
               target="_blank"
-              aria-label="Microsoft Learn"
             >
               <FaMicrosoft />
             </a>
