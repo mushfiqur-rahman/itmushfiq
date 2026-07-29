@@ -21,6 +21,7 @@ function App() {
         <meta name="robots" content="index,follow" />
 
         <link rel="canonical" href="https://mushfiq.xyz/" />
+        <meta property="og:type" content="website" />
 
         {/* Open Graph */}
         <meta property="og:title" content="Mushfiqur Rahman" />
@@ -32,6 +33,11 @@ function App() {
         <meta property="og:url" content="https://mushfiq.xyz/" />
 
         {/* Twitter */}
+        <meta name="twitter:title" content="itmushfiq" />
+        <meta
+          name="twitter:description"
+          content="Google Workspace & Microsoft 365 Expert"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -48,15 +54,21 @@ function App() {
           })}
         </script>
       </Helmet>
-      <div className="md:w-1/2 mx-auto min-h-svh px-10 py-5 rounded-lg shadow-2xl lime-500 m-20">
-        <Header />
+      <main className="md:w-1/2 mx-auto min-h-svh px-10 py-5 rounded-lg shadow-2xl shadow-blue-700 m-20">
+        <header>
+          <Header />
+        </header>
+
         <Summary />
         <Experience />
         <Education />
         <Skills />
         <Certifications />
-      </div>
-      <Footer />
+
+        <footer>
+          <Footer />
+        </footer>
+      </main>
     </>
   );
 }

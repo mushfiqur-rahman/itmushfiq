@@ -12,7 +12,7 @@ import { FaUpwork } from "react-icons/fa6";
 const Header = () => {
   return (
     <>
-      <header className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-4">
         <div>
           <div className="text-base font-medium mb-2">
             <h1 className="md:text-3xl text-xl font-semibold">
@@ -108,7 +108,7 @@ const Header = () => {
             className="aspect-square h-full w-full bg-lime-500"
           />
         </div>
-      </header>
+      </div>
     </>
   );
 };
