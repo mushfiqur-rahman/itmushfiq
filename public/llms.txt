@@ -1,0 +1,43 @@
+# Mushfiqur Rahman Portfolio
+
+> Personal portfolio of Mushfiqur Rahman, specializing in Google Workspace, Microsoft 365, Email Migration, DNS Management, WordPress, and IT Support.
+
+## Website
+
+- https://mushfiq.xyz/
+
+## Services
+
+- Google Workspace Administration
+- Microsoft 365 Administration
+- Email Migration
+- Microsoft 365 Tenant Migration
+- Google Workspace Migration
+- IMAP Email Migration
+- DNS Configuration
+- SPF, DKIM & DMARC Setup
+- Email Deliverability
+- WordPress Development
+- Website Maintenance
+- IT Support
+- Cloud Migration
+- Technical Consulting
+
+## About
+
+I help businesses migrate, secure, and manage their cloud email infrastructure. My work includes Google Workspace administration, Microsoft 365 administration, DNS configuration, email authentication, email migration, WordPress support, and IT consulting.
+
+## Contact
+
+- Website: https://mushfiq.xyz/
+- LinkedIn: https://linkedin.com/in/itmushfiq
+- GitHub: https://github.com/mushfiqur-rahman
+- Upwork: https://www.upwork.com/freelancers/itmushfiq
+
+## Preferred URLs
+
+- https://mushfiq.xyz/
+
+## License
+
+Content may be quoted with attribution.
