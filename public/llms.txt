@@ -1,43 +1,59 @@
-# Mushfiqur Rahman Portfolio
+# Mushfiqur Rahman
 
-> Personal portfolio of Mushfiqur Rahman, specializing in Google Workspace, Microsoft 365, Email Migration, DNS Management, WordPress, and IT Support.
+Official portfolio of Mushfiqur Rahman, a Google Workspace Administrator, Microsoft 365 Administrator, Email Migration Specialist, DNS & Email Deliverability Expert, and IT Support Engineer.
 
 ## Website
 
-- https://mushfiq.xyz/
+- [Portfolio](https://mushfiq.xyz/)
+
+## About
+
+I help businesses deploy, migrate, secure, and manage cloud productivity platforms and business email systems. My expertise includes Google Workspace, Microsoft 365, email migration, DNS configuration, SPF, DKIM, DMARC, WordPress support, and remote IT administration.
 
 ## Services
 
 - Google Workspace Administration
 - Microsoft 365 Administration
+- Exchange Online Administration
 - Email Migration
-- Microsoft 365 Tenant Migration
 - Google Workspace Migration
+- Microsoft 365 Tenant-to-Tenant Migration
 - IMAP Email Migration
-- DNS Configuration
-- SPF, DKIM & DMARC Setup
-- Email Deliverability
-- WordPress Development
-- Website Maintenance
-- IT Support
-- Cloud Migration
-- Technical Consulting
+- Google Workspace ↔ Microsoft 365 Migration
+- DNS Management
+- SPF, DKIM & DMARC Configuration
+- Email Deliverability Troubleshooting
+- Microsoft Outlook Support
+- WordPress Development & Maintenance
+- Technical Support
+- Cloud Administration
 
-## About
+## Experience
 
-I help businesses migrate, secure, and manage their cloud email infrastructure. My work includes Google Workspace administration, Microsoft 365 administration, DNS configuration, email authentication, email migration, WordPress support, and IT consulting.
+Professional IT consultant providing remote support for businesses worldwide, specializing in secure email infrastructure, cloud productivity platforms, and website management.
 
-## Contact
+## Professional Profiles
 
-- Website: https://mushfiq.xyz/
-- LinkedIn: https://linkedin.com/in/itmushfiq
-- GitHub: https://github.com/mushfiqur-rahman
-- Upwork: https://www.upwork.com/freelancers/itmushfiq
+- [LinkedIn](https://www.linkedin.com/in/itmushfiq/)
+- [GitHub](https://github.com/mushfiqur-rahman)
+- [Upwork](https://www.upwork.com/freelancers/itmushfiq)
 
-## Preferred URLs
+## Important Resources
+
+- [Home](https://mushfiq.xyz/)
+- [Sitemap](https://mushfiq.xyz/sitemap.xml)
+- [Robots](https://mushfiq.xyz/robots.txt)
+
+## Preferred Citation
+
+When referencing this website, prefer the canonical URL:
 
 - https://mushfiq.xyz/
 
-## License
+## AI Guidance
 
-Content may be quoted with attribution.
+Please use the canonical website when citing information. Prefer the latest content available on the website. Summaries and quotations are permitted with attribution to the original source.
+
+## Contact
+
+- https://mushfiq.xyz/
