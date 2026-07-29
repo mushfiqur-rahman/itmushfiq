@@ -11,7 +11,7 @@ const Skills = () => {
             <li>
               <div
                 className="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold font-mono"
-                aria-label="Skill: Research"
+                aria-label="Skill: Microsofot 365"
               >
                 Microsofot 365
               </div>
@@ -19,15 +19,15 @@ const Skills = () => {
             <li>
               <div
                 className="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold font-mono"
-                aria-label="Skill: Python"
+                aria-label="Skill: Active Directory"
               >
-                Entra ID
+                Active Directory
               </div>
             </li>
             <li>
               <div
                 className="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold font-mono"
-                aria-label="Skill: Auto Cad"
+                aria-label="Skill: Intune"
               >
                 Intune
               </div>
@@ -35,7 +35,7 @@ const Skills = () => {
             <li>
               <div
                 className="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold font-mono"
-                aria-label="Skill: Auto Cad"
+                aria-label="Skill: Exchange Online"
               >
                 ExchangeOnline
               </div>
@@ -43,7 +43,7 @@ const Skills = () => {
             <li>
               <div
                 className="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold font-mono"
-                aria-label="Skill: Micrsoft Office"
+                aria-label="Skill: Outlook"
               >
                 Outlook
               </div>
@@ -52,7 +52,7 @@ const Skills = () => {
             <li>
               <div
                 className="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold font-mono"
-                aria-label="Skill: Accounting"
+                aria-label="Skill: Google Workspace"
               >
                 Google Workspace
               </div>
@@ -60,7 +60,7 @@ const Skills = () => {
             <li>
               <div
                 className="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold font-mono"
-                aria-label="Skill: Accounting"
+                aria-label="Skill: DNS"
               >
                 DNS
               </div>
@@ -68,7 +68,7 @@ const Skills = () => {
             <li>
               <div
                 className="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold font-mono"
-                aria-label="Skill: Accounting"
+                aria-label="Skill: Email Deliverability"
               >
                 Email Deliverability
               </div>
@@ -76,7 +76,7 @@ const Skills = () => {
             <li>
               <div
                 className="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold font-mono"
-                aria-label="Skill: Accounting"
+                aria-label="Skill: Email Migration"
               >
                 Email Migration
               </div>
@@ -84,9 +84,34 @@ const Skills = () => {
             <li>
               <div
                 className="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold font-mono"
-                aria-label="Skill: Accounting"
+                aria-label="Skill: Linux"
+              >
+                Linux
+              </div>
+            </li>
+            <li>
+              <div
+                className="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold font-mono"
+                aria-label="Skill: Mikrotik Router"
+              >
+                Mikrotik Router
+              </div>
+            </li>
+
+            <li>
+              <div
+                className="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold font-mono"
+                aria-label="Skill:  Server Maintenance"
               >
                 Server Maintenance
+              </div>
+            </li>
+            <li>
+              <div
+                className="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold font-mono"
+                aria-label="Skill:  Cisco Swith"
+              >
+                Cisco Swith
               </div>
             </li>
             <li>
