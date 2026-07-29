@@ -90,7 +90,7 @@ const Header = () => {
           aria-hidden="true"
         >
           <img
-            src="../public/mushfiq.png"
+            src="../mushfiq.png"
             alt="Mushfiqur Rahman's Profile Picture"
             className="aspect-square h-full w-full bg-lime-500"
           />
