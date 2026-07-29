@@ -6,6 +6,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { FaUpwork } from "react-icons/fa6";
 
 const Header = () => {
   return (
@@ -82,6 +83,15 @@ const Header = () => {
               aria-label="WhatsApp"
             >
               <FaWhatsapp />
+            </a>
+            <a
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input size-8 hover:scale-110 ease-in duration-300"
+              href="https://www.upwork.com/freelancers/itmushfiq"
+              rel="noreferrer"
+              target="_blank"
+              aria-label="Upwork"
+            >
+              <FaUpwork />
             </a>
           </div>
         </div>
