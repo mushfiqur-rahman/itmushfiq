@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Mushfiqur Rahman | Google Workspace Expert</title>
+        <title>Mushfiqur Rahman - IT Support Engineer</title>
 
         <meta
           name="description"
@@ -54,7 +54,7 @@ function App() {
           })}
         </script>
       </Helmet>
-      <main className="md:w-1/2 mx-auto min-h-svh px-10 py-5 rounded-lg shadow-2xl shadow-blue-700 m-20">
+      <main className="md:w-1/2 mx-auto min-h-svh px-10 py-5 rounded-lg md:shadow-xl xl:shadow-xl shadow-blue-700 m-20">
         <header>
           <Header />
         </header>
