@@ -1,0 +1,54 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  type?: "WebSite" | "Article";
+  image?: string;
+  pubDate?: Date | string;
+  author?: string;
+}
+
+const {
+  title,
+  description,
+  url,
+  type = "WebSite",
+  image = "https://itsupportbee.com/default-image.jpg", // আপনার ওয়েবসাইটের একটি ডিফল্ট ইমেজ লিংক দেবেন
+  pubDate,
+  author = "Mushfiqur Rahman",
+} = Astro.props;
+
+// ডায়নামিক স্কিমা অবজেক্ট তৈরি
+const schemaData: any = {
+  "@context": "https://schema.org",
+  "@type": type,
+  name: title,
+  headline: title,
+  description: description,
+  url: url,
+  image: image,
+  author: {
+    "@type": "Person",
+    name: author,
+    url: "https://itsupportbee.com",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "IT Support Bee",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://itsupportbee.com/logo.png",
+    },
+  },
+};
+
+// যদি এটি ব্লগ পোস্ট (Article) হয়, তাহলে পাবলিশ ডেট যুক্ত করবে
+if (type === "Article" && pubDate) {
+  schemaData.datePublished = new Date(pubDate).toISOString();
+  schemaData.dateModified = new Date(pubDate).toISOString();
+}
+---
+
+<!-- Google SEO-এর জন্য JSON-LD Script -->
+<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
