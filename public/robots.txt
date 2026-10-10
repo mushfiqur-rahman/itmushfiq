@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow specific paths if needed (optional)
+# Disallow: /admin/
+# Disallow: /private/
+
+Sitemap: https://itsupportbee.com/sitemap-index.xml
