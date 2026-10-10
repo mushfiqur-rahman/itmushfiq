@@ -2,30 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ExperienceTimeline from '../components/ExperienceTimeline.astro';
 
-const experience = [
-  {
-    role: "Founder & Lead Cloud Administrator",
-    company: "IT Support Bee",
-    duration: "2021 - Present",
-    description: "Leading a remote IT infrastructure consultancy. Specialized in zero-downtime Google Workspace & Microsoft 365 migrations, DNS security (SPF, DKIM, DMARC), and advanced cold email setups for B2B enterprises."
-  },
-  {
-    role: "Remote IT Support Engineer",
-    company: "Independent Consultant",
-    duration: "2020 - Present",
-    description: "Providing Tier 2/3 remote helpdesk support, Windows/macOS troubleshooting, hardware diagnostics, and AI workflow automation (Zapier, n8n) for global clients."
-  },
-  {
-    role: "Modern Web Developer",
-    company: "Freelance",
-    duration: "2019 - Present",
-    description: "Building fast, SEO-optimized, and accessible web applications using Astro, Tailwind CSS v4, and custom WordPress architectures without relying on bloated plugins."
-  }
-];
 
 const education = [
   {
-    degree: "Bachelor of Science (B.Sc)",
+    degree: "Bachelor of Science (B.Sc) in Computer Science & Engineering",
     institution: "National University, Bangladesh",
     year: "Graduated"
   }
@@ -61,6 +41,30 @@ const certifications = [
     issuer: "Google Cloud",
     image: "/certificates/Google Workspace Administrator.png",
     verifyLink: "https://www.coursera.org/account/accomplishments/specialization/LTH01Q01M3ND"
+  },
+  {
+    title: "Foundations of Cybersecurity",
+    issuer: "Google",
+    image: "/certificates/Foundations of Cybersecurity.png",
+    verifyLink: "https://www.coursera.org/account/accomplishments/verify/PWZ8ZGLJFVHQ"
+  },
+  {
+    title: "Planning for a Google Workspace Deployment",
+    issuer: "Google Cloud",
+    image: "/certificates/Planning for a Google Workspace Deployment.png",
+    verifyLink: "https://www.coursera.org/account/accomplishments/verify/XYWXS11GKC9V"
+  },
+  {
+    title: "Fundamentals of Red Hat Enterprise Linux",
+    issuer: "Red Hat",
+    image: "/certificates/Fundamentals of Red Hat Enterprise Linux.png",
+    verifyLink: "https://www.coursera.org/account/accomplishments/verify/YAA9RMASNSNJ"
+  },
+  {
+    title: "Introduction to Computers",
+    issuer: "Microsoft",
+    image: "/certificates/Introduction to Computers.png",
+    verifyLink: "https://www.coursera.org/account/accomplishments/verify/326FIAT22LFB"
   }
 ];
 
@@ -121,7 +125,7 @@ const skills = ["Microsoft 365", "Google Workspace", "Email Deliverability", "DN
         
 
         <!-- Education -->
-        <section class="lg:col-span-4">
+        <section class="lg:col-span-8">
           <h2 class="text-3xl font-black text-[#2D058A] dark:text-white tracking-tighter mb-8">
             Education.
           </h2>
@@ -187,7 +191,7 @@ const skills = ["Microsoft 365", "Google Workspace", "Email Deliverability", "DN
                 <!-- View Image Button (Lightbox Trigger) -->
                 <button 
                   onclick={`document.getElementById('cert-dialog-${index}').showModal()`}
-                  class="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-transparent text-[#2D058A] dark:text-white font-bold text-sm uppercase tracking-wider rounded-lg border-2 border-[#2D058A] dark:border-white/30 hover:bg-slate-50 dark:hover:border-[#90ee02] transition-colors cursor-pointer"
+                  class="inline-flex items-center gap-2 px-5 py-2.5 dark:hover:text-slate-500 bg-white dark:bg-transparent text-[#2D058A] dark:text-white font-bold text-sm uppercase tracking-wider rounded-lg border-2 border-[#2D058A] dark:border-white/30 hover:bg-slate-50 dark:hover:border-[#90ee02] transition-colors cursor-pointer"
                 >
                   View Certificate
                 </button>
