@@ -12,7 +12,7 @@ const { feedback, rating, name, avatar, designation, work } = Astro.props;
 ---
 
 <article
-  class="break-inside-avoid mb-6 p-6 md:p-8 bg-white dark:bg-[#150734] border-2 border-[#2D058A] dark:border-white/10 rounded-2xl shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.4)] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(45,5,138,1)] dark:hover:shadow-[6px_6px_0px_0px_rgba(144,238,2,0.6)] transition-all duration-300"
+  class="flex flex-col h-full p-6 md:p-8 bg-white dark:bg-[#150734] border-2 border-[#2D058A] dark:border-white/10 rounded-2xl shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.4)] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(45,5,138,1)] dark:hover:shadow-[6px_6px_0px_0px_rgba(144,238,2,0.6)] transition-all duration-300"
 >
   <!-- Rating Stars -->
   <div class="flex gap-1 mb-4" aria-label={`Rating: ${rating} out of 5 stars`}>
@@ -30,16 +30,16 @@ const { feedback, rating, name, avatar, designation, work } = Astro.props;
     }
   </div>
 
-  <!-- Feedback Text -->
+  <!-- Feedback Text (flex-grow ensures footer stays at bottom) -->
   <blockquote
-    class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed mb-6 font-medium"
+    class="grow text-slate-700 dark:text-slate-300 text-lg leading-relaxed mb-6 font-medium"
   >
     "{feedback}"
   </blockquote>
 
   <!-- Client Info -->
   <div
-    class="flex items-center gap-4 pt-4 border-t border-[#2D058A]/10 dark:border-white/10"
+    class="flex items-center gap-4 pt-4 border-t border-[#2D058A]/10 dark:border-white/10 mt-auto"
   >
     <img
       src={avatar}

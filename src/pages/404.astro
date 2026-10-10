@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="404 - Page Not Found | IT Support Bee">
+  <div
+    class="bg-slate-50 dark:bg-[#0f0224] pt-32 pb-32 min-h-[85vh] flex items-center justify-center"
+  >
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+      <!-- 404 Neo-Brutalist Card -->
+      <div
+        class="bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-3xl p-10 md:p-16 shadow-[12px_12px_0px_0px_rgba(45,5,138,1)] dark:shadow-[12px_12px_0px_0px_rgba(144,238,2,0.3)] relative overflow-hidden"
+      >
+        <!-- Decorative Glow Effects -->
+        <div
+          class="absolute -top-10 -right-10 w-32 h-32 bg-[#90ee02] rounded-full blur-3xl opacity-20 dark:opacity-10 pointer-events-none"
+        >
+        </div>
+        <div
+          class="absolute -bottom-10 -left-10 w-32 h-32 bg-[#2D058A] rounded-full blur-3xl opacity-20 dark:opacity-30 pointer-events-none"
+        >
+        </div>
+
+        <div class="relative z-10">
+          <!-- Massive 404 Text -->
+          <h1
+            class="text-[6rem] sm:text-[8rem] md:text-[10rem] font-black text-transparent bg-clip-text bg-gradient-to-br from-[#2D058A] to-[#7b2cbf] dark:from-[#90ee02] dark:to-[#ccff66] leading-none mb-4 drop-shadow-sm"
+          >
+            404
+          </h1>
+
+          <!-- Error Badge -->
+          <div
+            class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-sm font-bold tracking-widest uppercase border-2 border-[#2D058A] text-[#2D058A] dark:border-[#90ee02] dark:text-[#90ee02] rounded-full shadow-[2px_2px_0px_0px_rgba(45,5,138,1)] dark:shadow-[2px_2px_0px_0px_rgba(144,238,2,0.4)]"
+          >
+            System Error
+          </div>
+
+          <!-- Catchy Heading -->
+          <h2
+            class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-6"
+          >
+            Lost in the Cloud?
+          </h2>
+
+          <!-- Description -->
+          <p
+            class="text-lg font-medium text-slate-600 dark:text-slate-400 mb-10 max-w-xl mx-auto leading-relaxed"
+          >
+            The page you are looking for might have been removed, had its name
+            changed, or is temporarily unavailable due to a DNS routing issue.
+            Let's get you back on track.
+          </p>
+
+          <!-- Action Buttons -->
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <!-- Primary Button (Home) -->
+            <a
+              href="/"
+              class="w-full sm:w-auto px-8 py-4 bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-black text-sm md:text-base uppercase tracking-widest rounded-xl border-4 border-[#2D058A] dark:border-[#90ee02] hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(144,238,2,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)] transition-all text-center"
+            >
+              Return Home
+            </a>
+
+            <!-- Secondary Button (Blog) -->
+            <a
+              href="/blog"
+              class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-transparent text-[#2D058A] dark:text-white font-black text-sm md:text-base uppercase tracking-widest rounded-xl border-4 border-[#2D058A] dark:border-white/30 hover:bg-slate-50 dark:hover:bg-white/5 hover:border-[#2D058A] dark:hover:border-[#90ee02] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:hover:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.4)] transition-all text-center"
+            >
+              Read Articles
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

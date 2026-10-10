@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog");
+const sortedPosts = allPosts.sort(
+  (a, b) =>
+    new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+);
+---
+
+<BaseLayout title="Blog | IT Mushfiq - Tech Insights & Case Studies">
+  <div class="bg-slate-50 dark:bg-[#0f0224] pt-24 pb-32 min-h-screen">
+    <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Page Header -->
+      <header class="mb-16 max-w-4xl mx-auto text-center">
+        <h1
+          class="text-5xl md:text-6xl font-black text-[#2D058A] dark:text-white tracking-tighter mb-6"
+        >
+          Blog & Case Studies.
+        </h1>
+        <p class="text-xl text-slate-700 dark:text-slate-300 font-medium">
+          Deep dives into cloud migrations, DNS security, and IT infrastructure.
+        </p>
+      </header>
+
+      <!-- One Post Per Row (Vertical Stack) -->
+      <div class="max-w-4xl mx-auto flex flex-col gap-16">
+        {
+          sortedPosts.map((post) => (
+            <PostCard
+              title={post.data.title}
+              excerpt={post.data.description}
+              date={post.data.pubDate}
+              author={post.data.author}
+              category={post.data.category}
+              image={post.data.image}
+              href={`/blog/${post.id}`}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</BaseLayout>

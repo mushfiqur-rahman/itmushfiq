@@ -25,6 +25,17 @@ const { title = "IT Mushfiq | Remote IT Support & Web Development" } =
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <script is:inline>
+      // HTML রেন্ডার হওয়ার আগেই থিম অ্যাপ্লাই করে দেবে
+      const theme = localStorage.getItem("theme");
+      if (
+        theme === "dark" ||
+        (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
   </head>
   <body
     class="bg-slate-50 text-slate-900 font-['Poppins'] antialiased selection:bg-indigo-100 selection:text-indigo-900 flex flex-col min-h-screen"

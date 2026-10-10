@@ -1,66 +1,167 @@
 ---
-const navItems = [
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Blog", path: "/blog" },
+  { name: "Contact", path: "/contact" },
 ];
 ---
 
-<header
-  class="sticky top-0 z-50 w-full bg-slate-50/80 backdrop-blur-md border-b border-slate-200/60"
+<!-- Scroll Progress Bar -->
+<div
+  id="scroll-progress"
+  class="fixed top-0 left-0 h-1.5 bg-[#90ee02] dark:bg-[#2D058A] w-0 z-50 transition-all duration-150 ease-out"
 >
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20">
-      <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group">
-        <span
-          class="text-2xl font-bold text-slate-900 tracking-tight group-hover:text-indigo-600 transition-colors"
-        >
-          IT<span class="text-indigo-600">Mushfiq</span>
-        </span>
-      </a>
+</div>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8">
-        {
-          navItems.map((item) => (
-            <a
-              href={item.path}
-              class="text-slate-600 font-medium hover:text-indigo-600 transition-colors duration-200"
+<header
+  class="fixed top-0 w-full bg-white/90 dark:bg-[#0f0224]/90 backdrop-blur-md border-b-4 border-[#2D058A] dark:border-white/10 z-40 transition-colors duration-300"
+>
+  <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <div class="shrink-0">
+        <a
+          href="/"
+          class="flex items-center gap-2 group outline-none focus-visible:ring-4 focus-visible:ring-[#90ee02]/50 rounded-lg p-1"
+        >
+          <div
+            class="w-10 h-10 bg-[#90ee02] border-2 border-[#2D058A] flex items-center justify-center rounded-lg shadow-[2px_2px_0px_0px_rgba(45,5,138,1)] group-hover:-translate-y-0.5 transition-transform"
+          >
+            <span class="font-black text-[#2D058A] text-xl leading-none"
+              >IT</span
             >
-              {item.name}
-            </a>
-          ))
+          </div>
+          <span
+            class="text-2xl font-black text-[#2D058A] dark:text-white tracking-tight group-hover:text-[#7b2cbf] dark:group-hover:text-[#90ee02] transition-colors"
+          >
+            Mushfiq
+          </span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav
+        class="hidden md:flex items-center gap-8"
+        aria-label="Main Navigation"
+      >
+        {
+          navLinks.map((link) => {
+            const isActive =
+              currentPath === link.path ||
+              (link.path !== "/" && currentPath.startsWith(link.path));
+
+            return (
+              <a
+                href={link.path}
+                class={`text-base font-bold tracking-wide uppercase outline-none focus-visible:ring-4 focus-visible:ring-[#90ee02]/50 rounded-md transition-colors ${
+                  isActive
+                    ? "text-[#2D058A] dark:text-[#90ee02] border-b-4 border-[#2D058A] dark:border-[#90ee02] pb-1"
+                    : "text-slate-600 dark:text-slate-300 hover:text-[#2D058A] dark:hover:text-[#90ee02] hover:border-b-4 hover:border-transparent pb-1"
+                }`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {link.name}
+              </a>
+            );
+          })
         }
       </nav>
 
-      <!-- CTA & Mobile Toggle -->
-      <div class="flex items-center gap-4">
+      <!-- Desktop Action Buttons (Theme Toggle & CTA) -->
+      <div class="hidden md:flex items-center gap-6">
+        <!-- Theme Toggle Button -->
+        <button
+          id="theme-toggle"
+          aria-label="Toggle Dark Mode"
+          class="w-10 h-10 flex items-center justify-center bg-slate-100 dark:bg-[#150734] border-2 border-[#2D058A] dark:border-white/20 rounded-lg text-[#2D058A] dark:text-[#90ee02] shadow-[2px_2px_0px_0px_rgba(45,5,138,1)] dark:shadow-[2px_2px_0px_0px_rgba(144,238,2,0.4)] hover:-translate-y-0.5 transition-all outline-none focus-visible:ring-4 focus-visible:ring-[#90ee02]/50 cursor-pointer"
+        >
+          <!-- Sun icon for Dark mode -->
+          <svg
+            id="theme-toggle-light-icon"
+            class="hidden w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"></path>
+          </svg>
+          <!-- Moon icon for Light mode -->
+          <svg
+            id="theme-toggle-dark-icon"
+            class="hidden w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+            ></path>
+          </svg>
+        </button>
+
         <a
           href="/contact"
-          class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-full shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5"
+          class="px-6 py-2 bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-black uppercase tracking-widest text-sm border-2 border-[#2D058A] dark:border-[#90ee02] rounded-lg shadow-[4px_4px_0px_0px_rgba(144,238,2,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all outline-none focus-visible:ring-4 focus-visible:ring-[#90ee02]/50"
         >
-          Let's Talk
+          Book Call
         </a>
+      </div>
 
-        <!-- Mobile Menu Button -->
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center gap-4">
+        <!-- Theme Toggle Mobile -->
         <button
-          id="mobile-menu-btn"
-          class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none"
-          aria-label="Toggle Menu"
+          id="theme-toggle-mobile"
+          aria-label="Toggle Dark Mode"
+          class="w-10 h-10 flex items-center justify-center bg-slate-100 dark:bg-[#150734] border-2 border-[#2D058A] dark:border-white/20 rounded-lg text-[#2D058A] dark:text-[#90ee02] shadow-[2px_2px_0px_0px_rgba(45,5,138,1)] dark:shadow-[2px_2px_0px_0px_rgba(144,238,2,0.4)] outline-none cursor-pointer"
         >
+          <svg
+            id="theme-toggle-light-icon-mobile"
+            class="hidden w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"></path>
+          </svg>
+          <svg
+            id="theme-toggle-dark-icon-mobile"
+            class="hidden w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+            ></path>
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          id="mobile-menu-btn"
+          class="w-10 h-10 flex items-center justify-center bg-white dark:bg-[#150734] border-2 border-[#2D058A] dark:border-white/20 rounded-lg text-[#2D058A] dark:text-white outline-none focus-visible:ring-4 focus-visible:ring-[#90ee02]/50 cursor-pointer"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
           <svg
             class="w-6 h-6"
             fill="none"
-            stroke="currentColor"
             viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
           >
             <path
-              id="menu-icon"
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
+              stroke-width="2.5"
               d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
@@ -68,44 +169,125 @@ const navItems = [
     </div>
   </div>
 
-  <!-- Mobile Nav Panel -->
+  <!-- Mobile Menu (Hidden by default) -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-6 shadow-xl absolute w-full"
+    class="hidden md:hidden border-t-4 border-[#2D058A] dark:border-white/10 bg-white dark:bg-[#0f0224]"
   >
-    <div class="flex flex-col space-y-4">
+    <div class="px-4 pt-4 pb-8 space-y-2">
       {
-        navItems.map((item) => (
-          <a
-            href={item.path}
-            class="text-slate-700 font-medium hover:text-indigo-600 hover:bg-slate-50 p-2 rounded-lg transition-colors"
-          >
-            {item.name}
-          </a>
-        ))
+        navLinks.map((link) => {
+          const isActive =
+            currentPath === link.path ||
+            (link.path !== "/" && currentPath.startsWith(link.path));
+          return (
+            <a
+              href={link.path}
+              class={`block px-4 py-3 rounded-lg text-lg font-bold uppercase tracking-widest ${
+                isActive
+                  ? "bg-slate-100 dark:bg-[#150734] text-[#2D058A] dark:text-[#90ee02] border-2 border-[#2D058A] dark:border-[#90ee02]"
+                  : "text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-[#150734] hover:text-[#2D058A] dark:hover:text-[#90ee02] border-2 border-transparent"
+              }`}
+            >
+              {link.name}
+            </a>
+          );
+        })
       }
       <a
         href="/contact"
-        class="w-full text-center px-6 py-3 mt-4 text-sm font-semibold text-indigo-600 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition-colors"
+        class="block mt-6 px-4 py-3 text-center bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-black uppercase tracking-widest text-lg border-2 border-[#2D058A] dark:border-[#90ee02] rounded-lg shadow-[4px_4px_0px_0px_rgba(144,238,2,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.4)]"
       >
-        Let's Talk
+        Book Strategy Call
       </a>
     </div>
   </div>
 </header>
 
 <script>
-  const btn = document.getElementById("mobile-menu-btn");
-  const menu = document.getElementById("mobile-menu");
-  const icon = document.getElementById("menu-icon");
-
-  btn?.addEventListener("click", () => {
-    menu?.classList.toggle("hidden");
-    // Simple icon change logic (Hamburger to Cross)
-    if (menu?.classList.contains("hidden")) {
-      icon?.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
-    } else {
-      icon?.setAttribute("d", "M6 18L18 6M6 6l12 12");
+  // ==========================================
+  // 1. Scroll Progress Bar
+  // ==========================================
+  window.addEventListener("scroll", () => {
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const progressBar = document.getElementById("scroll-progress");
+    if (progressBar) {
+      progressBar.style.width = scrolled + "%";
     }
   });
+
+  // ==========================================
+  // 2. Mobile Menu Toggle
+  // ==========================================
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+      const isExpanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", isExpanded ? "false" : "true");
+    });
+  }
+
+  // ==========================================
+  // 3. Fail-proof Theme Toggle (No TS Errors)
+  // ==========================================
+  const root = document.documentElement;
+
+  // Set initial theme
+  const savedTheme = localStorage.getItem("theme");
+  if (
+    savedTheme === "dark" ||
+    (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    root.classList.add("dark");
+  } else {
+    root.classList.remove("dark");
+  }
+
+  // Grab Elements
+  const toggleDesktop = document.getElementById("theme-toggle");
+  const sunDesktop = document.getElementById("theme-toggle-light-icon");
+  const moonDesktop = document.getElementById("theme-toggle-dark-icon");
+
+  const toggleMobile = document.getElementById("theme-toggle-mobile");
+  const sunMobile = document.getElementById("theme-toggle-light-icon-mobile");
+  const moonMobile = document.getElementById("theme-toggle-dark-icon-mobile");
+
+  // Update Icons visibility based on current theme
+  const updateIcons = () => {
+    const isDark = root.classList.contains("dark");
+    if (isDark) {
+      sunDesktop?.classList.remove("hidden");
+      moonDesktop?.classList.add("hidden");
+      sunMobile?.classList.remove("hidden");
+      moonMobile?.classList.add("hidden");
+    } else {
+      sunDesktop?.classList.add("hidden");
+      moonDesktop?.classList.remove("hidden");
+      sunMobile?.classList.add("hidden");
+      moonMobile?.classList.remove("hidden");
+    }
+  };
+
+  // Run once on load
+  updateIcons();
+
+  // Toggle Action
+  const toggleTheme = () => {
+    root.classList.toggle("dark");
+    const isDark = root.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    updateIcons();
+  };
+
+  // Add Listeners
+  toggleDesktop?.addEventListener("click", toggleTheme);
+  toggleMobile?.addEventListener("click", toggleTheme);
 </script>

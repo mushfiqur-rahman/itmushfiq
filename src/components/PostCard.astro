@@ -1,0 +1,105 @@
+---
+interface Props {
+  title: string;
+  excerpt: string;
+  date: string;
+  author?: string;
+  category: string;
+  image: string;
+  href: string;
+}
+
+const {
+  title,
+  excerpt,
+  date,
+  author = "Mushfiqur Rahman",
+  category,
+  image,
+  href,
+} = Astro.props;
+
+// Date ফরম্যাটিং (e.g., October 10, 2026)
+const formattedDate = new Date(date).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<article
+  class="group flex flex-col bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-2xl shadow-[8px_8px_0px_0px_rgba(45,5,138,1)] dark:shadow-[8px_8px_0px_0px_rgba(144,238,2,0.3)] hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_rgba(45,5,138,1)] dark:hover:shadow-[12px_12px_0px_0px_rgba(144,238,2,0.5)] transition-all duration-300 overflow-hidden relative"
+>
+  <!-- ১. Featured Image (At Top) -->
+  <div
+    class="relative w-full aspect-video border-b-4 border-[#2D058A] dark:border-white/10 overflow-hidden bg-slate-100 dark:bg-[#0f0224]"
+  >
+    <img
+      src={image}
+      alt={`Featured image for ${title}`}
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      loading="lazy"
+      onerror="this.src='https://placehold.co/800x450/2D058A/90ee02?text=IT+Mushfiq'"
+    />
+    <div class="absolute top-4 left-4 z-10">
+      <span
+        class="inline-block px-3 py-1 bg-[#90ee02] text-[#2D058A] border-2 border-[#2D058A] text-xs font-black uppercase tracking-wider rounded-md shadow-[2px_2px_0px_0px_rgba(45,5,138,1)]"
+      >
+        {category}
+      </span>
+    </div>
+  </div>
+
+  <div class="flex flex-col p-6 md:p-10">
+    <!-- ২. Date & Author Name -->
+    <div
+      class="flex items-center flex-wrap gap-2 text-sm font-bold text-slate-500 dark:text-slate-400 mb-4 uppercase tracking-widest"
+    >
+      <time datetime={new Date(date).toISOString()}>{formattedDate}</time>
+      <span class="text-[#2D058A] dark:text-[#90ee02] text-lg leading-none"
+        >•</span
+      >
+      <span>By {author}</span>
+    </div>
+
+    <!-- ৩. Blog Title -->
+    <h3
+      class="text-3xl md:text-4xl font-black text-[#2D058A] dark:text-white mb-5 leading-tight group-hover:text-[#7b2cbf] dark:group-hover:text-[#90ee02] transition-colors"
+    >
+      <a
+        href={href}
+        class="outline-none before:absolute before:inset-0 focus-visible:ring-4 focus-visible:ring-[#90ee02]/50 rounded-lg"
+      >
+        {title}
+      </a>
+    </h3>
+
+    <!-- ৪. Content / Excerpt -->
+    <p
+      class="text-lg text-slate-700 dark:text-slate-300 font-medium leading-relaxed mb-6"
+    >
+      {excerpt}
+    </p>
+
+    <!-- Read More Button -->
+    <div
+      class="mt-auto self-start inline-flex items-center gap-2 text-base font-bold text-[#2D058A] dark:text-[#90ee02] uppercase tracking-wider relative"
+    >
+      <span class="relative z-10">Read Full Article</span>
+      <svg
+        class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="3"
+          d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+      >
+      <span
+        class="absolute bottom-0 left-0 w-0 h-1 bg-[#90ee02] dark:bg-[#2D058A] transition-all duration-300 group-hover:w-full z-0"
+      ></span>
+    </div>
+  </div>
+</article>

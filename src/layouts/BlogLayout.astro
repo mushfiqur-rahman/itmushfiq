@@ -1,0 +1,275 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { site } from "../data/site"; // 👈 site.ts ইম্পোর্ট করা হলো
+
+const { frontmatter, headings, prevPost, nextPost } = Astro.props;
+const { title, description, pubDate, author, image, category } = frontmatter;
+
+const siteUrl = Astro.site || Astro.url.origin;
+
+// Astro-এর পার্সিং এরর এড়াতে ফিল্টারিং লজিক
+const filteredHeadings = headings.filter((h: any) => h.depth <= 3);
+
+// Schema Markup (JSON-LD) for SEO & AEO
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description: description,
+  image: image ? new URL(image, siteUrl) : undefined,
+  author: {
+    "@type": "Person",
+    // 👈 যদি ফ্রন্টম্যাটারে author না থাকে, তবে site.name ব্যবহার করবে
+    name: author || site.name,
+  },
+  datePublished: new Date(pubDate).toISOString(),
+  publisher: {
+    "@type": "Organization",
+    name: "IT Support Bee",
+    logo: {
+      "@type": "ImageObject",
+      url: new URL("/logo.png", siteUrl),
+    },
+  },
+};
+---
+
+<BaseLayout title={`${title} | IT Mushfiq`}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <div class="bg-slate-50 dark:bg-[#0f0224] pt-24 pb-32">
+    <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="max-w-4xl mx-auto text-center mb-16">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-sm font-bold tracking-widest uppercase border-2 border-[#2D058A] text-[#2D058A] dark:border-[#90ee02] dark:text-[#90ee02] rounded-full shadow-[2px_2px_0px_0px_rgba(45,5,138,1)] dark:shadow-[2px_2px_0px_0px_rgba(144,238,2,0.4)]"
+        >
+          {category}
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-black text-[#2D058A] dark:text-white tracking-tighter mb-6 leading-tight"
+        >
+          {title}
+        </h1>
+        <div
+          class="flex items-center justify-center gap-4 text-slate-600 dark:text-slate-400 font-medium"
+        >
+          <!-- 👈 ডাইনামিক Author Name -->
+          <span>By {author || site.name}</span>
+          <span>•</span>
+          <time datetime={new Date(pubDate).toISOString()}>{pubDate}</time>
+        </div>
+      </header>
+
+      {
+        image && (
+          <div class="max-w-5xl mx-auto mb-16 rounded-2xl border-4 border-[#2D058A] dark:border-[#90ee02] shadow-[8px_8px_0px_0px_rgba(45,5,138,1)] dark:shadow-[8px_8px_0px_0px_rgba(144,238,2,0.4)] overflow-hidden bg-slate-100 dark:bg-[#150734]">
+            <img
+              src={image}
+              alt={title}
+              class="w-full h-auto object-cover aspect-video"
+            />
+          </div>
+        )
+      }
+
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-7xl mx-auto items-start"
+      >
+        <aside class="lg:col-span-3 lg:sticky lg:top-32 hidden lg:block">
+          <div
+            class="p-6 bg-white dark:bg-[#150734] border-2 border-[#2D058A] dark:border-white/10 rounded-2xl shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.3)]"
+          >
+            <h3
+              class="font-black text-xl text-[#2D058A] dark:text-white mb-4 uppercase tracking-widest border-b-2 border-[#2D058A]/10 dark:border-white/10 pb-2"
+            >
+              On this page
+            </h3>
+            <ul class="space-y-3">
+              {
+                filteredHeadings.map((heading: any) => (
+                  <li
+                    class={`text-sm font-medium ${heading.depth === 3 ? "ml-4" : ""}`}
+                  >
+                    <a
+                      href={`#${heading.slug}`}
+                      class="text-slate-600 dark:text-slate-400 hover:text-[#2D058A] dark:hover:text-[#90ee02] transition-colors"
+                    >
+                      {heading.text}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </aside>
+
+        <article class="lg:col-span-9">
+          <!-- Main Content Slot -->
+          <div
+            class="prose prose-lg md:prose-xl prose-slate dark:text-gray-400 dark:prose-invert max-w-none custom-prose mb-16"
+          >
+            <slot />
+          </div>
+
+          <!-- 🌟 NEW: Dynamic Author Bio Section (Using site.ts) 🌟 -->
+          <div
+            class="p-8 bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-[#90ee02] rounded-2xl shadow-[8px_8px_0px_0px_rgba(45,5,138,1)] dark:shadow-[8px_8px_0px_0px_rgba(144,238,2,0.4)] flex flex-col md:flex-row items-center md:items-start gap-6"
+          >
+            <img
+              src="/mushfiqur.jpg"
+              alt={site.name}
+              class="w-24 h-24 rounded-full border-4 border-[#2D058A] dark:border-[#90ee02] object-cover bg-slate-100"
+              onerror="this.src='https://placehold.co/100x100/2D058A/90ee02?text=MR'"
+            />
+            <div class="text-center md:text-left grow">
+              <h3
+                class="text-2xl font-black text-[#2D058A] dark:text-white mb-1"
+              >
+                {site.name}
+              </h3>
+              <p
+                class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-3"
+              >
+                {site.role}
+              </p>
+              <p class="text-slate-600 dark:text-slate-300 font-medium mb-4">
+                {site.bio}
+              </p>
+
+              <!-- Map Social Links from site.ts -->
+              <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                {
+                  site.socials.map((social) => (
+                    <a
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-sm font-bold text-[#2D058A] dark:text-[#90ee02] hover:underline underline-offset-4 decoration-2"
+                    >
+                      {social.label}
+                    </a>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Previous / Next Post Navigation -->
+      <div
+        class="max-w-7xl mx-auto mt-16 pt-10 border-t-4 border-[#2D058A]/10 dark:border-white/10 flex flex-col md:flex-row justify-between gap-6"
+      >
+        {
+          prevPost ? (
+            <a
+              href={prevPost.url}
+              class="group flex flex-col p-6 bg-white dark:bg-[#150734] border-2 border-[#2D058A] dark:border-[#90ee02] rounded-2xl shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(45,5,138,1)] transition-all flex-1 text-left"
+            >
+              <span class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-2">
+                ← Previous Post
+              </span>
+              <span class="text-xl font-bold text-[#2D058A] dark:text-white group-hover:text-[#90ee02]">
+                {prevPost.title}
+              </span>
+            </a>
+          ) : (
+            <div class="flex-1" />
+          )
+        }
+
+        {
+          nextPost ? (
+            <a
+              href={nextPost.url}
+              class="group flex flex-col p-6 bg-[#2D058A] dark:bg-[#90ee02] border-2 border-[#2D058A] dark:border-[#90ee02] rounded-2xl shadow-[4px_4px_0px_0px_rgba(144,238,2,1)] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(144,238,2,1)] transition-all flex-1 text-right"
+            >
+              <span class="text-sm font-bold text-[#90ee02] dark:text-[#2D058A] uppercase tracking-widest mb-2">
+                Next Post →
+              </span>
+              <span class="text-xl font-bold text-white dark:text-[#2D058A]">
+                {nextPost.title}
+              </span>
+            </a>
+          ) : (
+            <div class="flex-1" />
+          )
+        }
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  .custom-prose h2,
+  .custom-prose h3 {
+    color: #2d058a;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    scroll-margin-top: 100px;
+  }
+  .dark .custom-prose h2,
+  .dark .custom-prose h3 {
+    color: #ffffff;
+  }
+  .dark .custom-prose p,
+  .dark .custom-prose li,
+  .dark .custom-prose ul,
+  .dark .custom-prose ol {
+    color: #e2e8f0 !important; /* text-slate-200 color jate clear bojha jay */
+  }
+
+  .dark .custom-prose strong {
+    color: #ffffff !important;
+  }
+  .custom-prose img {
+    border-radius: 1rem;
+    border: 4px solid #2d058a;
+    box-shadow: 4px 4px 0px 0px rgba(45, 5, 138, 1);
+  }
+  .dark .custom-prose img {
+    border-color: #90ee02;
+    box-shadow: 4px 4px 0px 0px rgba(144, 238, 2, 0.4);
+  }
+  .custom-prose pre {
+    background-color: #0f0224 !important;
+    border: 2px solid #90ee02;
+    border-radius: 0.75rem;
+    box-shadow: 4px 4px 0px 0px rgba(144, 238, 2, 0.4);
+  }
+  .custom-prose a {
+    color: #2d058a;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+  .dark .custom-prose a {
+    color: #90ee02;
+  }
+  /* Markdown Typography Spacing Fix */
+  .custom-prose p {
+    margin-bottom: 1.75rem !important; /* প্যারাগ্রাফের নিচে স্পেস */
+    line-height: 1.8 !important; /* লাইনের মাঝে গ্যাপ */
+  }
+
+  .custom-prose h2 {
+    margin-top: 3.5rem !important; /* হেডিং ২ এর ওপরে স্পেস */
+    margin-bottom: 1.25rem !important; /* হেডিং ২ এর নিচে স্পেস */
+  }
+
+  .custom-prose h3 {
+    margin-top: 2.5rem !important; /* হেডিং ৩ এর ওপরে স্পেস */
+    margin-bottom: 1rem !important; /* হেডিং ৩ এর নিচে স্পেস */
+  }
+
+  .custom-prose ul,
+  .custom-prose ol {
+    margin-bottom: 1.75rem !important;
+    padding-left: 1.5rem !important; /* লিস্টের বামে জায়গা */
+  }
+
+  .custom-prose li {
+    margin-bottom: 0.5rem !important;
+    line-height: 1.7 !important;
+  }
+</style>
