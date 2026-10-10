@@ -1,0 +1,260 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const experience = [
+  {
+    role: "Founder & Lead Cloud Administrator",
+    company: "IT Support Bee",
+    duration: "2021 - Present",
+    description: "Leading a remote IT infrastructure consultancy. Specialized in zero-downtime Google Workspace & Microsoft 365 migrations, DNS security (SPF, DKIM, DMARC), and advanced cold email setups for B2B enterprises."
+  },
+  {
+    role: "Remote IT Support Engineer",
+    company: "Independent Consultant",
+    duration: "2020 - Present",
+    description: "Providing Tier 2/3 remote helpdesk support, Windows/macOS troubleshooting, hardware diagnostics, and AI workflow automation (Zapier, n8n) for global clients."
+  },
+  {
+    role: "Modern Web Developer",
+    company: "Freelance",
+    duration: "2019 - Present",
+    description: "Building fast, SEO-optimized, and accessible web applications using Astro, Tailwind CSS v4, and custom WordPress architectures without relying on bloated plugins."
+  }
+];
+
+const education = [
+  {
+    degree: "Bachelor of Science (B.Sc)",
+    institution: "National University, Bangladesh",
+    year: "Graduated"
+  }
+];
+
+const certifications = [
+  {
+    title: "Microsoft 365 Certified: Enterprise Administrator",
+    issuer: "Microsoft",
+    image: "/certs/m365-cert.jpg", // আপনার সার্টিফিকেটের আসল ইমেজের পাথ দিন
+    verifyLink: "https://learn.microsoft.com/verify/..." // ভেরিফিকেশন লিংক
+  },
+  {
+    title: "Google Workspace Deployment Specialist",
+    issuer: "Google",
+    image: "/certs/google-workspace-cert.jpg",
+    verifyLink: "https://google.credential.net/..."
+  },
+  {
+    title: "AWS Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    image: "/certs/aws-cert.jpg",
+    verifyLink: "https://aws.amazon.com/verification/..."
+  },
+  {
+    title: "Advanced DNS & Deliverability Expert",
+    issuer: "IT Support Bee",
+    image: "/certs/dns-expert.jpg",
+    verifyLink: null // লিংক না থাকলে null রাখুন
+  }
+];
+
+const skills = ["Microsoft 365", "Google Workspace", "Email Deliverability", "DNS Security", "Astro", "Tailwind CSS", "WordPress", "Zapier & n8n", "Linux Server Admin", "Bash Scripting"];
+---
+
+<BaseLayout title="About Me | IT Mushfiq - Infrastructure Expert">
+  
+  <div class="bg-white dark:bg-[#0f0224] pt-24 pb-16 overflow-hidden">
+    <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- 1. Who Am I (Hero Section) -->
+      <section class="mb-32 relative">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <!-- Text Content -->
+          <div>
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-sm font-bold tracking-widest uppercase border-2 border-[#2D058A] text-[#2D058A] dark:border-[#90ee02] dark:text-[#90ee02] rounded-full">
+              Who I Am
+            </div>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-[#2D058A] dark:text-white tracking-tighter mb-8 leading-[1.1]">
+              Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#2D058A] to-[#7b2cbf] dark:from-[#90ee02] dark:to-[#ccff66]">Mushfiqur.</span>
+            </h1>
+            <div class="space-y-6 text-xl text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
+              <p>
+                I am a remote IT Support Engineer and Cloud Administrator with over three years of proven experience in transforming messy infrastructures into streamlined, secure, and automated systems.
+              </p>
+              <p>
+                As the founder of IT Support Bee, my mission is simple: eliminate IT downtime, ensure your business emails actually reach the inbox, and automate repetitive workflows so you can focus on scaling your business. I don't just fix problems; I architect long-term solutions.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Image/Avatar Placeholder (Neo-brutalist Style) -->
+          <div class="relative w-full aspect-square max-w-md mx-auto lg:ml-auto">
+            <div class="absolute inset-0 bg-[#90ee02] translate-x-4 translate-y-4 rounded-2xl border-4 border-[#2D058A] dark:border-[#90ee02]"></div>
+            <div class="absolute inset-0 bg-[#2D058A] overflow-hidden rounded-2xl border-4 border-[#2D058A] dark:border-[#90ee02] z-10 grayscale hover:grayscale-0 transition-all duration-500">
+              <!-- আপনার একটি প্রফেশনাল ছবি এখানে দিন -->
+              <img src="/mushfiqur.jpg" alt="Mushfiqur Rahman" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x600/2D058A/90ee02?text=MUSHFIQUR'"/>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Skills & Tech Stack Marquee (Optional but looks great) -->
+      <section class="mb-32">
+        <h2 class="text-2xl font-black text-[#2D058A] dark:text-white uppercase tracking-widest mb-8 border-b-4 border-[#2D058A] dark:border-white/10 pb-4 inline-block">
+          Technical Arsenal
+        </h2>
+        <div class="flex flex-wrap gap-4">
+          {skills.map((skill) => (
+            <span class="px-6 py-3 text-lg font-bold text-[#2D058A] dark:text-white bg-slate-100 dark:bg-[#150734] border-2 border-[#2D058A] dark:border-white/20 shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.4)] rounded-xl hover:-translate-y-1 transition-transform">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        
+        <!-- 3. Experience Timeline -->
+        <section class="lg:col-span-8">
+          <h2 class="text-4xl md:text-5xl font-black text-[#2D058A] dark:text-white tracking-tighter mb-12">
+            Professional Experience.
+          </h2>
+          
+          <div class="relative border-l-4 border-[#2D058A] dark:border-[#90ee02] ml-4 md:ml-6 space-y-12">
+            {experience.map((item) => (
+              <div class="relative pl-10 md:pl-16">
+                <!-- Timeline Dot -->
+                <span class="absolute -left-[14px] top-2 w-6 h-6 bg-[#90ee02] border-4 border-[#2D058A] rounded-full"></span>
+                
+                <!-- Neo-brutalist Card -->
+                <article class="p-6 md:p-8 bg-white dark:bg-[#150734] border-2 border-[#2D058A] dark:border-white/10 rounded-2xl shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.4)]">
+                  <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                    <h3 class="text-2xl font-bold text-[#2D058A] dark:text-white">{item.role}</h3>
+                    <span class="inline-block px-3 py-1 bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] text-sm font-bold uppercase tracking-wider rounded-md">
+                      {item.duration}
+                    </span>
+                  </div>
+                  <h4 class="text-lg font-bold text-slate-500 dark:text-[#90ee02]/80 uppercase tracking-widest mb-4">{item.company}</h4>
+                  <p class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
+                    {item.description}
+                  </p>
+                </article>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- 4. Education & Certifications -->
+        <section class="lg:col-span-4 space-y-16">
+          
+          <!-- Education -->
+          <div>
+            <h2 class="text-3xl font-black text-[#2D058A] dark:text-white tracking-tighter mb-8">
+              Education.
+            </h2>
+            <div class="space-y-6">
+              {education.map((edu) => (
+                <div class="p-6 bg-slate-50 dark:bg-[#150734] border-2 border-slate-200 dark:border-white/10 rounded-2xl">
+                  <h3 class="text-xl font-bold text-[#2D058A] dark:text-white mb-2">{edu.degree}</h3>
+                  <p class="text-slate-600 dark:text-slate-400 font-medium mb-4">{edu.institution}</p>
+                  <span class="text-sm font-bold px-3 py-1 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md">
+                    {edu.year}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div>
+            <h2 class="text-3xl font-black text-[#2D058A] dark:text-white tracking-tighter mb-8">
+              Certifications.
+            </h2>
+            <!-- Certifications (With Lightbox) -->
+          <div>
+            <h2 class="text-3xl font-black text-[#2D058A] dark:text-white tracking-tighter mb-8">
+              Certifications.
+            </h2>
+            <ul class="space-y-4">
+              {certifications.map((cert, index) => (
+                <li>
+                  <!-- Certificate Card Button -->
+                  <button 
+                    onclick={`document.getElementById('cert-dialog-${index}').showModal()`}
+                    class="w-full text-left flex items-start gap-4 p-4 bg-white dark:bg-[#150734] border-2 border-[#2D058A] dark:border-white/20 rounded-xl shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.3)] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(45,5,138,1)] dark:hover:shadow-[6px_6px_0px_0px_rgba(144,238,2,0.6)] transition-all duration-300 group cursor-pointer outline-none focus-visible:ring-4 focus-visible:ring-[#90ee02]/50"
+                  >
+                    <div class="w-10 h-10 flex-shrink-0 bg-[#90ee02] border-2 border-[#2D058A] flex items-center justify-center rounded-lg mt-1 transition-transform group-hover:rotate-6">
+                      <svg class="w-5 h-5 text-[#2D058A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-lg text-[#2D058A] dark:text-white group-hover:text-[#7b2cbf] dark:group-hover:text-[#90ee02] transition-colors leading-tight mb-1">
+                        {cert.title}
+                      </h3>
+                      <p class="text-sm font-medium text-slate-500 dark:text-slate-400">
+                        {cert.issuer}
+                      </p>
+                    </div>
+                  </button>
+
+                  <!-- Native HTML Lightbox Dialog -->
+                  <dialog 
+                    id={`cert-dialog-${index}`} 
+                    class="bg-transparent backdrop:bg-[#0f0224]/80 backdrop:backdrop-blur-sm p-4 m-auto max-w-4xl w-full"
+                  >
+                    <div class="bg-white dark:bg-[#150734] p-3 border-4 border-[#2D058A] dark:border-[#90ee02] shadow-[8px_8px_0px_0px_rgba(45,5,138,1)] dark:shadow-[8px_8px_0px_0px_rgba(144,238,2,0.4)] rounded-2xl relative flex flex-col">
+                      
+                      <!-- Close Button -->
+                      <button 
+                        onclick={`document.getElementById('cert-dialog-${index}').close()`}
+                        class="absolute -top-4 -right-4 w-10 h-10 bg-[#90ee02] dark:bg-[#2D058A] text-[#2D058A] dark:text-[#90ee02] border-2 border-[#2D058A] dark:border-[#90ee02] rounded-full font-black text-2xl flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(45,5,138,1)] dark:shadow-[2px_2px_0px_0px_rgba(144,238,2,1)] hover:scale-110 transition-transform z-10 cursor-pointer"
+                        aria-label="Close dialog"
+                      >
+                        &times;
+                      </button>
+                      
+                      <!-- Certificate Image (Zoomed) -->
+                      <div class="overflow-hidden rounded-xl border-2 border-slate-200 dark:border-white/10 mb-4 bg-slate-100 dark:bg-[#0f0224] flex items-center justify-center">
+                        <img 
+                          src={cert.image} 
+                          alt={`${cert.title} Certificate`} 
+                          class="w-full h-auto max-h-[70vh] object-contain"
+                          loading="lazy"
+                          onerror="this.src='https://placehold.co/800x600/f8fafc/2D058A?text=Certificate+Image+Pending'"
+                        />
+                      </div>
+
+                      <!-- Footer & Verify Link -->
+                      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 px-2 pb-2">
+                        <div>
+                          <h4 class="font-bold text-[#2D058A] dark:text-white">{cert.title}</h4>
+                          <p class="text-sm font-medium text-slate-500">Issued by: {cert.issuer}</p>
+                        </div>
+                        
+                        {cert.verifyLink && (
+                          <a 
+                            href={cert.verifyLink} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="inline-flex items-center gap-2 px-6 py-2.5 bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-bold text-sm uppercase tracking-wider rounded-lg border-2 border-[#2D058A] dark:border-[#90ee02] hover:-translate-y-1 shadow-[2px_2px_0px_0px_rgba(144,238,2,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.4)] transition-all flex-shrink-0"
+                          >
+                            Verify Link
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                          </a>
+                        )}
+                      </div>
+                      
+                    </div>
+                  </dialog>
+                </li>
+              ))}
+            </ul>
+          </div>
+          </div>
+          
+        </section>
+
+      </div>
+    </div>
+  </div>
+</BaseLayout>

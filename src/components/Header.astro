@@ -1,0 +1,111 @@
+---
+const navItems = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Services", path: "/services" },
+  { name: "Blog", path: "/blog" },
+];
+---
+
+<header
+  class="sticky top-0 z-50 w-full bg-slate-50/80 backdrop-blur-md border-b border-slate-200/60"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <span
+          class="text-2xl font-bold text-slate-900 tracking-tight group-hover:text-indigo-600 transition-colors"
+        >
+          IT<span class="text-indigo-600">Mushfiq</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.path}
+              class="text-slate-600 font-medium hover:text-indigo-600 transition-colors duration-200"
+            >
+              {item.name}
+            </a>
+          ))
+        }
+      </nav>
+
+      <!-- CTA & Mobile Toggle -->
+      <div class="flex items-center gap-4">
+        <a
+          href="/contact"
+          class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-full shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5"
+        >
+          Let's Talk
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none"
+          aria-label="Toggle Menu"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              id="menu-icon"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Nav Panel -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-6 shadow-xl absolute w-full"
+  >
+    <div class="flex flex-col space-y-4">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.path}
+            class="text-slate-700 font-medium hover:text-indigo-600 hover:bg-slate-50 p-2 rounded-lg transition-colors"
+          >
+            {item.name}
+          </a>
+        ))
+      }
+      <a
+        href="/contact"
+        class="w-full text-center px-6 py-3 mt-4 text-sm font-semibold text-indigo-600 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition-colors"
+      >
+        Let's Talk
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const icon = document.getElementById("menu-icon");
+
+  btn?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+    // Simple icon change logic (Hamburger to Cross)
+    if (menu?.classList.contains("hidden")) {
+      icon?.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
+    } else {
+      icon?.setAttribute("d", "M6 18L18 6M6 6l12 12");
+    }
+  });
+</script>

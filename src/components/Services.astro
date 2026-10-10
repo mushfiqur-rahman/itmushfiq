@@ -1,0 +1,96 @@
+---
+import ServiceCard from "../components/ServiceCard.astro";
+---
+
+<section
+  id="services"
+  class="py-24 bg-slate-50 dark:bg-[#0f0224] border-y border-[#2D058A]/10 dark:border-white/10 relative overflow-hidden"
+>
+  <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="mb-16 max-w-3xl">
+      <h2
+        class="text-4xl md:text-5xl font-black text-[#2D058A] dark:text-white tracking-tighter mb-6"
+      >
+        Comprehensive Solutions.
+      </h2>
+      <p class="text-xl text-slate-700 dark:text-slate-300 font-medium">
+        From foundation to automation, everything your business needs to scale
+        securely.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+      <!-- Connective Arrows for Desktop (Matches the reference image) -->
+      <div
+        class="hidden lg:block absolute top-1/2 left-[33%] -translate-x-1/2 -translate-y-1/2 text-[#2D058A] dark:text-[#90ee02] z-0"
+      >
+        <svg
+          class="w-6 h-6 opacity-50"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg
+        >
+      </div>
+      <div
+        class="hidden lg:block absolute top-1/2 left-[66%] -translate-x-1/2 -translate-y-1/2 text-[#2D058A] dark:text-[#90ee02] z-0"
+      >
+        <svg
+          class="w-6 h-6 opacity-50"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg
+        >
+      </div>
+
+      <ServiceCard
+        number="01"
+        category="IT SUPPORT"
+        title="IT Support & Systems Administration"
+        items={[
+          "Microsoft 365",
+          "Google Workspace",
+          "Remote IT Support",
+          "Device & User Support",
+        ]}
+        href="/services/it-support"
+      />
+
+      <ServiceCard
+        number="02"
+        category="CLOUD & EMAIL"
+        title="Business Email & Cloud"
+        items={[
+          "Email Configuration",
+          "Email Migration",
+          "DNS",
+          "SPF / DKIM / DMARC",
+          "Cloud Migration",
+        ]}
+        href="/services/cloud-email"
+      />
+
+      <ServiceCard
+        number="03"
+        category="AUTOMATION"
+        title="Business Automation"
+        items={[
+          "Zapier & n8n",
+          "Brevo & GoHighLevel",
+          "AI Workflows",
+          "SaaS Integrations",
+        ]}
+        href="/services/automation"
+      />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,131 @@
+---
+// BrandSlider.astro
+const brands = [
+  { name: "Aviva Strategies", src: "/Brands/avivastrategies.png" },
+  { name: "Bea Social", src: "/Brands/beasocial.png" },
+  { name: "Brand Physics", src: "/Brands/brandphysics.png" },
+  { name: "D'Well", src: "/Brands/dwll.png" },
+  {
+    name: "First Impression NC",
+    src: "/Brands/FirstImpression.png",
+  },
+  { name: "Gerfin", src: "/Brands/Gerfin.png" },
+  {
+    name: "Innovative Software",
+    src: "/Brands/innovativesoftware.png",
+  },
+  {
+    name: "Japan Quality Exports",
+    src: "/Brands/japanqualityexports.png",
+  },
+  {
+    name: "Langley Cottages",
+    src: "/Brands/langleycottagesandapartments.png",
+  },
+  {
+    name: "Let's Do Something",
+    src: "/Brands/letsdosomething.png",
+  },
+  { name: "Lillie Nicole", src: "/Brands/lillienicole.png" },
+  { name: "Lux Vetco", src: "/Brands/luxvetco.png" },
+  {
+    name: "Medical Training Certs",
+    src: "/Brands/medicaltrainingcerts.png",
+  },
+  { name: "Millbank Dark", src: "/Brands/millbankdark.png" },
+  { name: "Millbank Light", src: "/Brands/millbanklight.png" },
+  { name: "Mojo for Running", src: "/Brands/MojoforRunning.png" },
+  { name: "Owl Vision Labs", src: "/Brands/owlvisionlabs.png" },
+  { name: "Quantive", src: "/Brands/Quantive.png" },
+  { name: "Sharpstream", src: "/Brands/sharpstream.png" },
+  { name: "SM Landscapes", src: "/Brands/smlandscapes.png" },
+  {
+    name: "Steel City Auction",
+    src: "/Brands/steelcityauction.png",
+  },
+  { name: "10fold Cars", src: "/Brands/tenfoldcars.png" },
+  { name: "The Ads Agency", src: "/Brands/theadsagency.png" },
+  {
+    name: "The Freedom Studio",
+    src: "/Brands/thefreedomstudio.png",
+  },
+  { name: "The Lush Space", src: "/Brands/thelushspace.png" },
+  { name: "The Self Space", src: "/Brands/theselfspace.png" },
+  { name: "Viavant Law PLLC", src: "/Brands/Viavant Law PLLC.png" },
+  { name: "Voxtech 3D", src: "/Brands/voxtech3d.png" },
+  { name: "Wochmaker", src: "/Brands/wochmaker.png" },
+];
+---
+
+<section
+  class="py-10 bg-white dark:bg-[#0f0224] border-y border-[#2D058A]/10 dark:border-white/10 overflow-hidden flex flex-col justify-center"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mb-8 text-center">
+    <p
+      class="text-sm font-bold tracking-widest uppercase text-[#2D058A]/60 dark:text-white/50"
+    >
+      Trusted by ambitious brands & forward-thinking businesses
+    </p>
+  </div>
+
+  <!-- Swiper Container -->
+  <div class="relative w-full">
+    <!-- Gradient Masks for smooth fade effect -->
+    <div
+      class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white dark:from-[#0f0224] to-transparent z-10 pointer-events-none"
+    >
+    </div>
+    <div
+      class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white dark:from-[#0f0224] to-transparent z-10 pointer-events-none"
+    >
+    </div>
+
+    <div class="swiper brand-swiper">
+      <div class="swiper-wrapper items-center">
+        {
+          brands.map((brand) => (
+            <div class="swiper-slide w-auto! px-6">
+              <img
+                src={brand.src}
+                alt={`${brand.name} logo`}
+                width="150"
+                height="60"
+                class="h-12 w-auto object-contain transition-transform duration-300 hover:scale-110 cursor-grab active:cursor-grabbing"
+                loading="lazy"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper Initialization script for Astro -->
+<script>
+  import Swiper from "swiper";
+  import { Autoplay } from "swiper/modules";
+  import "swiper/css";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    new Swiper(".brand-swiper", {
+      modules: [Autoplay],
+      loop: true,
+      slidesPerView: "auto",
+      spaceBetween: 0,
+      speed: 3000, // ট্রানজিশন স্পিড
+      autoplay: {
+        delay: 0, // কোনো থামা ছাড়াই চলবে
+        disableOnInteraction: false, // ইউজার সোয়াইপ করার পরও চলতে থাকবে
+        pauseOnMouseEnter: true, // মাউস হোভার করলে থেমে যাবে
+      },
+      grabCursor: true, // ইউজারের বোঝার সুবিধার জন্য কার্সর স্টাইল
+    });
+  });
+</script>
+
+<style>
+  :global(.brand-swiper .swiper-wrapper) {
+    transition-timing-function: linear !important;
+  }
+</style>

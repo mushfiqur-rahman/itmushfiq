@@ -1,0 +1,116 @@
+---
+import ProcessCard from "../components/ProcessCard.astro";
+---
+
+<section
+  class="py-24 bg-white dark:bg-[#0f0224] border-y border-[#2D058A]/10 dark:border-white/10 relative overflow-hidden"
+>
+  <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Split Header -->
+    <div
+      class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10 mb-16"
+    >
+      <!-- Left Side (Eyebrow & Title) -->
+      <div class="max-w-2xl">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="w-8 h-1 bg-[#90ee02]" aria-hidden="true"></span>
+          <span
+            class="text-sm font-bold tracking-widest uppercase text-[#2D058A] dark:text-slate-300"
+          >
+            A Practical Alternative
+          </span>
+        </div>
+        <h2
+          class="text-4xl md:text-5xl lg:text-6xl font-black text-[#2D058A] dark:text-white tracking-tighter leading-[1.1]"
+        >
+          Your IT. Managed Without the Overhead.
+        </h2>
+      </div>
+
+      <!-- Right Side (Description) -->
+      <div class="max-w-lg lg:pb-2">
+        <p
+          class="text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed font-medium"
+        >
+          Work directly with an experienced remote IT professional who can
+          manage day-to-day systems, troubleshoot issues, and handle migrations
+          and administration.
+        </p>
+      </div>
+    </div>
+
+    <!-- Process / Value Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 01 -->
+      <ProcessCard
+        number="01"
+        title="Reduce IT Downtime"
+        description="Resolve technical issues quickly and keep employees productive."
+      >
+        <!-- Pulse Icon -->
+        <svg
+          slot="icon"
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.5"
+            d="M3 12h5l3-8 4 16 3-8h5"></path>
+        </svg>
+      </ProcessCard>
+
+      <!-- Card 02 -->
+      <ProcessCard
+        number="02"
+        title="Keep Business Email Reliable"
+        description="Manage Microsoft 365, Google Workspace, DNS, authentication, deliverability, and migrations."
+      >
+        <!-- Email Icon -->
+        <svg
+          slot="icon"
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.5"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          ></path>
+        </svg>
+      </ProcessCard>
+
+      <!-- Card 03 -->
+      <ProcessCard
+        number="03"
+        title="Have Someone Own Your IT"
+        description="Get a reliable technical partner who understands your systems and can handle ongoing IT operations."
+      >
+        <!-- Shield Check Icon -->
+        <svg
+          slot="icon"
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.5"
+            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+          ></path>
+        </svg>
+      </ProcessCard>
+    </div>
+  </div>
+</section>
