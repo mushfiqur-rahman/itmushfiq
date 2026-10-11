@@ -1,0 +1,470 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Email Deliverability & DMARC Setup Services | IT Support Bee";
+const description =
+  "Stop landing in spam. Expert email deliverability services including SPF, DKIM, DMARC alignment, blacklist removal, and cold email infrastructure setup.";
+const currentUrl = Astro.url.href;
+
+const faqs = [
+  {
+    question: "Why do my legitimate business emails keep going to spam?",
+    answer:
+      "Emails usually land in spam due to missing or misconfigured DNS authentication records (SPF, DKIM, DMARC), poor domain reputation, or being listed on email blacklists. Google and Yahoo recently updated their algorithms to strictly penalize senders without properly aligned authentication records.",
+  },
+  {
+    question: "What exactly are SPF, DKIM, and DMARC?",
+    answer:
+      "These are DNS-based email authentication protocols. SPF lists which servers are allowed to send on your behalf. DKIM signs your emails cryptographically to prevent tampering. DMARC tells receiving servers what to do (e.g., reject or quarantine) if an email fails SPF or DKIM checks, effectively preventing hackers from spoofing your domain.",
+  },
+  {
+    question: "How do you set up infrastructure for cold email outreach?",
+    answer:
+      "Cold email requires a completely different architecture than your primary business email. We set up secondary domains (e.g., getyourcompany.com instead of yourcompany.com), configure custom tracking domains so your links aren't blacklisted, establish strict DMARC policies, and guide you through the IP/domain warm-up process.",
+  },
+  {
+    question: "Can you help remove my domain from a blacklist?",
+    answer:
+      "Yes. We use advanced tools to identify exactly which blacklists (like Spamhaus, SORBS, or Barracuda) have flagged your domain or IP address. We then resolve the underlying security or volume issues that caused the listing and submit formal delisting and mitigation requests on your behalf.",
+  },
+];
+---
+
+<BaseLayout title={title} description={description} type="WebSite">
+  <script
+    type="application/ld+json"
+    slot="head"
+    is:inline
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Email Deliverability & Authentication",
+      provider: { "@type": "LocalBusiness", name: "IT Support Bee" },
+      description: description,
+      url: currentUrl,
+      mainEntity: {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
+      },
+    })}
+  />
+
+  <!-- 1. HERO SECTION (Extended for SEO) -->
+  <section
+    class="pt-32 pb-24 bg-slate-50 dark:bg-[#0f0224] border-b-4 border-[#2D058A]"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <span
+          class="inline-block px-4 py-1.5 mb-6 bg-[#90ee02] text-[#2D058A] font-black uppercase tracking-widest text-sm border-2 border-[#2D058A] rounded-full shadow-[2px_2px_0px_0px_rgba(45,5,138,1)]"
+        >
+          Email Infrastructure Security
+        </span>
+        <h1
+          class="text-5xl md:text-7xl font-black text-[#2D058A] dark:text-white leading-tight mb-8"
+        >
+          Stop Landing in Spam. <br />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#2D058A] to-[#7b2cbf] dark:from-[#90ee02] dark:to-[#ccff66]"
+            >Hit the Inbox Every Time.</span
+          >
+        </h1>
+        <p
+          class="text-xl text-slate-700 dark:text-slate-300 font-medium mb-10 leading-relaxed"
+        >
+          Sending emails into the void costs you leads, clients, and revenue. We
+          audit your DNS records, implement strict SPF, DKIM, and DMARC
+          alignment, repair damaged domain reputations, and build bulletproof
+          infrastructure for high-volume cold outreach.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/contact"
+            class="px-10 py-5 bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-black uppercase tracking-widest text-lg border-2 border-[#2D058A] dark:border-[#90ee02] rounded-xl shadow-[6px_6px_0px_0px_rgba(144,238,2,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all"
+          >
+            Get a Free Domain Audit
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. THE PAIN POINT (In-depth problem explanation for SEO) -->
+  <section class="py-24 bg-white dark:bg-[#150734]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-8 uppercase tracking-tight"
+      >
+        The Hidden Cost of Poor Deliverability
+      </h2>
+      <div class="prose prose-lg prose-slate dark:prose-invert max-w-none">
+        <p class="font-medium text-lg leading-relaxed mb-6">
+          In 2024, Google and Yahoo fundamentally changed how email works. They
+          implemented strict authentication requirements for all bulk senders.
+          If your technical infrastructure isn't perfectly configured, your
+          emails won't even make it to the spam folder—they will be rejected
+          outright at the server level.
+        </p>
+        <p class="font-medium text-lg leading-relaxed mb-8">
+          Many businesses unknowingly destroy their primary domain's reputation
+          by sending cold outreach or automated marketing emails without the
+          proper technical safeguards in place.
+        </p>
+
+        <div class="space-y-6">
+          <div
+            class="bg-red-50 dark:bg-red-900/10 border-l-8 border-red-500 p-6 rounded-r-xl"
+          >
+            <h3
+              class="text-xl font-black text-red-700 dark:text-red-400 mb-2 mt-0"
+            >
+              Domain Spoofing & Phishing
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">
+              Without DMARC enforcement, hackers can send emails that look
+              exactly like they came from your CEO. This destroys client trust
+              and severely damages your domain's sending reputation, causing
+              your legitimate emails to be flagged as dangerous.
+            </p>
+          </div>
+
+          <div
+            class="bg-amber-50 dark:bg-amber-900/10 border-l-8 border-amber-500 p-6 rounded-r-xl"
+          >
+            <h3
+              class="text-xl font-black text-amber-700 dark:text-amber-400 mb-2 mt-0"
+            >
+              Blacklist Placements
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">
+              A sudden spike in sending volume or a high bounce rate can
+              instantly land your IP or domain on major blacklists like
+              Spamhaus. Once listed, Microsoft 365 and Google Workspace servers
+              will automatically block your emails from reaching their users.
+            </p>
+          </div>
+
+          <div
+            class="bg-blue-50 dark:bg-blue-900/10 border-l-8 border-blue-500 p-6 rounded-r-xl"
+          >
+            <h3
+              class="text-xl font-black text-blue-700 dark:text-blue-400 mb-2 mt-0"
+            >
+              Ruining the Primary Domain
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">
+              Sending cold sales emails directly from your primary business
+              domain (e.g., yourcompany.com) is the fastest way to get your
+              entire company's internal and external communications routed to
+              the junk folder.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. COMPARISON TABLE (Trust building & decision making) -->
+  <section
+    class="py-24 bg-slate-100 dark:bg-[#0a0118] border-y-4 border-[#2D058A] dark:border-white/10"
+  >
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-12 text-center uppercase tracking-tight"
+      >
+        Why Proper Setup Matters
+      </h2>
+
+      <div
+        class="overflow-x-auto rounded-xl border-4 border-[#2D058A] shadow-[8px_8px_0px_0px_rgba(45,5,138,1)] bg-white dark:bg-[#150734]"
+      >
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr>
+              <th
+                class="p-6 border-b-4 border-r-4 border-[#2D058A] bg-slate-50 dark:bg-[#0f0224] text-[#2D058A] dark:text-white font-black text-xl w-1/3"
+                >Infrastructure</th
+              >
+              <th
+                class="p-6 border-b-4 border-r-4 border-[#2D058A] bg-slate-50 dark:bg-[#0f0224] text-slate-500 font-black text-xl w-1/3"
+                >Default / DIY Setup</th
+              >
+              <th
+                class="p-6 border-b-4 border-[#2D058A] bg-[#90ee02] text-[#2D058A] font-black text-xl w-1/3"
+                >With IT Support Bee</th
+              >
+            </tr>
+          </thead>
+          <tbody class="text-slate-700 dark:text-slate-300 font-medium">
+            <tr>
+              <td
+                class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Authentication</td
+              >
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
+                >Missing or syntax errors</td
+              >
+              <td
+                class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
+                >Perfect SPF, DKIM & DMARC alignment</td
+              >
+            </tr>
+            <tr>
+              <td
+                class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Cold Email Setup</td
+              >
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
+                >Sent from primary domain</td
+              >
+              <td
+                class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
+                >Isolated secondary domains & IPs</td
+              >
+            </tr>
+            <tr>
+              <td
+                class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Click Tracking</td
+              >
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
+                >Shared provider domains (Spam risk)</td
+              >
+              <td
+                class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
+                >Custom branded tracking domains</td
+              >
+            </tr>
+            <tr>
+              <td
+                class="p-6 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Google / Yahoo Rules</td
+              >
+              <td class="p-6 border-r-4 border-[#2D058A]"
+                >Often non-compliant</td
+              >
+              <td class="p-6 bg-green-50 dark:bg-green-900/10"
+                >100% compliant with 2024 standards</td
+              >
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. DEEP DIVE SERVICES (Pillar Content) -->
+  <section class="py-24 bg-white dark:bg-[#150734]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-16 text-center uppercase tracking-tight"
+      >
+        Core Deliverability Solutions
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Pillar 1 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                ></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              DMARC & Authentication
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            We conduct a forensic analysis of your DNS records. We ensure your
+            SPF record doesn't exceed the 10-lookup limit, generate strict
+            2048-bit DKIM keys, and implement a DMARC policy (moving from p=none
+            to p=reject). This guarantees that major inbox providers instantly
+            recognize your emails as legitimate and secure.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Cold Outreach Infrastructure
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            To protect your main business domain, we architect isolated
+            secondary domains specifically for marketing and sales outreach. We
+            set up Google Workspace or Microsoft 365 tenants for these domains,
+            configure custom tracking subdomains to mask third-party analytics
+            links, and establish automated IP warm-up schedules.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                ></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Blacklist & Reputation Repair
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            If your domain has been burned, we can fix it. We monitor over 100
+            global blocklists to see where you are flagged. We analyze your
+            bounce logs to find the root cause, fix the infrastructure
+            vulnerability, and handle the manual delisting appeals with
+            providers like Spamhaus, Barracuda, and SORBS.
+          </p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                ></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Google Postmaster Monitoring
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            We don't just guess; we use hard data. We verify your domains with
+            Google Postmaster Tools and Microsoft SNDS to monitor your IP and
+            domain reputation in real-time. We analyze spam complaint rates,
+            delivery errors, and authentication success rates to ensure your
+            inbox placement stays at 99%+.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. AEO FAQ SECTION (Expanded) -->
+  <section
+    class="py-24 bg-slate-50 dark:bg-[#0f0224] border-t-4 border-[#2D058A] dark:border-white/10"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-12 text-center uppercase tracking-tight"
+      >
+        Common Questions
+      </h2>
+      <div class="space-y-6">
+        {
+          faqs.map((faq) => (
+            <details class="group bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.3)]">
+              <summary class="flex justify-between items-center font-black cursor-pointer list-none p-6 text-lg text-[#2D058A] dark:text-white hover:bg-slate-50 dark:hover:bg-[#2D058A] dark:hover:text-[#90ee02] transition-colors">
+                {faq.question}
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="p-6 pt-0 text-slate-700 dark:text-slate-300 font-medium leading-relaxed border-t-2 border-slate-200 dark:border-white/5">
+                {faq.answer}
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. HIGH-CONVERTING CTA -->
+  <section class="py-24 bg-[#90ee02] border-t-4 border-[#2D058A]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2
+        class="text-4xl md:text-6xl font-black text-[#2D058A] mb-6 uppercase tracking-tighter"
+      >
+        Get Back in the Inbox.
+      </h2>
+      <p class="text-xl text-[#2D058A]/80 font-bold mb-12 max-w-2xl mx-auto">
+        Don't let technical errors cost you clients. Let us audit your DNS and
+        bulletproof your email infrastructure today.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block px-12 py-5 bg-[#2D058A] text-[#90ee02] font-black uppercase tracking-widest text-lg border-4 border-[#2D058A] rounded-xl shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(255,255,255,1)] transition-all"
+      >
+        Book a Deliverability Audit
+      </a>
+    </div>
+  </section>
+</BaseLayout>

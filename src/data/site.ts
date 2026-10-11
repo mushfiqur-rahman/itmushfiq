@@ -6,9 +6,10 @@ export const site = {
   email: "hello@itmushfiq.com",
   website: "https://itmushfiq.com",
   socials: [
-    { label: "GitHub", url: "https://github.com/itmushfiqdev" },
+    { label: "GitHub", url: "https://github.com/mushfiqur-rahman" },
     { label: "LinkedIn", url: "https://linkedin.com/in/itmushfiq" },
-    { label: "X (Twitter)", url: "https://x.com/itmushfiq" },
+    { label: "X (Twitter)", url: "https://x.com/itsupportbee" },
+    { label: "YouTube", url: "https://youtube.com/itmushfiq" },
     { label: "Agency", url: "https://itsupportbee.com" },
   ],
 };

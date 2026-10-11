@@ -1,0 +1,468 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Automated Email Marketing Services | IT Support Bee";
+const description =
+  "Stop relying entirely on expensive ads. We build automated email marketing systems that capture leads, nurture relationships, and turn prospects into paying customers.";
+const currentUrl = Astro.url.href;
+
+const faqs = [
+  {
+    question: "How will email marketing actually help my business grow?",
+    answer:
+      "Most people who visit your website aren't ready to buy on day one. If you don't collect their email, they leave and forget about you. Email marketing allows you to stay in touch, build trust, and gently guide them toward making a purchase over time, without paying for expensive ads to reach them again.",
+  },
+  {
+    question: "I already send a monthly newsletter. Isn't that enough?",
+    answer:
+      "Sending a generic newsletter to everyone is often ineffective. We build 'Automated Sequences.' For example, when someone joins your list, they automatically receive a tailored series of emails over the next few weeks introducing your best services. This works in the background 24/7 to generate sales.",
+  },
+  {
+    question:
+      "What happens if someone adds a product to their cart but doesn't buy?",
+    answer:
+      "This is where you lose the most money. We set up 'Abandoned Cart' automations. If a customer leaves without paying, our system automatically sends them a friendly reminder email a few hours later. This simple setup often recovers 10% to 15% of lost sales automatically.",
+  },
+  {
+    question: "Why should we hire IT Support Bee for this?",
+    answer:
+      "Because we handle both the strategy and the technical setup. We don't just write the emails; we ensure your domain is authenticated so emails don't go to spam, we set up the complex automation rules, and we segment your audience so the right person gets the right message at the right time.",
+  },
+];
+---
+
+<BaseLayout title={title} description={description} type="WebSite">
+  <script
+    type="application/ld+json"
+    slot="head"
+    is:inline
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Automated Email Marketing",
+      provider: { "@type": "LocalBusiness", name: "IT Support Bee" },
+      description: description,
+      url: currentUrl,
+      mainEntity: {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
+      },
+    })}
+  />
+
+  <!-- 1. HERO SECTION (Business Improvement Focused) -->
+  <section
+    class="pt-32 pb-24 bg-slate-50 dark:bg-[#0f0224] border-b-4 border-[#2D058A]"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <span
+          class="inline-block px-4 py-1.5 mb-6 bg-[#90ee02] text-[#2D058A] font-black uppercase tracking-widest text-sm border-2 border-[#2D058A] rounded-full shadow-[2px_2px_0px_0px_rgba(45,5,138,1)]"
+        >
+          Sales Automation
+        </span>
+        <h1
+          class="text-5xl md:text-7xl font-black text-[#2D058A] dark:text-white leading-tight mb-8"
+        >
+          Turn Your Audience Into <br />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#2D058A] to-[#7b2cbf] dark:from-[#90ee02] dark:to-[#ccff66]"
+            >Loyal Customers.</span
+          >
+        </h1>
+        <p
+          class="text-xl text-slate-700 dark:text-slate-300 font-medium mb-10 leading-relaxed"
+        >
+          Stop letting interested prospects slip away. We build smart, automated
+          email systems that capture website visitors, nurture them with
+          valuable content, and consistently turn them into paying clients while
+          you focus on running your business.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/contact"
+            class="px-10 py-5 bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-black uppercase tracking-widest text-lg border-2 border-[#2D058A] dark:border-[#90ee02] rounded-xl shadow-[6px_6px_0px_0px_rgba(144,238,2,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all"
+          >
+            Start Automating Your Sales
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. THE PAIN POINT (What problems we solve) -->
+  <section class="py-24 bg-white dark:bg-[#150734]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-8 uppercase tracking-tight"
+      >
+        Why Your Current Marketing Feels Exhausting
+      </h2>
+      <div class="prose prose-lg prose-slate dark:prose-invert max-w-none">
+        <p class="font-medium text-lg leading-relaxed mb-6">
+          Most business owners rely entirely on social media or expensive ads to
+          get new clients. The problem? If you stop paying for ads, your sales
+          stop completely. You don't actually "own" your social media followers;
+          the platforms do.
+        </p>
+        <p class="font-medium text-lg leading-relaxed mb-8">
+          Without a proper email marketing strategy, you are constantly chasing
+          new leads while completely ignoring the people who already showed
+          interest but just needed a little more time to make a decision.
+        </p>
+
+        <div class="space-y-6">
+          <div
+            class="bg-red-50 dark:bg-red-900/10 border-l-8 border-red-500 p-6 rounded-r-xl"
+          >
+            <h3
+              class="text-xl font-black text-red-700 dark:text-red-400 mb-2 mt-0"
+            >
+              Losing Warm Leads
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">
+              96% of visitors leave your website without buying anything. If you
+              don't offer them a reason to leave their email address, you lose
+              the ability to follow up, and they will likely end up buying from
+              a competitor.
+            </p>
+          </div>
+
+          <div
+            class="bg-amber-50 dark:bg-amber-900/10 border-l-8 border-amber-500 p-6 rounded-r-xl"
+          >
+            <h3
+              class="text-xl font-black text-amber-700 dark:text-amber-400 mb-2 mt-0"
+            >
+              The "One Size Fits All" Mistake
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">
+              Sending the exact same promotional email to every single person on
+              your list annoys your audience. People only buy when they receive
+              offers that are highly relevant to their specific problems.
+            </p>
+          </div>
+
+          <div
+            class="bg-blue-50 dark:bg-blue-900/10 border-l-8 border-blue-500 p-6 rounded-r-xl"
+          >
+            <h3
+              class="text-xl font-black text-blue-700 dark:text-blue-400 mb-2 mt-0"
+            >
+              Inconsistent Sales Cycles
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">
+              When you do everything manually, you only make sales when you
+              actively run a campaign. There is no system working in the
+              background to continuously educate and convert new leads on
+              autopilot.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. COMPARISON TABLE (Why they should choose us) -->
+  <section
+    class="py-24 bg-slate-100 dark:bg-[#0a0118] border-y-4 border-[#2D058A] dark:border-white/10"
+  >
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-12 text-center uppercase tracking-tight"
+      >
+        A Better Way to Grow
+      </h2>
+
+      <div
+        class="overflow-x-auto rounded-xl border-4 border-[#2D058A] shadow-[8px_8px_0px_0px_rgba(45,5,138,1)] bg-white dark:bg-[#150734]"
+      >
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr>
+              <th
+                class="p-6 border-b-4 border-r-4 border-[#2D058A] bg-slate-50 dark:bg-[#0f0224] text-[#2D058A] dark:text-white font-black text-xl w-1/3"
+                >Business Approach</th
+              >
+              <th
+                class="p-6 border-b-4 border-r-4 border-[#2D058A] bg-slate-50 dark:bg-[#0f0224] text-slate-500 font-black text-xl w-1/3"
+                >Traditional Marketing</th
+              >
+              <th
+                class="p-6 border-b-4 border-[#2D058A] bg-[#90ee02] text-[#2D058A] font-black text-xl w-1/3"
+                >With IT Support Bee</th
+              >
+            </tr>
+          </thead>
+          <tbody class="text-slate-700 dark:text-slate-300 font-medium">
+            <tr>
+              <td
+                class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Lead Follow-up</td
+              >
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
+                >Manual, slow, often forgotten</td
+              >
+              <td
+                class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
+                >100% automated and instantly delivered</td
+              >
+            </tr>
+            <tr>
+              <td
+                class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Customer Communication</td
+              >
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
+                >Generic "Blast" Newsletters</td
+              >
+              <td
+                class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
+                >Personalized messages based on interest</td
+              >
+            </tr>
+            <tr>
+              <td
+                class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Abandoned Carts</td
+              >
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
+                >Lost revenue forever</td
+              >
+              <td
+                class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
+                >Automatically recovered through reminders</td
+              >
+            </tr>
+            <tr>
+              <td
+                class="p-6 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Technical Setup</td
+              >
+              <td class="p-6 border-r-4 border-[#2D058A]"
+                >Emails often land in the spam folder</td
+              >
+              <td class="p-6 bg-green-50 dark:bg-green-900/10"
+                >Fully authenticated to guarantee inbox delivery</td
+              >
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. DEEP DIVE SERVICES (How we solve the problems) -->
+  <section class="py-24 bg-white dark:bg-[#150734]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-16 text-center uppercase tracking-tight"
+      >
+        How We Build Your Sales Machine
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Pillar 1 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Automated Welcome Sequences
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            When someone gives you their email, that is when they are most
+            interested in your business. We build a structured series of emails
+            that automatically goes out over their first week. This introduces
+            your brand, builds trust, and gently guides them toward making their
+            first purchase without you lifting a finger.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Recovering Lost Sales
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            If a customer abandons their shopping cart or leaves a booking page
+            halfway through, we set up systems to track that behavior. We then
+            automatically send them a personalized reminder email (sometimes
+            with a small discount) to bring them back. It is the easiest way to
+            increase your revenue instantly.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Smart Audience Segmentation
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            We stop the generic email blasts. We organize your audience based on
+            their behavior—what they clicked on, what they bought, or what
+            services they looked at. This allows us to send highly specific
+            offers to the right people, drastically increasing the chances they
+            will buy.
+          </p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                ></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Technical Setup & Spam Prevention
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            The best marketing email in the world is useless if it lands in the
+            spam folder. As IT experts, we handle the complex background
+            configurations (authenticating your domain) to ensure your emails
+            actually reach your customers' main inbox, keeping your business
+            highly visible.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. AEO FAQ SECTION -->
+  <section
+    class="py-24 bg-slate-50 dark:bg-[#0f0224] border-t-4 border-[#2D058A] dark:border-white/10"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-12 text-center uppercase tracking-tight"
+      >
+        Common Questions
+      </h2>
+      <div class="space-y-6">
+        {
+          faqs.map((faq) => (
+            <details class="group bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.3)]">
+              <summary class="flex justify-between items-center font-black cursor-pointer list-none p-6 text-lg text-[#2D058A] dark:text-white hover:bg-slate-50 dark:hover:bg-[#2D058A] dark:hover:text-[#90ee02] transition-colors">
+                {faq.question}
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="p-6 pt-0 text-slate-700 dark:text-slate-300 font-medium leading-relaxed border-t-2 border-slate-200 dark:border-white/5">
+                {faq.answer}
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. HIGH-CONVERTING CTA -->
+  <section class="py-24 bg-[#90ee02] border-t-4 border-[#2D058A]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2
+        class="text-4xl md:text-6xl font-black text-[#2D058A] mb-6 uppercase tracking-tighter"
+      >
+        Ready to Automate Your Sales?
+      </h2>
+      <p class="text-xl text-[#2D058A]/80 font-bold mb-12 max-w-2xl mx-auto">
+        Stop letting warm leads forget about your business. Let us build a
+        system that turns your audience into paying clients automatically.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block px-12 py-5 bg-[#2D058A] text-[#90ee02] font-black uppercase tracking-widest text-lg border-4 border-[#2D058A] rounded-xl shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(255,255,255,1)] transition-all"
+      >
+        Discuss Your Strategy
+      </a>
+    </div>
+  </section>
+</BaseLayout>

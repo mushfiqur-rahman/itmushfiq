@@ -1,0 +1,467 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Conversion-Focused Web Development Services | IT Support Bee";
+const description =
+  "We build high-performance websites that load instantly, rank higher on Google, and turn your visitors into paying customers.";
+const currentUrl = Astro.url.href;
+
+const faqs = [
+  {
+    question: "How does a faster website actually help my business?",
+    answer:
+      "Website speed directly impacts your sales. Studies show that if your website takes more than 3 seconds to load, over 50% of your visitors will leave before seeing what you offer. By building a lightning-fast website, we stop people from leaving, keeping potential clients on your page long enough to convert into sales.",
+  },
+  {
+    question: "Why is my current website invisible on Google?",
+    answer:
+      "Having a pretty design doesn't mean Google can read it. Most websites are built with messy, unorganized code that search engines struggle to understand. We solve this by building a clean, structurally sound foundation so Google knows exactly what services you offer, making it easy to rank your business above competitors.",
+  },
+  {
+    question: "Will I need to pay for constant maintenance and bug fixes?",
+    answer:
+      "No. Traditional web agencies often use heavy, pre-made templates that constantly break and require expensive monthly maintenance. We build lean, highly secure, and stable websites that just work. This drastically reduces your ongoing costs and eliminates unexpected crashes.",
+  },
+  {
+    question: "How does a mobile-optimized site affect my business?",
+    answer:
+      "Over 60% of all web traffic now comes from mobile phones, and Google uses mobile-friendliness to rank your site. If your website is difficult to navigate on a phone, you are actively losing more than half of your potential leads. We guarantee a flawless, easy-to-use experience across all screen sizes.",
+  },
+];
+---
+
+<BaseLayout title={title} description={description} type="WebSite">
+  <script
+    type="application/ld+json"
+    slot="head"
+    is:inline
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Conversion-Focused Web Development",
+      provider: { "@type": "LocalBusiness", name: "IT Support Bee" },
+      description: description,
+      url: currentUrl,
+      mainEntity: {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
+      },
+    })}
+  />
+
+  <!-- 1. HERO SECTION (Business Growth Focused) -->
+  <section
+    class="pt-32 pb-24 bg-slate-50 dark:bg-[#0f0224] border-b-4 border-[#2D058A]"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <span
+          class="inline-block px-4 py-1.5 mb-6 bg-[#90ee02] text-[#2D058A] font-black uppercase tracking-widest text-sm border-2 border-[#2D058A] rounded-full shadow-[2px_2px_0px_0px_rgba(45,5,138,1)]"
+        >
+          Business Growth & Lead Generation
+        </span>
+        <h1
+          class="text-5xl md:text-7xl font-black text-[#2D058A] dark:text-white leading-tight mb-8"
+        >
+          Websites Built to <br />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#2D058A] to-[#7b2cbf] dark:from-[#90ee02] dark:to-[#ccff66]"
+            >Generate Revenue.</span
+          >
+        </h1>
+        <p
+          class="text-xl text-slate-700 dark:text-slate-300 font-medium mb-10 leading-relaxed"
+        >
+          Stop losing customers to slow load times and confusing layouts. We
+          engineer high-performance, conversion-focused websites that rank
+          higher on search engines, build instant trust, and actively turn your
+          traffic into paying clients.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/contact"
+            class="px-10 py-5 bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-black uppercase tracking-widest text-lg border-2 border-[#2D058A] dark:border-[#90ee02] rounded-xl shadow-[6px_6px_0px_0px_rgba(144,238,2,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all"
+          >
+            Discuss Your Business Goals
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. THE PAIN POINT (Business Problems) -->
+  <section class="py-24 bg-white dark:bg-[#150734]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-8 uppercase tracking-tight"
+      >
+        Why Most Websites Burn Money
+      </h2>
+      <div class="prose prose-lg prose-slate dark:prose-invert max-w-none">
+        <p class="font-medium text-lg leading-relaxed mb-6">
+          Most business owners treat their website like a digital brochure. They
+          pay agencies for a "pretty design," only to realize months later that
+          the site generates zero leads, ranks poorly on Google, and constantly
+          breaks.
+        </p>
+        <p class="font-medium text-lg leading-relaxed mb-8">
+          Your website should be your best salesperson. If it isn't actively
+          bringing in new business, it's costing you money in lost opportunities
+          and wasted advertising spend.
+        </p>
+
+        <div class="space-y-6">
+          <div
+            class="bg-red-50 dark:bg-red-900/10 border-l-8 border-red-500 p-6 rounded-r-xl"
+          >
+            <h3
+              class="text-xl font-black text-red-700 dark:text-red-400 mb-2 mt-0"
+            >
+              Problem 1: The "Slow Loading" Trap
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">
+              If you run ads to a slow website, users will click the link, get
+              frustrated by the loading screen, and leave before seeing your
+              business. You pay for the click, but your competitor gets the
+              client.
+            </p>
+          </div>
+
+          <div
+            class="bg-amber-50 dark:bg-amber-900/10 border-l-8 border-amber-500 p-6 rounded-r-xl"
+          >
+            <h3
+              class="text-xl font-black text-amber-700 dark:text-amber-400 mb-2 mt-0"
+            >
+              Problem 2: Invisible to Search Engines
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">
+              Without a deep SEO foundation, your website is invisible to
+              Google. If clients search for your services and find your
+              competitors instead, you are bleeding potential revenue every
+              single day.
+            </p>
+          </div>
+
+          <div
+            class="bg-blue-50 dark:bg-blue-900/10 border-l-8 border-blue-500 p-6 rounded-r-xl"
+          >
+            <h3
+              class="text-xl font-black text-blue-700 dark:text-blue-400 mb-2 mt-0"
+            >
+              Problem 3: The Maintenance Money Pit
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">
+              Cheaply built websites require constant updates, bug fixes, and
+              security patches. You end up paying hundreds of dollars a month
+              just to keep the site from crashing or getting hacked.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. COMPARISON TABLE (Value Focus) -->
+  <section
+    class="py-24 bg-slate-100 dark:bg-[#0a0118] border-y-4 border-[#2D058A] dark:border-white/10"
+  >
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-12 text-center uppercase tracking-tight"
+      >
+        The Value of Doing It Right
+      </h2>
+
+      <div
+        class="overflow-x-auto rounded-xl border-4 border-[#2D058A] shadow-[8px_8px_0px_0px_rgba(45,5,138,1)] bg-white dark:bg-[#150734]"
+      >
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr>
+              <th
+                class="p-6 border-b-4 border-r-4 border-[#2D058A] bg-slate-50 dark:bg-[#0f0224] text-[#2D058A] dark:text-white font-black text-xl w-1/3"
+                >Business Goal</th
+              >
+              <th
+                class="p-6 border-b-4 border-r-4 border-[#2D058A] bg-slate-50 dark:bg-[#0f0224] text-slate-500 font-black text-xl w-1/3"
+                >Standard Agency Site</th
+              >
+              <th
+                class="p-6 border-b-4 border-[#2D058A] bg-[#90ee02] text-[#2D058A] font-black text-xl w-1/3"
+                >IT Support Bee Approach</th
+              >
+            </tr>
+          </thead>
+          <tbody class="text-slate-700 dark:text-slate-300 font-medium">
+            <tr>
+              <td
+                class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Customer Retention</td
+              >
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
+                >Users leave due to slow load times</td
+              >
+              <td
+                class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
+                >Instant loading keeps visitors engaged</td
+              >
+            </tr>
+            <tr>
+              <td
+                class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Organic Lead Gen</td
+              >
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
+                >Relies entirely on expensive paid ads</td
+              >
+              <td
+                class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
+                >Built to rank naturally on Google searches</td
+              >
+            </tr>
+            <tr>
+              <td
+                class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Ongoing Costs</td
+              >
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
+                >High monthly maintenance fees</td
+              >
+              <td
+                class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
+                >Highly stable, saving you money monthly</td
+              >
+            </tr>
+            <tr>
+              <td
+                class="p-6 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Turning Visits into Sales</td
+              >
+              <td class="p-6 border-r-4 border-[#2D058A]"
+                >Confusing navigation loses sales</td
+              >
+              <td class="p-6 bg-green-50 dark:bg-green-900/10"
+                >Clear call-to-actions that drive bookings</td
+              >
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. DEEP DIVE SERVICES (How we solve the problems) -->
+  <section class="py-24 bg-white dark:bg-[#150734]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-16 text-center uppercase tracking-tight"
+      >
+        How We Maximize Your Results
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Pillar 1 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Extreme Performance & Speed
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            Every second your website takes to load, you lose potential sales.
+            We remove heavy, unnecessary code and build lean, lightning-fast
+            interfaces. This stops people from leaving your site in frustration,
+            ensuring that every marketing dollar you spend actually results in a
+            user seeing your offer instantly.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                ></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Search Engine Dominance (SEO)
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            We don't just add keywords; we build the core foundation that Google
+            loves. By implementing the right hidden structures, we ensure your
+            business ranks highly for the services you offer—driving
+            high-quality, organic leads to your inbox without you having to
+            constantly pay for expensive ads.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                ></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Bulletproof Security & Stability
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            A broken website means lost business. We build incredibly stable and
+            secure digital platforms that protect your business data and your
+            clients' privacy. By removing easily hackable elements, we lower the
+            risk of cyber threats, saving you from disastrous PR nightmares and
+            costly emergency repairs.
+          </p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                ></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Mobile-First Conversion Design
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            A beautiful desktop site is useless if your mobile users can't
+            easily find your phone number. We design with a mobile-first
+            approach, ensuring that navigation is simple, buttons are easy to
+            tap, and the path to purchase (or booking a call) is completely
+            smooth for every user, on every device.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. AEO FAQ SECTION -->
+  <section
+    class="py-24 bg-slate-50 dark:bg-[#0f0224] border-t-4 border-[#2D058A] dark:border-white/10"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-12 text-center uppercase tracking-tight"
+      >
+        Common Questions
+      </h2>
+      <div class="space-y-6">
+        {
+          faqs.map((faq) => (
+            <details class="group bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.3)]">
+              <summary class="flex justify-between items-center font-black cursor-pointer list-none p-6 text-lg text-[#2D058A] dark:text-white hover:bg-slate-50 dark:hover:bg-[#2D058A] dark:hover:text-[#90ee02] transition-colors">
+                {faq.question}
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="p-6 pt-0 text-slate-700 dark:text-slate-300 font-medium leading-relaxed border-t-2 border-slate-200 dark:border-white/5">
+                {faq.answer}
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. HIGH-CONVERTING CTA -->
+  <section class="py-24 bg-[#90ee02] border-t-4 border-[#2D058A]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2
+        class="text-4xl md:text-6xl font-black text-[#2D058A] mb-6 uppercase tracking-tighter"
+      >
+        Stop Losing Clients to Bad Design.
+      </h2>
+      <p class="text-xl text-[#2D058A]/80 font-bold mb-12 max-w-2xl mx-auto">
+        Let's build a digital platform that actively grows your business and
+        maximizes your results.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block px-12 py-5 bg-[#2D058A] text-[#90ee02] font-black uppercase tracking-widest text-lg border-4 border-[#2D058A] rounded-xl shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(255,255,255,1)] transition-all"
+      >
+        Discuss Your Project
+      </a>
+    </div>
+  </section>
+</BaseLayout>
