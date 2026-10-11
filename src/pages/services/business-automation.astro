@@ -1,0 +1,467 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Smart Business Automation Services | IT Support Bee";
+const description =
+  "Stop wasting time on repetitive manual tasks. We build smart business automations that connect your software and handle your daily workflows on autopilot.";
+const currentUrl = Astro.url.href;
+
+const faqs = [
+  {
+    question: "Will business automation replace my current employees?",
+    answer:
+      "No, automation is not here to replace your team; it's here to make them faster. By automating the boring, repetitive tasks (like data entry or moving files between apps), your employees can focus on high-value work like closing sales and building client relationships.",
+  },
+  {
+    question: "Is business automation complicated to learn and maintain?",
+    answer:
+      "Not when we set it up. We design our automated workflows to run silently in the background. You don't need to learn any complex software or manage the systems yourself. We handle the entire technical setup and ensure it works smoothly with the tools you already use.",
+  },
+  {
+    question: "How does automating workflows help my business grow?",
+    answer:
+      "Growth usually means hiring more admin staff to handle the extra paperwork. With automation, your systems can process 10 clients or 1,000 clients with the exact same effort. This allows you to scale your business rapidly without massively increasing your payroll costs.",
+  },
+  {
+    question: "Is our company data secure with these automation tools?",
+    answer:
+      "Absolutely. We only use enterprise-grade automation platforms with strict data privacy policies. We configure the systems so your sensitive business information is securely encrypted during transfers and never exposed to unauthorized users.",
+  },
+];
+---
+
+<BaseLayout title={title} description={description} type="WebSite">
+  <script
+    type="application/ld+json"
+    slot="head"
+    is:inline
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Business Automation",
+      provider: { "@type": "LocalBusiness", name: "IT Support Bee" },
+      description: description,
+      url: currentUrl,
+      mainEntity: {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
+      },
+    })}
+  />
+
+  <!-- 1. HERO SECTION (Business Efficiency Focused) -->
+  <section
+    class="pt-32 pb-24 bg-slate-50 dark:bg-[#0f0224] border-b-4 border-[#2D058A]"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <span
+          class="inline-block px-4 py-1.5 mb-6 bg-[#90ee02] text-[#2D058A] font-black uppercase tracking-widest text-sm border-2 border-[#2D058A] rounded-full shadow-[2px_2px_0px_0px_rgba(45,5,138,1)]"
+        >
+          Workflow Efficiency
+        </span>
+        <h1
+          class="text-5xl md:text-7xl font-black text-[#2D058A] dark:text-white leading-tight mb-8"
+        >
+          Stop Doing Manual Work. <br />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#2D058A] to-[#7b2cbf] dark:from-[#90ee02] dark:to-[#ccff66]"
+            >Automate Your Business.</span
+          >
+        </h1>
+        <p
+          class="text-xl text-slate-700 dark:text-slate-300 font-medium mb-10 leading-relaxed"
+        >
+          Every hour your team spends copying information between apps or doing
+          manual data entry is wasted time. We build smart, reliable systems
+          that connect your software and handle your repetitive daily tasks on
+          autopilot.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/contact"
+            class="px-10 py-5 bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-black uppercase tracking-widest text-lg border-2 border-[#2D058A] dark:border-[#90ee02] rounded-xl shadow-[6px_6px_0px_0px_rgba(144,238,2,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all"
+          >
+            Find Out What You Can Automate
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. THE PAIN POINT (Business Problems) -->
+  <section class="py-24 bg-white dark:bg-[#150734]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-8 uppercase tracking-tight"
+      >
+        Why Manual Tasks Are Draining Your Profit
+      </h2>
+      <div class="prose prose-lg prose-slate dark:prose-invert max-w-none">
+        <p class="font-medium text-lg leading-relaxed mb-6">
+          As a business grows, so does the boring administrative work. Your team
+          ends up spending half their day moving data from emails into your CRM,
+          organizing files, and sending the exact same onboarding emails to new
+          clients over and over again.
+        </p>
+        <p class="font-medium text-lg leading-relaxed mb-8">
+          When highly paid employees spend their time acting like robots, your
+          business slows down, mistakes happen, and your operating costs go
+          through the roof.
+        </p>
+
+        <div class="space-y-6">
+          <div
+            class="bg-red-50 dark:bg-red-900/10 border-l-8 border-red-500 p-6 rounded-r-xl"
+          >
+            <h3
+              class="text-xl font-black text-red-700 dark:text-red-400 mb-2 mt-0"
+            >
+              Problem 1: Disconnected Software
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">
+              You use one app for billing, another for emails, and a third for
+              project management. Because they don't 'talk' to each other, your
+              team has to manually update everything in three different places.
+            </p>
+          </div>
+
+          <div
+            class="bg-amber-50 dark:bg-amber-900/10 border-l-8 border-amber-500 p-6 rounded-r-xl"
+          >
+            <h3
+              class="text-xl font-black text-amber-700 dark:text-amber-400 mb-2 mt-0"
+            >
+              Problem 2: Expensive Human Errors
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">
+              Typing client details manually from an email into a spreadsheet
+              eventually leads to spelling mistakes, lost contact information,
+              and billing errors that cost you money and credibility.
+            </p>
+          </div>
+
+          <div
+            class="bg-blue-50 dark:bg-blue-900/10 border-l-8 border-blue-500 p-6 rounded-r-xl"
+          >
+            <h3
+              class="text-xl font-black text-blue-700 dark:text-blue-400 mb-2 mt-0"
+            >
+              Problem 3: Wasted Salary
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">
+              You are paying your staff to think, solve problems, and make
+              sales. Paying them to copy and paste data between software
+              programs is a terrible use of their time and your budget.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. COMPARISON TABLE (Value Focus) -->
+  <section
+    class="py-24 bg-slate-100 dark:bg-[#0a0118] border-y-4 border-[#2D058A] dark:border-white/10"
+  >
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-12 text-center uppercase tracking-tight"
+      >
+        The Advantage of Business Automation
+      </h2>
+
+      <div
+        class="overflow-x-auto rounded-xl border-4 border-[#2D058A] shadow-[8px_8px_0px_0px_rgba(45,5,138,1)] bg-white dark:bg-[#150734]"
+      >
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr>
+              <th
+                class="p-6 border-b-4 border-r-4 border-[#2D058A] bg-slate-50 dark:bg-[#0f0224] text-[#2D058A] dark:text-white font-black text-xl w-1/3"
+                >Business Activity</th
+              >
+              <th
+                class="p-6 border-b-4 border-r-4 border-[#2D058A] bg-slate-50 dark:bg-[#0f0224] text-slate-500 font-black text-xl w-1/3"
+                >Manual Operations</th
+              >
+              <th
+                class="p-6 border-b-4 border-[#2D058A] bg-[#90ee02] text-[#2D058A] font-black text-xl w-1/3"
+                >With Automated Workflows</th
+              >
+            </tr>
+          </thead>
+          <tbody class="text-slate-700 dark:text-slate-300 font-medium">
+            <tr>
+              <td
+                class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >New Client Onboarding</td
+              >
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
+                >Manual emails, slow document signing</td
+              >
+              <td
+                class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
+                >Instant, professional, and zero-touch</td
+              >
+            </tr>
+            <tr>
+              <td
+                class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Data Entry</td
+              >
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
+                >Slow, expensive, and prone to typing errors</td
+              >
+              <td
+                class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
+                >Instant, 100% accurate, and automatic</td
+              >
+            </tr>
+            <tr>
+              <td
+                class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Lead Processing</td
+              >
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
+                >Emails sit in an inbox waiting to be read</td
+              >
+              <td
+                class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
+                >Instantly sorted and sent to the right team</td
+              >
+            </tr>
+            <tr>
+              <td
+                class="p-6 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
+                >Scaling the Business</td
+              >
+              <td class="p-6 border-r-4 border-[#2D058A]"
+                >Requires hiring more staff for admin work</td
+              >
+              <td class="p-6 bg-green-50 dark:bg-green-900/10"
+                >The system handles the extra workload easily</td
+              >
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. DEEP DIVE SERVICES (How we solve the problems) -->
+  <section class="py-24 bg-white dark:bg-[#150734]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-16 text-center uppercase tracking-tight"
+      >
+        How We Streamline Your Workflow
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Pillar 1 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                ></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Connecting Your Software
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            We make your different business apps talk to each other. When a new
+            lead fills out a form on your website, our automation instantly
+            creates a profile in your CRM, alerts your sales team on Slack or
+            Teams, and adds them to your email list—without anyone copying or
+            pasting a single word.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                ></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Automated Client Onboarding
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            First impressions matter. When a client signs a contract or pays an
+            invoice, we build systems that automatically send them a welcome
+            package, generate their project folders in Google Drive, and assign
+            the initial tasks to your team. The client gets a flawless
+            experience instantly.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                ></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Paperless Data Processing
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            If your business handles a lot of invoices, contracts, or
+            standardized forms, you know how painful manual sorting is. We set
+            up automated pipelines that extract the important details (like
+            names, amounts, or dates) from incoming files and save them securely
+            in your database exactly where they need to go.
+          </p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-[#2D058A]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
+              Smart Lead Routing
+            </h3>
+          </div>
+          <p
+            class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
+          >
+            Not all inquiries are equal. We create intelligent funnels that sort
+            your incoming emails or form submissions. Support requests go
+            straight to the helpdesk, while high-value sales inquiries are
+            instantly routed to your top sales reps with a notification on their
+            phone, ensuring you never miss a big deal.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. AEO FAQ SECTION (Fix applied to hover state) -->
+  <section
+    class="py-24 bg-slate-50 dark:bg-[#0f0224] border-t-4 border-[#2D058A] dark:border-white/10"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-12 text-center uppercase tracking-tight"
+      >
+        Common Questions
+      </h2>
+      <div class="space-y-6">
+        {
+          faqs.map((faq) => (
+            <details class="group bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.3)]">
+              <summary class="flex justify-between items-center font-black cursor-pointer list-none p-6 text-lg text-[#2D058A] dark:text-white hover:bg-slate-50 dark:hover:bg-[#2D058A] dark:hover:text-[#90ee02] transition-colors">
+                {faq.question}
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </span>
+              </summary>
+
+              <div class="p-6 pt-0 text-slate-700 dark:text-slate-300 font-medium leading-relaxed border-t-2 border-slate-200 dark:border-white/5">
+                {faq.answer}
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. HIGH-CONVERTING CTA -->
+  <section class="py-24 bg-[#90ee02] border-t-4 border-[#2D058A]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2
+        class="text-4xl md:text-6xl font-black text-[#2D058A] mb-6 uppercase tracking-tighter"
+      >
+        Ready to Save Hours Every Day?
+      </h2>
+      <p class="text-xl text-[#2D058A]/80 font-bold mb-12 max-w-2xl mx-auto">
+        Stop letting your team do the work of a robot. Let's find out exactly
+        what tasks we can automate to help you scale faster without hiring more
+        staff.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block px-12 py-5 bg-[#2D058A] text-[#90ee02] font-black uppercase tracking-widest text-lg border-4 border-[#2D058A] rounded-xl shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(255,255,255,1)] transition-all"
+      >
+        Book an Automation Audit
+      </a>
+    </div>
+  </section>
+</BaseLayout>

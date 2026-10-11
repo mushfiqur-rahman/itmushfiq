@@ -1,21 +1,34 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
 
-const socialLinks = [
+const socials = [
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/company/itsupportbee",
-    icon: "in",
+    url: "https://www.linkedin.com/in/itmushfiq/",
+    icon: "lucide:linkedin",
   },
-  { name: "Facebook", url: "https://www.facebook.com/itsupportbee", icon: "f" },
-  { name: "X (Twitter)", url: "https://x.com/itsupportbee", icon: "𝕏" },
-  { name: "YouTube", url: "https://www.youtube.com/@itsupportbee", icon: "▶" },
+  {
+    name: "Facebook",
+    url: "https://facebook.com/itsupportbee",
+    icon: "lucide:facebook",
+  },
+  {
+    name: "X / Twitter",
+    url: "https://x.com/itsupportbee",
+    icon: "lucide:twitter",
+  },
   {
     name: "Instagram",
-    url: "https://www.instagram.com/itsupportbee",
-    icon: "ig",
+    url: "https://instagram.com/itsupportbee",
+    icon: "lucide:instagram",
   },
-  { name: "TikTok", url: "https://www.tiktok.com/@itsupportbee", icon: "tk" },
+  {
+    name: "TikTok",
+    url: "https://tiktok.com/@itsupportbee",
+    // Note: Lucide এ tiktok আইকন না থাকলে 'lucide:music-2' বা অন্য কোনো প্যাক ব্যবহার করতে পারেন
+    icon: "lucide:music-2",
+  },
 ];
 
 const services = [
@@ -175,17 +188,17 @@ const services = [
 
           <!-- Social Links -->
           <div>
-            <div class="flex flex-wrap gap-4">
+            <div class="flex items-center gap-4">
               {
-                socialLinks.map((social) => (
+                socials.map((social) => (
                   <a
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Visit our ${social.name}`}
-                    class="w-12 h-12 flex items-center justify-center bg-white dark:bg-transparent text-[#2D058A] dark:text-white border-2 border-[#2D058A] dark:border-white/30 rounded-full font-black text-lg hover:bg-[#90ee02] dark:hover:bg-[#90ee02] hover:text-[#2D058A] hover:border-[#2D058A] dark:hover:text-[#2D058A] transition-all"
+                    aria-label={social.name}
+                    class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-slate-700 text-slate-300 hover:bg-[#90ee02] hover:text-[#2D058A] hover:border-[#90ee02] transition-all duration-300 outline-none"
                   >
-                    {social.icon}
+                    <Icon name={social.icon} class="w-5 h-5" />
                   </a>
                 ))
               }
