@@ -1,91 +1,93 @@
----
-
----
-
+<!-- 1. HERO SECTION (London Focused) -->
 <section
-  id="hero"
-  class="relative w-full min-h-[90vh] flex items-center justify-center bg-white dark:bg-[#0f0224] transition-colors duration-500 overflow-hidden pt-24 pb-16"
-  aria-labelledby="hero-heading"
+  class="relative dark:text-white pt-32 pb-24 overflow-hidden border-b-4 border-[#2D058A]"
 >
-  <!-- Background Glow & Creative Elements (CSS Shapes) -->
+  <!-- Background grid texture -->
   <div
-    class="absolute inset-0 z-0 pointer-events-none opacity-20 dark:opacity-40"
+    class="absolute inset-0 opacity-10 bg-[radial-gradient(#90ee02_1px,transparent_1px)] bg-size-[24px_24px]"
   >
-    <div
-      class="absolute top-[-10%] right-[-5%] w-100 h-100 bg-[#90ee02] rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-[120px] animate-pulse"
-    >
-    </div>
-    <div
-      class="absolute bottom-[-10%] left-[-10%] w-100 h-100 bg-[#2D058A] rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-[150px]"
-    >
-    </div>
   </div>
 
-  <div class="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
-    <div class="max-w-5xl">
-      <!-- AEO/SEO Optimized Eyebrow (Brand Positioning) -->
-      <p
-        class="inline-block py-1.5 px-5 mb-8 text-sm md:text-base font-bold tracking-widest uppercase border-2 border-[#2D058A] text-[#2D058A] dark:border-[#90ee02] dark:text-[#90ee02] rounded-full"
-      >
-        Enterprise IT & Automation Expert
-      </p>
-
-      <!-- Giant Typography (Modern Bold H1) -->
-      <h1
-        id="hero-heading"
-        class="text-6xl md:text-7xl lg:text-[5.5rem] font-black leading-[1.05] tracking-tighter text-[#2D058A] dark:text-white mb-8"
-      >
-        Remote IT Support. <br />
-        Seamless <span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-[#2D058A] to-[#7b2cbf] dark:from-[#90ee02] dark:to-[#ccff66]"
-          >Cloud.</span
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Left Column: Value Prop -->
+      <div class="lg:col-span-7">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-[#90ee02] text-[#2D058A] font-black uppercase tracking-widest text-xs rounded-full border-2 border-[#2D058A] shadow-[2px_2px_0px_0px_#2D058A]"
         >
-        <br />
-        Smart Automation.
-      </h1>
+          <span class="w-2 h-2 rounded-full bg-[#2D058A] animate-ping"></span>
+          Managed IT Services
+        </div>
 
-      <!-- Problem-Solving Subheadline (CRO Focused) -->
-      <p
-        class="text-xl md:text-2xl text-slate-700 dark:text-slate-300 font-medium mb-12 max-w-3xl leading-relaxed"
-      >
-        Stop losing leads to the spam folder and fighting with messy
-        infrastructure. I execute zero-downtime email migrations, configure
-        advanced cold email systems, and build automated workflows so you can
-        focus on scaling your business.
-      </p>
-
-      <!-- Call To Action (High Contrast Neo-brutalism Style) -->
-      <div class="flex flex-col sm:flex-row gap-6">
-        <!-- Primary CTA: High contrast Neon Green bg with Deep Purple text -->
-        <a
-          href="/contact"
-          class="inline-flex items-center justify-center px-8 py-4 text-xl font-bold text-[#2D058A] bg-[#90ee02] border-4 border-[#2D058A] dark:border-[#90ee02] transition-all duration-300 shadow-[8px_8px_0px_0px_rgba(45,5,138,1)] dark:shadow-[8px_8px_0px_0px_rgba(144,238,2,0.4)] hover:shadow-none hover:translate-x-8px hover:translate-y-2 focus:outline-none focus:ring-4 focus:ring-[#90ee02]/50"
-          aria-label="Book a strategy call to fix your infrastructure"
+        <h1
+          class="text-5xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight leading-[0.95] mb-8"
         >
-          Fix My Infrastructure
-          <svg
-            class="w-6 h-6 ml-3"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
+          Reliable Remote <br />
+          <span class="text-[#90ee02]">IT Support</span>
+          <br />
+          In London.
+        </h1>
+
+        <p
+          class="text-lg md:text-xl dark:text-slate-300 font-medium leading-relaxed max-w-xl mb-10"
+        >
+          Stop fighting with technology. We provide fast, secure, and proactive
+          IT management for London-based businesses, ensuring your team can work
+          without frustrating interruptions.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-5">
+          <a
+            href="/contact"
+            class="px-8 py-4 bg-[#90ee02] text-[#2D058A] font-black uppercase tracking-wider text-base border-4 border-[#2D058A] rounded-xl shadow-[6px_6px_0px_0px_#2D058A] hover:-translate-y-1 transition-all"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="3"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </a>
+            Get Support Today
+          </a>
+          <a
+            href="#services"
+            class="px-8 py-4 bg-transparent dark:text-white font-bold uppercase tracking-wider text-base border-2 border-white/20 rounded-xl hover:border-[#90ee02] hover:text-[#90ee02] transition-colors"
+          >
+            Explore Services ↓
+          </a>
+        </div>
+      </div>
 
-        <!-- Secondary CTA -->
-        <a
-          href="#services"
-          class="inline-flex items-center justify-center px-8 py-4 text-xl font-bold text-[#2D058A] dark:text-[#90ee02] bg-transparent border-4 border-[#2D058A] dark:border-[#90ee02] hover:bg-[#2D058A] hover:text-white dark:hover:bg-[#90ee02] dark:hover:text-[#2D058A] transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#2D058A]/30"
-        >
-          Explore Solutions
-        </a>
+      <!-- Right Column: Hero Visual with Dynamic Cutout Frame -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          <!-- Neo-brutalist Green Offset Block -->
+          <div
+            class="absolute -inset-2 bg-[#90ee02] rounded-2xl transform -rotate-2"
+          >
+          </div>
+
+          <!-- Image Card -->
+          <div
+            class="relative bg-[#150734] border-4 border-[#2D058A] rounded-2xl overflow-hidden shadow-2xl"
+          >
+            <!-- London Business / Office Image -->
+            <img
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
+              alt="Corporate IT Support in London"
+              class="w-full h-115 object-cover contrast-125 hover:grayscale-0 transition-all duration-500"
+              loading="eager"
+              fetchpriority="high"
+            />
+            <div
+              class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0d021f] via-[#0d021f]/90 to-transparent p-6"
+            >
+              <p
+                class="text-xs uppercase font-black text-[#90ee02] tracking-widest mb-1"
+              >
+                UK Operations
+              </p>
+              <p class="text-base font-bold text-white leading-snug">
+                Instant remote troubleshooting and enterprise security for
+                modern businesses.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
