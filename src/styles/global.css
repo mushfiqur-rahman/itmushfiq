@@ -14,6 +14,11 @@
   --color-ok: #15803d;
 }
 
+/* Forces padding inside markdown code blocks */
+.prose pre {
+  padding: 1.5rem 2rem !important;
+}
+
 @layer base {
   @media (prefers-color-scheme: dark) {
     :root {
