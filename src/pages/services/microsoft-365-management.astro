@@ -1,31 +1,33 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
 
-const title = "Conversion-Focused Web Development Services | IT Support Bee";
+const title = "Microsoft 365, Intune & Entra ID Management | IT Support Bee";
 const description =
-  "We build high-performance websites that load instantly, rank higher on Google, and turn your visitors into paying customers.";
+  "Secure your remote workforce with enterprise-grade Microsoft 365 administration, Intune device management, and Entra ID identity protection.";
 const currentUrl = Astro.url.href;
 
 const faqs = [
   {
-    question: "How does a faster website actually help my business?",
+    question: "Do we need to buy new laptops for Microsoft Intune to work?",
     answer:
-      "Website speed directly impacts your sales. Studies show that if your website takes more than 3 seconds to load, over 50% of your visitors will leave before seeing what you offer. By building a lightning-fast website, we stop people from leaving, keeping potential clients on your page long enough to convert into sales.",
+      "No. While Intune works flawlessly with new devices via Windows Autopilot (zero-touch setup), we can also enroll your existing company-owned laptops and even securely manage company data on employees' personal devices (BYOD) without invading their privacy.",
   },
   {
-    question: "Why is my current website invisible on Google?",
+    question: "What happens if an employee loses their company laptop?",
     answer:
-      "Having a pretty design doesn't mean Google can read it. Most websites are built with messy, unorganized code that search engines struggle to understand. We solve this by building a clean, structurally sound foundation so Google knows exactly what services you offer, making it easy to rank your business above competitors.",
+      "Because we manage your devices via Microsoft Intune and Entra ID, we can instantly lock the device, force a password reset, or remotely wipe all company data the moment it is reported lost or stolen. Your business data remains completely safe.",
   },
   {
-    question: "Will I need to pay for constant maintenance and bug fixes?",
+    question:
+      "Can you stop employees from logging in from unapproved locations?",
     answer:
-      "No. Traditional web agencies often use heavy, pre-made templates that constantly break and require expensive monthly maintenance. We build lean, highly secure, and stable websites that just work. This drastically reduces your ongoing costs and eliminates unexpected crashes.",
+      "Yes. Using Entra ID Conditional Access, we can block login attempts from specific countries, require multi-factor authentication (MFA) if the login looks suspicious, or only allow access from approved company devices.",
   },
   {
-    question: "How does a mobile-optimized site affect my business?",
+    question: "How do you handle employee onboarding and offboarding?",
     answer:
-      "Over 60% of all web traffic now comes from mobile phones, and Google uses mobile-friendliness to rank your site. If your website is difficult to navigate on a phone, you are actively losing more than half of your potential leads. We guarantee a flawless, easy-to-use experience across all screen sizes.",
+      "We automate it. When a new employee starts, they instantly get the right licenses, group access, and software. When someone leaves, one click revokes their access across all Microsoft 365 services, securing your data instantly.",
   },
 ];
 ---
@@ -38,7 +40,7 @@ const faqs = [
     set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
-      name: "Conversion-Focused Web Development",
+      name: "Microsoft 365, Intune & Entra ID Management",
       provider: { "@type": "LocalBusiness", name: "IT Support Bee" },
       description: description,
       url: currentUrl,
@@ -53,40 +55,40 @@ const faqs = [
     })}
   />
 
-  <!-- 1. HERO SECTION (Business Growth Focused) -->
+  <!-- 1. HERO SECTION -->
   <section
     class="pt-32 pb-24 bg-slate-50 dark:bg-[#0f0224] border-b-4 border-[#2D058A]"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl">
         <span
-          class="inline-block px-4 py-1.5 mb-6 bg-[#90ee02] text-[#2D058A] font-black uppercase tracking-widest text-sm border-2 border-[#2D058A] rounded-full shadow-[2px_2px_0px_0px_rgba(45,5,138,1)]"
+          class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-[#90ee02] text-[#2D058A] font-black uppercase tracking-widest text-sm border-2 border-[#2D058A] rounded-full shadow-[2px_2px_0px_0px_rgba(45,5,138,1)]"
         >
-          Business Growth & Lead Generation
+          <Icon name="lucide:shield-check" class="w-4 h-4" />
+          Enterprise Workspace Security
         </span>
         <h1
           class="text-5xl md:text-7xl font-black text-[#2D058A] dark:text-white leading-tight mb-8"
         >
-          Websites Built to <br />
+          Secure Your <br />
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-[#2D058A] to-[#7b2cbf] dark:from-[#90ee02] dark:to-[#ccff66]"
-            >Generate Revenue.</span
+            >Microsoft 365 Cloud.</span
           >
         </h1>
         <p
           class="text-xl text-slate-700 dark:text-slate-300 font-medium mb-10 leading-relaxed"
         >
-          Stop losing customers to slow load times and confusing layouts. We
-          engineer high-performance, conversion-focused websites that rank
-          higher on search engines, build instant trust, and actively turn your
-          traffic into paying clients.
+          Managing a remote workforce is dangerous without proper controls. We
+          implement Microsoft Intune and Entra ID to lock down your company
+          data, manage laptops remotely, and eliminate security breaches.
         </p>
         <div class="flex flex-wrap gap-4">
           <a
             href="/contact"
             class="px-10 py-5 bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-black uppercase tracking-widest text-lg border-2 border-[#2D058A] dark:border-[#90ee02] rounded-xl shadow-[6px_6px_0px_0px_rgba(144,238,2,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all"
           >
-            Discuss Your Business Goals
+            Secure Your Tenant Today
           </a>
         </div>
       </div>
@@ -99,19 +101,14 @@ const faqs = [
       <h2
         class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-8 uppercase tracking-tight"
       >
-        Why Most Websites Burn Money
+        Why Standard M365 Setup Isn't Enough
       </h2>
       <div class="prose prose-lg prose-slate dark:prose-invert max-w-none">
         <p class="font-medium text-lg leading-relaxed mb-6">
-          Most business owners treat their website like a digital brochure. They
-          pay agencies for a "pretty design," only to realize months later that
-          the site generates zero leads, ranks poorly on Google, and constantly
-          breaks.
-        </p>
-        <p class="font-medium text-lg leading-relaxed mb-8">
-          Your website should be your best salesperson. If it isn't actively
-          bringing in new business, it's costing you money in lost opportunities
-          and wasted advertising spend.
+          Simply buying Microsoft 365 licenses and handing out email addresses
+          leaves your business incredibly vulnerable. Without advanced
+          administration, you have zero control over what happens to your
+          company data once it hits an employee's device.
         </p>
 
         <div class="space-y-6">
@@ -121,13 +118,12 @@ const faqs = [
             <h3
               class="text-xl font-black text-red-700 dark:text-red-400 mb-2 mt-0"
             >
-              Problem 1: The "Slow Loading" Trap
+              Risk 1: The Remote Device Nightmare
             </h3>
             <p class="text-slate-700 dark:text-slate-300 m-0">
-              If you run ads to a slow website, users will click the link, get
-              frustrated by the loading screen, and leave before seeing your
-              business. You pay for the click, but your competitor gets the
-              client.
+              If a staff member loses their unmanaged laptop, whoever finds it
+              can access your SharePoint files, client data, and emails. You
+              have no way to wipe it remotely.
             </p>
           </div>
 
@@ -137,13 +133,12 @@ const faqs = [
             <h3
               class="text-xl font-black text-amber-700 dark:text-amber-400 mb-2 mt-0"
             >
-              Problem 2: Invisible to Search Engines
+              Risk 2: Weak Identity Security
             </h3>
             <p class="text-slate-700 dark:text-slate-300 m-0">
-              Without a deep SEO foundation, your website is invisible to
-              Google. If clients search for your services and find your
-              competitors instead, you are bleeding potential revenue every
-              single day.
+              Without Entra ID Conditional Access, hackers who steal an
+              employee's password can log in from anywhere in the world and
+              download your intellectual property.
             </p>
           </div>
 
@@ -153,12 +148,12 @@ const faqs = [
             <h3
               class="text-xl font-black text-blue-700 dark:text-blue-400 mb-2 mt-0"
             >
-              Problem 3: The Maintenance Money Pit
+              Risk 3: Manual IT Bottlenecks
             </h3>
             <p class="text-slate-700 dark:text-slate-300 m-0">
-              Cheaply built websites require constant updates, bug fixes, and
-              security patches. You end up paying hundreds of dollars a month
-              just to keep the site from crashing or getting hacked.
+              Setting up a new laptop for a hire takes your team hours of manual
+              software installation. When they leave, removing their access
+              across dozens of apps is chaotic and often forgotten.
             </p>
           </div>
         </div>
@@ -166,7 +161,7 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 3. COMPARISON TABLE (Value Focus) -->
+  <!-- 3. COMPARISON TABLE -->
   <section
     class="py-24 bg-slate-100 dark:bg-[#0a0118] border-y-4 border-[#2D058A] dark:border-white/10"
   >
@@ -174,7 +169,7 @@ const faqs = [
       <h2
         class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-12 text-center uppercase tracking-tight"
       >
-        The Value of Doing It Right
+        The Power of Managed Microsoft Cloud
       </h2>
 
       <div
@@ -185,15 +180,15 @@ const faqs = [
             <tr>
               <th
                 class="p-6 border-b-4 border-r-4 border-[#2D058A] bg-slate-50 dark:bg-[#0f0224] text-[#2D058A] dark:text-white font-black text-xl w-1/3"
-                >Business Goal</th
+                >Security Feature</th
               >
               <th
                 class="p-6 border-b-4 border-r-4 border-[#2D058A] bg-slate-50 dark:bg-[#0f0224] text-slate-500 font-black text-xl w-1/3"
-                >Standard Agency Site</th
+                >Basic Microsoft 365</th
               >
               <th
                 class="p-6 border-b-4 border-[#2D058A] bg-[#90ee02] text-[#2D058A] font-black text-xl w-1/3"
-                >IT Support Bee Approach</th
+                >With Intune & Entra ID</th
               >
             </tr>
           </thead>
@@ -201,52 +196,52 @@ const faqs = [
             <tr>
               <td
                 class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
-                >Customer Retention</td
+                >Device Setup</td
               >
               <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
-                >Users leave due to slow load times</td
+                >Manual installation by an IT guy</td
               >
               <td
                 class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
-                >Instant loading keeps visitors engaged</td
+                >Zero-touch setup over Wi-Fi (Autopilot)</td
               >
             </tr>
             <tr>
               <td
                 class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
-                >Organic Lead Gen</td
+                >Lost Laptops</td
               >
               <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
-                >Relies entirely on expensive paid ads</td
+                >Data is compromised permanently</td
               >
               <td
                 class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
-                >Built to rank naturally on Google searches</td
+                >Remote wipe and instant device lockout</td
               >
             </tr>
             <tr>
               <td
                 class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
-                >Ongoing Costs</td
+                >Access Control</td
               >
               <td class="p-6 border-b-2 border-r-4 border-[#2D058A]"
-                >High monthly maintenance fees</td
+                >Anyone with a password can log in</td
               >
               <td
                 class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
-                >Highly stable, saving you money monthly</td
+                >Blocked by location, device, and strict MFA</td
               >
             </tr>
             <tr>
               <td
                 class="p-6 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white"
-                >Turning Visits into Sales</td
+                >Data Leakage (BYOD)</td
               >
               <td class="p-6 border-r-4 border-[#2D058A]"
-                >Confusing navigation loses sales</td
+                >Employees can download files to personal PCs</td
               >
               <td class="p-6 bg-green-50 dark:bg-green-900/10"
-                >Clear call-to-actions that drive bookings</td
+                >Company data is encrypted and isolated</td
               >
             </tr>
           </tbody>
@@ -255,13 +250,13 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 4. DEEP DIVE SERVICES (How we solve the problems) -->
+  <!-- 4. DEEP DIVE SERVICES -->
   <section class="py-24 bg-white dark:bg-[#150734]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2
         class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-16 text-center uppercase tracking-tight"
       >
-        How We Maximize Your Results
+        Our Core Administration Pillars
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -271,30 +266,20 @@ const faqs = [
             <div
               class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
             >
-              <svg
-                class="w-6 h-6 text-[#2D058A]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg
-              >
+              <Icon name="lucide:smartphone" class="w-6 h-6 text-[#2D058A]" />
             </div>
             <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
-              Extreme Performance & Speed
+              Microsoft Intune (MDM & MAM)
             </h3>
           </div>
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            Every second your website takes to load, you lose potential sales.
-            We remove heavy, unnecessary code and build lean, lightning-fast
-            interfaces. This stops people from leaving your site in frustration,
-            ensuring that every marketing dollar you spend actually results in a
-            user seeing your offer instantly.
+            We manage your fleet of devices from the cloud. Ship a sealed laptop
+            directly from the store to a remote employee. The moment they
+            connect to Wi-Fi, Microsoft Intune automatically installs your
+            company apps, enforces BitLocker encryption, and applies security
+            policies—zero manual IT work required.
           </p>
         </div>
 
@@ -304,31 +289,20 @@ const faqs = [
             <div
               class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
             >
-              <svg
-                class="w-6 h-6 text-[#2D058A]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                ></path></svg
-              >
+              <Icon name="lucide:fingerprint" class="w-6 h-6 text-[#2D058A]" />
             </div>
             <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
-              Search Engine Dominance (SEO)
+              Entra ID (Identity Protection)
             </h3>
           </div>
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            We don't just add keywords; we build the core foundation that Google
-            loves. By implementing the right hidden structures, we ensure your
-            business ranks highly for the services you offer—driving
-            high-quality, organic leads to your inbox without you having to
-            constantly pay for expensive ads.
+            Passwords are no longer enough. We configure Entra ID (formerly
+            Azure AD) with strict Conditional Access policies. We ensure users
+            can only access company data if they are on a compliant device,
+            using phishing-resistant MFA, and connecting from an approved
+            geographical location.
           </p>
         </div>
 
@@ -338,31 +312,20 @@ const faqs = [
             <div
               class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
             >
-              <svg
-                class="w-6 h-6 text-[#2D058A]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                ></path></svg
-              >
+              <Icon name="lucide:users" class="w-6 h-6 text-[#2D058A]" />
             </div>
             <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
-              Bulletproof Security & Stability
+              M365 Administration & Licensing
             </h3>
           </div>
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            A broken website means lost business. We build incredibly stable and
-            secure digital platforms that protect your business data and your
-            clients' privacy. By removing easily hackable elements, we lower the
-            risk of cyber threats, saving you from disastrous PR nightmares and
-            costly emergency repairs.
+            Stop overpaying for orphaned licenses. We handle the daily
+            operations: creating shared mailboxes, structuring SharePoint
+            permissions, and establishing flawless onboarding/offboarding
+            workflows so departing employees lose access instantly without
+            deleting historical data.
           </p>
         </div>
 
@@ -372,38 +335,27 @@ const faqs = [
             <div
               class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0"
             >
-              <svg
-                class="w-6 h-6 text-[#2D058A]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                ></path></svg
-              >
+              <Icon name="lucide:shield-alert" class="w-6 h-6 text-[#2D058A]" />
             </div>
             <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">
-              Mobile-First Conversion Design
+              Data Loss Prevention (DLP)
             </h3>
           </div>
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            A beautiful desktop site is useless if your mobile users can't
-            easily find your phone number. We design with a mobile-first
-            approach, ensuring that navigation is simple, buttons are easy to
-            tap, and the path to purchase (or booking a call) is completely
-            smooth for every user, on every device.
+            We build fences around your sensitive data. Our DLP configurations
+            prevent employees from accidentally (or maliciously) forwarding
+            confidential client lists, credit card numbers, or intellectual
+            property to personal email addresses or unauthorized external
+            domains.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. AEO FAQ SECTION -->
+  <!-- 5. FAQ SECTION -->
   <section
     class="py-24 bg-slate-50 dark:bg-[#0f0224] border-t-4 border-[#2D058A] dark:border-white/10"
   >
@@ -420,18 +372,7 @@ const faqs = [
               <summary class="flex justify-between items-center font-black cursor-pointer list-none p-6 text-lg text-[#2D058A] dark:text-white hover:bg-slate-50 dark:hover:bg-[#2D058A] dark:hover:text-[#90ee02] transition-colors">
                 {faq.question}
                 <span class="transition group-open:rotate-180">
-                  <svg
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="3"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <path d="M6 9l6 6 6-6" />
-                  </svg>
+                  <Icon name="lucide:chevron-down" class="w-6 h-6" />
                 </span>
               </summary>
               <div class="p-6 pt-0 text-slate-700 dark:text-slate-300 font-medium leading-relaxed border-t-2 border-slate-200 dark:border-white/5">
@@ -450,17 +391,17 @@ const faqs = [
       <h2
         class="text-4xl md:text-6xl font-black text-[#2D058A] mb-6 uppercase tracking-tighter"
       >
-        Stop Losing Clients to Bad Design.
+        Is Your Company Data Safe?
       </h2>
       <p class="text-xl text-[#2D058A]/80 font-bold mb-12 max-w-2xl mx-auto">
-        Let's build a digital platform that actively grows your business and
-        maximizes your results.
+        Stop relying on default settings. Let us configure Intune and Entra ID
+        to lock down your Microsoft 365 environment against modern threats.
       </p>
       <a
         href="/contact"
         class="inline-block px-12 py-5 bg-[#2D058A] text-[#90ee02] font-black uppercase tracking-widest text-lg border-4 border-[#2D058A] rounded-xl shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(255,255,255,1)] transition-all"
       >
-        Discuss Your Project
+        Book a Security Audit
       </a>
     </div>
   </section>
