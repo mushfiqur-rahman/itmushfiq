@@ -5,7 +5,7 @@ description: A practical case study of deploying a React/Vite LMS and
   Let's Encrypt.
 pubDate: "October 20, 2026"
 author: Mushfiqur Rahman
-category: Web Development
+category: DevOps
 image: /images/lms-docker-vps-deployment.jpg
 ---
 
