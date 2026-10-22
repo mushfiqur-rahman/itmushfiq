@@ -6,7 +6,7 @@ description: A practical case study of deploying a React/Vite LMS and
 pubDate: "October 20, 2026"
 author: Mushfiqur Rahman
 category: DevOps
-image: /images/lms-docker-vps-deployment.jpg
+image: /images/lms-docker-vps-deployment-case-study.png
 ---
 
 Deploying a learning management system (LMS) requires more than copying
