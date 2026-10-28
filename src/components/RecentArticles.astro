@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
+  .slice(0, 3);
+
+const formatDate = (date: string) => new Date(date).toLocaleDateString("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+});
+---
+
+<section class="relative overflow-hidden bg-[#0b0b0e] py-18 text-white sm:py-24">
+  <div class="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full bg-[#2D058A]/30 blur-[110px]" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <header class="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+      <div class="max-w-2xl">
+        <span class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[.16em] text-[#90ee02]">Useful insights</span>
+        <h2 class="mt-4 text-4xl font-semibold leading-[1.04] tracking-tighter text-white sm:text-5xl">Practical IT guidance,<br /><span class="text-[#90ee02]">without the jargon.</span></h2>
+      </div>
+      <a href="/blog" class="group inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-[#90ee02]">View all articles <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></a>
+    </header>
+
+    <div class="grid gap-6 lg:grid-cols-3">
+      {posts.map((post, index) => (
+        <article class:list={["group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0f0f12] transition duration-300 hover:-translate-y-1 hover:border-[#90ee02]/70 hover:shadow-[0_20px_40px_rgba(144,238,2,.08)]", index === posts.length - 1 ? "lg:border-[#90ee02]/50" : ""]}>
+          <div class="relative aspect-video overflow-hidden bg-white/5">
+            <img src={post.data.image} alt="" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f0f12]/35 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-3 text-[11px] font-medium text-slate-400"><span class="inline-flex items-center gap-2 font-bold uppercase tracking-[.08em] text-[#90ee02]"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M7.2 2.4H3.8a1.4 1.4 0 0 0-1.4 1.4v3.4l5.9 6 5-5-6.1-5.8Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="5.2" cy="5.2" r=".8" fill="currentColor"/></svg>{post.data.category}</span><time datetime={new Date(post.data.pubDate).toISOString()}>{formatDate(post.data.pubDate)}</time><span>·</span><span>3 min read</span></div>
+            <h3 class="mt-5 text-2xl font-semibold leading-[1.35] tracking-[-.035em] text-white"><a href={`/blog/${post.id}`} class="before:absolute before:inset-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#90ee02]">{post.data.title}</a></h3>
+            <p class="mt-4 text-[15px] leading-7 text-slate-400">{post.data.description}</p>
+            <span class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#90ee02]">Read article <span class="text-lg transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

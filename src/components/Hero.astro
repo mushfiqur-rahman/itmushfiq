@@ -1,90 +1,98 @@
-<!-- 1. HERO SECTION (London Focused) -->
-<section
-  class="relative dark:text-white pt-32 pb-24 overflow-hidden border-b-4 border-[#2D058A]"
->
-  <!-- Background grid texture -->
-  <div
-    class="absolute inset-0 opacity-10 bg-[radial-gradient(#90ee02_1px,transparent_1px)] bg-size-[24px_24px]"
-  >
+<!-- Modern Remote IT Hero -->
+<section class="relative isolate overflow-hidden bg-[#071225] pt-32 pb-24 text-white sm:pt-40 sm:pb-30">
+  <!-- Atmospheric light field -->
+  <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute -left-32 top-10 h-96 w-96 rounded-full bg-cyan-400/20 blur-[110px]"></div>
+    <div class="absolute -right-32 -top-28 h-[34rem] w-[34rem] rounded-full bg-violet-500/25 blur-[120px]"></div>
+    <div class="absolute bottom-[-16rem] left-[30%] h-96 w-96 rounded-full bg-[#a3ff12]/12 blur-[120px]"></div>
+    <div class="absolute inset-0 opacity-[0.16] [background-image:linear-gradient(rgba(148,163,184,.18)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,.18)_1px,transparent_1px)] [background-size:64px_64px]"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <div class="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-10">
       <!-- Left Column: Value Prop -->
       <div class="lg:col-span-7">
-        <div
-          class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-[#90ee02] text-[#2D058A] font-black uppercase tracking-widest text-xs rounded-full border-2 border-[#2D058A] shadow-[2px_2px_0px_0px_#2D058A]"
-        >
-          <span class="w-2 h-2 rounded-full bg-[#2D058A] animate-ping"></span>
-          Managed IT Services
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3.5 py-2 text-xs font-semibold tracking-[0.14em] text-cyan-100 shadow-[0_0_28px_rgba(34,211,238,.12)] backdrop-blur-xl">
+          <span class="relative flex h-2.5 w-2.5"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#a3ff12] opacity-75"></span><span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#a3ff12]"></span></span>
+          REMOTE IT SUPPORT FOR GROWING TEAMS
         </div>
 
         <h1
-          class="text-5xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight leading-[0.95] mb-8"
+          class="mt-7 max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.055em] text-white sm:text-6xl md:text-7xl xl:text-[5.35rem]"
         >
-          Reliable Remote <br />
-          <span class="text-[#90ee02]">IT Support</span>
-          <br />
-          Globally
+          Your team works<br />
+          <span class="bg-gradient-to-r from-cyan-200 via-white to-[#a3ff12] bg-clip-text text-transparent">better when IT just works.</span>
         </h1>
 
         <p
-          class="text-lg md:text-xl dark:text-slate-300 font-medium leading-relaxed max-w-xl mb-10"
+          class="mt-7 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl"
         >
-          Stop fighting with technology. We provide fast, secure, and proactive
-          IT management for London-based businesses, ensuring your team can work
-          without frustrating interruptions.
+          Remote IT support for small businesses and distributed teams. We manage Microsoft 365, Google Workspace, email, devices, security, and automation—so your people can stay productive without technology getting in the way.
         </p>
 
-        <div class="flex flex-wrap items-center gap-5">
+        <div class="mt-9 flex flex-wrap items-center gap-4">
           <a
             href="/contact"
-            class="px-8 py-4 bg-[#90ee02] text-[#2D058A] font-black uppercase tracking-wider text-base border-4 border-[#2D058A] rounded-xl shadow-[6px_6px_0px_0px_#2D058A] hover:-translate-y-1 transition-all"
+            class="group inline-flex items-center gap-3 rounded-xl bg-[#a3ff12] px-6 py-3.5 text-sm font-bold text-[#071225] shadow-[0_10px_35px_rgba(163,255,18,.24)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_42px_rgba(163,255,18,.34)]"
           >
-            Get Support Today
+            Book a free IT consultation <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
           </a>
           <a
             href="#services"
-            class="px-8 py-4 bg-transparent dark:text-white font-bold uppercase tracking-wider text-base border-2 border-white/20 rounded-xl hover:border-[#90ee02] hover:text-[#90ee02] transition-colors"
+            class="inline-flex items-center gap-2 rounded-xl border border-white/18 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition hover:border-cyan-200/60 hover:bg-white/10"
           >
             Explore Services ↓
           </a>
         </div>
+
+        <div class="mt-11 flex flex-wrap gap-x-7 gap-y-3 border-t border-white/10 pt-6">
+          <span class="flex items-center gap-2 text-sm text-slate-300"><span class="text-[#a3ff12]">✓</span>Microsoft 365 &amp; Google Workspace</span>
+          <span class="flex items-center gap-2 text-sm text-slate-300"><span class="text-[#a3ff12]">✓</span>Email, devices &amp; access security</span>
+          <span class="flex items-center gap-2 text-sm text-slate-300"><span class="text-[#a3ff12]">✓</span>Remote help when your team needs it</span>
+        </div>
       </div>
 
-      <!-- Right Column: Hero Visual with Dynamic Cutout Frame -->
+      <!-- Right Column: Glass support console -->
       <div class="lg:col-span-5 relative">
         <div class="relative mx-auto max-w-md lg:max-w-none">
-          <!-- Neo-brutalist Green Offset Block -->
-          <div
-            class="absolute -inset-2 bg-[#90ee02] rounded-2xl transform -rotate-2"
-          >
-          </div>
+          <div class="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-cyan-300/35 via-transparent to-[#a3ff12]/20 blur-2xl"></div>
 
           <!-- Image Card -->
           <div
-            class="relative bg-[#150734] border-4 border-[#2D058A] rounded-2xl overflow-hidden shadow-2xl"
+            class="relative overflow-hidden rounded-[1.65rem] border border-white/15 bg-white/[0.09] p-3 shadow-2xl shadow-black/30 backdrop-blur-2xl"
           >
-            <!-- London Business / Office Image -->
+            <div class="absolute inset-x-4 top-0 z-10 h-px bg-gradient-to-r from-transparent via-cyan-100/75 to-transparent"></div>
+            <div class="relative overflow-hidden rounded-[1.2rem] border border-white/10 bg-[#0b1a32]/85">
+            <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
+              <div class="flex items-center gap-3">
+                <div class="grid h-9 w-9 place-items-center rounded-xl bg-cyan-300/15 text-sm font-bold text-cyan-100 ring-1 ring-cyan-200/20">IT</div>
+                <div><p class="text-sm font-semibold text-white">Support Bee Console</p><p class="text-xs text-slate-400">Your IT, in good hands</p></div>
+              </div>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-[#a3ff12]/10 px-2.5 py-1 text-[10px] font-bold tracking-wider text-[#c4ff69] ring-1 ring-[#a3ff12]/20"><span class="h-1.5 w-1.5 rounded-full bg-[#a3ff12]"></span>ONLINE</span>
+            </div>
             <img
               src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
               alt="Corporate IT Support in London"
-              class="w-full h-115 object-cover contrast-125 hover:grayscale-0 transition-all duration-500"
+              class="h-72 w-full object-cover opacity-45 mix-blend-luminosity transition duration-700 hover:scale-105"
               loading="eager"
               fetchpriority="high"
             />
             <div
-              class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0d021f] via-[#0d021f]/90 to-transparent p-6"
+              class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#071225] via-[#071225]/90 to-transparent p-6"
             >
               <p
-                class="text-xs uppercase font-black text-[#90ee02] tracking-widest mb-1"
+                class="mb-1 text-xs font-bold uppercase tracking-[0.16em] text-[#c4ff69]"
               >
-                UK Operations
+                Service health
               </p>
-              <p class="text-base font-bold text-white leading-snug">
-                Instant remote troubleshooting and enterprise security for
-                modern businesses.
+              <p class="text-3xl font-semibold tracking-tight text-white">
+                99.98% <span class="text-sm font-medium text-slate-300">uptime maintained</span>
               </p>
+            </div>
+            <div class="grid grid-cols-2 gap-3 p-4">
+              <div class="rounded-xl border border-white/10 bg-white/5 p-3.5"><p class="text-[11px] font-medium uppercase tracking-wider text-slate-400">Resolved today</p><p class="mt-1 text-2xl font-semibold text-white">38 <span class="text-sm text-slate-400">tickets</span></p></div>
+              <div class="rounded-xl border border-white/10 bg-white/5 p-3.5"><p class="text-[11px] font-medium uppercase tracking-wider text-slate-400">Avg. response</p><p class="mt-1 text-2xl font-semibold text-white">12 <span class="text-sm text-slate-400">min</span></p></div>
+            </div>
             </div>
           </div>
         </div>

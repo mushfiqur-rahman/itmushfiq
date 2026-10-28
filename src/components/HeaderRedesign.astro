@@ -1,0 +1,59 @@
+---
+import { getDynamicServices } from "../utils/getServices";
+
+const currentPath = Astro.url.pathname;
+const services = await getDynamicServices();
+const links = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Blog", path: "/blog" },
+  { name: "Contact", path: "/contact" },
+];
+const isActive = (path: string) => currentPath === path || (path !== "/" && currentPath.startsWith(path));
+---
+
+<header class="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-5">
+  <div class="mx-auto max-w-7xl rounded-2xl border border-[#2D058A]/10 bg-white/85 px-4 shadow-[0_12px_40px_rgba(45,5,138,.10)] backdrop-blur-xl dark:border-white/10 dark:bg-[#10052a]/85 sm:px-5">
+    <div class="flex min-h-16 items-center justify-between gap-4">
+      <a href="/" class="group flex items-center gap-3 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2D058A]">
+        <span class="grid h-9 w-9 place-items-center rounded-xl bg-[#2D058A] text-sm font-black text-white shadow-[0_6px_16px_rgba(45,5,138,.28)] transition-transform duration-300 group-hover:-rotate-6">IT</span>
+        <span class="leading-none"><span class="block text-base font-bold tracking-[-.04em] text-[#2D058A] dark:text-white">Support Bee</span><span class="mt-1 block text-[10px] font-semibold uppercase tracking-[.16em] text-slate-400">Remote IT partner</span></span>
+      </a>
+
+      <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
+        {links.slice(0, 2).map((link) => <a href={link.path} aria-current={isActive(link.path) ? "page" : undefined} class:list={["rounded-lg px-3 py-2 text-sm font-medium transition", isActive(link.path) ? "bg-[#2D058A]/8 text-[#2D058A] dark:bg-white/10 dark:text-white" : "text-slate-600 hover:bg-[#2D058A]/5 hover:text-[#2D058A] dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"]}>{link.name}</a>)}
+        <details class="group relative">
+          <summary class:list={["flex cursor-pointer list-none items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition marker:content-none", currentPath.startsWith("/services") ? "bg-[#2D058A]/8 text-[#2D058A] dark:bg-white/10 dark:text-white" : "text-slate-600 hover:bg-[#2D058A]/5 hover:text-[#2D058A] dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"]}>
+            Services <svg class="h-3.5 w-3.5 transition-transform group-open:rotate-180" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </summary>
+          <div class="absolute left-0 top-[calc(100%+1rem)] w-72 rounded-2xl border border-[#2D058A]/10 bg-white p-2 shadow-[0_18px_50px_rgba(45,5,138,.18)] dark:border-white/10 dark:bg-[#160a32]">
+            <p class="px-3 py-2 text-[10px] font-bold uppercase tracking-[.16em] text-slate-400">How we help</p>
+            {services.map((service) => <a href={service.path} class:list={["block rounded-xl px-3 py-2.5 text-sm font-medium transition", currentPath === service.path ? "bg-[#2D058A] text-white" : "text-slate-700 hover:bg-[#2D058A]/6 hover:text-[#2D058A] dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-white"]}>{service.name}</a>)}
+          </div>
+        </details>
+        {links.slice(2).map((link) => <a href={link.path} aria-current={isActive(link.path) ? "page" : undefined} class:list={["rounded-lg px-3 py-2 text-sm font-medium transition", isActive(link.path) ? "bg-[#2D058A]/8 text-[#2D058A] dark:bg-white/10 dark:text-white" : "text-slate-600 hover:bg-[#2D058A]/5 hover:text-[#2D058A] dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"]}>{link.name}</a>)}
+      </nav>
+
+      <div class="hidden items-center gap-3 lg:flex">
+        <a href="/contact" class="rounded-xl bg-[#2D058A] px-4 py-2.5 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(45,5,138,.25)] transition hover:-translate-y-0.5 hover:bg-[#3c0bb4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2D058A]">Book a call <span aria-hidden="true">→</span></a>
+      </div>
+
+      <details class="group relative lg:hidden">
+        <summary class="grid h-10 w-10 cursor-pointer list-none place-items-center rounded-xl border border-[#2D058A]/12 bg-[#2D058A]/5 text-[#2D058A] marker:content-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2D058A] dark:border-white/15 dark:bg-white/10 dark:text-white" aria-label="Open navigation menu">
+          <svg class="h-5 w-5 group-open:hidden" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <svg class="hidden h-5 w-5 group-open:block" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+        </summary>
+        <nav class="absolute right-0 top-[calc(100%+1rem)] w-[min(22rem,calc(100vw-1.5rem))] rounded-2xl border border-[#2D058A]/10 bg-white p-3 shadow-[0_18px_50px_rgba(45,5,138,.18)] dark:border-white/10 dark:bg-[#160a32]" aria-label="Mobile navigation">
+          <div class="grid grid-cols-2 gap-2">
+            {links.map((link) => <a href={link.path} aria-current={isActive(link.path) ? "page" : undefined} class:list={["rounded-xl px-3 py-3 text-sm font-semibold transition", isActive(link.path) ? "bg-[#2D058A] text-white" : "bg-slate-50 text-slate-700 hover:bg-[#2D058A]/8 hover:text-[#2D058A] dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10"]}>{link.name}</a>)}
+          </div>
+          <details class="mt-2 rounded-xl bg-slate-50 dark:bg-white/5">
+            <summary class="cursor-pointer px-3 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200">Services</summary>
+            <div class="space-y-1 px-2 pb-2">{services.map((service) => <a href={service.path} class="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-[#2D058A]/8 hover:text-[#2D058A] dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">{service.name}</a>)}</div>
+          </details>
+          <a href="/contact" class="mt-3 block rounded-xl bg-[#2D058A] px-4 py-3 text-center text-sm font-semibold text-white">Book a free IT audit <span aria-hidden="true">→</span></a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
