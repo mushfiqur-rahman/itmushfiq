@@ -1,330 +1,68 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
+const services = ['Google Workspace Migration', 'Microsoft 365 Setup', 'Email Deliverability (SPF/DKIM/DMARC)', 'Web Development (Astro/WordPress)', 'IT Infrastructure Support', 'Help me choose'];
+const socials = [{name:'LinkedIn',url:'https://www.linkedin.com/in/itmushfiq/',icon:'linkedin'},{name:'Facebook',url:'https://facebook.com/itsupportbee',icon:'facebook'},{name:'X / Twitter',url:'https://x.com/itsupportbee',icon:'twitter'},{name:'Instagram',url:'https://instagram.com/itsupportbee',icon:'instagram'},{name:'TikTok',url:'https://tiktok.com/@itsupportbee',icon:'music-2'}];
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { Icon } from "astro-icon/components";
-
-const socials = [
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/itmushfiq/",
-    icon: "lucide:linkedin",
-  },
-  {
-    name: "Facebook",
-    url: "https://facebook.com/itsupportbee",
-    icon: "lucide:facebook",
-  },
-  {
-    name: "X / Twitter",
-    url: "https://x.com/itsupportbee",
-    icon: "lucide:twitter",
-  },
-  {
-    name: "Instagram",
-    url: "https://instagram.com/itsupportbee",
-    icon: "lucide:instagram",
-  },
-  {
-    name: "TikTok",
-    url: "https://tiktok.com/@itsupportbee",
-    // Note: Lucide এ tiktok আইকন না থাকলে 'lucide:music-2' বা অন্য কোনো প্যাক ব্যবহার করতে পারেন
-    icon: "lucide:music-2",
-  },
-];
-
-const services = [
-  "Google Workspace Migration",
-  "Microsoft 365 Setup",
-  "Email Deliverability (SPF/DKIM/DMARC)",
-  "Web Development (Astro/WordPress)",
-  "IT Infrastructure Support",
-];
----
-
 <BaseLayout title="Contact Us | IT Support Bee">
-  <div class="bg-slate-50 dark:bg-[#0f0224] pt-32 pb-32 min-h-screen">
-    <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        <!-- Left Column: Contact Information -->
-        <div class="space-y-12">
-          <header>
-            <h1
-              class="text-5xl md:text-6xl font-black text-[#2D058A] dark:text-white tracking-tighter mb-4 leading-[1.1]"
-            >
-              Pick the Channel <br /><span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-[#2D058A] to-[#7b2cbf] dark:from-[#90ee02] dark:to-[#ccff66]"
-                >That Suits You.</span
-              >
-            </h1>
-          </header>
-
-          <!-- Contact Methods -->
-          <div
-            class="bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-2xl p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(45,5,138,1)] dark:shadow-[8px_8px_0px_0px_rgba(144,238,2,0.3)] space-y-8"
-          >
-            <!-- WhatsApp / Phone -->
-            <div
-              class="flex items-start gap-4 pb-8 border-b-2 border-slate-100 dark:border-white/10"
-            >
-              <div
-                class="w-12 h-12 shrink-0 bg-[#90ee02] border-2 border-[#2D058A] flex items-center justify-center rounded-xl"
-              >
-                <svg
-                  class="w-6 h-6 text-[#2D058A]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  ><path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  ></path></svg
-                >
-              </div>
-              <div>
-                <h3
-                  class="font-bold text-lg text-slate-900 dark:text-white mb-1"
-                >
-                  WhatsApp & Phone (Fastest)
-                </h3>
-                <a
-                  href="tel:+447988585324"
-                  class="text-xl font-black text-[#2D058A] dark:text-[#90ee02] hover:underline"
-                  >+44 7988 585324</a
-                >
-                <p
-                  class="text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium"
-                >
-                  Replies within ~1 hour
-                </p>
-              </div>
-            </div>
-
-            <!-- Email -->
-            <div class="flex items-start gap-4">
-              <div
-                class="w-12 h-12 shrink-0 bg-slate-100 dark:bg-[#0f0224] border-2 border-[#2D058A] dark:border-[#90ee02] flex items-center justify-center rounded-xl"
-              >
-                <svg
-                  class="w-6 h-6 text-[#2D058A] dark:text-[#90ee02]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  ><path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  ></path></svg
-                >
-              </div>
-              <div>
-                <h3
-                  class="font-bold text-lg text-slate-900 dark:text-white mb-1"
-                >
-                  Email
-                </h3>
-                <a
-                  href="mailto:hello@itsupportbee.com"
-                  class="text-xl font-black text-[#2D058A] dark:text-[#90ee02] hover:underline"
-                  >hello@itsupportbee.com</a
-                >
-                <p
-                  class="text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium"
-                >
-                  Replies within ~2 hours
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Offices Section -->
-          <div>
-            <h2
-              class="text-2xl font-black text-[#2D058A] dark:text-white mb-6 uppercase tracking-widest"
-            >
-              Offices
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <!-- Bangladesh Office -->
-              <a
-                href="https://maps.app.goo.gl/xMpanDiXEeTepe7D8"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group block p-6 bg-white dark:bg-[#150734] border-4 border-slate-200 dark:border-white/10 rounded-2xl hover:border-[#2D058A] dark:hover:border-[#90ee02] transition-colors cursor-pointer"
-              >
-                <h3
-                  class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#2D058A] dark:group-hover:text-[#90ee02]"
-                >
-                  Bangladesh
-                </h3>
-                <p
-                  class="text-sm font-medium text-slate-600 dark:text-slate-400"
-                >
-                  Software Technology Park<br />Jashore, Bangladesh
-                </p>
-              </a>
-
-              <!-- UK Office -->
-              <a
-                href="https://maps.app.goo.gl/chnU3DmxJvgfsiRs6"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group block p-6 bg-white dark:bg-[#150734] border-4 border-slate-200 dark:border-white/10 rounded-2xl hover:border-[#2D058A] dark:hover:border-[#90ee02] transition-colors cursor-pointer"
-              >
-                <h3
-                  class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#2D058A] dark:group-hover:text-[#90ee02]"
-                >
-                  London, UK
-                </h3>
-                <p
-                  class="text-sm font-medium text-slate-600 dark:text-slate-400"
-                >
-                  9 New Change<br />London EC4M 9AG, UK
-                </p>
-              </a>
-            </div>
-          </div>
-
-          <!-- Social Links -->
-          <div>
-            <div class="flex items-center gap-4">
-              {
-                socials.map((social) => (
-                  <a
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.name}
-                    class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-slate-700 text-slate-300 hover:bg-[#90ee02] hover:text-[#2D058A] hover:border-[#90ee02] transition-all duration-300 outline-none"
-                  >
-                    <Icon name={social.icon} class="w-5 h-5" />
-                  </a>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Column: Contact Form -->
-        <div
-          class="bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-3xl p-8 md:p-12 shadow-[12px_12px_0px_0px_rgba(45,5,138,1)] dark:shadow-[12px_12px_0px_0px_rgba(144,238,2,0.4)]"
-        >
-          <h2
-            class="text-3xl md:text-4xl font-black text-[#2D058A] dark:text-white mb-8 tracking-tight"
-          >
-            Share Your Requirements
-          </h2>
-
-          <form class="space-y-6" onsubmit="event.preventDefault();">
-            <div>
-              <label
-                for="name"
-                class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2"
-                >Full Name <span class="text-red-500">*</span></label
-              >
-              <input
-                type="text"
-                id="name"
-                placeholder="Enter your full name"
-                required
-                class="w-full px-5 py-3 bg-slate-50 dark:bg-[#0f0224] border-2 border-slate-300 dark:border-white/10 rounded-xl focus:outline-none focus:border-[#2D058A] dark:focus:border-[#90ee02] text-slate-900 dark:text-white transition-colors"
-              />
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label
-                  for="phone"
-                  class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2"
-                  >Phone <span class="text-red-500">*</span></label
-                >
-                <input
-                  type="tel"
-                  id="phone"
-                  placeholder="+1 (555) 000-0000"
-                  required
-                  class="w-full px-5 py-3 bg-slate-50 dark:bg-[#0f0224] border-2 border-slate-300 dark:border-white/10 rounded-xl focus:outline-none focus:border-[#2D058A] dark:focus:border-[#90ee02] text-slate-900 dark:text-white transition-colors"
-                />
-              </div>
-
-              <div>
-                <label
-                  for="email"
-                  class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2"
-                  >Email <span class="text-red-500">*</span></label
-                >
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="your@email.com"
-                  required
-                  class="w-full px-5 py-3 bg-slate-50 dark:bg-[#0f0224] border-2 border-slate-300 dark:border-white/10 rounded-xl focus:outline-none focus:border-[#2D058A] dark:focus:border-[#90ee02] text-slate-900 dark:text-white transition-colors"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label
-                for="website"
-                class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2"
-                >Website</label
-              >
-              <input
-                type="url"
-                id="website"
-                placeholder="https://yourwebsite.com"
-                class="w-full px-5 py-3 bg-slate-50 dark:bg-[#0f0224] border-2 border-slate-300 dark:border-white/10 rounded-xl focus:outline-none focus:border-[#2D058A] dark:focus:border-[#90ee02] text-slate-900 dark:text-white transition-colors"
-              />
-            </div>
-
-            <div>
-              <label
-                for="service"
-                class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2"
-                >Select Your Services <span class="text-red-500">*</span></label
-              >
-              <div class="relative">
-                <select
-                  id="service"
-                  required
-                  class="w-full px-5 py-3 bg-slate-50 dark:bg-[#0f0224] border-2 border-slate-300 dark:border-white/10 rounded-xl focus:outline-none focus:border-[#2D058A] dark:focus:border-[#90ee02] text-slate-900 dark:text-white appearance-none transition-colors"
-                >
-                  <option value="" disabled selected>Select a service...</option
-                  >
-                  {
-                    services.map((service) => (
-                      <option value={service}>{service}</option>
-                    ))
-                  }
-                </select>
-                <!-- Custom Dropdown Arrow -->
-                <div
-                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500"
-                >
-                  <svg
-                    class="fill-current h-4 w-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    ><path
-                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                    ></path></svg
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <button
-                type="submit"
-                class="w-full px-8 py-4 bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-black text-lg uppercase tracking-widest rounded-xl border-4 border-[#2D058A] dark:border-[#90ee02] hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(144,238,2,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)] transition-all cursor-pointer"
-              >
-                Submit Request
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="contact" aria-labelledby="contact-title">
+<div class="shell">
+<header class="intro">
+<p class="eyebrow"><span></span> YOUR NEXT CHAPTER STARTS HERE</p>
+<h1 id="contact-title">Less IT friction.<br/><span>More possibility.</span></h1>
+<p>A small question. A big migration. A fresh start.<br/>Tell us what’s on your mind. We’ll take it from here.</p>
+<div class="benefits"><span><Icon name="lucide:globe"/> Remote-first support</span><span><Icon name="lucide:shield-check"/> People you can rely on</span></div>
+</header>
+<div class="bento">
+<div class="channels">
+<a href="https://wa.me/447988585324" class="glass chat">
+<div class="card-top"><span class="tile"><Icon name="lucide:message-circle"/></span><span class="kicker">LET’S TALK</span><Icon name="lucide:arrow-up-right"/></div>
+<h2>A real person.<br/>A clearer way forward.</h2><p>Skip the ticket queue. Start a conversation<br/>with our team on WhatsApp.</p><span class="action">Chat with an IT expert <Icon name="lucide:arrow-right"/></span><div class="orbit" aria-hidden="true"></div>
+</a>
+<div class="direct">
+<a class="glass mini" href="mailto:hello@itsupportbee.com"><Icon name="lucide:mail"/><h2>Prefer email?</h2><p>Give us the bigger picture.</p><span>hello@itsupportbee.com ↗</span></a>
+<a class="glass mini" href="tel:+447988585324"><Icon name="lucide:phone"/><h2>Let’s talk it through.</h2><p>Sometimes a call is easier.</p><span>+44 7988 585324 ↗</span></a>
+</div>
+<section class="glass next" aria-labelledby="next-title"><p class="kicker">GOOD TO KNOW</p><h2 id="next-title">What happens next?</h2><ol>
+<li><span>01</span><div><h3>We listen first.</h3><p>We get to know your business and the challenge.</p></div></li>
+<li><span>02</span><div><h3>You get a clear plan.</h3><p>Practical next steps, explained without the jargon.</p></div></li>
+<li><span>03</span><div><h3>We make IT work for you.</h3><p>Move forward with support that fits your team.</p></div></li>
+</ol></section>
+</div>
+<section class="glass form-panel" aria-labelledby="form-title"><p class="kicker">— LET’S BUILD SOMETHING BETTER</p><h2 id="form-title">Tell us what you need.</h2><p class="form-intro">You bring the challenge. We’ll help with the solution.</p>
+<form id="contact-form" action="mailto:hello@itsupportbee.com" method="post" enctype="text/plain">
+<div class="row"><div><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" placeholder="Alex Morgan" required maxlength="120"/></div><div><label for="email">Work email *</label><input id="email" name="email" type="email" autocomplete="email" placeholder="alex@company.com" required maxlength="200"/></div></div>
+<div class="row"><div><label for="company">Company <span>(optional)</span></label><input id="company" name="company" autocomplete="organization" placeholder="Your company" maxlength="160"/></div><div><label for="phone">Phone <span>(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+44 7988 000000" maxlength="50"/></div></div>
+<div><label for="service">How can we help? *</label><select id="service" name="service" required><option value="" disabled selected>Select a service</option>{services.map(service=><option value={service}>{service}</option>)}</select></div>
+<div><label for="message">A little about your project *</label><textarea id="message" name="message" rows="4" required maxlength="2500" placeholder="What’s the challenge? Tell us about your goals, your team, or where you’re getting stuck."></textarea></div>
+<p class="note" id="email-note">Opens a draft in your email app for you to review and send. Fields marked * are required.</p>
+<button type="submit" aria-describedby="email-note">Let’s start a conversation <Icon name="lucide:arrow-up-right"/></button>
+<p id="form-status" role="status" aria-live="polite"></p>
+<p class="reassurance"><Icon name="lucide:lock-keyhole"/> Just a conversation. No pressure, no obligation.</p>
+</form></section>
+</div>
+<section class="locations" aria-labelledby="locations-title"><div class="location-intro"><p class="kicker">LOCAL ROOTS. GLOBAL REACH.</p><h2 id="locations-title">Near or far,<br/>we’re on your team.</h2><p>Based in Bangladesh and the UK.<br/>Connected to your business, wherever you work.</p></div>
+<a class="glass office" href="https://maps.app.goo.gl/xMpanDiXEeTepe7D8" target="_blank" rel="noopener noreferrer"><div class="office-top">BD / 01 <Icon name="lucide:arrow-up-right"/></div><Icon name="lucide:map-pin"/><h3>Jashore, Bangladesh</h3><p>Software Technology Park<br/>Jashore, Bangladesh</p><span>View on Google Maps <span class="sr-only">(opens in a new tab)</span></span></a>
+<a class="glass office" href="https://maps.app.goo.gl/chnU3DmxJvgfsiRs6" target="_blank" rel="noopener noreferrer"><div class="office-top">UK / 02 <Icon name="lucide:arrow-up-right"/></div><Icon name="lucide:map-pin"/><h3>London, United Kingdom</h3><p>9 New Change<br/>London EC4M 9AG, UK</p><span>View on Google Maps <span class="sr-only">(opens in a new tab)</span></span></a>
+</section>
+<div class="socials"><p>Good connections start with a hello.</p><nav aria-label="Social media">{socials.map(s=><a href={s.url} target="_blank" rel="noopener noreferrer" aria-label={`${s.name} (opens in a new tab)`}><Icon name={`lucide:${s.icon}`}/></a>)}</nav></div>
+</div>
+</section>
 </BaseLayout>
+<script>
+const form=document.querySelector<HTMLFormElement>('#contact-form');
+form?.addEventListener('submit',event=>{
+ event.preventDefault();
+ const data=new FormData(form);
+ const body=`Name: ${data.get('name')}\nEmail: ${data.get('email')}\nCompany: ${data.get('company') || 'Not provided'}\nPhone: ${data.get('phone') || 'Not provided'}\nService: ${data.get('service')}\n\n${data.get('message')}`;
+ window.location.href=`mailto:hello@itsupportbee.com?subject=${encodeURIComponent(`IT support enquiry: ${data.get('service')}`)}&body=${encodeURIComponent(body)}`;
+ const status=document.querySelector<HTMLElement>('#form-status');
+ if(status) status.textContent='Your email app should open with a draft. Nothing has been sent yet. If it doesn’t open, email hello@itsupportbee.com or use WhatsApp. Your details remain here.';
+});
+</script>
+<style>
+.contact{--muted:#bbb2cd;--line:#c7afff24;background:radial-gradient(ellipse 650px 470px at 50% 0,#2d058a70,transparent),radial-gradient(ellipse 400px 700px at 100% 55%,#46218425,transparent),#0c071b;color:#f6f2ff;padding:150px 24px 65px;overflow:hidden}.shell{max-width:1180px;margin:auto}.intro{text-align:center;margin-bottom:52px}.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:30px;padding:8px 15px;font-size:9px;letter-spacing:.18em;color:#d6c5f7;background:#ffffff04}.eyebrow span{width:6px;height:6px;background:#c5a4ff;border-radius:50%;box-shadow:0 0 14px #bc94ff}h1{font-size:clamp(40px,5.4vw,70px);font-weight:500;letter-spacing:-.055em;line-height:1.12;margin:24px 0 22px}h1 span{background:linear-gradient(100deg,#f0e5ff,#ae8bdc);background-clip:text;color:transparent}.intro>p:not(.eyebrow){font-size:14px;color:var(--muted);line-height:1.9}.benefits{display:flex;justify-content:center;gap:25px;margin-top:22px;font-size:11px;color:#d1c6e3}.benefits span{display:flex;align-items:center;gap:7px}.benefits svg{width:14px;height:14px;color:#c09bf7}.bento{display:grid;grid-template-columns:1fr 1.13fr;gap:22px;align-items:start}.channels{display:grid;gap:18px}.glass{border:1px solid var(--line);border-radius:22px;background:linear-gradient(130deg,#ffffff0d,#ffffff04);box-shadow:inset 0 1px 0 #ffffff05,0 12px 40px #0000000a;backdrop-filter:blur(18px)}a.glass{display:block;transition:transform .2s,border-color .2s}a.glass:hover{border-color:#ab8ad575;transform:translateY(-3px)}.chat{position:relative;overflow:hidden;padding:27px 28px;background:radial-gradient(ellipse at 100% 0,#754dc640,transparent 65%),linear-gradient(125deg,#2d058a99,#231337)}.card-top{display:flex;align-items:center;gap:12px;margin-bottom:24px}.tile{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;border:1px solid #ffffff20;background:#ffffff12}.tile svg{width:22px;height:22px}.kicker{font-size:9px;font-weight:500;letter-spacing:.17em;color:#cbb7eb}.card-top>svg{margin-left:auto;width:20px;height:20px;color:#c7afed}.chat h2{font-size:27px;line-height:1.3;letter-spacing:-.035em;font-weight:500;position:relative;z-index:1}.chat p{font-size:12px;color:#d1c2e6;margin-top:13px}.action{display:flex;align-items:center;gap:13px;font-size:12px;font-weight:500;margin-top:26px}.action svg{width:17px;height:17px}.orbit{position:absolute;width:220px;height:220px;border:1px solid #bb99ff25;border-radius:50%;right:-100px;bottom:-120px;box-shadow:0 0 0 30px #aa88ff09,0 0 0 60px #aa88ff06;pointer-events:none}.direct{display:grid;grid-template-columns:1fr 1fr;gap:18px}.mini{padding:22px 19px;min-width:0}.mini>svg{width:20px;height:20px;color:#c3a0fa;margin-bottom:19px}.mini h2{font-size:13px;font-weight:500}.mini p{font-size:10px;color:var(--muted);margin:5px 0 13px}.mini>span{font-size:10px;color:#d8c7f7;overflow-wrap:anywhere}.next{padding:24px 28px}.next h2{font-size:19px;margin-top:7px;letter-spacing:-.03em}ol{display:grid;gap:16px;margin-top:21px}li{display:flex;gap:14px}li>span{display:grid;place-items:center;width:28px;height:28px;flex-shrink:0;border:1px solid var(--line);border-radius:50%;font-size:10px;color:#bca4de}li h3{font-weight:500;font-size:12px}li p{font-size:10px;color:var(--muted);margin-top:2px}.form-panel{padding:32px;background:linear-gradient(145deg,#ffffff0c,#ffffff04)}.form-panel h2{font-size:28px;font-weight:500;letter-spacing:-.045em;margin:14px 0 7px}.form-intro{font-size:12px;color:var(--muted);margin-bottom:27px}form{display:grid;gap:20px}.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.row>div{min-width:0}label{display:block;font-size:11px;font-weight:500;margin-bottom:8px}label span{font-size:10px;color:var(--muted);font-weight:400}input,select,textarea{width:100%;min-height:46px;display:block;border:1px solid #c5b1ef29;background:#100b20;color:#eee8f8;border-radius:9px;padding:12px 13px;font:inherit;font-size:11px;color-scheme:dark}textarea{resize:vertical;min-height:122px}input::placeholder,textarea::placeholder{color:#aca0bc;opacity:1}select:invalid{color:#aca0bc}input:hover,select:hover,textarea:hover{border-color:#b293ec66}.note{color:var(--muted);font-size:10px;line-height:1.7}button{display:flex;align-items:center;justify-content:center;gap:18px;min-height:52px;border:1px solid #9471da66;border-radius:10px;background:linear-gradient(110deg,#2d058a,#5223a4);box-shadow:0 6px 25px #2d058a44,inset 0 1px 0 #ffffff15;font-size:12px;font-weight:500;color:white;cursor:pointer}button:hover{filter:brightness(1.2)}button svg{width:18px;height:18px}.reassurance{display:flex;align-items:center;justify-content:center;gap:7px;font-size:9px;color:var(--muted)}.reassurance svg{width:12px;height:12px}#form-status:empty{display:none}#form-status{font-size:11px;color:#dcc9ff}.locations{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;margin-top:52px}.location-intro{padding:14px 0}.location-intro h2{font-size:26px;line-height:1.35;letter-spacing:-.035em;margin:14px 0}.location-intro>p:last-child{font-size:11px;color:var(--muted)}.office{padding:23px}.office-top{display:flex;justify-content:space-between;color:#baa7d3;font-size:9px;letter-spacing:.15em}.office-top svg{width:16px;height:16px}.office>svg{width:22px;height:22px;color:#c4a5f5;margin:20px 0 12px}.office h3{font-size:14px;font-weight:500;letter-spacing:-.02em}.office p{font-size:11px;color:var(--muted);margin:8px 0 15px}.office>span{font-size:10px;color:#d3b8fc}.socials{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:27px;margin-top:35px}.socials p{font-size:11px;color:var(--muted)}.socials nav{display:flex;gap:8px}.socials a{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;color:#c5b4dd}.socials a:hover{background:#2d058a}.socials svg{width:16px;height:16px}.contact :is(a,button,input,select,textarea):focus-visible{outline:3px solid #c7a6ff;outline-offset:4px}
+@media(max-width:1000px){.bento{gap:16px}.direct{grid-template-columns:1fr;gap:14px}.mini>svg{float:right}.form-panel{padding:25px}.row{grid-template-columns:1fr}.locations{gap:16px}.office{padding:20px}}
+@media(max-width:640px){.contact{padding:125px 18px 42px}.intro{margin-bottom:35px}.eyebrow{font-size:8px}.intro>p:not(.eyebrow){font-size:12px}.benefits{gap:14px;font-size:9px}.bento{grid-template-columns:1fr}.form-panel{grid-row:1;padding:25px 22px}.form-panel h2{font-size:25px}.channels{margin-top:2px}.direct{grid-template-columns:1fr 1fr}.mini{padding:18px 14px}.mini>svg{float:none}.mini h2{font-size:12px}.mini>span{font-size:9px}.locations{grid-template-columns:1fr 1fr;margin-top:32px}.location-intro{grid-column:1/-1}.office{padding:18px 15px}.office h3{font-size:12px}.socials{flex-direction:column;gap:16px}}
+@media(prefers-reduced-motion:reduce){a.glass:hover{transform:none}}
+</style>

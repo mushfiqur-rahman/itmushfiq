@@ -107,7 +107,7 @@ const navLinks = [
 
       <!-- Desktop Action Buttons -->
       <div class="hidden md:flex items-center gap-6">
-        <button id="theme-toggle" aria-label="Toggle Dark Mode" class="w-10 h-10 flex items-center justify-center bg-slate-100 dark:bg-[#150734] border-2 border-[#2D058A] dark:border-white/20 rounded-lg text-[#2D058A] dark:text-[#90ee02] shadow-[2px_2px_0px_0px_rgba(45,5,138,1)] dark:shadow-[2px_2px_0px_0px_rgba(144,238,2,0.4)] hover:-translate-y-0.5 transition-all outline-none focus-visible:ring-4 focus-visible:ring-[#90ee02]/50 cursor-pointer">
+        <button id="theme-toggle" aria-label="Toggle Dark Mode" class="hidden" tabindex="-1" aria-hidden="true">
           <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
           </svg>
@@ -122,7 +122,7 @@ const navLinks = [
 
       <!-- Mobile Controls -->
       <div class="md:hidden flex items-center gap-4">
-        <button id="theme-toggle-mobile" aria-label="Toggle Dark Mode" class="w-10 h-10 flex items-center justify-center bg-slate-100 dark:bg-[#150734] border-2 border-[#2D058A] dark:border-white/20 rounded-lg text-[#2D058A] dark:text-[#90ee02] shadow-[2px_2px_0px_0px_rgba(45,5,138,1)] dark:shadow-[2px_2px_0px_0px_rgba(144,238,2,0.4)] outline-none cursor-pointer">
+        <button id="theme-toggle-mobile" aria-label="Toggle Dark Mode" class="hidden" tabindex="-1" aria-hidden="true">
           <svg id="theme-toggle-light-icon-mobile" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
           </svg>
@@ -221,46 +221,4 @@ const navLinks = [
     });
   }
 
-  const root = document.documentElement;
-  
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    root.classList.add('dark');
-  } else {
-    root.classList.remove('dark');
-  }
-
-  const toggleDesktop = document.getElementById('theme-toggle');
-  const sunDesktop = document.getElementById('theme-toggle-light-icon');
-  const moonDesktop = document.getElementById('theme-toggle-dark-icon');
-  const toggleMobile = document.getElementById('theme-toggle-mobile');
-  const sunMobile = document.getElementById('theme-toggle-light-icon-mobile');
-  const moonMobile = document.getElementById('theme-toggle-dark-icon-mobile');
-
-  const updateIcons = () => {
-    const isDark = root.classList.contains('dark');
-    if (isDark) {
-      sunDesktop?.classList.remove('hidden');
-      moonDesktop?.classList.add('hidden');
-      sunMobile?.classList.remove('hidden');
-      moonMobile?.classList.add('hidden');
-    } else {
-      sunDesktop?.classList.add('hidden');
-      moonDesktop?.classList.remove('hidden');
-      sunMobile?.classList.add('hidden');
-      moonMobile?.classList.remove('hidden');
-    }
-  };
-
-  updateIcons();
-
-  const toggleTheme = () => {
-    root.classList.toggle('dark');
-    const isDark = root.classList.contains('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    updateIcons();
-  };
-
-  toggleDesktop?.addEventListener('click', toggleTheme);
-  toggleMobile?.addEventListener('click', toggleTheme);
 </script>
