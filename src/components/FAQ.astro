@@ -23,66 +23,155 @@ const faqs = [
 ];
 ---
 
-<section id="faq" class="py-24 bg-white dark:bg-[#0f0224] border-y border-[#2D058A]/10 dark:border-white/10 relative overflow-hidden">
-  <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
-      
-      <!-- FAQ Header (Left Column on Desktop) -->
-      <div class="lg:col-span-5 lg:sticky lg:top-32">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-sm font-bold tracking-widest uppercase border-2 border-[#2D058A] text-[#2D058A] dark:border-[#90ee02] dark:text-[#90ee02] rounded-full">
-          Got Questions?
+<section id="faq" class="faq-section" aria-labelledby="faq-heading">
+  <div class="faq-container">
+    <header class="faq-header">
+      <span class="eyebrow"><span class="status-dot" aria-hidden="true"></span> THE SUPPORT DESK / FAQ</span>
+      <div class="heading-row">
+        <h2 id="faq-heading">Good questions.<br /><span>Clear answers.</span></h2>
+        <p>Less IT uncertainty. More peace of mind.<br />Everything you need to know before we get your technology working better.</p>
+      </div>
+    </header>
+
+    <div class="faq-grid">
+      <aside class="support-card glass-panel" aria-labelledby="support-heading">
+        <div class="card-topline"><span>HUMAN SUPPORT. REMOTE FIRST.</span><span aria-hidden="true">↗</span></div>
+        <div class="support-art" aria-hidden="true">
+          <div class="orbit orbit-outer"></div><div class="orbit orbit-inner"></div>
+          <div class="headset-tile">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 27v-5a14 14 0 0 1 28 0v5"/><rect x="7" y="23" width="8" height="13" rx="4"/><rect x="33" y="23" width="8" height="13" rx="4"/><path d="M37 36v2a5 5 0 0 1-5 5h-7"/><path d="M23 43h4"/></svg>
+          </div>
+          <span class="orbit-node node-one"></span><span class="orbit-node node-two"></span>
         </div>
-        <h2 class="text-4xl md:text-5xl font-black text-[#2D058A] dark:text-white tracking-tighter mb-6 leading-[1.1]">
-          Frequently Asked Questions.
-        </h2>
-        <p class="text-xl text-slate-700 dark:text-slate-300 font-medium mb-8">
-          Everything you need to know about my services, migration process, and how we can work together.
-        </p>
-        
-        <!-- CTA inside FAQ -->
-        <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 text-lg font-bold text-white dark:text-[#2D058A] bg-[#2D058A] dark:bg-[#90ee02] border-2 border-[#2D058A] dark:border-[#90ee02] rounded-xl hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(144,238,2,1)] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.8)] transition-all duration-300">
-          Book a Free Consultation
-        </a>
-      </div>
+        <div class="support-copy">
+          <span class="mini-label">LET’S TALK IT</span>
+          <h3 id="support-heading">Your setup is unique.<br />So is our support.</h3>
+          <p>Have a question that isn’t covered here? Tell us what your team needs. We’ll help you find the next step.</p>
+          <a href="/contact" class="consultation-link">Book a free consultation <span aria-hidden="true">↗</span></a>
+          <span class="card-footnote">Real people. Practical answers.</span>
+        </div>
+      </aside>
 
-      <!-- FAQ Accordion (Right Column on Desktop) -->
-      <div class="lg:col-span-7 space-y-4">
-        {faqs.map((faq, index) => (
-          <details class="group bg-white dark:bg-[#150734] border-2 border-[#2D058A] dark:border-white/10 rounded-2xl shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.4)] transition-all duration-300 open:border-[#2D058A] dark:open:border-[#90ee02] open:bg-slate-50 dark:open:bg-[#1c0a45]">
-            
-            <summary class="flex justify-between items-center cursor-pointer p-6 md:p-8 outline-none focus-visible:ring-4 focus-visible:ring-[#90ee02]/50 rounded-2xl">
-              <h3 class="text-xl font-bold text-[#2D058A] dark:text-white group-hover:text-[#7b2cbf] dark:group-hover:text-[#90ee02] transition-colors pr-4">
-                {faq.question}
-              </h3>
-              
-              <!-- Animated Plus/Minus Icon -->
-              <span class="relative shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-[#2D058A] dark:border-[#90ee02] text-[#2D058A] dark:text-[#90ee02] group-open:bg-[#2D058A] dark:group-open:bg-[#90ee02] group-open:text-white dark:group-open:text-[#2D058A] transition-all duration-300">
-                <svg class="w-5 h-5 absolute transition-transform duration-300 group-open:rotate-90 group-open:opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16M4 12h16"></path></svg>
-                <svg class="w-5 h-5 absolute opacity-0 transition-transform duration-300 -rotate-90 group-open:rotate-0 group-open:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M20 12H4"></path></svg>
-              </span>
-            </summary>
-            
-            <div class="px-6 pb-6 md:px-8 md:pb-8 text-lg font-medium text-slate-700 dark:text-slate-300 leading-relaxed">
-              <div class="pt-4 border-t border-[#2D058A]/10 dark:border-white/10">
-                {faq.answer}
-              </div>
-            </div>
-            
-          </details>
-        ))}
+      <div class="answers-panel glass-panel">
+        <div class="answers-heading"><span>FREQUENTLY ASKED</span><span>{String(faqs.length).padStart(2, '0')} QUESTIONS</span></div>
+        <div class="faq-list">
+          {faqs.map((faq, index) => (
+            <details class="faq-item" name="support-faq" open={index === 0}>
+              <summary>
+                <span class="question-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <h3>{faq.question}</h3>
+                <span class="toggle" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 10h12"/><path class="plus-stroke" d="M10 4v12"/></svg></span>
+              </summary>
+              <div class="answer"><p>{faq.answer}</p></div>
+            </details>
+          ))}
+        </div>
+        <div class="answers-footer"><span class="footer-mark" aria-hidden="true">✳</span><p>From the first conversation to ongoing support.<br /><span>IT that works with you.</span></p></div>
       </div>
-
     </div>
+    <div class="section-footer"><span>IT SUPPORT BEE</span><span>Built around your team. Wherever you work.</span></div>
   </div>
 </section>
 
 <style>
-  /* Hide default browser marker for details/summary */
-  details > summary {
-    list-style: none;
+  .faq-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 104px 0 64px;
+    scroll-margin-top: 100px;
+    color: #edf3fc;
+    background: radial-gradient(ellipse at 5% 42%, #12354580, transparent 48%), radial-gradient(ellipse at 95% 30%, #37226550, transparent 45%), #071225;
+    border-block: 1px solid #ffffff0d;
   }
-  details > summary::-webkit-details-marker {
-    display: none;
+  .faq-section::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(#a5c9ed05 1px, transparent 1px), linear-gradient(90deg, #a5c9ed05 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(black, transparent 85%);
+  }
+  .faq-container { max-width: 1280px; margin-inline: auto; padding-inline: 32px; }
+  .eyebrow, .mini-label, .card-topline, .answers-heading, .section-footer { font-size: 10px; font-weight: 500; letter-spacing: .15em; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: #c5e6e8; }
+  .status-dot { width: 6px; height: 6px; border-radius: 50%; background: #a3ff12; box-shadow: 0 0 14px #a3ff1266; }
+  .heading-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-top: 22px; margin-bottom: 44px; }
+  h2 { font-size: clamp(2.6rem, 4.7vw, 4rem); line-height: 1.1; letter-spacing: -.055em; font-weight: 500; }
+  h2 span { color: #a9d9e4; background: linear-gradient(100deg, #a5edeb, #c4c9f0 65%, #e0edc7); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .heading-row > p { max-width: 365px; margin-bottom: 5px; font-size: 14px; line-height: 1.9; color: #aebdd1; }
+  .faq-grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.6fr); gap: 20px; align-items: stretch; }
+  .glass-panel { position: relative; overflow: hidden; border: 1px solid #d4e6ff24; border-radius: 24px; background: linear-gradient(135deg, #ffffff0c, #ffffff03), #0c1b30b3; box-shadow: inset 0 1px 0 #ffffff0a, 0 20px 70px #00000014; backdrop-filter: blur(20px); }
+  .glass-panel::before { content: ""; position: absolute; inset: 0 24px auto; height: 1px; background: linear-gradient(90deg, transparent, #bef3f16b, transparent); pointer-events: none; }
+  .support-card { display: flex; flex-direction: column; padding: 28px; background: radial-gradient(ellipse at 50% 28%, #51c8b51c, transparent 65%), linear-gradient(145deg, #ffffff0a, #ffffff02), #0c1b30b3; }
+  .card-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #a7c1cf; font-size: 9px; }
+  .card-topline > span:last-child { font-size: 20px; color: #bfe2e3; }
+  .support-art { position: relative; display: grid; place-items: center; min-height: 195px; flex: 1; }
+  .orbit { position: absolute; width: 170px; height: 170px; border: 1px solid #a9f0e315; border-radius: 50%; }
+  .orbit-inner { width: 128px; height: 128px; border-color: #a9f0e324; }
+  .headset-tile { display: grid; place-items: center; width: 84px; height: 84px; border: 1px solid #b2f7e747; border-radius: 25px; background: linear-gradient(135deg, #bdffee21, #5adcc209); box-shadow: inset 0 1px 0 #e7fff830, 0 0 50px #5eead415; transform: rotate(-8deg); }
+  .headset-tile svg { width: 43px; height: 43px; color: #bffce8; transform: rotate(8deg); }
+  .orbit-node { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #b4eab7; box-shadow: 0 0 15px #b4eab760; }
+  .node-one { transform: translate(73px, -44px); }
+  .node-two { transform: translate(-52px, 38px); width: 4px; height: 4px; background: #8ed4e8; }
+  .mini-label { color: #a3ff12; font-size: 9px; }
+  .support-copy h3 { margin-top: 12px; font-size: clamp(1.3rem, 2vw, 1.65rem); line-height: 1.4; font-weight: 500; letter-spacing: -.035em; }
+  .support-copy p { color: #aebdd1; font-size: 13px; line-height: 1.9; margin-top: 14px; }
+  .consultation-link { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 15px 17px; margin-top: 26px; border: 1px solid #c5ff6480; border-radius: 12px; background: #a3ff12; color: #102019; font-size: 12px; font-weight: 700; box-shadow: 0 5px 25px #a3ff1210; transition: background .2s, box-shadow .2s, transform .2s; }
+  .consultation-link span { font-size: 19px; line-height: 1; }
+  .consultation-link:hover { background: #b9ff50; box-shadow: 0 6px 28px #a3ff122a; transform: translateY(-2px); }
+  .card-footnote { display: block; text-align: center; margin-top: 14px; color: #91a6bc; font-size: 10px; }
+  .answers-panel { padding: 0 28px; }
+  .answers-heading { display: flex; justify-content: space-between; gap: 12px; padding-block: 25px; color: #b7c9dd; font-size: 9px; }
+  .answers-heading > span:last-child { color: #8fa5be; letter-spacing: .08em; }
+  .faq-item { border-top: 1px solid #d4e6ff16; }
+  summary { display: flex; align-items: center; gap: 16px; padding: 24px 0; cursor: pointer; list-style: none; border-radius: 8px; }
+  summary::-webkit-details-marker { display: none; }
+  .question-number { flex-shrink: 0; color: #839ab6; font-size: 11px; font-variant-numeric: tabular-nums; }
+  summary h3 { flex: 1; font-size: 14px; line-height: 1.7; font-weight: 500; letter-spacing: -.01em; transition: color .2s; }
+  .toggle { display: grid; place-items: center; flex-shrink: 0; width: 30px; height: 30px; border: 1px solid #d4e6ff24; border-radius: 50%; background: #ffffff04; color: #afc1d5; transition: background .2s, border-color .2s; }
+  .toggle svg { width: 16px; height: 16px; }
+  .plus-stroke { transform-origin: center; transition: transform .2s, opacity .2s; }
+  summary:hover h3, details[open] summary h3 { color: #d3f3dc; }
+  details[open] .question-number { color: #a3ff12; }
+  details[open] .toggle { background: #a3ff1210; color: #c6f39a; border-color: #a3ff1240; }
+  details[open] .plus-stroke { transform: rotate(90deg); opacity: 0; }
+  .answer { padding: 0 46px 24px 32px; }
+  .answer p { color: #aebdd1; font-size: 13px; line-height: 1.95; }
+  .answers-footer { display: flex; align-items: center; gap: 13px; border-top: 1px solid #d4e6ff16; padding-block: 22px; }
+  .footer-mark { font-size: 27px; color: #acd4d5; }
+  .answers-footer p { font-size: 11px; color: #aebdd1; line-height: 1.9; }
+  .answers-footer p span { color: #d6e4ef; }
+  .section-footer { display: flex; justify-content: space-between; gap: 16px; margin-top: 25px; color: #8fa5be; font-size: 9px; }
+  .section-footer > span:last-child { letter-spacing: .02em; }
+  summary:focus-visible, .consultation-link:focus-visible { outline: 2px solid #a3ff12; outline-offset: 5px; }
+  @media (max-width: 900px) {
+    .heading-row { align-items: flex-start; flex-direction: column; gap: 20px; }
+    .heading-row > p { max-width: 520px; }
+    .faq-grid { grid-template-columns: minmax(0, 1fr); }
+    .support-card { order: 2; display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 12px 24px; }
+    .card-topline { grid-column: 1 / -1; }
+    .support-art { min-height: 180px; }
+  }
+  @media (max-width: 540px) {
+    .faq-section { padding: 72px 0 40px; }
+    .faq-container { padding-inline: 20px; }
+    .heading-row { margin-bottom: 30px; }
+    .answers-panel { padding-inline: 18px; border-radius: 20px; }
+    .answers-heading { font-size: 8px; letter-spacing: .09em; }
+    summary { gap: 10px; padding-block: 21px; }
+    summary h3 { font-size: 13px; }
+    .toggle { width: 26px; height: 26px; }
+    .answer { padding: 0 0 22px 25px; }
+    .support-card { display: flex; padding: 24px; border-radius: 20px; }
+    .support-art { min-height: 185px; }
+    .support-copy h3 { font-size: 24px; }
+    .section-footer { flex-direction: column; gap: 6px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .consultation-link, summary h3, .toggle, .plus-stroke { transition: none; }
+    .consultation-link:hover { transform: none; }
   }
 </style>
