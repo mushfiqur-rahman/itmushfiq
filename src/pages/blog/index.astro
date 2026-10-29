@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import PostCard from "../../components/PostCard.astro";
 import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("blog");
@@ -8,38 +7,45 @@ const sortedPosts = allPosts.sort(
   (a, b) =>
     new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
 );
+const formatDate = (date: string) => new Date(date).toLocaleDateString("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+});
 ---
 
-<BaseLayout title="Blog | IT Mushfiq - Tech Insights & Case Studies">
-  <div class="bg-slate-50 dark:bg-[#0f0224] pt-24 pb-32 min-h-screen">
-    <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Page Header -->
-      <header class="mb-16 max-w-4xl mx-auto text-center">
-        <h1
-          class="text-5xl md:text-6xl font-black text-[#2D058A] dark:text-white tracking-tighter mb-6"
-        >
-          Blog & Case Studies.
-        </h1>
-        <p class="text-xl text-slate-700 dark:text-slate-300 font-medium">
-          Deep dives into cloud migrations, DNS security, and IT infrastructure.
-        </p>
+<BaseLayout title="Insights & Case Studies | IT Support Bee" description="Practical guidance on cloud migration, email systems, infrastructure security, and remote IT support.">
+  <div class="relative min-h-screen overflow-hidden bg-[#0a0612] pb-24 pt-32 text-white sm:pt-40">
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <div class="absolute -left-48 top-10 h-[32rem] w-[32rem] rounded-full bg-[#2D058A]/45 blur-[140px]"></div>
+      <div class="absolute right-[-12rem] top-36 h-96 w-96 rounded-full bg-[#90ee02]/10 blur-[130px]"></div>
+      <div class="absolute inset-0 opacity-[.16] [background-image:linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] [background-size:64px_64px]"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <header class="max-w-3xl">
+        <div class="max-w-3xl">
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[.06] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[.18em] text-[#90ee02] backdrop-blur-xl"><span class="h-1.5 w-1.5 rounded-full bg-[#90ee02]"></span> IT support insights</span>
+          <h1 class="mt-5 text-5xl font-semibold leading-[.98] tracking-[-.065em] text-white sm:text-6xl lg:text-7xl">Useful guidance for <span class="bg-gradient-to-r from-white via-violet-200 to-[#90ee02] bg-clip-text text-transparent">calmer IT.</span></h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">Practical thinking on cloud migration, secure email, infrastructure, and the everyday systems that keep your team working.</p>
+        </div>
       </header>
 
-      <!-- One Post Per Row (Vertical Stack) -->
-      <div class="max-w-4xl mx-auto flex flex-col gap-16">
-        {
-          sortedPosts.map((post) => (
-            <PostCard
-              title={post.data.title}
-              excerpt={post.data.description}
-              date={post.data.pubDate}
-              author={post.data.author}
-              category={post.data.category}
-              image={post.data.image}
-              href={`/blog/${post.id}`}
-            />
-          ))
-        }
+      <div class="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {sortedPosts.map((post, index) => (
+          <article class="group relative flex min-h-[30rem] flex-col overflow-hidden rounded-[1.5rem] border border-white/12 bg-white/[.055] shadow-2xl shadow-black/20 backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:border-[#90ee02]/50 hover:shadow-[0_22px_55px_rgba(144,238,2,.08)]">
+            <div class="relative mx-3 mt-3 aspect-[16/8.5] shrink-0 overflow-hidden rounded-[1rem]">
+              <img src={post.data.image} alt="" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" loading={index === 0 ? "eager" : "lazy"} />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#10051f]/70 via-transparent to-transparent"></div>
+              <span class="absolute left-5 top-5 rounded-full border border-white/20 bg-[#12082a]/75 px-3 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-[#90ee02] backdrop-blur-md">{post.data.category}</span>
+            </div>
+            <div class="flex grow flex-col p-6 sm:p-8">
+              <div class="flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-[.14em] text-slate-400"><time datetime={new Date(post.data.pubDate).toISOString()}>{formatDate(post.data.pubDate)}</time><span class="h-1 w-1 rounded-full bg-[#90ee02]"></span><span>{post.data.author}</span><span class="h-1 w-1 rounded-full bg-[#90ee02]"></span><span>{index === 0 ? "8 min read" : "7 min read"}</span></div>
+              <h2 class="mt-5 text-xl font-semibold leading-[1.15] tracking-[-.04em] text-white sm:text-2xl"><a href={`/blog/${post.id}`} class="before:absolute before:inset-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#90ee02]">{post.data.title}</a></h2>
+              <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-300">{post.data.description}</p>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </div>

@@ -84,3 +84,5 @@ image: "/images/[short-topic-name].jpg"
 
 Please generate the full Markdown output now.
 ````
+
+redesign FAQ component with modern Remote IT agency itsupportbee.com asthetic, glassmorphism, highly impressive, light effect Minimalism + Bento Grid + subtle gradients.
