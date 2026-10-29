@@ -20,8 +20,13 @@ const testimonials = [
 ];
 ---
 
-<section id="testimonials" class="py-24 bg-slate-50 dark:bg-[#0f0224] border-y border-[#2D058A]/10 dark:border-white/10 overflow-hidden">
-  <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
+<section id="testimonials" class="testimonials-section relative py-24 overflow-hidden transition-colors duration-300">
+  <div class="testimonials-atmosphere" aria-hidden="true">
+    <div class="testimonials-grid"></div>
+    <div class="testimonials-glass"></div>
+    <div class="testimonials-horizon"></div>
+  </div>
+  <div class="relative z-10 max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
@@ -91,6 +96,110 @@ const testimonials = [
 </script>
 
 <style>
+
+  .testimonials-section {
+    isolation: isolate;
+    background:
+      radial-gradient(ellipse at 92% 12%, #90ee0260, transparent 42%),
+      radial-gradient(ellipse at 8% 48%, #8049db55, transparent 48%),
+      radial-gradient(ellipse at 70% 95%, #b9abf580, transparent 45%),
+      linear-gradient(145deg, #f9faff, #f0eef8 55%, #f8fbf4);
+    border-block: 1px solid #2d058a12;
+  }
+
+  .testimonials-atmosphere {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .testimonials-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(#70569e0b 1px, transparent 1px),
+      linear-gradient(90deg, #70569e0b 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at 65% 40%, black, transparent 75%);
+  }
+
+  .testimonials-atmosphere::before {
+    content: "";
+    position: absolute;
+    width: min(70vw, 950px);
+    aspect-ratio: 1;
+    top: -35%;
+    right: -12%;
+    border-radius: 50%;
+    border: 1px solid #9c76e645;
+    box-shadow: 0 0 0 50px #9c76e608, 0 0 0 100px #9c76e608,
+      inset 0 0 90px #90ee0220, 0 0 100px #9c76e620;
+  }
+
+  .testimonials-glass {
+    position: absolute;
+    inset: 64px max(20px, calc((100% - 1360px) / 2));
+    border: 1px solid #ffffffb3;
+    border-radius: 40px;
+    background: linear-gradient(125deg, #ffffff70, #ffffff12 45%, #ffffff38);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: inset 0 1px 0 #fff, 0 24px 90px #2d058a06;
+  }
+
+  .testimonials-glass::before,
+  .testimonials-glass::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 45%;
+    background: linear-gradient(90deg, transparent, #a788e6, transparent);
+  }
+
+  .testimonials-glass::before { top: -1px; left: 6%; }
+  .testimonials-glass::after { bottom: -1px; right: 6%; }
+
+  .testimonials-horizon {
+    position: absolute;
+    top: 0;
+    left: 15%;
+    width: 70%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #9c76e6, #90ee0280, transparent);
+    box-shadow: 0 0 28px #9566ee45;
+  }
+
+  :global(.dark) .testimonials-section {
+    background:
+      radial-gradient(ellipse at 95% 8%, #90ee0238, transparent 38%),
+      radial-gradient(ellipse at 0% 45%, #7236da85, transparent 50%),
+      radial-gradient(ellipse at 75% 100%, #6436b875, transparent 50%),
+      linear-gradient(145deg, #0e071b, #100a20 55%, #090d14);
+    border-color: #ffffff0d;
+  }
+
+  :global(.dark) .testimonials-grid {
+    background-image:
+      linear-gradient(#c4b5fd09 1px, transparent 1px),
+      linear-gradient(90deg, #c4b5fd09 1px, transparent 1px);
+  }
+
+  :global(.dark) .testimonials-glass {
+    border-color: #ffffff20;
+    background: linear-gradient(125deg, #ffffff0e, #ffffff01 45%, #ffffff08);
+    box-shadow: inset 0 1px 0 #ffffff0a, 0 24px 90px #00000018;
+  }
+
+  :global(.dark) .testimonials-glass::before,
+  :global(.dark) .testimonials-glass::after {
+    background: linear-gradient(90deg, transparent, #a98ae480, #90ee0240, transparent);
+  }
+
+  @media (max-width: 639px) {
+    .testimonials-glass { inset: 40px 8px; border-radius: 24px; }
+    .testimonials-grid { background-size: 48px 48px; }
+  }
+
   /* Custom Neo-brutalist styling for Swiper Pagination Dots */
   :global(.testimonial-swiper .swiper-pagination-bullet) {
     background-color: #2D058A;
