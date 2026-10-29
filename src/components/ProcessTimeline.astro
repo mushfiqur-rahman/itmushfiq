@@ -39,30 +39,26 @@ const stages = [
 ---
 
 <section
-  class="relative overflow-hidden bg-[#0b0b0e] py-20 text-white sm:py-28"
+  id="process"
+  class="process-section relative overflow-hidden py-20 text-[#2D058A] dark:text-white sm:py-28"
 >
-  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
-    <div
-      class="absolute left-1/2 top-0 h-80 w-1/2 -translate-x-1/2 rounded-full bg-[#2D058A]/25 blur-[130px]"
-    >
-    </div>
-    <div
-      class="absolute inset-0 opacity-[.18] bg-[radial-gradient(rgba(255,255,255,.13)_1px,transparent_1px)] [background-size-[24px_24px]"
-    >
-    </div>
+  <div class="process-atmosphere" aria-hidden="true">
+    <div class="process-grid"></div>
+    <div class="process-glass"></div>
+    <div class="process-horizon"></div>
   </div>
 
-  <div class="relative mx-auto max-w-5xl px-4 sm:px-6">
+  <div class="relative z-10 mx-auto max-w-5xl px-4 sm:px-6">
     <header class="mx-auto max-w-2xl text-center">
-      <p class="text-[10px] font-bold uppercase tracking-[.2em] text-[#90ee02]">
+      <p class="text-[10px] font-bold uppercase tracking-[.2em] text-[#2D058A] dark:text-[#90ee02]">
         A clear working rhythm
       </p>
       <h2
-        class="mt-3 text-4xl font-semibold tracking-tighter text-white sm:text-5xl"
+        class="mt-3 text-4xl font-semibold tracking-tighter text-[#2D058A] dark:text-white sm:text-5xl"
       >
         How we work
       </h2>
-      <p class="mx-auto mt-4 max-w-lg text-sm leading-6 text-slate-400">
+      <p class="mx-auto mt-4 max-w-lg text-sm leading-6 text-slate-600 dark:text-slate-400">
         A focused partnership that turns everyday IT into a stable, secure
         foundation for your team.
       </p>
@@ -70,7 +66,7 @@ const stages = [
 
     <div class="relative mx-auto mt-14 max-w-4xl" data-process-timeline>
       <div
-        class="absolute bottom-8 left-1/2 top-8 hidden w-px -translate-x-1/2 bg-white/12 md:block"
+        class="absolute bottom-8 left-1/2 top-8 hidden w-px -translate-x-1/2 bg-[#2D058A]/15 dark:bg-white/12 md:block"
         aria-hidden="true"
       >
       </div>
@@ -95,7 +91,7 @@ const stages = [
                 ]}
                 aria-hidden="true"
               >
-                <p class="text-7xl font-semibold leading-none -tracking-widest text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,.16)] transition duration-300 group-hover:text-[#90ee02]/10">
+                <p class="text-7xl font-semibold leading-none -tracking-widest text-transparent [-webkit-text-stroke:2px_rgba(45,5,138,.16)] dark:[-webkit-text-stroke:2px_rgba(255,255,255,.16)] transition duration-300 group-hover:text-[#90ee02]/10">
                   {stage.number}
                 </p>
                 <p class="mt-4 text-[9px] font-bold uppercase tracking-[.24em] text-slate-600 transition group-hover:text-[#90ee02]">
@@ -105,7 +101,7 @@ const stages = [
               <div
                 data-process-card
                 class:list={[
-                  "group relative overflow-hidden rounded-xl border border-white/10 bg-white/2.5 p-6 transition-[border-color,box-shadow] duration-300 hover:border-[#90ee02]/80 hover:shadow-[0_18px_45px_rgba(144,238,2,.14)]",
+                  "group relative overflow-hidden rounded-xl border border-white/70 bg-white/55 backdrop-blur-xl dark:border-white/10 dark:bg-white/2.5 p-6 transition-[border-color,box-shadow] duration-300 hover:border-[#90ee02]/80 hover:shadow-[0_18px_45px_rgba(144,238,2,.14)]",
                   index % 2 === 0
                     ? "md:col-start-1 md:row-start-1"
                     : "md:col-start-3 md:row-start-1",
@@ -128,13 +124,13 @@ const stages = [
                     </span>
                   </>
                 </div>
-                <h3 class="relative mt-4 text-xl font-semibold tracking-[-.035em] text-white group-hover:text-[#90ee02]">
+                <h3 class="relative mt-4 text-xl font-semibold tracking-[-.035em] text-[#2D058A] dark:text-white group-hover:text-[#7209b7] dark:group-hover:text-[#90ee02]">
                   {stage.title}
                 </h3>
-                <p class="relative mt-1 text-[9px] font-bold uppercase tracking-[.16em] text-[#90ee02]/70">
+                <p class="relative mt-1 text-[9px] font-bold uppercase tracking-[.16em] text-[#7209b7] dark:text-[#90ee02]/70">
                   {stage.label}
                 </p>
-                <p class="relative mt-4 max-w-md text-sm leading-6 text-slate-400">
+                <p class="relative mt-4 max-w-md text-sm leading-6 text-slate-600 dark:text-slate-400">
                   {stage.description}
                 </p>
               </div>
@@ -240,3 +236,110 @@ const stages = [
       });
   }
 </script>
+
+<style>
+
+  .process-section {
+    isolation: isolate;
+    background:
+      radial-gradient(ellipse at 92% 12%, #90ee0260, transparent 42%),
+      radial-gradient(ellipse at 8% 48%, #8049db55, transparent 48%),
+      radial-gradient(ellipse at 70% 95%, #b9abf580, transparent 45%),
+      linear-gradient(145deg, #f9faff, #f0eef8 55%, #f8fbf4);
+    border-block: 1px solid #2d058a12;
+  }
+
+  .process-atmosphere {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .process-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(#70569e0b 1px, transparent 1px),
+      linear-gradient(90deg, #70569e0b 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at 65% 40%, black, transparent 75%);
+  }
+
+  .process-atmosphere::before {
+    content: "";
+    position: absolute;
+    width: min(70vw, 950px);
+    aspect-ratio: 1;
+    top: -35%;
+    right: -12%;
+    border-radius: 50%;
+    border: 1px solid #9c76e645;
+    box-shadow: 0 0 0 50px #9c76e608, 0 0 0 100px #9c76e608,
+      inset 0 0 90px #90ee0220, 0 0 100px #9c76e620;
+  }
+
+  .process-glass {
+    position: absolute;
+    inset: 64px max(20px, calc((100% - 1360px) / 2));
+    border: 1px solid #ffffffb3;
+    border-radius: 40px;
+    background: linear-gradient(125deg, #ffffff70, #ffffff12 45%, #ffffff38);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: inset 0 1px 0 #fff, 0 24px 90px #2d058a06;
+  }
+
+  .process-glass::before,
+  .process-glass::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 45%;
+    background: linear-gradient(90deg, transparent, #a788e6, transparent);
+  }
+
+  .process-glass::before { top: -1px; left: 6%; }
+  .process-glass::after { bottom: -1px; right: 6%; }
+
+  .process-horizon {
+    position: absolute;
+    top: 0;
+    left: 15%;
+    width: 70%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #9c76e6, #90ee0280, transparent);
+    box-shadow: 0 0 28px #9566ee45;
+  }
+
+  :global(.dark) .process-section {
+    background:
+      radial-gradient(ellipse at 95% 8%, #90ee0238, transparent 38%),
+      radial-gradient(ellipse at 0% 45%, #7236da85, transparent 50%),
+      radial-gradient(ellipse at 75% 100%, #6436b875, transparent 50%),
+      linear-gradient(145deg, #0e071b, #100a20 55%, #090d14);
+    border-color: #ffffff0d;
+  }
+
+  :global(.dark) .process-grid {
+    background-image:
+      linear-gradient(#c4b5fd09 1px, transparent 1px),
+      linear-gradient(90deg, #c4b5fd09 1px, transparent 1px);
+  }
+
+  :global(.dark) .process-glass {
+    border-color: #ffffff20;
+    background: linear-gradient(125deg, #ffffff0e, #ffffff01 45%, #ffffff08);
+    box-shadow: inset 0 1px 0 #ffffff0a, 0 24px 90px #00000018;
+  }
+
+  :global(.dark) .process-glass::before,
+  :global(.dark) .process-glass::after {
+    background: linear-gradient(90deg, transparent, #a98ae480, #90ee0240, transparent);
+  }
+
+  @media (max-width: 639px) {
+    .process-glass { inset: 40px 8px; border-radius: 24px; }
+    .process-grid { background-size: 48px 48px; }
+  }
+
+</style>
