@@ -4,6 +4,7 @@ description: A practical case study of deploying a React/Vite LMS and
   Node.js API on Ubuntu using Docker Compose, PostgreSQL, Nginx, and
   Let's Encrypt.
 pubDate: "October 20, 2026"
+updatedDate: "2026-10-30"
 author: Mushfiqur Rahman
 category: DevOps
 image: /blog/lms-docker-vps-deployment-case-study.png
@@ -15,6 +16,12 @@ persistent course uploads, and HTTPS configuration must work together.
 This case study documents a practical deployment of a React/Vite
 frontend and Node.js/Express backend to a Hostinger VPS running Ubuntu
 26.04 LTS, using Docker Compose and PostgreSQL.
+
+## At a glance
+
+The deployment brought a React frontend, Node.js API, and PostgreSQL database online using Docker Compose, with Nginx serving HTTPS. The main fixes involved a Docker build-context exclusion, certificate hostname coverage, and an Nginx configuration error.
+
+The recorded checks confirmed container startup, the frontend HTTPS response, and a hostname redirect. They do not establish load capacity, backup recoverability, or successful operation of every LMS feature. This is a project account with operational examples, not a complete deployment package for another application.
 
 The project was uploaded directly to the VPS rather than pulled from
 GitHub, keeping the deployment workflow independent of a source-control
@@ -138,6 +145,9 @@ the final runtime image.
 ### 4. Verify database and backend startup
 
 The Compose stack started with PostgreSQL reporting a healthy status.
+Container startup is not the same as application readiness. For a new
+deployment, configure and test dependency health checks; see
+[Docker's startup-order guidance](https://docs.docker.com/compose/how-tos/startup-order/).
 The backend entrypoint waited for PostgreSQL, ran:
 
 ```bash
@@ -295,19 +305,19 @@ API, uploads, email, and payment integrations.
 
 ## Recommended Production Checklist
 
-- [ ] Confirm `https://example.com` loads with a valid certificate.
-- [ ] Confirm HTTP redirects to HTTPS.
-- [ ] Test authentication and the frontend-to-backend API connection.
-- [ ] Change or remove all demo accounts and default passwords.
-- [ ] Confirm Prisma seed logic is safe to run repeatedly.
-- [ ] Configure backups for PostgreSQL and uploaded files.
-- [ ] Test certificate renewal and keep ports 80 and 443 reachable.
-- [ ] Keep database port 5432 private.
-- [ ] Configure monitoring, log rotation, and security updates.
-- [ ] Configure required email, storage, push notification, and
+- Confirm `https://example.com` loads with a valid certificate.
+- Confirm HTTP redirects to HTTPS.
+- Test authentication and the frontend-to-backend API connection.
+- Change or remove all demo accounts and default passwords.
+- Confirm Prisma seed logic is safe to run repeatedly.
+- Configure backups for PostgreSQL and uploaded files.
+- Test certificate renewal and keep ports 80 and 443 reachable.
+- Keep database port 5432 private.
+- Configure monitoring, log rotation, and security updates.
+- Configure required email, storage, push notification, and
       payment integrations.
 
-## Conclusion
+## What to carry into your next deployment
 
 This deployment demonstrates how a React/Vite frontend, Node.js API, and
 PostgreSQL database can be hosted on a Hostinger VPS using Docker
@@ -320,14 +330,23 @@ A reliable deployment is not just a running container. It is a tested
 system with secure access, persistent data, verified HTTPS, backups, and
 a clear recovery process.
 
-## Need Help Deploying or Securing Your Infrastructure?
+## Reference for Docker build failures
+
+Docker's [build-context documentation](https://docs.docker.com/build/concepts/context/)
+explains which files are available to a build and how ignore rules affect them.
+Use it when a file exists on the host but a Docker build cannot copy it.
+These vendor references support the technical explanation; they do not
+independently verify this project's reported results.
+
+## Need help reviewing your infrastructure?
 
 IT Support Bee helps businesses deploy and maintain web applications,
 cloud services, DNS, SSL/TLS, and remote IT infrastructure.
 
-- **Email:** hello@itsupportbee.com
+- **Email:** [hello@itsupportbee.com](mailto:hello@itsupportbee.com)
 - **Contact:**
   [itsupportbee.com/contact](https://itsupportbee.com/contact)
 
-Book a strategy call to review your deployment, strengthen security, and
-plan a maintainable production setup.
+Explore our [remote IT support](/services/remote-it-support), or send an enquiry
+with your stack, hosting environment, and the issue you need to resolve.
+We can then discuss whether the work fits our support scope.

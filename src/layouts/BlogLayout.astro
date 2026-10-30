@@ -1,11 +1,18 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import "@fontsource/merriweather/latin-400.css";
+import "@fontsource/merriweather/latin-400-italic.css";
+import "@fontsource/merriweather/latin-700.css";
 import { site } from "../data/site"; // 👈 site.ts ইম্পোর্ট করা হলো
 
-const { frontmatter, headings, prevPost, nextPost } = Astro.props;
-const { title, description, pubDate, author, image, category } = frontmatter;
+const { frontmatter, headings, prevPost, nextPost, readingMinutes } = Astro.props;
+const { title, description, pubDate, updatedDate, author, image, category } = frontmatter;
 
 const siteUrl = Astro.site || Astro.url.origin;
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const formatDate = (date: string) => new Date(date).toLocaleDateString("en-US", {
+  month: "long", day: "numeric", year: "numeric", timeZone: "UTC",
+});
 
 // Astro-এর পার্সিং এরর এড়াতে ফিল্টারিং লজিক
 const filteredHeadings = headings.filter((h: any) => h.depth <= 3);
@@ -14,6 +21,11 @@ const filteredHeadings = headings.filter((h: any) => h.depth <= 3);
 const schema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
+  "@id": `${canonicalUrl}#article`,
+  url: canonicalUrl,
+  mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+  inLanguage: "en",
+  articleSection: category,
   headline: title,
   description: description,
   image: image ? new URL(image, siteUrl) : undefined,
@@ -21,23 +33,23 @@ const schema = {
     "@type": "Person",
     // 👈 যদি ফ্রন্টম্যাটারে author না থাকে, তবে site.name ব্যবহার করবে
     name: author || site.name,
+    url: new URL("/about", siteUrl).href,
   },
   datePublished: new Date(pubDate).toISOString(),
+  ...(updatedDate && { dateModified: new Date(updatedDate).toISOString() }),
   publisher: {
     "@type": "Organization",
     name: "IT Support Bee",
-    logo: {
-      "@type": "ImageObject",
-      url: new URL("/logo.png", siteUrl),
-    },
+    "@id": "https://itsupportbee.com/#organization",
+    url: "https://itsupportbee.com",
   },
 };
 ---
 
-<BaseLayout title={`${title} | IT Mushfiq`}>
+<BaseLayout title={`${title} | IT Support Bee`} description={description} image={image} type="Article" includeSchema={false}>
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
-  <div class="bg-slate-50 dark:bg-[#0f0224] pt-24 pb-32">
+  <div class="post-detail site-background pt-32 pb-32">
     <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
       <header class="max-w-4xl mx-auto text-center mb-16">
         <div
@@ -51,12 +63,14 @@ const schema = {
           {title}
         </h1>
         <div
-          class="flex items-center justify-center gap-4 text-slate-600 dark:text-slate-400 font-medium"
+          class="flex flex-wrap items-center justify-center gap-4 text-slate-600 dark:text-slate-400 font-medium"
         >
           <!-- 👈 ডাইনামিক Author Name -->
-          <span>By {author || site.name}</span>
+          <span>By <a href="/about" class="underline underline-offset-4">{author || site.name}</a></span>
           <span>•</span>
-          <time datetime={new Date(pubDate).toISOString()}>{pubDate}</time>
+          <span>Published <time datetime={new Date(pubDate).toISOString()}>{formatDate(pubDate)}</time></span>
+          {updatedDate && <span>Updated <time datetime={new Date(updatedDate).toISOString()}>{formatDate(updatedDate)}</time></span>}
+          <span>{readingMinutes} min read</span>
         </div>
       </header>
 
@@ -75,15 +89,15 @@ const schema = {
       <div
         class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-7xl mx-auto items-start"
       >
-        <aside class="lg:col-span-3 lg:sticky lg:top-32 hidden lg:block">
+        <aside class="lg:col-span-3 lg:sticky lg:top-32" aria-label="Article contents">
           <div
             class="p-6 bg-white dark:bg-[#150734] border-2 border-[#2D058A] dark:border-white/10 rounded-2xl shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.3)]"
           >
-            <h3
+            <h2
               class="font-black text-xl text-[#2D058A] dark:text-white mb-4 uppercase tracking-widest border-b-2 border-[#2D058A]/10 dark:border-white/10 pb-2"
             >
               On this page
-            </h3>
+            </h2>
             <ul class="space-y-3">
               {
                 filteredHeadings.map((heading: any) => (
@@ -103,7 +117,7 @@ const schema = {
           </div>
         </aside>
 
-        <article class="lg:col-span-9">
+        <article class="lg:col-span-9 min-w-0">
           <!-- Main Content Slot -->
           <div
             class="prose prose-lg md:prose-xl prose-slate dark:text-gray-400 dark:prose-invert max-w-none custom-prose mb-16"
@@ -122,11 +136,11 @@ const schema = {
               onerror="this.src='https://placehold.co/100x100/2D058A/90ee02?text=MR'"
             />
             <div class="text-center md:text-left grow">
-              <h3
+              <h2
                 class="text-2xl font-black text-[#2D058A] dark:text-white mb-1"
               >
                 {site.name}
-              </h3>
+              </h2>
               <p
                 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-3"
               >
@@ -201,6 +215,56 @@ const schema = {
 </BaseLayout>
 
 <style is:global>
+  .post-detail h1,
+  .post-detail .custom-prose {
+    font-family: "Merriweather", Georgia, serif;
+    font-synthesis: none;
+  }
+  .post-detail h1 { font-weight: 700; line-height: 1.3; letter-spacing: -.025em; }
+  .post-detail .custom-prose {
+    max-width: 70ch;
+    font-size: 1.125rem;
+    line-height: 1.85;
+    overflow-wrap: anywhere;
+  }
+  .post-detail .custom-prose :is(h2, h3, h4, strong) { font-weight: 700; }
+  .post-detail .custom-prose :is(h2, h3, h4) { line-height: 1.45; }
+  .post-detail .custom-prose h2 { font-size: 1.65em; }
+  .post-detail .custom-prose h3 { font-size: 1.3em; }
+  .post-detail .custom-prose :is(code, pre) { font-family: ui-monospace, monospace; }
+  .post-detail .custom-prose pre {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .post-detail .custom-prose table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    color: #e2e8f0;
+  }
+  .post-detail .custom-prose :is(th, td) {
+    padding: .75rem;
+    border: 1px solid #64748b;
+    text-align: left;
+    vertical-align: top;
+  }
+  .post-detail .custom-prose th { color: #fff; background: #211335; }
+  .post-detail :is(a, summary):focus-visible {
+    outline: 3px solid #c7a6ff;
+    outline-offset: 4px;
+  }
+  .post-detail aside a { display: inline-block; padding-block: .25rem; }
+  .post-detail .text-slate-500 { color: #b8c5d8; }
+  @media (max-width: 640px) {
+    .post-detail .custom-prose { font-size: 1rem; }
+    .post-detail .custom-prose :is(th, td) { padding: .5rem; }
+  }
+  @media (forced-colors: active) {
+    .post-detail .custom-prose :is(th, td) { border-color: CanvasText; }
+    .post-detail :is(a, summary):focus-visible { outline-color: Highlight; }
+  }
   .custom-prose h2,
   .custom-prose h3 {
     color: #2d058a;

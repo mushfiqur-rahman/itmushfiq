@@ -14,7 +14,7 @@ const {
   description,
   url,
   type = "WebSite",
-  image = "https://itsupportbee.com/default-image.jpg", // আপনার ওয়েবসাইটের একটি ডিফল্ট ইমেজ লিংক দেবেন
+  image,
   pubDate,
   author = "Mushfiqur Rahman",
 } = Astro.props;
@@ -27,19 +27,17 @@ const schemaData: any = {
   headline: title,
   description: description,
   url: url,
-  image: image,
+  image: image ? new URL(image, url).href : undefined,
   author: {
     "@type": "Person",
     name: author,
-    url: "https://itsupportbee.com",
+    url: "https://itsupportbee.com/about",
   },
   publisher: {
     "@type": "Organization",
     name: "IT Support Bee",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://itsupportbee.com/logo.png",
-    },
+    "@id": "https://itsupportbee.com/#organization",
+    url: "https://itsupportbee.com",
   },
 };
 

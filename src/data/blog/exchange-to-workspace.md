@@ -1,102 +1,102 @@
 ---
-title: "How I Executed a 23-Hour Exchange to Google Workspace Migration"
-description: "A comprehensive technical guide on migrating enterprise email to Google Workspace with zero downtime, dual delivery, and advanced content compliance rules."
+title: "Exchange Online to Google Workspace: A 23-Hour Migration Case Study"
+description: "Lessons from an Exchange Online to Google Workspace migration: mailbox discovery, routing, synchronization, DNS checks, and post-migration validation."
 pubDate: "October 10, 2026"
+updatedDate: "2026-10-30"
 author: "Mushfiqur Rahman"
 category: "Cloud Migration"
 image: "/blog/exchange-to-workspace.png"
 ---
 
-Migrating an entire enterprise from Microsoft Exchange Online to Google Workspace is a high-stakes operation. A single misconfigured DNS record can halt business communications instantly.
+Moving business email from Exchange Online to Google Workspace requires more than copying messages. The work includes identifying accounts and sending applications, planning mail routing, transferring supported data, and checking that people can use the new system.
 
-Recently, I architected and executed a seamless **23-hour email migration project** for a client. The objective was absolute zero downtime during the cutover and setting up robust spam protection for their secondary domains. Here is the step-by-step technical breakdown of how I achieved this.
+This case study describes a project in which I used mailbox discovery, dual delivery, data synchronization, and authentication changes. The initial data synchronization took **23 hours**. That is a result from this project, not a standard migration timeline or a guarantee of uninterrupted service.
 
-## 1. Pre-Migration Infrastructure Audit
+## What this case study covers
 
-Before touching any MX records, you must map the existing environment. Many organizations have legacy devices (scanners, CRM platforms, ERPs) relying on SMTP relays.
+- Source: Microsoft Exchange Online.
+- Destination: Google Workspace.
+- Main concerns: continued mail delivery, synchronization, and unwanted messages reaching secondary alias domains.
+- Reported milestone: a 23-hour initial synchronization, followed by additional synchronization and cutover work.
+- Scope limits: mailbox count, total data volume, migration tool, and detailed validation records are not included in this public account. The duration alone is not enough to estimate another project.
 
-I initiated a comprehensive mailbox audit using PowerShell to understand the data volume and identify potential bottlenecks before the transfer.
+For business owners, the key question is whether the migration plan covers the way the team actually uses email. For administrators, the important work is mapping dependencies and verifying the result of each change.
 
-```powershell
-# Connect to Exchange Online
-Connect-ExchangeOnline -UserPrincipalName admin@clientdomain.com
+## 1. Identify mailboxes and sending applications
 
-# Extract all active mailboxes and their total sizes to plan the 23-hour sync window
-Get-Mailbox -ResultSize Unlimited | Get-MailboxStatistics | Select DisplayName, ItemCount, TotalItemSize | Sort-Object TotalItemSize -Descending | Export-Csv -Path "C:\MailboxAudit.csv" -NoTypeInformation
-```
+Before changing DNS or routing, I reviewed mailbox sizes and the existing environment. Data volume helps with capacity and scheduling, but it is only one part of the assessment.
 
-![Exchange Admin Center Mailbox Audit](/blog/exchange-to-workspace.png)
-_Always verify mailbox sizes prior to the sync process to prevent exceeding Google Workspace storage limits._
+A migration inventory should also identify aliases, groups, shared resources, and applications that send mail on the company's behalf. Website forms, CRM systems, scanners, and billing tools can depend on the old provider even when staff use only Outlook.
 
-## 2. Setting Up Dual Delivery for Zero Downtime
+For another project, confirm which data the chosen migration method supports. Messages, contacts, calendars, permissions, and client settings should not be assumed to transfer identically between platforms.
 
-To guarantee zero downtime, I implemented a **Dual Delivery** routing architecture. Dual Delivery ensures that while DNS records are propagating across global servers, emails are delivered to both the legacy Exchange server and the new Google Workspace inboxes simultaneously.
+## 2. Plan routing during the transition
 
-1. Configured Google Workspace as the primary MX record.
-2. Created a host route in the Google Workspace Admin Console pointing to the legacy Exchange server.
-3. Set up an email routing rule to forward a copy of all incoming mail to the legacy Microsoft 365 alias (`@clientdomain.onmicrosoft.com`).
+I used dual delivery as part of the transition. Google documents dual delivery as a configuration that delivers incoming mail to Gmail and a separate mail system. It needs a defined primary server and routing configuration; it is not a universal guarantee against interruption. See [Google's dual-delivery guidance](https://knowledge.workspace.google.com/admin/gmail/advanced/deliver-email-to-multiple-inboxes-with-dual-delivery).
 
-## 3. The 23-Hour Data Migration Window
+The practical lesson is to document the intended mail path before changing it. Test delivery to representative users and aliases, check for loops and duplicates, and agree when the old route can be removed.
 
-With Dual Delivery active, I started the server-to-server data migration. Due to the significant data volume, the initial synchronization took exactly 23 hours to complete.
+This account describes the approach rather than a complete tenant-specific runbook. The precise sequence of routing and MX changes must be designed for the source, destination, and migration tool.
 
-Throughout this window, I actively monitored the API limits and potential throttling from Microsoft’s servers. Once the initial sync reached 99%, I scheduled a final **Delta Sync** right before the ultimate MX cutover to capture any emails that arrived during those 23 hours.
+## 3. Monitor synchronization and reconcile remaining data
 
-## 4. Advanced Spam Restriction via Content Compliance
+The initial server-to-server synchronization took 23 hours. During that period, I monitored progress and potential throttling. An additional synchronization was used to capture messages arriving after the initial transfer.
 
-Post-migration, the client faced a specific challenge: their secondary alias domains were receiving a high volume of targeted spam. Instead of relying solely on standard spam filters, I configured advanced **Content Compliance rules** and quarantine vaults in Google Workspace.
+A progress percentage alone is not a completion test. For a new migration, inspect failures and exclusions, resolve recoverable errors, and compare representative source and destination data. Keep the source available for the agreed validation period rather than decommissioning it solely because the tool reports completion.
 
-I utilized Regular Expressions (RegEx) to isolate and quarantine suspicious traffic hitting the secondary domains:
+Timing depends on mailbox volume, message count, tool capabilities, provider limits, and the amount of work needed to resolve exceptions.
 
-```regex
-# Regular Expression used in Content Compliance to target secondary alias domains
-(?i)\b[A-Za-z0-9._%+-]+@secondaryaliasdomain\.com\b
-```
+## 4. Review unwanted mail to secondary domains
 
-**Implementation Steps:**
+The project also involved unwanted traffic addressed to secondary alias domains. I used Google Workspace compliance rules and quarantine as part of the response.
 
-1. Navigated to **Google Workspace Admin > Apps > Google Workspace > Gmail > Compliance**.
-2. Created a new Content Compliance rule triggered on _Inbound_ messages.
-3. Added the RegEx condition to match the specific secondary domain.
-4. Set the action to **Quarantine** instead of rejecting, ensuring no legitimate emails were accidentally lost.
+A recipient-domain match identifies mail addressed to that domain; it does not prove that the message is spam. A rule matching an entire domain can also hold legitimate customer messages. Any such rule needs sample-message testing, narrow conditions where possible, a review owner, and a process for releasing legitimate mail.
 
-![Google Workspace Content Compliance Setup](/blog/exchange-to-workspace.png)
-_Routing suspicious alias emails directly to a dedicated quarantine vault._
+Quarantine can give an administrator an opportunity to review messages, but it should not be described as a guarantee that mail cannot be missed or lost.
 
-## 5. DNS Cutover & Authentication (SPF, DKIM, DMARC)
+## 5. Check DNS and sender authentication
 
-The migration is never complete without securing the sender reputation. I updated their DNS records to strictly authorize Google Workspace and prevent spoofing.
+The migration included DNS and authentication changes for the new sending environment. For any business, those changes must account for every legitimate sender, including third-party applications.
 
-```text
-# Google Workspace MX Records
-Priority 1: smtp.google.com
+Use the destination provider's current setup instructions and tenant-generated values rather than copying another company's records. Confirm SPF and DKIM configuration and review DMARC reporting before deciding whether to tighten enforcement. Google's [DMARC setup guidance](https://knowledge.workspace.google.com/admin/security/set-up-dmarc) explains the prerequisites and rollout process.
 
-# SPF Record (Authorizing Google only)
-v=spf1 include:_spf.google.com ~all
+Authentication and successful message acceptance are useful checks, but neither proves that every recipient will place messages in the inbox.
 
-# DKIM Record (Generated from Google Admin Console)
-google._domainkey IN TXT "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A..."
+## What to verify before signing off a migration
 
-# DMARC Policy (Monitoring mode to prevent legitimate email bounce)
-_dmarc IN TXT "v=DMARC1; p=none; rua=mailto:dmarc-reports@clientdomain.com;"
-```
+The following is a recommended checklist for a future migration, not a claim that each test has published evidence in this case study:
 
-Within minutes, the DNS propagated, and the client was securely sending and receiving emails from their new Google Workspace environment.
+| Check | What it helps establish |
+| --- | --- |
+| Send and receive mail with external test accounts | Basic mail flow is working in both directions. |
+| Check aliases, groups, and shared addresses | Important business addresses still reach the intended people. |
+| Review migration errors and sample transferred data | Exceptions and missing items can be investigated. |
+| Test calendars and contacts where included | Supported non-mail data behaves as expected. |
+| Test CRM, forms, scanners, and billing senders | Business applications still send through the intended route. |
+| Review authentication results in received messages | Messages from each sender use the expected authentication. |
+| Check staff access and client configuration | Users can sign in and work with the destination system. |
+| Agree aftercare and source retirement | There is a clear owner for issues after cutover. |
 
----
+## Migration questions
 
-## Answer Engine Optimization (FAQ)
+### How long does an Exchange Online to Google Workspace migration take?
 
-To provide quick answers for both clients and AI Answer Engines (like Google Gemini and ChatGPT), here are the most common questions regarding enterprise email migrations:
+There is no single duration. The initial synchronization in this project took 23 hours, but discovery, preparation, validation, user changes, and aftercare are separate work. A useful estimate needs the mailbox count, data volume, supported data types, and migration method.
 
-### What is the hardest part of an Exchange to Google Workspace migration?
+### Can dual delivery prevent all email downtime?
 
-The hardest part is not the data transfer itself, but identifying legacy applications that use SMTP relay and ensuring they are correctly reconfigured with Google App Passwords before the final MX record cutover.
+No. It can support a transition by delivering incoming messages to two systems, but configuration errors and other dependencies still need to be managed. A migration plan should include testing, monitoring, and an agreed response if something fails.
 
-### How do you prevent email loss during a migration?
+### Will calendars, contacts, and permissions move with email?
 
-By implementing a Dual Delivery routing architecture. This ensures that while DNS records are propagating globally, emails are routed to both the old and new servers simultaneously.
+That depends on the migration method and the source and destination features. Confirm each data type and any limitations before agreeing the project scope. Do not assume mailbox transfer includes files, all permissions, or every Outlook setting.
 
-### How do you block spam sent to alias domains in Google Workspace?
+### Should all mail to a secondary domain be quarantined?
 
-You can use Content Compliance rules combined with Regular Expressions (RegEx) to target specific inbound traffic directed at alias domains, routing it straight to a quarantine vault without affecting primary email flow.
+Only if that behavior is intentional and appropriate for the business. A domain-wide rule can also hold legitimate messages. Review the actual problem and test proposed conditions before applying them broadly.
+
+## Planning a similar email migration?
+
+IT Support Bee provides [business email migration services](/services/email-migration), with related [Google Workspace administration](/services/workspace-management) and [email deliverability support](/services/email-deliverability).
+
+[Discuss your migration](/contact) with your current provider, target platform, approximate user count and data size, and preferred timing. Those details make it possible to scope the work around your team's needs.

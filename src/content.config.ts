@@ -8,6 +8,7 @@ const blogCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.string(), // তারিখের টাইপ এরর ফিক্স করতে coerce ব্যবহার করা হয়েছে
+    updatedDate: z.string().optional(),
     author: z.string().default("Mushfiqur Rahman"),
     category: z.string(),
     image: z.string(),

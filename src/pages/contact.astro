@@ -1,16 +1,16 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Icon } from 'astro-icon/components';
-const services = ['Google Workspace Migration', 'Microsoft 365 Setup', 'Email Deliverability (SPF/DKIM/DMARC)', 'Web Development (Astro/WordPress)', 'IT Infrastructure Support', 'Help me choose'];
+const services = ['Email Migration', 'Google Workspace Management', 'Microsoft 365 Setup & Management', 'GoDaddy Microsoft 365 Defederation', 'Email Deliverability (SPF/DKIM/DMARC)', 'Email Marketing Automation', 'Business Automation', 'Remote IT Support', 'Help me choose'];
 const socials = [{name:'LinkedIn',url:'https://www.linkedin.com/in/itmushfiq/',icon:'linkedin'},{name:'Facebook',url:'https://facebook.com/itsupportbee',icon:'facebook'},{name:'X / Twitter',url:'https://x.com/itsupportbee',icon:'twitter'},{name:'Instagram',url:'https://instagram.com/itsupportbee',icon:'instagram'},{name:'TikTok',url:'https://tiktok.com/@itsupportbee',icon:'music-2'}];
 ---
-<BaseLayout title="Contact Us | IT Support Bee">
+<BaseLayout title="Get Business Email & IT Help | IT Support Bee" description="Discuss an email migration, spam problem, Microsoft 365 or Google Workspace setup, or ongoing IT support. Contact IT Support Bee for a scoped plan.">
 <section class="contact" aria-labelledby="contact-title">
 <div class="shell">
 <header class="intro">
 <p class="eyebrow"><span></span> YOUR NEXT CHAPTER STARTS HERE</p>
 <h1 id="contact-title">Less IT friction.<br/><span>More possibility.</span></h1>
-<p>A small question. A big migration. A fresh start.<br/>Tell us what’s on your mind. We’ll take it from here.</p>
+<p>Email going to spam, a move to a new provider, or ongoing IT support?<br/>Tell us about your setup and what you need to change.</p>
 <div class="benefits"><span><Icon name="lucide:globe"/> Remote-first support</span><span><Icon name="lucide:shield-check"/> People you can rely on</span></div>
 </header>
 <div class="bento">
@@ -34,7 +34,7 @@ const socials = [{name:'LinkedIn',url:'https://www.linkedin.com/in/itmushfiq/',i
 <div class="row"><div><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" placeholder="Alex Morgan" required maxlength="120"/></div><div><label for="email">Work email *</label><input id="email" name="email" type="email" autocomplete="email" placeholder="alex@company.com" required maxlength="200"/></div></div>
 <div class="row"><div><label for="company">Company <span>(optional)</span></label><input id="company" name="company" autocomplete="organization" placeholder="Your company" maxlength="160"/></div><div><label for="phone">Phone <span>(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+44 7988 000000" maxlength="50"/></div></div>
 <div><label for="service">How can we help? *</label><select id="service" name="service" required><option value="" disabled selected>Select a service</option>{services.map(service=><option value={service}>{service}</option>)}</select></div>
-<div><label for="message">A little about your project *</label><textarea id="message" name="message" rows="4" required maxlength="2500" placeholder="What’s the challenge? Tell us about your goals, your team, or where you’re getting stuck."></textarea></div>
+<div><label for="message">A little about your project *</label><textarea id="message" name="message" rows="4" required maxlength="2500" placeholder="Include your current email provider, number of users, the problem or target platform, and preferred timing. Do not include passwords or recovery codes."></textarea></div>
 <p class="note" id="email-note">Opens a draft in your email app for you to review and send. Fields marked * are required.</p>
 <button type="submit" aria-describedby="email-note">Let’s start a conversation <Icon name="lucide:arrow-up-right"/></button>
 <p id="form-status" role="status" aria-live="polite"></p>

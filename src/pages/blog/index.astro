@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { readingTime } from "../../utils/readingTime";
 
 const allPosts = await getCollection("blog");
 const sortedPosts = allPosts.sort(
@@ -40,7 +41,7 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString("en-US", 
               <span class="absolute left-5 top-5 rounded-full border border-white/20 bg-[#12082a]/75 px-3 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-[#90ee02] backdrop-blur-md">{post.data.category}</span>
             </div>
             <div class="flex grow flex-col p-6 sm:p-8">
-              <div class="flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-[.14em] text-slate-400"><time datetime={new Date(post.data.pubDate).toISOString()}>{formatDate(post.data.pubDate)}</time><span class="h-1 w-1 rounded-full bg-[#90ee02]"></span><span>{post.data.author}</span><span class="h-1 w-1 rounded-full bg-[#90ee02]"></span><span>{index === 0 ? "8 min read" : "7 min read"}</span></div>
+              <div class="flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-[.14em] text-slate-400"><time datetime={new Date(post.data.pubDate).toISOString()}>{formatDate(post.data.pubDate)}</time><span class="h-1 w-1 rounded-full bg-[#90ee02]"></span><span>{post.data.author}</span><span class="h-1 w-1 rounded-full bg-[#90ee02]"></span><span>{readingTime(post.body)} min read</span></div>
               <h2 class="mt-5 text-xl font-semibold leading-[1.15] tracking-[-.04em] text-white sm:text-2xl"><a href={`/blog/${post.id}`} class="before:absolute before:inset-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#90ee02]">{post.data.title}</a></h2>
               <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-300">{post.data.description}</p>
             </div>

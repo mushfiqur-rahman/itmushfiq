@@ -12,12 +12,13 @@ import "@fontsource/poppins/900.css"; // Black
 
 const {
   title,
-  description,
+  description = "Business email migration, deliverability troubleshooting, Microsoft 365 and Google Workspace management, and remote IT support from IT Support Bee.",
   image,
   articleDate,
   type = "WebSite",
+  includeSchema = true,
 } = Astro.props;
-const currentUrl = Astro.url.href;
+const currentUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href;
 ---
 
 <!doctype html>
@@ -27,19 +28,28 @@ const currentUrl = Astro.url.href;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Expert Remote IT Support, Microsoft 365, Google Workspace, and Custom Web Development Services."
+      content={description}
     />
     <title>{title}</title>
+    <link rel="canonical" href={currentUrl} />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="IT Support Bee service guide" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:type" content={type === "Article" ? "article" : "website"} />
+    <meta property="og:site_name" content="IT Support Bee" />
+    {image && <meta property="og:image" content={new URL(image, currentUrl).href} />}
 
-    <Schema
+    {includeSchema && <Schema
       title={title}
       description={description ||
-        "IT Support Bee - Remote IT Infrastructure Management"}
+        "IT Support Bee - Remote IT Support for Business"}
       url={currentUrl}
       type={type}
       image={image}
       pubDate={articleDate}
-    />
+    />}
+    <slot name="head" />
   </head>
   <body class="bg-[#0f0224] text-slate-200">
     <Header />
