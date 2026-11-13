@@ -12,6 +12,8 @@ const blogCollection = defineCollection({
     author: z.string().default("Mushfiqur Rahman"),
     category: z.string(),
     image: z.string(),
+    imageAlt: z.string().optional(),
+    citation: z.string().url().optional(),
   }),
 });
 

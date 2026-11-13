@@ -45,3 +45,9 @@ This file is a concise guide to the public website. Service pages describe the a
 - [Privacy policy](https://itsupportbee.com/privacy-policy): Information about handling personal data.
 - [Terms of service](https://itsupportbee.com/terms): Website and service terms.
 - [Sitemap](https://itsupportbee.com/sitemap-index.xml): Machine-readable discovery of published pages.
+
+## Practical troubleshooting guides
+
+- [Why Are Business Emails Going to Spam? A Troubleshooting Checklist](https://itsupportbee.com/blog/business-emails-going-to-spam): Diagnose business emails going to spam with message headers, SPF, DKIM, DMARC, sending reputation, and practical tests before changing DNS.
+- [Business Email Migration Checklist: Before and After Cutover](https://itsupportbee.com/blog/business-email-migration-checklist): Plan a business email migration with mailbox discovery, a pilot, DNS preparation, cutover ownership, validation, and a clear source-retirement decision.
+- [Microsoft 365 Employee Offboarding Checklist for Small Teams](https://itsupportbee.com/blog/microsoft-365-employee-offboarding-checklist): Plan Microsoft 365 offboarding around account access, sessions, mailbox ownership, business files, connected apps, and a documented handover.

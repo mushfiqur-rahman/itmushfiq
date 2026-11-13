@@ -15,6 +15,8 @@ const {
   description = "Business email migration, deliverability troubleshooting, Microsoft 365 and Google Workspace management, and remote IT support from IT Support Bee.",
   image,
   articleDate,
+  modifiedDate,
+  noindex = false,
   type = "WebSite",
   includeSchema = true,
 } = Astro.props;
@@ -49,6 +51,17 @@ const currentUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).h
       image={image}
       pubDate={articleDate}
     />}
+    <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large"} />
+    <meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {image && <meta name="twitter:image" content={new URL(image, currentUrl).href} />}
+    {type === "Article" && articleDate && <meta property="article:published_time" content={new Date(articleDate).toISOString()} />}
+    {type === "Article" && modifiedDate && <meta property="article:modified_time" content={new Date(modifiedDate).toISOString()} />}
+    <meta name="msvalidate.01" content="967D05F8C7F9343E1A1F222CA5615E13" />
+    <meta name="p:domain_verify" content="55bd5cb7350e20b1349e6cef4d2d52c6" />
+    <meta name="yandex-verification" content="3f14f1973fc27b8c" />
+    <meta property="fb:app_id" content="1455261176418413" />
     <slot name="head" />
   </head>
   <body class="bg-[#0f0224] text-slate-200">
@@ -58,14 +71,6 @@ const currentUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).h
       <WhatsAppButton />
     </main>
     <Footer />
-
-    <!-- ========================================== -->
-    <!-- SEO & VERIFICATION META TAGS               -->
-    <!-- ========================================== -->
-    <meta name="msvalidate.01" content="967D05F8C7F9343E1A1F222CA5615E13" />
-    <meta name="p:domain_verify" content="55bd5cb7350e20b1349e6cef4d2d52c6" />
-    <meta name="yandex-verification" content="3f14f1973fc27b8c" />
-    <meta property="fb:app_id" content="1455261176418413" />
 
     <!-- ========================================== -->
     <!-- ANALYTICS & TRACKING SCRIPTS               -->

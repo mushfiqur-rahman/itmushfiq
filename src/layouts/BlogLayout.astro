@@ -26,6 +26,7 @@ const schema = {
   mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
   inLanguage: "en",
   articleSection: category,
+  citation: frontmatter.citation,
   headline: title,
   description: description,
   image: image ? new URL(image, siteUrl) : undefined,
@@ -46,8 +47,10 @@ const schema = {
 };
 ---
 
-<BaseLayout title={`${title} | IT Support Bee`} description={description} image={image} type="Article" includeSchema={false}>
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<BaseLayout title={`${title} | IT Support Bee`} description={description} image={image} type="Article" articleDate={pubDate} modifiedDate={updatedDate} includeSchema={false}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, "\\u003c")} />
+  </Fragment>
 
   <div class="post-detail site-background pt-32 pb-32">
     <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,7 +82,7 @@ const schema = {
           <div class="max-w-5xl mx-auto mb-16 rounded-2xl border-4 border-[#2D058A] dark:border-[#90ee02] shadow-[8px_8px_0px_0px_rgba(45,5,138,1)] dark:shadow-[8px_8px_0px_0px_rgba(144,238,2,0.4)] overflow-hidden bg-slate-100 dark:bg-[#150734]">
             <img
               src={image}
-              alt={title}
+              alt={frontmatter.imageAlt || title}
               class="w-full h-auto object-cover aspect-video"
             />
           </div>
