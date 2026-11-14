@@ -1,0 +1,3 @@
+# Serve Astro's custom error page for missing URLs on Hostinger (Apache/LiteSpeed).
+# A local path preserves the original URL and HTTP 404 status.
+ErrorDocument 404 /404.html
