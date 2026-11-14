@@ -1,5 +1,6 @@
 ﻿---
 import { Icon } from "astro-icon/components";
+import { site } from "../data/site";
 const currentYear = new Date().getFullYear();
 const solutions = [
   { name: "Remote IT support", path: "/services/remote-it-support" },
@@ -43,24 +44,10 @@ const organization = {
   name: "IT Support Bee",
   url: "https://itsupportbee.com",
   email: "hello@itsupportbee.com",
-  telephone: "+447988585324",
+  telephone: site.telephone,
   description:
     "Remote IT support, Microsoft 365 and Google Workspace management, email migration, email deliverability, and business automation.",
-  address: [
-    {
-      "@type": "PostalAddress",
-      streetAddress: "Software Technology Park",
-      addressLocality: "Jashore",
-      addressCountry: "BD",
-    },
-    {
-      "@type": "PostalAddress",
-      streetAddress: "9 New Change",
-      addressLocality: "London",
-      postalCode: "EC4M 9AG",
-      addressCountry: "GB",
-    },
-  ],
+  address: site.address,
   sameAs: socials.map((social) => social.url),
 };
 ---
