@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-06-18",
+  "serverInfo": {
+    "name": "itsupportbee-public-guide",
+    "title": "IT Support Bee Public Service Guide",
+    "version": "1.0.0"
+  },
+  "description": "Read-only access to public IT Support Bee services, FAQs, and contact links.",
+  "documentationUrl": "https://itsupportbee.com/llms.txt",
+  "transport": { "type": "streamable-http", "endpoint": "https://itsupportbee.com/mcp" },
+  "capabilities": { "tools": { "listChanged": false }, "resources": { "subscribe": false, "listChanged": false } },
+  "authentication": { "required": false, "schemes": [] },
+  "tools": [{
+    "name": "get_service_guide",
+    "description": "Read IT Support Bee services, common questions, and contact links. Does not submit a request or book a service.",
+    "inputSchema": { "type": "object", "properties": {}, "additionalProperties": false },
+    "annotations": { "readOnlyHint": true, "destructiveHint": false, "idempotentHint": true, "openWorldHint": false }
+  }],
+  "resources": [
+    { "name": "service-guide", "uri": "https://itsupportbee.com/index.md", "mimeType": "text/markdown" },
+    { "name": "site-guide", "uri": "https://itsupportbee.com/llms.txt", "mimeType": "text/plain" },
+    { "name": "server-card", "uri": "mcp://server-card.json", "mimeType": "application/json" }
+  ]
+}

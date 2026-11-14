@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Content-Signal: search=yes, ai-train=no
 
 # Disallow specific paths if needed (optional)
 # Disallow: /admin/

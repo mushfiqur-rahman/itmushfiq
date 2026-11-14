@@ -40,6 +40,9 @@ This file is a concise guide to the public website. Service pages describe the a
 
 ## Optional
 
+- [Homepage as Markdown](https://itsupportbee.com/index.md): Services, FAQs, and contact links. The homepage also negotiates Markdown with `Accept: text/markdown`.
+- [MCP server card](https://itsupportbee.com/.well-known/mcp/server-card.json): Discovery for the read-only public guide MCP endpoint at `https://itsupportbee.com/mcp`. Supports service-guide lookup and public resources; no bookings or account access.
+
 - [Insights and case studies](https://itsupportbee.com/blog): Technical guides and project write-ups.
 - [LMS deployment case study](https://itsupportbee.com/blog/lms-docker-vps-deployment-case-study): Related infrastructure experience deploying an application with Docker and HTTPS.
 - [Privacy policy](https://itsupportbee.com/privacy-policy): Information about handling personal data.

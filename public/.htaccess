@@ -1,3 +1,21 @@
 # Serve Astro's custom error page for missing URLs on Hostinger (Apache/LiteSpeed).
 # A local path preserves the original URL and HTTP 404 status.
 ErrorDocument 404 /404.html
+
+# Hostinger Apache/LiteSpeed with PHP 8+. Match only these exact public routes.
+RewriteEngine On
+RewriteRule ^(?:index\.html)?$ agent-home.php [END]
+RewriteRule ^mcp/?$ mcp.php [END]
+
+AddType text/markdown .md
+<IfModule mod_headers.c>
+    <Files "index.md">
+        Header set Link "<https://itsupportbee.com/>; rel=\"canonical\""
+    </Files>
+    <Files "server-card.json">
+        Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Methods "GET, HEAD, OPTIONS"
+        Header set Access-Control-Allow-Headers "Content-Type"
+        Header set Cache-Control "public, max-age=3600"
+    </Files>
+</IfModule>

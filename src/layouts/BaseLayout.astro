@@ -35,6 +35,8 @@ const currentUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).h
     <title>{title}</title>
     <link rel="canonical" href={currentUrl} />
     <link rel="alternate" type="text/plain" href="/llms.txt" title="IT Support Bee service guide" />
+    {Astro.url.pathname === "/" && <link rel="alternate" type="text/markdown" href="/index.md" title="Homepage as Markdown" />}
+    <link rel="describedby" type="application/json" href="/.well-known/mcp/server-card.json" title="MCP server card" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={currentUrl} />
@@ -65,6 +67,7 @@ const currentUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).h
     <slot name="head" />
   </head>
   <body class="bg-[#0f0224] text-slate-200">
+    <script src="/webmcp.js" is:inline defer></script>
     <Header />
     <main id="main-content" tabindex="-1" class="grow">
       <slot />
