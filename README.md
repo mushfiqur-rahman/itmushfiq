@@ -1,4 +1,16 @@
-# Astro Starter Kit: Minimal
+# IT Support Bee
+
+## Maintaining articles and case studies
+
+- Add Markdown entries under [src/data/blog](src/data/blog). Set `caseStudy: true` for project case studies; omit it or set `false` for regular blog posts.
+- [posts.ts](src/utils/posts.ts) owns listing filters, newest-first sorting, and date formatting. Blog and Case Studies must remain separate.
+- [ArticleCard.astro](src/components/ArticleCard.astro) is the shared card for the homepage, Blog, and Case Studies. Change its markup once to update all three.
+- [ListingLayout.astro](src/layouts/ListingLayout.astro) controls Blog/Case Studies page spacing, homepage-inspired backgrounds, headings, and the consultation section. Navigation lives in the site header, not listing-page tabs.
+- Keep article URLs at `/blog/<id>/` even for case studies to preserve existing links. Classification changes where an entry is listed, not its URL.
+- [videoTestimonials.ts](src/data/videoTestimonials.ts) is independent of homepage written reviews. Each card has its own `youtubeUrl` or `youtubeId`; blank values leave its play control inactive. Never substitute another client's video.
+- Run `npm run build` after changes. Start development with `npm run dev -- --background` (Windows PowerShell may require `npm.cmd`).
+
+## Original starter reference
 
 ```sh
 npm create astro@latest -- --template minimal

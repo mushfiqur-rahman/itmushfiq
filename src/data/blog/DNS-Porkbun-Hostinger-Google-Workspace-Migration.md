@@ -1,4 +1,5 @@
 ---
+caseStudy: true
 title: "DNS Porkbun Hostinger Google Workspace Migration"
 description: "Discover how I migrated business emails from InMotion Hosting to Google Workspace, consolidated multiple domains, and organized Gmail with aliases, labels, and Groups."
 pubDate: 2026-06-10
@@ -259,7 +260,7 @@ The actual legacy server IP and DNS records were retained privately for implemen
 
 The final Google Workspace MX configuration uses Google's current recommended destination:
 
-```dns
+```plaintext
 Type: MX
 Host: @
 Priority: 1
@@ -533,7 +534,7 @@ Three standards are particularly important.
 
 For a domain sending exclusively through Google Workspace, an SPF record can look like:
 
-```dns
+```plaintext
 v=spf1 include:_spf.google.com ~all
 ```
 
@@ -563,7 +564,7 @@ After DNS publication, DKIM signing is enabled in the Google Workspace Admin Con
 
 A monitoring-stage example is:
 
-```dns
+```plaintext
 Host: _dmarc
 Type: TXT
 Value: v=DMARC1; p=none; rua=mailto:dmarc@example.com

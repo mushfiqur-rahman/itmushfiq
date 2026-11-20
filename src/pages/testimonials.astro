@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { videoTestimonials, getYoutubeId } from '../data/videoTestimonials';
+
+---
+<BaseLayout title="Video Testimonials | IT Support Bee" description="Client video stories about business email, migrations, and IT support from IT Support Bee.">
+  <section class="testimonial-page">
+    <header class="testimonial-intro">
+      <span class="testimonial-eyebrow">Client experiences</span>
+      <h1>Real stories. <span>Real results.</span></h1>
+      <p>Discover how businesses simplify their email, move confidently to the cloud,<br class="hidden md:block" /> and keep their teams working with IT Support Bee.</p>
+    </header>
+    <div class="testimonial-content">
+      <div class="testimonial-grid">
+        {videoTestimonials.map(item => {
+          const videoId = getYoutubeId(item.youtubeUrl ?? item.youtubeId);
+          const videoName = item.name;
+          return <article class="video-card">
+            <div class="video-portrait">
+              <img src={item.thumbnail} alt={item.placeholder ? 'Stock portrait for testimonial design preview' : item.name} width="720" height="800" loading="eager" />
+              <button type="button" disabled={!videoId} data-testimonial-video={videoId} data-client-name={videoName} class="video-trigger" aria-label={`Play video testimonial from ${videoName}`}><span class="play-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1.5 1.5 0 0 0 2.3 1.3l10-6.5a1.5 1.5 0 0 0 0-2.6l-10-6.5A1.5 1.5 0 0 0 8 5.5Z" fill="currentColor" /></svg></span></button>
+            </div>
+            <div class="video-details">
+              <div class="stars" role="img" aria-label={item.placeholder ? 'Preview five-star rating' : '5 out of 5 stars'}>{Array.from({length:5}, () => <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2 3.1 6.3 7 .9-5.1 5 1.2 7-6.2-3.3-6.2 3.3 1.2-7-5.1-5 7-.9Z" /></svg>)}</div>
+              <h2>{item.name}</h2>
+              <p>{item.position}</p>
+            </div>
+          </article>;
+        })}
+      </div>
+    </div>
+  </section>
+  <dialog id="testimonial-player" aria-labelledby="video-title" class="m-auto w-[calc(100%-2rem)] max-w-4xl overflow-hidden rounded-2xl border border-white/20 bg-[#111111] p-0 text-white shadow-2xl backdrop:bg-black/80">
+    <div class="flex items-center justify-between gap-4 p-4"><h2 id="video-title" class="text-sm font-semibold">Client testimonial</h2><button type="button" data-close-video class="rounded-lg border border-white/20 px-4 py-2 text-sm hover:bg-white/10">Close <span aria-hidden="true">×</span></button></div>
+    <div data-video-container class="aspect-video"></div>
+  </dialog>
+</BaseLayout>
+<style>
+  .testimonial-page{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 0 12%,#22d3ee25,transparent 45%),radial-gradient(ellipse at 100% 0%,#8b5cf638,transparent 50%),radial-gradient(ellipse at 50% 100%,#a3ff1212,transparent 45%),#071225;color:#fff;padding-top:155px;padding-bottom:96px;min-height:80vh}
+  .testimonial-page::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(#94a3b807 1px,transparent 1px),linear-gradient(90deg,#94a3b807 1px,transparent 1px);background-size:64px 64px}
+  .testimonial-intro{text-align:center;padding:0 24px 0}
+  .testimonial-eyebrow{display:inline-flex;align-items:center;gap:8px;color:#c4ff69;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:22px;padding:7px 13px;border:1px solid #ffffff26;border-radius:99px;background:#ffffff08}
+  .testimonial-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:#a3ff12;box-shadow:0 0 12px #a3ff1266}
+  .testimonial-intro h1{font-size:clamp(2.4rem,5vw,4.4rem);font-weight:700;letter-spacing:-.055em;line-height:1.05;margin:0}
+  .testimonial-intro h1 span{background:linear-gradient(90deg,#a5f3fc,#fff 45%,#a3ff12);background-clip:text;color:transparent}
+  .testimonial-intro p{max-width:850px;margin:26px auto 0;color:#cbd5e1;font-size:17px;line-height:1.85}
+  .testimonial-content{max-width:1280px;margin:auto;padding:54px 24px 0}
+  .testimonial-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+  .video-card{overflow:hidden;border:1px solid #ffffff26;border-radius:20px;background:linear-gradient(135deg,#ffffff0c,#ffffff03),#0b1a32;box-shadow:inset 0 1px 0 #ffffff0a,0 20px 45px #0003;transition:border-color .2s,transform .2s}
+  .video-card:hover{border-color:#a3ff1266;transform:translateY(-4px)}
+  .video-portrait{position:relative;aspect-ratio:288/314;overflow:hidden}
+  .video-portrait img{width:100%;height:100%;object-fit:cover}
+  .video-trigger{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:white;background:linear-gradient(transparent 65%,#0003);border:0;width:100%}
+  .video-trigger{cursor:pointer}
+  .play-icon{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;border:1px solid #ffffff88;background:#c3b9b170;backdrop-filter:blur(12px);box-shadow:0 4px 20px #0002;transition:background .2s,transform .2s}
+  .video-trigger:hover .play-icon{transform:scale(1.08);background:#c4ff0080}
+  .play-icon svg{width:25px;height:25px;margin-left:-3px}
+  .video-details{padding:18px 19px 17px}
+  .stars{display:flex;gap:3px;color:#a3ff12;margin-bottom:5px}
+  .stars svg{width:17px;height:17px}
+  .video-details h2{font-size:14px;line-height:1.5;font-weight:700;letter-spacing:-.035em;margin:0}
+  .video-details p{font-size:11px;color:#94a3b8;line-height:1.6;margin:5px 0 0}
+  @media(max-width:1023px){.testimonial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:540px){.testimonial-page{padding-top:120px;padding-bottom:60px}.testimonial-intro{padding-bottom:34px}.testimonial-content{padding:36px 24px 0}.testimonial-grid{grid-template-columns:1fr;max-width:350px;margin:auto}.testimonial-intro p{font-size:14px}.testimonial-intro h1 span{display:block}}
+</style>
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('#testimonial-player');
+  const container = dialog?.querySelector<HTMLElement>('[data-video-container]');
+  let trigger: HTMLButtonElement | null = null;
+  document.querySelectorAll<HTMLButtonElement>('[data-testimonial-video]').forEach(link => link.addEventListener('click', event => {
+    if (!dialog || !container) return;
+    event.preventDefault();
+    trigger = link;
+    const title = `Video testimonial from ${link.dataset.clientName}`;
+    dialog.querySelector('#video-title')!.textContent = title;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${link.dataset.testimonialVideo}?autoplay=1&rel=0`;
+    iframe.title = title;
+    iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    iframe.className = 'h-full w-full border-0';
+    container.replaceChildren(iframe);
+    dialog.showModal();
+  }));
+  dialog?.querySelector('[data-close-video]')?.addEventListener('click', () => dialog.close());
+  dialog?.addEventListener('click', event => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close(); } });
+  dialog?.addEventListener('close', () => { container?.replaceChildren(); trigger?.focus(); });
+</script>

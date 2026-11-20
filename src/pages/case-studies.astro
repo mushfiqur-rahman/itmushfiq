@@ -1,0 +1,21 @@
+---
+import ListingLayout from '../layouts/ListingLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getPosts } from '../utils/posts';
+const studies = await getPosts('case-study');
+---
+<ListingLayout
+  title="Client Case Studies | IT Support Bee"
+  description="A closer look at real client projects: email migrations, Workspace consolidation, delivery fixes, and the work behind each solution."
+  eyebrow="The work behind the results"
+  heading="Real challenges."
+  accent="Practical solutions."
+>
+  <div class="mb-6 flex items-center justify-between gap-4">
+    <h2 class="text-xl font-semibold text-white">Explore the projects</h2>
+    <span class="text-sm text-slate-400">{studies.length} case studies</span>
+  </div>
+  <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+    {studies.map((post, index) => <ArticleCard post={post} eager={index < 3} />)}
+  </div>
+</ListingLayout>

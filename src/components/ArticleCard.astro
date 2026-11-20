@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { readingTime } from '../utils/readingTime';
+import { formatPostDate } from '../utils/posts';
+
+// Shared by the homepage, Blog, and Case Studies: edit card styling here.
+interface Props {
+  post: CollectionEntry<'blog'>;
+  eager?: boolean;
+}
+const { post, eager = false } = Astro.props;
+const action = post.data.caseStudy ? 'Read case study' : 'Read article';
+---
+<article class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/15 bg-[#0b1a32]/80 shadow-xl shadow-black/10 transition duration-300 hover:-translate-y-1 hover:border-[#a3ff12]/60">
+  <div class="relative aspect-video overflow-hidden bg-white/5">
+    <img src={post.data.image} alt={post.data.imageAlt ?? post.data.title}
+      width="640" height="360" loading={eager ? 'eager' : 'lazy'}
+      class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+  </div>
+  <div class="flex grow flex-col p-6">
+    <p class="text-xs font-bold uppercase tracking-wider text-[#c4ff69]">{post.data.category}</p>
+    <h3 class="mt-4 text-2xl font-semibold leading-tight tracking-tight text-white">
+      <a href={`/blog/${post.id}/`} class="before:absolute before:inset-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a3ff12]">{post.data.title}</a>
+    </h3>
+    <p class="mt-4 text-sm leading-7 text-slate-300">{post.data.description}</p>
+    <div class="mt-auto pt-6">
+      <p class="text-xs text-slate-400"><time datetime={new Date(post.data.pubDate).toISOString()}>{formatPostDate(post.data.pubDate)}</time> · {readingTime(post.body)} min read</p>
+      <p class="mt-4 border-t border-white/10 pt-4 text-sm font-semibold text-[#c4ff69]">{action} <span aria-hidden="true">↗</span></p>
+    </div>
+  </div>
+</article>

@@ -4,6 +4,7 @@ import { bookingUrl } from "../data/booking";
 
 const currentPath = Astro.url.pathname;
 const services = await getDynamicServices();
+const proofLinks = [{ name: 'Case study', path: '/case-studies/' }, { name: 'Testimonial', path: '/testimonials/' }];
 const links = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about/" },
@@ -33,6 +34,12 @@ const isActive = (path: string) => currentPath === path || (path !== "/" && curr
             {services.map((service) => <a href={service.path} class:list={["block rounded-xl px-3 py-2.5 text-sm font-medium transition", currentPath === service.path ? "bg-[#2D058A] text-white" : "text-slate-700 hover:bg-[#2D058A]/6 hover:text-[#2D058A] dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-white"]}>{service.name}</a>)}
           </div>
         </details>
+        <details class="group relative">
+          <summary class:list={['flex cursor-pointer list-none items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white', proofLinks.some(link => isActive(link.path)) && 'bg-white/10 text-white']}>
+            Case studies <svg class="h-3.5 w-3.5 transition-transform group-open:rotate-180" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </summary>
+          <div class="site-surface absolute left-0 top-[calc(100%+1rem)] w-56 rounded-2xl p-2">{proofLinks.map(link => <a href={link.path} aria-current={isActive(link.path) ? 'page' : undefined} class:list={['block rounded-xl px-3 py-3 text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-white', isActive(link.path) && 'bg-white/10 text-white']}>{link.name}</a>)}</div>
+        </details>
         {links.slice(2).map((link) => <a href={link.path} aria-current={isActive(link.path) ? "page" : undefined} class:list={["rounded-lg px-3 py-2 text-sm font-medium transition", isActive(link.path) ? "bg-[#2D058A]/8 text-[#2D058A] dark:bg-white/10 dark:text-white" : "text-slate-600 hover:bg-[#2D058A]/5 hover:text-[#2D058A] dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"]}>{link.name}</a>)}
       </nav>
 
@@ -52,6 +59,10 @@ const isActive = (path: string) => currentPath === path || (path !== "/" && curr
           <details class="mt-2 rounded-xl bg-slate-50 dark:bg-white/5">
             <summary class="cursor-pointer px-3 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200">Services</summary>
             <div class="space-y-1 px-2 pb-2"><a href="/services/remote-it-support/" class="block rounded-lg px-3 py-3 text-sm text-slate-700 dark:text-slate-200">Explore remote Microsoft 365 &amp; Workspace support</a>{services.map((service) => <a href={service.path} aria-current={currentPath === service.path ? 'page' : undefined} class="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-[#2D058A]/8 hover:text-[#2D058A] dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">{service.name}</a>)}</div>
+          </details>
+          <details class="mt-2 rounded-xl bg-white/5">
+            <summary class="cursor-pointer px-3 py-3 text-sm font-semibold text-slate-200">Case studies</summary>
+            <div class="space-y-1 px-2 pb-2">{proofLinks.map(link => <a href={link.path} aria-current={isActive(link.path) ? 'page' : undefined} class="block rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/10 hover:text-white">{link.name}</a>)}</div>
           </details>
           <a href={bookingUrl} class="mt-3 block rounded-xl bg-[#90ee02] px-4 py-3 text-center text-sm font-semibold text-[#160a32] hover:bg-[#b1ff37]">Book a consultation <span class="sr-only">on Calendly</span><span aria-hidden="true">→</span></a>
         </nav>

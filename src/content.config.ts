@@ -11,6 +11,8 @@ const blogCollection = defineCollection({
     updatedDate: z.string().optional(),
     author: z.string().default("Mushfiqur Rahman"),
     category: z.string(),
+    // true: Case Studies listing; false/omitted: Blog and homepage articles.
+    caseStudy: z.boolean().default(false),
     image: z.string(),
     imageAlt: z.string().optional(),
     citation: z.string().url().optional(),

@@ -1,4 +1,5 @@
 ---
+caseStudy: true
 title: LMS Deployment on a Hostinger VPS with Docker and HTTPS
 description: A practical case study of deploying a React/Vite LMS and
   Node.js API on Ubuntu using Docker Compose, PostgreSQL, Nginx, and
