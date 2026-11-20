@@ -1,38 +1,43 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceProof from "../../components/ServiceProof.astro";
 import { site } from '../../data/site';
 
-const title = "Remote IT Support for Small Businesses | IT Support Bee";
-const description = "Remote IT support for small businesses in the USA and Australia: email, Microsoft 365, Google Workspace, account access, and device issues fixed remotely.";
+const title = "Remote Microsoft 365 & Google Workspace Support | IT Support Bee";
+const description = "Remote support for Microsoft 365 and Google Workspace users in the USA and Australia: email, sign-in, MFA, Outlook, calendars, shared drives, and account fixes.";
 const currentUrl = Astro.url.href;
 
 const faqs = [
   {
-    question: "What happens when an employee has a technical issue?",
-    answer: "It's simple. Your employee sends us a message or opens a ticket, and our remote team connects to their computer securely within minutes to fix the problem. They don't have to wait hours for an 'IT guy' to drive to the office, meaning they get back to work much faster."
+    question: "What kind of problems can you fix remotely?",
+    answer: "Problems with email and the accounts around it: Outlook or Gmail not sending or receiving, sign-in and MFA lockouts, password resets, shared mailboxes and calendars, Outlook and Google Calendar sync, OneDrive, SharePoint and Google Drive access, licences, and adding or removing users. Physical hardware repairs and on-site network cabling are not covered."
   },
   {
-    question: "Is remote support as effective as having an on-site IT person?",
-    answer: "Yes, in fact, it's often more efficient. Over 95% of daily IT problems—like email issues, software errors, password resets, and printer configurations—can be fixed completely remotely. You get the expertise of an entire IT department without the cost of hiring a full-time, in-house employee."
+    question: "How does a remote support session work?",
+    answer: "You message me through live chat or email and describe the problem. If it needs a closer look, we join a screen-sharing session that you start and can end at any time. I fix the issue with you watching and explain what changed, so you know what to do if it happens again."
   },
   {
-    question: "How do you protect our company data if you are working remotely?",
-    answer: "Security is our top priority. We use encrypted, enterprise-grade tools to connect to your systems. We also proactively monitor your computers for viruses, enforce strong password policies, and ensure your data is backed up safely so it never falls into the wrong hands."
+    question: "How do you keep our accounts and data secure while working remotely?",
+    answer: "I work through admin roles you grant and can remove, never through shared personal passwords. Screen-sharing sessions are started and ended by you. Please never send passwords, recovery codes, or MFA codes by chat or email."
   },
   {
-    question: "Do we have to pay a huge unexpected bill every time something breaks?",
-    answer: "No. Traditional 'break-fix' IT guys charge you by the hour, which means they actually make more money when your business breaks down. We offer predictable support plans. We proactively maintain your systems so they don't break in the first place, keeping your monthly costs stable and manageable."
+    question: "Do you offer one-off fixes or ongoing support?",
+    answer: "Both. Many clients start with a single urgent fix, such as email going to spam or a locked admin account. Teams that want someone on call for Microsoft 365 or Google Workspace can agree a monthly arrangement with a defined scope, so the cost is known in advance."
+  },
+  {
+    question: "Which time zones do you support?",
+    answer: "I work remotely with businesses in the United States and Australia and schedule sessions around your working hours. Planned changes, such as migrations, can happen outside your business hours."
   }
 ];
 ---
 
 <BaseLayout title={title} description={description} type="WebSite">
-  
+
   <script type="application/ld+json" slot="head" is:inline set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Remote IT Support Services",
-    "serviceType": "Remote IT support and helpdesk",
+    "name": "Remote Microsoft 365 and Google Workspace Support",
+    "serviceType": "Remote Microsoft 365 and Google Workspace administration and support",
     "areaServed": site.areaServed,
     "audience": { "@type": "BusinessAudience", "audienceType": "Small businesses and remote teams" },
     "provider": { "@type": "Organization", "@id": "https://itsupportbee.com/#organization", "name": "IT Support Bee" },
@@ -48,99 +53,92 @@ const faqs = [
     }
   })} />
 
-  <!-- 1. HERO SECTION (Business Value Focused) -->
+  <!-- 1. HERO SECTION -->
   <section class="pt-32 pb-24 site-background site-background--accent border-t border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl">
         <span class="inline-block px-4 py-1.5 mb-6 bg-[#90ee02] text-[#2D058A] font-black uppercase tracking-widest text-sm border-2 border-[#2D058A] rounded-full shadow-[2px_2px_0px_0px_rgba(45,5,138,1)]">
-          Managed IT Services
+          Remote Support · USA &amp; Australia
         </span>
         <h1 class="text-5xl md:text-7xl font-black text-[#2D058A] dark:text-white leading-tight mb-8">
-          Remote IT Support. <br/>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#2D058A] to-[#7b2cbf] dark:from-[#90ee02] dark:to-[#ccff66]">Get Back to Business.</span>
+          Remote Microsoft 365 &amp; Google Workspace Support. <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#2D058A] to-[#7b2cbf] dark:from-[#90ee02] dark:to-[#ccff66]">Fixed by a Specialist.</span>
         </h1>
         <p class="text-xl text-slate-700 dark:text-slate-300 font-medium mb-10 leading-relaxed">
-          Every minute your team spends trying to fix computer glitches, reset passwords, or recover lost files is a minute they aren't working. We provide fast, reliable remote IT support so your business runs smoothly, securely, and without frustrating interruptions.
+          When email stops, sign-ins fail or calendars fall out of sync, your team stops too. I'm {site.name}, and I fix Microsoft 365 and Google Workspace problems remotely for small businesses, directly, without a ticket queue or a generic helpdesk.
         </p>
         <div class="flex flex-wrap gap-4">
           <a href="/contact/" class="px-10 py-5 bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-black uppercase tracking-widest text-lg border-2 border-[#2D058A] dark:border-[#90ee02] rounded-xl shadow-[6px_6px_0px_0px_rgba(144,238,2,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all">
-            Get IT Support Today
+            Get Help With Your Issue
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. THE PAIN POINT (Business Problems) -->
+  <!-- 2. THE PROBLEM -->
   <section class="py-24 site-background border-t border-white/10">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-8 uppercase tracking-tight">
-        Why Unmanaged IT is Hurting Your Business
+        Why General IT Help Often Falls Short
       </h2>
       <div class="prose prose-lg prose-slate dark:prose-invert max-w-none">
         <p class="font-medium text-lg leading-relaxed mb-6">
-          Many business owners try to handle IT issues themselves or rely on the most "tech-savvy" employee in the office. This creates a hidden drain on your company's time and money.
+          Most small businesses run on Microsoft 365 or Google Workspace, but general IT providers mostly look after devices and networks. Problems inside the tenant itself, such as mail routing, DNS records, licences and admin roles, are often passed around or patched without finding the cause.
         </p>
-        <p class="font-medium text-lg leading-relaxed mb-8">
-          When technology fails, work stops. If you only call for help after a disaster happens, you are already losing money from downtime and risking permanent data loss.
-        </p>
-        
         <div class="space-y-6">
           <div class="bg-red-50 dark:bg-red-900/10 border-l-8 border-red-500 p-6 rounded-r-xl">
-            <h3 class="text-xl font-black text-red-700 dark:text-red-400 mb-2 mt-0">Problem 1: Expensive Employee Downtime</h3>
-            <p class="text-slate-700 dark:text-slate-300 m-0">If a key employee can't access their email or a critical software crashes, they are sitting idle. You are paying them a full salary to wait for a computer to be fixed.</p>
+            <h3 class="text-xl font-black text-red-700 dark:text-red-400 mb-2 mt-0">Locked out of email or admin</h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">An MFA change, an expired password, or a former employee holding the only admin role can stop work completely. Recovery needs someone who knows the admin consoles well.</p>
           </div>
-          
           <div class="bg-amber-50 dark:bg-amber-900/10 border-l-8 border-amber-500 p-6 rounded-r-xl">
-            <h3 class="text-xl font-black text-amber-700 dark:text-amber-400 mb-2 mt-0">Problem 2: Hidden Security Risks</h3>
-            <p class="text-slate-700 dark:text-slate-300 m-0">Without active monitoring, your business is a prime target for ransomware and phishing attacks. One wrong click by an employee can expose your confidential client data to hackers.</p>
+            <h3 class="text-xl font-black text-amber-700 dark:text-amber-400 mb-2 mt-0">Mail that silently goes missing</h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">Messages that bounce, land in spam or never arrive are usually caused by DNS, forwarding or authentication settings, not by the mail app on someone's laptop.</p>
           </div>
-          
           <div class="bg-blue-50 dark:bg-blue-900/10 border-l-8 border-blue-500 p-6 rounded-r-xl">
-            <h3 class="text-xl font-black text-blue-700 dark:text-blue-400 mb-2 mt-0">Problem 3: Unpredictable Bills</h3>
-            <p class="text-slate-700 dark:text-slate-300 m-0">Hiring an IT guy only when things break means you get hit with massive, unexpected bills during emergencies. It makes it impossible to budget your business expenses properly.</p>
+            <h3 class="text-xl font-black text-blue-700 dark:text-blue-400 mb-2 mt-0">Access that nobody owns</h3>
+            <p class="text-slate-700 dark:text-slate-300 m-0">Shared drives, mailboxes and licences pile up when no one manages joiners and leavers. That costs money and leaves company data with people who no longer need it.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. COMPARISON TABLE (Value Focus) -->
+  <!-- 3. COMPARISON TABLE -->
   <section class="py-24 dark:border-white/10 site-background site-background--soft border-t border-white/10">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-slate-800 mb-12 text-center uppercase tracking-tight">
-        A Better Way to Manage Technology
+      <h2 class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-12 text-center uppercase tracking-tight">
+        Specialist Support vs. a General Helpdesk
       </h2>
-      
       <div class="overflow-x-auto rounded-xl border-4 border-[#2D058A] shadow-[8px_8px_0px_0px_rgba(45,5,138,1)] bg-white dark:bg-[#150734]">
         <table class="w-full text-left border-collapse">
           <thead>
             <tr>
-              <th class="p-6 border-b-4 border-r-4 border-[#2D058A] bg-slate-50 dark:bg-[#0f0224] text-[#2D058A] dark:text-white font-black text-xl w-1/3">Business Goal</th>
-              <th class="p-6 border-b-4 border-r-4 border-[#2D058A] bg-slate-50 dark:bg-[#0f0224] text-slate-500 font-black text-xl w-1/3">Traditional "Break-Fix" IT</th>
+              <th class="p-6 border-b-4 border-r-4 border-[#2D058A] bg-slate-50 dark:bg-[#0f0224] text-[#2D058A] dark:text-white font-black text-xl w-1/3">What you need</th>
+              <th class="p-6 border-b-4 border-r-4 border-[#2D058A] bg-slate-50 dark:bg-[#0f0224] text-slate-500 font-black text-xl w-1/3">General helpdesk</th>
               <th class="p-6 border-b-4 border-[#2D058A] bg-[#90ee02] text-[#2D058A] font-black text-xl w-1/3">With IT Support Bee</th>
             </tr>
           </thead>
           <tbody class="text-slate-700 dark:text-slate-300 font-medium">
             <tr>
-              <td class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white">Speed of Support</td>
-              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]">Wait hours or days for someone to visit</td>
-              <td class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10">Instant remote help within minutes</td>
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white">Who helps you</td>
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]">Whoever picks up the ticket</td>
+              <td class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10">The same specialist every time</td>
             </tr>
             <tr>
-              <td class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white">Approach to Problems</td>
-              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]">Only fixes things after they crash</td>
-              <td class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10">Proactive monitoring to stop crashes early</td>
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white">Email and DNS problems</td>
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]">Often escalated or worked around</td>
+              <td class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10">Traced to the cause in headers, DNS and admin logs</td>
             </tr>
             <tr>
-              <td class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white">Data Security</td>
-              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]">Basic antivirus, high risk of data loss</td>
-              <td class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10">Strict backups and enterprise security</td>
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white">Explanation</td>
+              <td class="p-6 border-b-2 border-r-4 border-[#2D058A]">Ticket closed</td>
+              <td class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10">Plain-English summary of what changed</td>
             </tr>
             <tr>
-              <td class="p-6 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white">Cost Management</td>
-              <td class="p-6 border-r-4 border-[#2D058A]">Surprise hourly bills during emergencies</td>
-              <td class="p-6 bg-green-50 dark:bg-green-900/10">Predictable, flat-rate monthly support</td>
+              <td class="p-6 border-r-4 border-[#2D058A] font-bold text-[#2D058A] dark:text-white">Cost</td>
+              <td class="p-6 border-r-4 border-[#2D058A]">Per-device contracts</td>
+              <td class="p-6 bg-green-50 dark:bg-green-900/10">One-off fixes or a monthly scope agreed in advance</td>
             </tr>
           </tbody>
         </table>
@@ -148,72 +146,62 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 4. DEEP DIVE SERVICES (How we solve the problems) -->
+  <!-- 4. WHAT I SUPPORT -->
   <section class="py-24 site-background border-t border-white/10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-16 text-center uppercase tracking-tight">
-        How We Protect Your Business
+        What I Support Remotely
       </h2>
-      
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        
-        <!-- Pillar 1 -->
         <div>
           <div class="flex items-center gap-4 mb-4">
             <div class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 text-[#2D058A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              <svg class="w-6 h-6 text-[#2D058A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
             </div>
-            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">Fast, Remote Helpdesk</h3>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">Email and Calendars</h3>
           </div>
           <p class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4">
-            When an employee has a computer issue, they don't have to wait. We securely connect to their screen and fix the issue right in front of their eyes. This drastically reduces downtime, keeping your staff happy and productive without the hassle of scheduling on-site visits.
+            Outlook and Gmail sending or receiving problems, mail going to spam, forwarding and aliases, shared mailboxes, and Outlook and Google Calendar sync between your team and clients.
           </p>
         </div>
-
-        <!-- Pillar 2 -->
         <div>
           <div class="flex items-center gap-4 mb-4">
             <div class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 text-[#2D058A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+              <svg class="w-6 h-6 text-[#2D058A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
             </div>
-            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">Proactive System Monitoring</h3>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">Sign-in, MFA and Security</h3>
           </div>
           <p class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4">
-            We don't wait for things to break. We quietly monitor your computers, networks, and cloud systems in the background. If a hard drive is about to fail or a software needs a critical update, we fix it before it ever causes a disruption to your daily operations.
+            Account lockouts, password and MFA resets, recovering admin access, and sensible security defaults such as MFA for every user and fewer global admins.
           </p>
         </div>
-
-        <!-- Pillar 3 -->
         <div>
           <div class="flex items-center gap-4 mb-4">
             <div class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 text-[#2D058A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+              <svg class="w-6 h-6 text-[#2D058A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
             </div>
-            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">Bulletproof Data Protection</h3>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">Files and Sharing</h3>
           </div>
           <p class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4">
-            Your client data is your most valuable asset. We lock down your systems with advanced security protocols, enforce safe password practices, and ensure your business files are securely backed up. If an accident happens, we can restore your data instantly.
+            OneDrive, SharePoint and Google Drive access, shared drive structure, and external sharing settings, so the right people can reach company files and no one else can.
           </p>
         </div>
-
-        <!-- Pillar 4 -->
         <div>
           <div class="flex items-center gap-4 mb-4">
             <div class="w-12 h-12 bg-[#90ee02] border-2 border-[#2D058A] rounded-lg flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 text-[#2D058A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
+              <svg class="w-6 h-6 text-[#2D058A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
             </div>
-            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">Employee Onboarding</h3>
+            <h3 class="text-2xl font-black text-[#2D058A] dark:text-[#90ee02]">Users and Licences</h3>
           </div>
           <p class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4">
-            When you hire someone new, we handle all the technical setup. We create their email accounts, grant them the correct access to company folders, and ensure their computer is fully prepped so they can start being productive on their very first day.
+            Adding new starters, offboarding leavers safely, converting mailboxes, and removing unused licences so you only pay for what your team uses.
           </p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- 5. AEO FAQ SECTION (Fix applied to hover state) -->
+  <!-- 5. FAQ -->
   <section class="py-24 dark:border-white/10 site-background site-background--soft border-t border-white/10">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-12 text-center uppercase tracking-tight">
@@ -222,15 +210,12 @@ const faqs = [
       <div class="space-y-6">
         {faqs.map((faq) => (
           <details class="group bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.3)]">
-            
-            <!-- Hover bug fixed here: dark:hover:bg-[#2D058A] and dark:hover:text-[#90ee02] -->
             <summary class="flex justify-between items-center font-black cursor-pointer list-none p-6 text-lg text-[#2D058A] dark:text-white hover:bg-slate-50 dark:hover:bg-[#2D058A] dark:hover:text-[#90ee02] transition-colors">
-              {faq.question}
+              <h3 class="text-lg font-black leading-snug m-0">{faq.question}</h3>
               <span class="transition group-open:rotate-180">
-                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
               </span>
             </summary>
-            
             <div class="p-6 pt-0 text-slate-700 dark:text-slate-300 font-medium leading-relaxed border-t-2 border-slate-200 dark:border-white/5">
               {faq.answer}
             </div>
@@ -240,17 +225,19 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 6. HIGH-CONVERTING CTA -->
+  <ServiceProof service="remote" reviewed="2026-11-20" caseStudies={["outlook-google-calendar-sync","business-emails-going-to-spam","microsoft-365-employee-offboarding-checklist"]} />
+
+  <!-- 6. CTA -->
   <section class="py-24 site-background site-background--accent border-t border-white/10">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter">
-        Ready for Hassle-Free IT?
+        Stuck on a Microsoft 365 or Workspace Problem?
       </h2>
       <p class="text-xl text-slate-300 font-bold mb-12 max-w-2xl mx-auto">
-        Stop letting tech issues slow down your team. Let us secure and support your business so you can focus on growing it.
+        Tell me what's happening. I'll tell you what's likely causing it and how long it should take to fix.
       </p>
       <a href="/contact/" class="inline-block px-12 py-5 bg-[#2D058A] text-[#90ee02] font-black uppercase tracking-widest text-lg border-4 border-[#2D058A] rounded-xl shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(255,255,255,1)] transition-all">
-        Get an IT Assessment
+        Describe Your Issue
       </a>
     </div>
   </section>

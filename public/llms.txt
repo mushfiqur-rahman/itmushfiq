@@ -1,6 +1,8 @@
 # IT Support Bee
 
-> IT Support Bee provides business email setup, migration, deliverability troubleshooting, and ongoing Microsoft 365 and Google Workspace administration. Led by Mushfiqur Rahman, the business also offers remote IT support, email marketing automation, and business workflow automation for growing and distributed teams.
+> IT Support Bee is the Microsoft 365 and Google Workspace email migration and deliverability consultancy of Mushfiqur Rahman, serving small businesses in the United States and Australia remotely. Core work: email migrations (including GoDaddy Microsoft 365 defederation), SPF, DKIM and DMARC setup, spam and delivery troubleshooting, and remote Microsoft 365 and Google Workspace admin support. Related: email marketing automation and business workflow automation.
+
+IT Support Bee is an independent consultancy. It is not affiliated with SupportBee (the helpdesk software company) or other similarly named "Bee" IT firms.
 
 Website: https://itsupportbee.com
 Contact: hello@itsupportbee.com
@@ -18,7 +20,7 @@ This file is a concise guide to the public website. Service pages describe the a
 
 ## Related IT services
 
-- [Remote IT support](https://itsupportbee.com/services/remote-it-support/): Remote troubleshooting for email, software, account access, and everyday workplace technology, with ongoing support arrangements discussed during consultation.
+- [Remote Microsoft 365 and Google Workspace support](https://itsupportbee.com/services/remote-it-support/): Remote fixes for email delivery, sign-in and MFA lockouts, Outlook and Google Calendar sync, shared drives and mailboxes, and user and licence administration. One-off fixes or a monthly scope. Not a general device helpdesk: no on-site or hardware repair.
 - [Business automation](https://itsupportbee.com/services/business-automation/): Connect business applications and automate repetitive tasks such as client onboarding, lead routing, and moving information between email, CRM, and billing workflows.
 
 ## Common customer questions

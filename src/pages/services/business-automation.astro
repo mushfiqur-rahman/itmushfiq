@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ServiceProof from "../../components/ServiceProof.astro";
 
 const title = "Smart Business Automation Services | IT Support Bee";
 const description =
-  "Stop wasting time on repetitive manual tasks. We build smart business automations that connect your software and handle your daily workflows on autopilot.";
+  "Stop wasting time on repetitive manual tasks. I build smart business automations that connect your software and handle your daily workflows on autopilot.";
 const currentUrl = Astro.url.href;
 
 const faqs = [
@@ -15,7 +16,7 @@ const faqs = [
   {
     question: "Is business automation complicated to learn and maintain?",
     answer:
-      "Not when we set it up. We design our automated workflows to run silently in the background. You don't need to learn any complex software or manage the systems yourself. We handle the entire technical setup and ensure it works smoothly with the tools you already use.",
+      "Not when I set it up. I design my automated workflows to run silently in the background. You don't need to learn any complex software or manage the systems yourself. I handle the entire technical setup and ensure it works smoothly with the tools you already use.",
   },
   {
     question: "How does automating workflows help my business grow?",
@@ -25,7 +26,7 @@ const faqs = [
   {
     question: "Is our company data secure with these automation tools?",
     answer:
-      "Absolutely. We only use enterprise-grade automation platforms with strict data privacy policies. We configure the systems so your sensitive business information is securely encrypted during transfers and never exposed to unauthorized users.",
+      "Security is planned in from the start. I use established platforms with published security and privacy terms, give each connection only the access it needs, and keep data encrypted in transit. You keep ownership of every account.",
   },
 ];
 ---
@@ -76,7 +77,7 @@ const faqs = [
           class="text-xl text-slate-700 dark:text-slate-300 font-medium mb-10 leading-relaxed"
         >
           Every hour your team spends copying information between apps or doing
-          manual data entry is wasted time. We build smart, reliable systems
+          manual data entry is wasted time. I build smart, reliable systems
           that connect your software and handle your repetitive daily tasks on
           autopilot.
         </p>
@@ -217,7 +218,7 @@ const faqs = [
               >
               <td
                 class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
-                >Instant, 100% accurate, and automatic</td
+                >Automatic, with validation checks</td
               >
             </tr>
             <tr>
@@ -251,13 +252,13 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 4. DEEP DIVE SERVICES (How we solve the problems) -->
+  <!-- 4. DEEP DIVE SERVICES (How I solve the problems) -->
   <section class="py-24 site-background border-t border-white/10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2
         class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-16 text-center uppercase tracking-tight"
       >
-        How We Streamline Your Workflow
+        How I Streamline Your Workflow
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -287,8 +288,8 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            We make your different business apps talk to each other. When a new
-            lead fills out a form on your website, our automation instantly
+            I make your different business apps talk to each other. When a new
+            lead fills out a form on your website, my automation instantly
             creates a profile in your CRM, alerts your sales team on Slack or
             Teams, and adds them to your email list—without anyone copying or
             pasting a single word.
@@ -322,7 +323,7 @@ const faqs = [
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
             First impressions matter. When a client signs a contract or pays an
-            invoice, we build systems that automatically send them a welcome
+            invoice, I build systems that automatically send them a welcome
             package, generate their project folders in Google Drive, and assign
             the initial tasks to your team. The client gets a flawless
             experience instantly.
@@ -356,7 +357,7 @@ const faqs = [
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
             If your business handles a lot of invoices, contracts, or
-            standardized forms, you know how painful manual sorting is. We set
+            standardized forms, you know how painful manual sorting is. I set
             up automated pipelines that extract the important details (like
             names, amounts, or dates) from incoming files and save them securely
             in your database exactly where they need to go.
@@ -388,11 +389,11 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            Not all inquiries are equal. We create intelligent funnels that sort
+            Not all inquiries are equal. I create intelligent funnels that sort
             your incoming emails or form submissions. Support requests go
             straight to the helpdesk, while high-value sales inquiries are
             instantly routed to your top sales reps with a notification on their
-            phone, ensuring you never miss a big deal.
+            phone, so high-value enquiries get a fast response.
           </p>
         </div>
       </div>
@@ -413,7 +414,7 @@ const faqs = [
           faqs.map((faq) => (
             <details class="group bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.3)]">
               <summary class="flex justify-between items-center font-black cursor-pointer list-none p-6 text-lg text-[#2D058A] dark:text-white hover:bg-slate-50 dark:hover:bg-[#2D058A] dark:hover:text-[#90ee02] transition-colors">
-                {faq.question}
+                <h3 class="text-lg font-black leading-snug m-0">{faq.question}</h3>
                 <span class="transition group-open:rotate-180">
                   <svg
                     fill="none"
@@ -440,6 +441,8 @@ const faqs = [
     </div>
   </section>
 
+  <ServiceProof service="automation" reviewed="2026-11-20" caseStudies={[]} />
+
   <!-- 6. HIGH-CONVERTING CTA -->
   <section class="py-24 site-background site-background--accent border-t border-white/10">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -450,7 +453,7 @@ const faqs = [
       </h2>
       <p class="text-xl text-slate-300 font-bold mb-12 max-w-2xl mx-auto">
         Stop letting your team do the work of a robot. Let's find out exactly
-        what tasks we can automate to help you scale faster without hiring more
+        what tasks I can automate to help you scale faster without hiring more
         staff.
       </p>
       <a

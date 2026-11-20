@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ServiceProof from "../../components/ServiceProof.astro";
 
 const title = "Email Deliverability & DMARC Setup Services | IT Support Bee";
 const description =
-  "Stop landing in spam. Expert email deliverability services including SPF, DKIM, DMARC alignment, blacklist removal, and cold email infrastructure setup.";
+  "Business emails going to spam? SPF, DKIM and DMARC setup, blocklist delisting, and sender-reputation fixes for Microsoft 365 and Google Workspace.";
 const currentUrl = Astro.url.href;
 
 const faqs = [
@@ -20,12 +21,12 @@ const faqs = [
   {
     question: "How do you set up infrastructure for cold email outreach?",
     answer:
-      "Cold email requires a completely different architecture than your primary business email. We set up secondary domains (e.g., getyourcompany.com instead of yourcompany.com), configure custom tracking domains so your links aren't blacklisted, establish strict DMARC policies, and guide you through the IP/domain warm-up process.",
+      "Cold email requires a completely different architecture than your primary business email. I set up secondary domains (e.g., getyourcompany.com instead of yourcompany.com), configure custom tracking domains so your links aren't blacklisted, establish strict DMARC policies, and guide you through the IP/domain warm-up process.",
   },
   {
     question: "Can you help remove my domain from a blacklist?",
     answer:
-      "Yes. We use advanced tools to identify exactly which blacklists (like Spamhaus, SORBS, or Barracuda) have flagged your domain or IP address. We then resolve the underlying security or volume issues that caused the listing and submit formal delisting and mitigation requests on your behalf.",
+      "Yes. I check which blocklists (like Spamhaus, SORBS, or Barracuda) have flagged your domain or IP address. I then resolve the underlying security or volume issues that caused the listing and submit formal delisting and mitigation requests on your behalf.",
   },
 ];
 ---
@@ -69,16 +70,15 @@ const faqs = [
           Stop Landing in Spam. <br />
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-[#2D058A] to-[#7b2cbf] dark:from-[#90ee02] dark:to-[#ccff66]"
-            >Hit the Inbox Every Time.</span
+            >Get Back to the Inbox.</span
           >
         </h1>
         <p
           class="text-xl text-slate-700 dark:text-slate-300 font-medium mb-10 leading-relaxed"
         >
-          Sending emails into the void costs you leads, clients, and revenue. We
+          Sending emails into the void costs you leads, clients, and revenue. I
           audit your DNS records, implement strict SPF, DKIM, and DMARC
-          alignment, repair damaged domain reputations, and build bulletproof
-          infrastructure for high-volume cold outreach.
+          alignment, investigate damaged sender reputation, and set up separate sending domains for outreach. Authentication builds trust with mailbox providers, but nobody can honestly guarantee inbox placement, so I show you the evidence before and after each fix.
         </p>
         <div class="flex flex-wrap gap-4">
           <a
@@ -140,8 +140,7 @@ const faqs = [
               Blacklist Placements
             </h3>
             <p class="text-slate-700 dark:text-slate-300 m-0">
-              A sudden spike in sending volume or a high bounce rate can
-              instantly land your IP or domain on major blacklists like
+              A sudden spike in sending volume or a high bounce rate can quickly land your IP or domain on major blacklists like
               Spamhaus. Once listed, Microsoft 365 and Google Workspace servers
               will automatically block your emails from reaching their users.
             </p>
@@ -208,7 +207,7 @@ const faqs = [
               >
               <td
                 class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
-                >Perfect SPF, DKIM & DMARC alignment</td
+                >Verified SPF, DKIM &amp; DMARC alignment</td
               >
             </tr>
             <tr>
@@ -246,7 +245,7 @@ const faqs = [
                 >Often non-compliant</td
               >
               <td class="p-6 bg-green-50 dark:bg-green-900/10"
-                >100% compliant with 2024 standards</td
+                >Checked against Google and Yahoo sender rules</td
               >
             </tr>
           </tbody>
@@ -291,11 +290,10 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            We conduct a forensic analysis of your DNS records. We ensure your
+            I conduct a forensic analysis of your DNS records. I ensure your
             SPF record doesn't exceed the 10-lookup limit, generate strict
             2048-bit DKIM keys, and implement a DMARC policy (moving from p=none
-            to p=reject). This guarantees that major inbox providers instantly
-            recognize your emails as legitimate and secure.
+            to p=reject). This lets receiving servers verify that your mail is genuinely yours, which removes one of the most common reasons legitimate mail is filtered.
           </p>
         </div>
 
@@ -325,8 +323,8 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            To protect your main business domain, we architect isolated
-            secondary domains specifically for marketing and sales outreach. We
+            To protect your main business domain, I architect isolated
+            secondary domains specifically for marketing and sales outreach. I
             set up Google Workspace or Microsoft 365 tenants for these domains,
             configure custom tracking subdomains to mask third-party analytics
             links, and establish automated IP warm-up schedules.
@@ -359,8 +357,7 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            If your domain has been burned, we can fix it. We monitor over 100
-            global blocklists to see where you are flagged. We analyze your
+            If your domain or IP has been listed, I check the major public blocklists to see where you are flagged. I analyze your
             bounce logs to find the root cause, fix the infrastructure
             vulnerability, and handle the manual delisting appeals with
             providers like Spamhaus, Barracuda, and SORBS.
@@ -393,11 +390,10 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            We don't just guess; we use hard data. We verify your domains with
+            Decisions are based on data, not guesswork. I verify your domains with
             Google Postmaster Tools and Microsoft SNDS to monitor your IP and
-            domain reputation in real-time. We analyze spam complaint rates,
-            delivery errors, and authentication success rates to ensure your
-            inbox placement stays at 99%+.
+            domain reputation in real-time. I analyze spam complaint rates,
+            delivery errors, and authentication pass rates, then report what changed after each fix.
           </p>
         </div>
       </div>
@@ -418,7 +414,7 @@ const faqs = [
           faqs.map((faq) => (
             <details class="group bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.3)]">
               <summary class="flex justify-between items-center font-black cursor-pointer list-none p-6 text-lg text-[#2D058A] dark:text-white hover:bg-slate-50 dark:hover:bg-[#2D058A] dark:hover:text-[#90ee02] transition-colors">
-                {faq.question}
+                <h3 class="text-lg font-black leading-snug m-0">{faq.question}</h3>
                 <span class="transition group-open:rotate-180">
                   <svg
                     fill="none"
@@ -444,6 +440,8 @@ const faqs = [
     </div>
   </section>
 
+  <ServiceProof service="deliverability" reviewed="2026-11-20" caseStudies={["workspace-hubspot-squarespace-email-delivery","business-emails-going-to-spam"]} />
+
   <!-- 6. HIGH-CONVERTING CTA -->
   <section class="py-24 site-background site-background--accent border-t border-white/10">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -453,8 +451,7 @@ const faqs = [
         Get Back in the Inbox.
       </h2>
       <p class="text-xl text-slate-300 font-bold mb-12 max-w-2xl mx-auto">
-        Don't let technical errors cost you clients. Let us audit your DNS and
-        bulletproof your email infrastructure today.
+        Don't let technical errors cost you clients. Let me audit your DNS and sending setup and give you a clear, prioritised fix list.
       </p>
       <a
         href="/contact/"
@@ -464,5 +461,4 @@ const faqs = [
       </a>
     </div>
   </section>
-<aside class="py-8 px-6 text-center"><a class="underline" href="/blog/workspace-hubspot-squarespace-email-delivery/">Client case study: Email delivery repair across Google Workspace, HubSpot and Squarespace</a></aside>
 </BaseLayout>

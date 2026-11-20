@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ServiceProof from "../../components/ServiceProof.astro";
 import { Icon } from "astro-icon/components";
 
 const title = "Microsoft 365, Intune & Entra ID Management | IT Support Bee";
@@ -11,23 +12,23 @@ const faqs = [
   {
     question: "Do we need to buy new laptops for Microsoft Intune to work?",
     answer:
-      "No. While Intune works flawlessly with new devices via Windows Autopilot (zero-touch setup), we can also enroll your existing company-owned laptops and even securely manage company data on employees' personal devices (BYOD) without invading their privacy.",
+      "No. While Intune works best with new devices via Windows Autopilot (zero-touch setup), I can also enroll your existing company-owned laptops and even securely manage company data on employees' personal devices (BYOD) without invading their privacy.",
   },
   {
     question: "What happens if an employee loses their company laptop?",
     answer:
-      "Because we manage your devices via Microsoft Intune and Entra ID, we can instantly lock the device, force a password reset, or remotely wipe all company data the moment it is reported lost or stolen. Your business data remains completely safe.",
+      "Because I manage your devices via Microsoft Intune and Entra ID, I can instantly lock the device, force a password reset, or remotely wipe all company data the moment it is reported lost or stolen. This greatly reduces the risk of company data being exposed.",
   },
   {
     question:
       "Can you stop employees from logging in from unapproved locations?",
     answer:
-      "Yes. Using Entra ID Conditional Access, we can block login attempts from specific countries, require multi-factor authentication (MFA) if the login looks suspicious, or only allow access from approved company devices.",
+      "Yes. Using Entra ID Conditional Access, I can block login attempts from specific countries, require multi-factor authentication (MFA) if the login looks suspicious, or only allow access from approved company devices.",
   },
   {
     question: "How do you handle employee onboarding and offboarding?",
     answer:
-      "We automate it. When a new employee starts, they instantly get the right licenses, group access, and software. When someone leaves, one click revokes their access across all Microsoft 365 services, securing your data instantly.",
+      "I automate it. When a new employee starts, they instantly get the right licenses, group access, and software. When someone leaves, a documented offboarding step revokes their access across Microsoft 365 services.",
   },
 ];
 ---
@@ -78,7 +79,7 @@ const faqs = [
         <p
           class="text-xl text-slate-700 dark:text-slate-300 font-medium mb-10 leading-relaxed"
         >
-          Managing a remote workforce is dangerous without proper controls. We
+          Managing a remote workforce is dangerous without proper controls. I
           implement Microsoft Intune and Entra ID to lock down your company
           data, manage laptops remotely, and eliminate security breaches.
         </p>
@@ -254,7 +255,7 @@ const faqs = [
       <h2
         class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-16 text-center uppercase tracking-tight"
       >
-        Our Core Administration Pillars
+        My Core Administration Pillars
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -273,11 +274,11 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            We manage your fleet of devices from the cloud. Ship a sealed laptop
+            I manage your fleet of devices from the cloud. Ship a sealed laptop
             directly from the store to a remote employee. The moment they
             connect to Wi-Fi, Microsoft Intune automatically installs your
             company apps, enforces BitLocker encryption, and applies security
-            policies—zero manual IT work required.
+            policies, with far less manual IT work.
           </p>
         </div>
 
@@ -296,8 +297,8 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            Passwords are no longer enough. We configure Entra ID (formerly
-            Azure AD) with strict Conditional Access policies. We ensure users
+            Passwords are no longer enough. I configure Entra ID (formerly
+            Azure AD) with strict Conditional Access policies. I ensure users
             can only access company data if they are on a compliant device,
             using phishing-resistant MFA, and connecting from an approved
             geographical location.
@@ -319,7 +320,7 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            Stop overpaying for orphaned licenses. We handle the daily
+            Stop overpaying for orphaned licenses. I handle the daily
             operations: creating shared mailboxes, structuring SharePoint
             permissions, and establishing flawless onboarding/offboarding
             workflows so departing employees lose access instantly without
@@ -342,7 +343,7 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            We build fences around your sensitive data. Our DLP configurations
+            I build fences around your sensitive data. My DLP configurations
             prevent employees from accidentally (or maliciously) forwarding
             confidential client lists, credit card numbers, or intellectual
             property to personal email addresses or unauthorized external
@@ -367,7 +368,7 @@ const faqs = [
           faqs.map((faq) => (
             <details class="group bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.3)]">
               <summary class="flex justify-between items-center font-black cursor-pointer list-none p-6 text-lg text-[#2D058A] dark:text-white hover:bg-slate-50 dark:hover:bg-[#2D058A] dark:hover:text-[#90ee02] transition-colors">
-                {faq.question}
+                <h3 class="text-lg font-black leading-snug m-0">{faq.question}</h3>
                 <span class="transition group-open:rotate-180">
                   <Icon name="lucide:chevron-down" class="w-6 h-6" />
                 </span>
@@ -382,6 +383,8 @@ const faqs = [
     </div>
   </section>
 
+  <ServiceProof service="m365" reviewed="2026-11-20" caseStudies={["google-to-microsoft-365-client-migration","microsoft-365-employee-offboarding-checklist"]} />
+
   <!-- 6. HIGH-CONVERTING CTA -->
   <section class="py-24 site-background site-background--accent border-t border-white/10">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -391,7 +394,7 @@ const faqs = [
         Is Your Company Data Safe?
       </h2>
       <p class="text-xl text-slate-300 font-bold mb-12 max-w-2xl mx-auto">
-        Stop relying on default settings. Let us configure Intune and Entra ID
+        Stop relying on default settings. Let me configure Intune and Entra ID
         to lock down your Microsoft 365 environment against modern threats.
       </p>
       <a

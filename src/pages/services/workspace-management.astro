@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ServiceProof from "../../components/ServiceProof.astro";
 
 const title = "Google Workspace Management Services | IT Support Bee";
 const description =
@@ -15,18 +16,18 @@ const faqs = [
   {
     question: "How do you handle employee onboarding and offboarding?",
     answer:
-      "We follow a strict, documented protocol. For onboarding, we create the account, assign the correct license, add them to relevant Google Groups, set up their email signature, and grant specific Drive permissions. For offboarding, we immediately suspend access, wipe company data from their mobile devices, archive their emails using Google Vault, and transfer their Drive files to a manager before deleting the account to save license costs.",
+      "I follow a strict, documented protocol. For onboarding, I create the account, assign the correct license, add them to relevant Google Groups, set up their email signature, and grant specific Drive permissions. For offboarding, I immediately suspend access, wipe company data from their mobile devices, archive their emails using Google Vault, and transfer their Drive files to a manager before deleting the account to save license costs.",
   },
   {
     question: "Why can't I just manage Google Workspace myself?",
     answer:
-      "While the basic setup is simple, scaling is complex. Without professional management, businesses often face data leaks from incorrect Drive sharing, spoofed emails due to missing DNS records, and wasted money on unused licenses. We ensure enterprise-grade security and compliance so you can focus on your business.",
+      "While the basic setup is simple, scaling is complex. Without professional management, businesses often face data leaks from incorrect Drive sharing, spoofed emails due to missing DNS records, and wasted money on unused licenses. I ensure enterprise-grade security and compliance so you can focus on your business.",
   },
   {
     question:
       "How do you secure our Google Drive data from internal and external threats?",
     answer:
-      "We transition your team from 'My Drive' to 'Shared Drives' to ensure the company owns all data. We remove broad 'anyone with the link' sharing options, enforce 2-Step Verification (2SV) company-wide, and set up DLP (Data Loss Prevention) rules to block the sharing of sensitive information like credit card numbers or PII.",
+      "I transition your team from 'My Drive' to 'Shared Drives' to ensure the company owns all data. I remove broad 'anyone with the link' sharing options, enforce 2-Step Verification (2SV) company-wide, and set up DLP (Data Loss Prevention) rules to block the sharing of sensitive information like credit card numbers or PII.",
   },
 ];
 ---
@@ -77,7 +78,7 @@ const faqs = [
           class="text-xl text-slate-700 dark:text-slate-300 font-medium mb-10 leading-relaxed"
         >
           Most businesses use less than 20% of Google Workspace's actual
-          capabilities while leaving their data highly vulnerable. We take full
+          capabilities while leaving their data highly vulnerable. I take full
           ownership of your Workspace infrastructure—from advanced security
           compliance and Drive architecture to automated employee onboarding and
           day-to-day IT helpdesk support.
@@ -145,7 +146,7 @@ const faqs = [
             <p class="text-slate-700 dark:text-slate-300 m-0">
               Businesses frequently pay for Google Workspace licenses they don't
               actually need. Keeping a former employee's account active just to
-              forward their emails is a common, expensive mistake. We convert
+              forward their emails is a common, expensive mistake. I convert
               these to free aliases or Cloud Identity licenses, saving you
               hundreds of dollars annually.
             </p>
@@ -295,13 +296,13 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            We implement zero-trust security policies across your organization.
+            I implement zero-trust security policies across your organization.
             This includes enforcing 2-Step Verification, configuring
             context-aware access (blocking logins from outside specific
             countries), and establishing Data Loss Prevention (DLP) rules. If an
             employee tries to email a credit card number or download massive
             amounts of data, the system automatically blocks the action and
-            alerts us.
+            alerts me.
           </p>
         </div>
 
@@ -331,10 +332,10 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            Onboarding should be magic, not a headache. We handle the entire IT
+            Onboarding should be magic, not a headache. I handle the entire IT
             side of HR. When a new hire starts, their email, groups, calendar
             access, and Drive permissions are ready on day one. When someone
-            leaves, our strict offboarding protocol immediately revokes access,
+            leaves, my strict offboarding protocol immediately revokes access,
             secures their emails, and archives their data without paying for an
             active Google Workspace license.
           </p>
@@ -366,8 +367,8 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            We migrate your team away from messy personal drives into a
-            structured Shared Drive hierarchy. We implement strict, folder-level
+            I migrate your team away from messy personal drives into a
+            structured Shared Drive hierarchy. I implement strict, folder-level
             permissions ensuring the marketing team can't access HR files, and
             external contractors can only view specific documents without the
             ability to download or print them.
@@ -400,7 +401,7 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            Consider us your in-house IT department, operating remotely. Your
+            Consider me your in-house IT department, operating remotely. Your
             employees can reach out directly for daily technical issues—from
             resetting passwords and recovering deleted files to troubleshooting
             Google Meet audio issues and configuring third-party marketplace
@@ -425,7 +426,7 @@ const faqs = [
           faqs.map((faq) => (
             <details class="group bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.3)]">
               <summary class="flex justify-between items-center font-black cursor-pointer list-none p-6 text-lg text-[#2D058A] dark:text-white hover:bg-slate-50 dark:hover:bg-[#2D058A] dark:hover:text-[#90ee02] transition-colors">
-                {faq.question}
+                <h3 class="text-lg font-black leading-snug m-0">{faq.question}</h3>
                 <span class="transition group-open:rotate-180">
                   <svg
                     fill="none"
@@ -451,6 +452,8 @@ const faqs = [
     </div>
   </section>
 
+  <ServiceProof service="workspace" reviewed="2026-11-20" caseStudies={["restructure-and-setup-google-workspace","dns-porkbun-hostinger-google-workspace-migration"]} />
+
   <!-- 6. HIGH-CONVERTING CTA -->
   <section class="py-24 site-background site-background--accent border-t border-white/10">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -460,7 +463,7 @@ const faqs = [
         Ready to Secure Your Cloud?
       </h2>
       <p class="text-xl text-slate-300 font-bold mb-12 max-w-2xl mx-auto">
-        Stop managing IT yourself. Let us optimize your Google Workspace so your
+        Stop managing IT yourself. Let me optimize your Google Workspace so your
         team can work securely and efficiently.
       </p>
       <a

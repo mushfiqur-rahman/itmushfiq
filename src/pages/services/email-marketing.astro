@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ServiceProof from "../../components/ServiceProof.astro";
 
 const title = "Automated Email Marketing Services | IT Support Bee";
 const description =
-  "Stop relying entirely on expensive ads. We build automated email marketing systems that capture leads, nurture relationships, and turn prospects into paying customers.";
+  "Stop relying entirely on expensive ads. I build automated email marketing systems that capture leads, nurture relationships, and turn prospects into paying customers.";
 const currentUrl = Astro.url.href;
 
 const faqs = [
@@ -15,18 +16,18 @@ const faqs = [
   {
     question: "I already send a monthly newsletter. Isn't that enough?",
     answer:
-      "Sending a generic newsletter to everyone is often ineffective. We build 'Automated Sequences.' For example, when someone joins your list, they automatically receive a tailored series of emails over the next few weeks introducing your best services. This works in the background 24/7 to generate sales.",
+      "Sending a generic newsletter to everyone is often ineffective. I build 'Automated Sequences.' For example, when someone joins your list, they automatically receive a tailored series of emails over the next few weeks introducing your best services. This works in the background 24/7 to generate sales.",
   },
   {
     question:
       "What happens if someone adds a product to their cart but doesn't buy?",
     answer:
-      "This is where you lose the most money. We set up 'Abandoned Cart' automations. If a customer leaves without paying, our system automatically sends them a friendly reminder email a few hours later. This simple setup often recovers 10% to 15% of lost sales automatically.",
+      "This is where you lose the most money. I set up 'Abandoned Cart' automations. If a customer leaves without paying, my system automatically sends them a friendly reminder email a few hours later. This simple setup can win back a share of sales that would otherwise be lost.",
   },
   {
     question: "Why should we hire IT Support Bee for this?",
     answer:
-      "Because we handle both the strategy and the technical setup. We don't just write the emails; we ensure your domain is authenticated so emails don't go to spam, we set up the complex automation rules, and we segment your audience so the right person gets the right message at the right time.",
+      "Because I handle both the strategy and the technical setup. I don't just write the emails; I ensure your domain is authenticated so emails don't go to spam, I set up the complex automation rules, and I segment your audience so the right person gets the right message at the right time.",
   },
 ];
 ---
@@ -76,7 +77,7 @@ const faqs = [
         <p
           class="text-xl text-slate-700 dark:text-slate-300 font-medium mb-10 leading-relaxed"
         >
-          Stop letting interested prospects slip away. We build smart, automated
+          Stop letting interested prospects slip away. I build smart, automated
           email systems that capture website visitors, nurture them with
           valuable content, and consistently turn them into paying clients while
           you focus on running your business.
@@ -93,7 +94,7 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 2. THE PAIN POINT (What problems we solve) -->
+  <!-- 2. THE PAIN POINT (What problems I solve) -->
   <section class="py-24 site-background border-t border-white/10">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2
@@ -166,7 +167,7 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 3. COMPARISON TABLE (Why they should choose us) -->
+  <!-- 3. COMPARISON TABLE (Why they should choose me) -->
   <section class="py-24 dark:border-white/10 site-background site-background--soft border-t border-white/10"
   >
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -207,7 +208,7 @@ const faqs = [
               >
               <td
                 class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
-                >100% automated and instantly delivered</td
+                >Automated and sent on schedule</td
               >
             </tr>
             <tr>
@@ -245,7 +246,7 @@ const faqs = [
                 >Emails often land in the spam folder</td
               >
               <td class="p-6 bg-green-50 dark:bg-green-900/10"
-                >Fully authenticated to guarantee inbox delivery</td
+                >Authenticated with SPF, DKIM &amp; DMARC</td
               >
             </tr>
           </tbody>
@@ -254,13 +255,13 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 4. DEEP DIVE SERVICES (How we solve the problems) -->
+  <!-- 4. DEEP DIVE SERVICES (How I solve the problems) -->
   <section class="py-24 site-background border-t border-white/10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2
         class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-16 text-center uppercase tracking-tight"
       >
-        How We Build Your Sales Machine
+        How I Build Your Sales Machine
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -290,7 +291,7 @@ const faqs = [
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
             When someone gives you their email, that is when they are most
-            interested in your business. We build a structured series of emails
+            interested in your business. I build a structured series of emails
             that automatically goes out over their first week. This introduces
             your brand, builds trust, and gently guides them toward making their
             first purchase without you lifting a finger.
@@ -324,10 +325,10 @@ const faqs = [
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
             If a customer abandons their shopping cart or leaves a booking page
-            halfway through, we set up systems to track that behavior. We then
+            halfway through, I set up systems to track that behavior. I then
             automatically send them a personalized reminder email (sometimes
             with a small discount) to bring them back. It is the easiest way to
-            increase your revenue instantly.
+            recover sales you would otherwise lose.
           </p>
         </div>
 
@@ -357,9 +358,9 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            We stop the generic email blasts. We organize your audience based on
+            I stop the generic email blasts. I organize your audience based on
             their behavior—what they clicked on, what they bought, or what
-            services they looked at. This allows us to send highly specific
+            services they looked at. This allows me to send highly specific
             offers to the right people, drastically increasing the chances they
             will buy.
           </p>
@@ -392,7 +393,7 @@ const faqs = [
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
             The best marketing email in the world is useless if it lands in the
-            spam folder. As IT experts, we handle the complex background
+            spam folder. As an IT specialist, I handle the complex background
             configurations (authenticating your domain) to ensure your emails
             actually reach your customers' main inbox, keeping your business
             highly visible.
@@ -416,7 +417,7 @@ const faqs = [
           faqs.map((faq) => (
             <details class="group bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.3)]">
               <summary class="flex justify-between items-center font-black cursor-pointer list-none p-6 text-lg text-[#2D058A] dark:text-white hover:bg-slate-50 dark:hover:bg-[#2D058A] dark:hover:text-[#90ee02] transition-colors">
-                {faq.question}
+                <h3 class="text-lg font-black leading-snug m-0">{faq.question}</h3>
                 <span class="transition group-open:rotate-180">
                   <svg
                     fill="none"
@@ -442,6 +443,8 @@ const faqs = [
     </div>
   </section>
 
+  <ServiceProof service="marketing" reviewed="2026-11-20" caseStudies={["workspace-hubspot-squarespace-email-delivery"]} />
+
   <!-- 6. HIGH-CONVERTING CTA -->
   <section class="py-24 site-background site-background--accent border-t border-white/10">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -451,7 +454,7 @@ const faqs = [
         Ready to Automate Your Sales?
       </h2>
       <p class="text-xl text-slate-300 font-bold mb-12 max-w-2xl mx-auto">
-        Stop letting warm leads forget about your business. Let us build a
+        Stop letting warm leads forget about your business. Let me build a
         system that turns your audience into paying clients automatically.
       </p>
       <a

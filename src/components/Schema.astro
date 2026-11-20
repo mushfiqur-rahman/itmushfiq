@@ -4,18 +4,66 @@ import services from "../data/services.json";
 import faqs from "../data/faqs.json";
 const { title, description, url } = Astro.props;
 const origin = "https://itsupportbee.com";
+const path = new URL(url).pathname;
+const pageName = String(title).replace(/\s*\|\s*IT Support Bee\s*$/, "");
+
+// Home > (Blog >) Page. /services/ has no index page, so it is not a crumb.
+const crumbs = [{ name: "Home", item: origin + "/" }];
+if (path.startsWith("/blog/") && path !== "/blog/") crumbs.push({ name: "Blog", item: origin + "/blog/" });
+if (path !== "/") crumbs.push({ name: pageName, item: url });
+
 const schemaData = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Organization", "@id": origin + "/#organization", name: "IT Support Bee", url: origin, description: site.bio, logo: origin + "/favicon.svg", email: site.email, address: site.address, areaServed: site.areaServed, sameAs: site.companySocials.map(s => s.url), founder: { "@id": origin + "/#founder" }, contactPoint: { "@type": "ContactPoint", email: site.email, contactType: "customer support", url: origin + "/contact/", availableLanguage: "English" } },
-    { "@type": "Person", "@id": origin + "/#founder", name: site.name, jobTitle: site.role, url: origin + "/about/", sameAs: site.socials.filter(s => !["Agency", "X (Twitter)"].includes(s.label)).map(s => s.url), worksFor: { "@id": origin + "/#organization" } },
-    { "@type": "WebSite", "@id": origin + "/#website", url: origin, name: "IT Support Bee", publisher: { "@id": origin + "/#organization" }, inLanguage: "en" },
-    { "@type": "WebPage", "@id": url + "#webpage", url, name: title, description, isPartOf: { "@id": origin + "/#website" }, inLanguage: "en" },
-    ...(new URL(url).pathname === "/" ? [
-      ...services.map(service => ({ "@type": "Service", "@id": origin + service.href + "#service", name: service.title, description: service.desc, url: origin + service.href, provider: { "@id": origin + "/#organization" } })),
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": origin + "/#organization",
+      name: "IT Support Bee",
+      alternateName: "IT Support Bee by Mushfiqur Rahman",
+      url: origin,
+      description: site.entityDescription,
+      slogan: "Business email that works for you",
+      logo: origin + "/favicon.svg",
+      image: origin + "/og-default.png",
+      email: site.email,
+      address: site.address,
+      areaServed: site.areaServed,
+      knowsAbout: site.knowsAbout,
+      sameAs: site.companySocials.map(s => s.url),
+      founder: { "@id": origin + "/#founder" },
+      contactPoint: { "@type": "ContactPoint", email: site.email, contactType: "customer support", url: origin + "/contact/", availableLanguage: "English", areaServed: ["US", "AU"] },
+    },
+    {
+      "@type": "Person",
+      "@id": origin + "/#founder",
+      name: site.name,
+      jobTitle: site.role,
+      description: site.bio,
+      image: origin + "/mushfiqur.jpg",
+      url: origin + "/about/",
+      knowsAbout: site.knowsAbout,
+      alumniOf: { "@type": "CollegeOrUniversity", name: "National University, Bangladesh" },
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        name: "Bachelor of Science in Computer Science and Engineering",
+        recognizedBy: { "@type": "CollegeOrUniversity", name: "National University, Bangladesh" },
+      },
+      sameAs: site.socials.filter(s => !["Agency", "X (Twitter)"].includes(s.label)).map(s => s.url),
+      worksFor: { "@id": origin + "/#organization" },
+    },
+    { "@type": "WebSite", "@id": origin + "/#website", url: origin, name: "IT Support Bee", description: site.entityDescription, publisher: { "@id": origin + "/#organization" }, inLanguage: "en" },
+    { "@type": "WebPage", "@id": url + "#webpage", url, name: title, description, isPartOf: { "@id": origin + "/#website" }, about: { "@id": origin + "/#organization" }, inLanguage: "en", ...(crumbs.length > 1 ? { breadcrumb: { "@id": url + "#breadcrumb" } } : {}) },
+    ...(crumbs.length > 1 ? [{
+      "@type": "BreadcrumbList",
+      "@id": url + "#breadcrumb",
+      itemListElement: crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.name, item: c.item })),
+    }] : []),
+    ...(path === "/" ? [
+      ...services.map(service => ({ "@type": "Service", "@id": origin + service.href + "#service", name: service.title, description: service.desc, url: origin + service.href, provider: { "@id": origin + "/#organization" }, areaServed: site.areaServed })),
       { "@type": "FAQPage", "@id": origin + "/#faq", mainEntity: faqs.map(faq => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) }
     ] : [])
   ]
 };
 ---
-<script type="application/ld+json" set:html={JSON.stringify(schemaData).replace(/</g, "\u003c")} />
+<script type="application/ld+json" set:html={JSON.stringify(schemaData).replace(/</g, "<")} />

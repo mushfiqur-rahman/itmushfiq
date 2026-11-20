@@ -1,4 +1,5 @@
 // src/utils/getServices.ts
+import services from "../data/services.json";
 
 export async function getDynamicServices() {
   let dynamicServices: { name: string; path: string }[] = [];
@@ -21,8 +22,8 @@ export async function getDynamicServices() {
           .replace(/\.(astro|md|mdx)$/, "")
           .replace(/\/index$/, "") + "/"; // index.astro হ্যান্ডেল করা; trailing slash matches canonical URLs
 
-        // টাইটেল বের করা
-        let title = file.frontmatter?.title;
+        // টাইটেল বের করা: prefer the service's display title from services.json
+        let title = file.frontmatter?.title ?? services.find((s) => s.href === path)?.title;
         if (!title && path) {
           // Paths end in "/", so take the last non-empty segment.
           const slug = path.split("/").filter(Boolean).pop();

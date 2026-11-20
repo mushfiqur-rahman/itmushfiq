@@ -1,5 +1,5 @@
 ---
-title: "Exchange Online to Google Workspace: A 23-Hour Migration Case Study"
+title: "Exchange Online to Google Workspace in 23 Hours: Case Study"
 description: "Lessons from an Exchange Online to Google Workspace migration: mailbox discovery, routing, synchronization, DNS checks, and post-migration validation."
 pubDate: "October 10, 2026"
 updatedDate: "2026-10-30"

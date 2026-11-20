@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components";
 import { site } from "../data/site";
 const currentYear = new Date().getFullYear();
 const solutions = [
-  { name: "Remote IT support", path: "/services/remote-it-support/" },
+  { name: "Remote Microsoft 365 & Workspace support", path: "/services/remote-it-support/" },
   {
     name: "Microsoft 365 management",
     path: "/services/microsoft-365-management/",
@@ -18,7 +18,7 @@ const solutions = [
   { name: "Business automation", path: "/services/business-automation/" },
 ];
 const company = [
-  { name: "About the team", path: "/about/" },
+  { name: "About Mushfiqur", path: "/about/" },
   { name: "Insights & guides", path: "/blog/" },
   { name: "Get in touch", path: "/contact/" },
   { name: "Service guide for AI tools", path: "/llms.txt" },
@@ -32,7 +32,7 @@ const organization = {
   url: "https://itsupportbee.com",
   email: "hello@itsupportbee.com",
   description:
-    "Remote IT support, Microsoft 365 and Google Workspace management, email migration, email deliverability, and business automation.",
+    site.entityDescription,
   address: site.address,
   areaServed: site.areaServed,
   sameAs: socials.map((social) => social.url),
@@ -71,8 +71,7 @@ const organization = {
           ></a
         >
         <p>
-          Remote IT support, cloud management, and email expertise for your
-          business.
+          Microsoft 365 and Google Workspace email migration, deliverability, and remote admin support by Mushfiqur Rahman.
         </p>
 
         <nav class="social-links" aria-label="Follow IT Support Bee">
@@ -120,7 +119,7 @@ const organization = {
       </nav>
       <section class="panel contact-panel" aria-labelledby="footer-contact">
         <div>
-          <h3 id="footer-contact">Contact our team</h3><a
+          <h3 id="footer-contact">Contact me</h3><a
             class="email"
             href="mailto:hello@itsupportbee.com"
             >hello@itsupportbee.com <Icon

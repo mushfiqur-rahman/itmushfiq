@@ -207,4 +207,4 @@ A Claude Team migration is not hard. It is unforgiving. The built-in tool does t
 
 Want this handled without disrupting your team? IT Support Bee plans the audit, configures the organization, runs the live migration session over screen share and hands you a clear summary. No passwords shared. Everything is done in the admin console or on screen share, with your permission.
 
-Email **hello@itsupportbee.com** or visit [itsupportbee.com/contact](https://itsupportbee.com/contact/) to book a strategy call and bulletproof your IT infrastructure.
+Email **hello@itsupportbee.com** or visit [itsupportbee.com/contact](https://itsupportbee.com/contact/) to book a call about your Microsoft 365 or Google Workspace setup.

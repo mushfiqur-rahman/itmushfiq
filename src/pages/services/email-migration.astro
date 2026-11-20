@@ -1,31 +1,32 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ServiceProof from "../../components/ServiceProof.astro";
 
-const title = "Enterprise Email Migration Services | IT Support Bee";
+const title = "Email Migration: Microsoft 365 & Google Workspace | IT Support Bee";
 const description =
-  "Zero-downtime email migrations. We specialize in Exchange Online to Google Workspace, GoDaddy Microsoft 365 defederation, and complex tenant consolidations.";
+  "Planned email migrations between Microsoft 365, Google Workspace, GoDaddy and cPanel, with dual delivery during cutover and checks on every mailbox.";
 const currentUrl = Astro.url.href;
 
 const faqs = [
   {
-    question: "What does zero-downtime migration actually mean?",
+    question: "Will we lose email during the migration?",
     answer:
-      "It means your team will never stop receiving or sending emails. We use a staged approach, configuring temporary routing domains and dual-delivery systems. We do the heavy data synchronization in the background and only switch the live MX records during scheduled off-hours (usually a weekend).",
+      "The goal is that your team keeps sending and receiving throughout. I use a staged approach: the bulk of the data is copied in the background first, dual delivery covers the DNS propagation window, and the live MX change happens in a quiet period you choose, often a weekend. Some interruption is still possible, such as signing in again on phones, so I agree the cutover plan and a rollback step with you before anything changes.",
   },
   {
     question: "How do you handle GoDaddy Microsoft 365 Defederation?",
     answer:
-      "GoDaddy locks down your Microsoft 365 admin panel, forcing you to pay higher renewal fees. We use advanced PowerShell scripts and the Microsoft.Graph.Identity.DirectoryManagement module to sever the backend connection. This transfers full global admin rights directly to you on Microsoft's native platform, without migrating a single mailbox.",
+      "Microsoft 365 bought through GoDaddy is federated to GoDaddy, which limits what you can manage in the Microsoft admin centre. Defederation removes that link using Microsoft's own PowerShell and Graph tools, so you hold the global admin role directly with Microsoft, usually without moving mailboxes. I first check licensing, domains and sign-in settings, because each tenant is different.",
   },
   {
     question: "Can you migrate our folders, labels, and calendar events?",
     answer:
-      "Yes. Whether moving from Exchange Online to Workspace or consolidating multiple Google tenants, we map your entire folder hierarchy, calendar events, contacts, and custom labels so your employees log in on Monday morning with everything exactly where they left it.",
+      "Yes. Whether moving from Exchange Online to Workspace or consolidating multiple Google tenants, I map your entire folder hierarchy, calendar events, contacts, and custom labels and then check a sample of mailboxes with you before the old system is retired.",
   },
   {
     question: "What happens to emails sent to us during the DNS transition?",
     answer:
-      "We set up catch-all rules and custom routing vaults before the MX records are updated. Any email that arrives during the DNS propagation window is safely captured in a quarantine vault or routed to the new destination, guaranteeing zero data loss.",
+      "Before the MX records change, I set up dual delivery and routing so mail arriving during DNS propagation (typically up to 24 to 48 hours) reaches a mailbox your team can read. After cutover, a final sync picks up anything that still landed in the old system.",
   },
 ];
 ---
@@ -66,20 +67,16 @@ const faqs = [
         <h1
           class="text-5xl md:text-7xl font-black text-[#2D058A] dark:text-white leading-tight mb-8"
         >
-          Flawless Email Migrations. <br />
+          Email Migrations, <br />
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-[#2D058A] to-[#7b2cbf] dark:from-[#90ee02] dark:to-[#ccff66]"
-            >Zero Data Loss.</span
+            >Planned Around Your Cutover.</span
           >
         </h1>
         <p
           class="text-xl text-slate-700 dark:text-slate-300 font-medium mb-10 leading-relaxed"
         >
-          Email is the lifeblood of your business. We execute complex cloud
-          migrations—from GoDaddy tenant defederations to massive
-          Exchange-to-Workspace moves—with military precision. Your team leaves
-          on Friday and logs into a perfectly mapped, secure new environment on
-          Monday morning.
+          Email is the lifeblood of your business. I plan and run migrations between Microsoft 365, Google Workspace, GoDaddy and cPanel email, from GoDaddy defederations to Exchange-to-Workspace moves. The data is copied before the switch, the cutover happens at a time you choose, and every mailbox is checked afterwards.
         </p>
         <div class="flex flex-wrap gap-4">
           <a
@@ -140,9 +137,7 @@ const faqs = [
             </h3>
             <p class="text-slate-700 dark:text-slate-300 m-0">
               If you bought Microsoft 365 through GoDaddy, you don't have true
-              admin access. Attempting to migrate out manually often leads to
-              days of downtime. We bypass this using specialized PowerShell
-              scripts to defederate your tenant natively.
+              admin access. Moving away without a plan can mean an unnecessary mailbox migration. In many cases the tenant can be defederated with Microsoft's own tools instead.
             </p>
           </div>
 
@@ -172,7 +167,7 @@ const faqs = [
       <h2
         class="text-3xl md:text-5xl font-black text-[#2D058A] dark:text-white mb-12 text-center uppercase tracking-tight"
       >
-        Why Clients Trust Our Process
+        Why Clients Trust My Process
       </h2>
 
       <div
@@ -206,7 +201,7 @@ const faqs = [
               >
               <td
                 class="p-6 border-b-2 border-[#2D058A] bg-green-50 dark:bg-green-900/10"
-                >Zero downtime (Weekend Cutover)</td
+                >Planned off-hours cutover with dual delivery</td
               >
             </tr>
             <tr>
@@ -289,9 +284,7 @@ const faqs = [
           >
             Whether you are moving from Microsoft Exchange Online to Google
             Workspace, or migrating from a legacy cPanel/Webmail server to
-            Microsoft 365, we handle the entire API-level data transfer. We
-            ensure every label, nested folder, and recurring calendar invite is
-            perfectly mapped to the new environment.
+            Microsoft 365, I handle the entire API-level data transfer. Labels, nested folders and calendars are mapped where the destination supports them, and I flag anything that cannot move, such as some Gmail-only features, before you commit.
           </p>
         </div>
 
@@ -320,11 +313,7 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            GoDaddy limits your administrative control over Microsoft 365. We
-            execute precise PowerShell scripts using the Microsoft Graph API to
-            defederate your tenant. This breaks the link with GoDaddy and
-            restores your native global admin privileges instantly—without
-            requiring a single mailbox to be moved or downloaded.
+            GoDaddy limits your administrative control over Microsoft 365. Using Microsoft's PowerShell and Graph tools, I defederate the tenant so you manage it directly with Microsoft, usually without moving or downloading any mailboxes.
           </p>
         </div>
 
@@ -354,9 +343,9 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            Did you acquire a new company? We merge multiple Google Workspace or
+            Did you acquire a new company? I merge multiple Google Workspace or
             Microsoft 365 environments into a single, unified corporate tenant.
-            We manage the complex domain verifications, establish primary and
+            I manage the complex domain verifications, establish primary and
             secondary domains, and consolidate user identities without
             disrupting cross-department communication.
           </p>
@@ -388,7 +377,7 @@ const faqs = [
           <p
             class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-4"
           >
-            For complex enterprise setups, a simple cutover isn't enough. We
+            For complex enterprise setups, a simple cutover isn't enough. I
             build advanced content compliance rules, setup quarantine vaults,
             and configure dual-delivery routing for secondary domain aliases.
             This ensures strict data security and compliance policies remain
@@ -413,7 +402,7 @@ const faqs = [
           faqs.map((faq) => (
             <details class="group bg-white dark:bg-[#150734] border-4 border-[#2D058A] dark:border-white/10 rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(45,5,138,1)] dark:shadow-[4px_4px_0px_0px_rgba(144,238,2,0.3)]">
               <summary class="flex justify-between items-center font-black cursor-pointer list-none p-6 text-lg text-[#2D058A] dark:text-white hover:bg-slate-50 dark:hover:bg-[#2D058A] dark:hover:text-[#90ee02] transition-colors">
-                {faq.question}
+                <h3 class="text-lg font-black leading-snug m-0">{faq.question}</h3>
                 <span class="transition group-open:rotate-180">
                   <svg
                     fill="none"
@@ -439,6 +428,8 @@ const faqs = [
     </div>
   </section>
 
+  <ServiceProof service="migration" reviewed="2026-11-20" caseStudies={["exchange-to-workspace","google-to-microsoft-365-client-migration","business-email-migration-checklist"]} />
+
   <!-- 6. HIGH-CONVERTING CTA -->
   <section class="py-24 site-background site-background--accent border-t border-white/10">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -448,8 +439,7 @@ const faqs = [
         Ready for a Smooth Move?
       </h2>
       <p class="text-xl text-slate-300 font-bold mb-12 max-w-2xl mx-auto">
-        Don't risk your company's data with a DIY migration. Let us plan and
-        execute a flawless transition this weekend.
+        Don't risk your company's data with a DIY migration. Let me plan a migration with a clear cutover window, a rollback step and a mailbox-by-mailbox check.
       </p>
       <a
         href="/contact/"
@@ -459,5 +449,4 @@ const faqs = [
       </a>
     </div>
   </section>
-<aside class="py-8 px-6 text-center"><a class="underline" href="/blog/google-to-microsoft-365-client-migration/">Client case study: Google to Microsoft 365: a migration with DNS changes</a></aside>
 </BaseLayout>

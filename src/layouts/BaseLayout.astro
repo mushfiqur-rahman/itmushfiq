@@ -12,7 +12,7 @@ import "@fontsource/poppins/900.css"; // Black
 const {
   title,
   description = "Business email migration, deliverability troubleshooting, Microsoft 365 and Google Workspace management, and remote IT support from IT Support Bee.",
-  image,
+  image: pageImage,
   articleDate,
   modifiedDate,
   noindex = false,
@@ -20,6 +20,9 @@ const {
   includeSchema = true,
 } = Astro.props;
 const currentUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href;
+// Pages without their own image share the default 1200x630 card.
+const image = pageImage || "/og-default.png";
+const usesDefaultImage = !pageImage;
 ---
 
 <!doctype html>
@@ -41,7 +44,10 @@ const currentUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).h
     <meta property="og:url" content={currentUrl} />
     <meta property="og:type" content={type === "Article" ? "article" : "website"} />
     <meta property="og:site_name" content="IT Support Bee" />
-    {image && <meta property="og:image" content={new URL(image, currentUrl).href} />}
+    <meta property="og:image" content={new URL(image, currentUrl).href} />
+    {usesDefaultImage && <meta property="og:image:width" content="1200" />}
+    {usesDefaultImage && <meta property="og:image:height" content="630" />}
+    <meta property="og:image:alt" content={title} />
 
     {includeSchema && <Schema
       title={title}
@@ -53,10 +59,10 @@ const currentUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).h
       pubDate={articleDate}
     />}
     <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large"} />
-    <meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    {image && <meta name="twitter:image" content={new URL(image, currentUrl).href} />}
+    <meta name="twitter:image" content={new URL(image, currentUrl).href} />
     {type === "Article" && articleDate && <meta property="article:published_time" content={new Date(articleDate).toISOString()} />}
     {type === "Article" && modifiedDate && <meta property="article:modified_time" content={new Date(modifiedDate).toISOString()} />}
     <meta name="msvalidate.01" content="967D05F8C7F9343E1A1F222CA5615E13" />

@@ -1,0 +1,67 @@
+---
+// Proof block for service pages: named expert byline, review date,
+// matching client reviews, and related case studies.
+import { getCollection } from "astro:content";
+import { site } from "../data/site";
+import { testimonials, type ServiceKey } from "../data/testimonials";
+
+interface Props {
+  service: ServiceKey;
+  /** Blog post ids (lowercase slugs) to link as case studies or guides. */
+  caseStudies?: string[];
+  /** ISO date this page was last reviewed for accuracy. */
+  reviewed: string;
+}
+
+const { service, caseStudies = [], reviewed } = Astro.props;
+const reviews = testimonials.filter((t) => t.services.includes(service)).slice(0, 3);
+const posts = (await getCollection("blog")).filter((p) => caseStudies.includes(p.id));
+const linked = caseStudies.map((id) => posts.find((p) => p.id === id)).filter(Boolean);
+const reviewedLabel = new Date(reviewed).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+---
+
+<section class="py-20 site-background border-t border-white/10" aria-labelledby="proof-title">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-center gap-5 p-6 rounded-2xl border border-white/10 bg-white/5">
+      <img src="/mushfiqur.jpg" alt={site.name} width="72" height="72" loading="lazy" class="w-18 h-18 rounded-full object-cover border-2 border-[#90ee02]" />
+      <div>
+        <p class="text-sm uppercase tracking-widest text-[#90ee02] font-bold">Who does the work</p>
+        <p class="text-lg text-white font-bold">
+          <a href="/about/" class="underline underline-offset-4">{site.name}</a>, Microsoft 365 &amp; Google Workspace email consultant
+        </p>
+        <p class="text-sm text-slate-300">
+          You work directly with me, not a call centre. Page reviewed for accuracy on <time datetime={reviewed}>{reviewedLabel}</time>.
+        </p>
+      </div>
+    </div>
+
+    {reviews.length > 0 && (
+      <>
+        <h2 id="proof-title" class="mt-14 mb-8 text-3xl font-black text-white tracking-tight">What clients say about this work</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          {reviews.map((r) => (
+            <figure class="flex flex-col p-6 rounded-2xl border border-white/10 bg-white/5">
+              <blockquote class="text-slate-200 text-sm leading-relaxed grow">“{r.feedback}”</blockquote>
+              <figcaption class="mt-5 pt-4 border-t border-white/10 text-sm">
+                <span class="block font-bold text-white">{r.name}, {r.designation}</span>
+                <span class="block text-xs text-slate-400 mt-1">Project: {r.work}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p class="mt-4 text-xs text-slate-400">Client reviews, quoted as written.</p>
+      </>
+    )}
+
+    {linked.length > 0 && (
+      <div class="mt-12">
+        <h2 class="mb-4 text-2xl font-black text-white tracking-tight" id={reviews.length ? undefined : "proof-title"}>Related case studies and guides</h2>
+        <ul class="space-y-3">
+          {linked.map((p) => (
+            <li><a href={`/blog/${p!.id}/`} class="text-[#90ee02] font-semibold underline underline-offset-4">{p!.data.title}</a></li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+</section>

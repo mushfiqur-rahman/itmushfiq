@@ -2,6 +2,7 @@
 title: "Why Are Business Emails Going to Spam? A Troubleshooting Checklist"
 description: "Compare real message headers to isolate spam placement, diagnose SPF and DKIM alignment, and verify repairs in the application that sends the mail."
 pubDate: 2026-11-13
+updatedDate: "2026-11-20"
 author: "Mushfiqur Rahman"
 category: "Deliverability"
 image: "/blog/Why-Business-Emails-Go-to-Spam.png"
@@ -93,3 +94,11 @@ Share the domain, affected application, approximate start time, redacted headers
 For help interpreting the results, see [email deliverability support](/services/email-deliverability/). Planning a provider change? Use the [email migration checklist](/blog/business-email-migration-checklist/) before altering mail routing.
 
 To diagnose mail that customers find in junk, email **hello@itsupportbee.com** or [book a strategy call with IT Support Bee](https://itsupportbee.com/contact/).
+
+## Standards and provider references
+
+- [RFC 7208: Sender Policy Framework (SPF)](https://www.rfc-editor.org/rfc/rfc7208)
+- [RFC 6376: DomainKeys Identified Mail (DKIM) Signatures](https://www.rfc-editor.org/rfc/rfc6376)
+- [RFC 7489: Domain-based Message Authentication, Reporting, and Conformance (DMARC)](https://www.rfc-editor.org/rfc/rfc7489)
+- [Google: Email sender guidelines](https://support.google.com/a/answer/81126)
+- [Microsoft: Email authentication in Microsoft 365](https://learn.microsoft.com/en-us/defender-office-365/email-authentication-about)

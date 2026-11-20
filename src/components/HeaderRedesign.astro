@@ -19,7 +19,7 @@ const isActive = (path: string) => currentPath === path || (path !== "/" && curr
     <div class="flex min-h-16 items-center justify-between gap-4">
       <a href="/" class="group flex items-center gap-3 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2D058A]">
         <span class="grid h-9 w-9 place-items-center rounded-xl bg-[#90ee02] text-sm font-black text-[#160a32] shadow-[0_6px_16px_rgba(144,238,2,.2)] transition-transform duration-300 group-hover:-rotate-6">IT</span>
-        <span class="leading-none"><span class="block text-base font-bold tracking-[-.04em] text-white">Support Bee</span><span class="mt-1 block text-[10px] font-semibold uppercase tracking-[.16em] text-slate-400">Remote IT partner</span></span>
+        <span class="leading-none"><span class="block text-base font-bold tracking-[-.04em] text-white">Support Bee</span><span class="mt-1 block text-[10px] font-semibold uppercase tracking-[.16em] text-slate-400">Email systems consultant</span></span>
       </a>
 
       <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
@@ -29,7 +29,7 @@ const isActive = (path: string) => currentPath === path || (path !== "/" && curr
             Services <svg class="h-3.5 w-3.5 transition-transform group-open:rotate-180" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
           </summary>
           <div class="site-surface absolute left-0 top-[calc(100%+1rem)] w-72 rounded-2xl p-2">
-            <a href="/services/remote-it-support/" class="block rounded-xl px-3 py-3 text-sm text-slate-700 dark:text-slate-200">Explore remote IT support</a>
+            <a href="/services/remote-it-support/" class="block rounded-xl px-3 py-3 text-sm text-slate-700 dark:text-slate-200">Explore remote Microsoft 365 &amp; Workspace support</a>
             {services.map((service) => <a href={service.path} class:list={["block rounded-xl px-3 py-2.5 text-sm font-medium transition", currentPath === service.path ? "bg-[#2D058A] text-white" : "text-slate-700 hover:bg-[#2D058A]/6 hover:text-[#2D058A] dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-white"]}>{service.name}</a>)}
           </div>
         </details>
@@ -51,7 +51,7 @@ const isActive = (path: string) => currentPath === path || (path !== "/" && curr
           </div>
           <details class="mt-2 rounded-xl bg-slate-50 dark:bg-white/5">
             <summary class="cursor-pointer px-3 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200">Services</summary>
-            <div class="space-y-1 px-2 pb-2"><a href="/services/remote-it-support/" class="block rounded-lg px-3 py-3 text-sm text-slate-700 dark:text-slate-200">Explore remote IT support</a>{services.map((service) => <a href={service.path} aria-current={currentPath === service.path ? 'page' : undefined} class="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-[#2D058A]/8 hover:text-[#2D058A] dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">{service.name}</a>)}</div>
+            <div class="space-y-1 px-2 pb-2"><a href="/services/remote-it-support/" class="block rounded-lg px-3 py-3 text-sm text-slate-700 dark:text-slate-200">Explore remote Microsoft 365 &amp; Workspace support</a>{services.map((service) => <a href={service.path} aria-current={currentPath === service.path ? 'page' : undefined} class="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-[#2D058A]/8 hover:text-[#2D058A] dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white">{service.name}</a>)}</div>
           </details>
           <a href={bookingUrl} class="mt-3 block rounded-xl bg-[#90ee02] px-4 py-3 text-center text-sm font-semibold text-[#160a32] hover:bg-[#b1ff37]">Book a consultation <span class="sr-only">on Calendly</span><span aria-hidden="true">→</span></a>
         </nav>

@@ -36,8 +36,8 @@
     "icon": "lucide:bot"
   },
   {
-    "title": "Remote IT Helpdesk",
-    "desc": "Get remote help with email, account access, software, and everyday IT problems, with ongoing support scoped to your team.",
+    "title": "Remote Microsoft 365 & Workspace Support",
+    "desc": "Remote fixes for email, sign-in and MFA, calendars, shared files, users and licences in Microsoft 365 and Google Workspace.",
     "href": "/services/remote-it-support/",
     "icon": "lucide:headset"
   }

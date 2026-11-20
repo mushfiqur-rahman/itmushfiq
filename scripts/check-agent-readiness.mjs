@@ -6,17 +6,17 @@ const read = path => readFileSync(`dist/${path}`, 'utf8');
 const home = read('index.html');
 assert.match(home, /<link[^>]+rel="canonical"[^>]+href="https:\/\/itsupportbee.com\/"/);
 assert.match(home, /<meta[^>]+name="description"/);
-assert.match(home, /<title>Business Email &amp; Remote IT Support/);
+assert.match(home, /<title>Email Migration &amp; Deliverability Consultant/);
 const schemas = [...home.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].flatMap(m => {
   const value = JSON.parse(m[1]);
   return value['@graph'] ?? [value];
 });
 for (const type of ['Organization', 'Person', 'WebSite', 'WebPage', 'Service', 'FAQPage']) {
-  assert(schemas.some(s => s['@type'] === type), `Missing ${type}`);
+  assert(schemas.some(s => [].concat(s['@type']).includes(type)), `Missing ${type}`);
 }
-assert(schemas.find(s => s['@type'] === 'Organization').sameAs.length > 0);
+assert(schemas.find(s => [].concat(s['@type']).includes('Organization')).sameAs.length > 0);
 assert.equal(schemas.filter(s => s['@type'] === 'Service').length, 7);
-assert.match(read('robots.txt'), /Content-Signal: search=yes, ai-train=no/);
+assert.match(read('robots.txt'), /Content-Signal: search=yes, ai-train=yes/);
 assert.match(read('llms.txt'), /https:\/\/itsupportbee.com\/contact/);
 const markdown = read('index.md');
 assert.match(markdown, /^# Business Email Support/);
@@ -29,8 +29,11 @@ for (const name of ['sitemap.xml']) {
   assert(urls.length > 0);
   for (const [, item] of urls) {
     const lastmod = item.match(/<lastmod>(.*?)<\/lastmod>/)?.[1];
-    assert(lastmod && Number.isFinite(Date.parse(lastmod)), `Missing/invalid lastmod: ${item}`);
-    assert(Date.parse(lastmod) <= Date.now(), `Future lastmod: ${lastmod}`);
+    // lastmod is omitted when no trustworthy date exists; when present it must be valid.
+    if (lastmod) {
+      assert(Number.isFinite(Date.parse(lastmod)), `Invalid lastmod: ${item}`);
+      assert(Date.parse(lastmod) <= Date.now(), `Future lastmod: ${lastmod}`);
+    }
     assert(!item.includes('index.md'), 'Markdown alternate should not be an indexable page');
   }
 }

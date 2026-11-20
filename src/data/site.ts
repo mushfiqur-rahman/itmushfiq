@@ -1,7 +1,23 @@
 export const site = {
   name: "Mushfiqur Rahman",
-  role: "Cloud Administrator & IT Support Engineer",
-  bio: "Helping businesses set up, migrate, and manage reliable email systems. Specializing in Google Workspace, Microsoft 365, email deliverability, and remote IT support at IT Support Bee.",
+  role: "Microsoft 365 & Google Workspace Email Consultant",
+  bio: "I help small businesses migrate, secure, and fix their business email. I specialize in Microsoft 365 and Google Workspace migrations, SPF, DKIM and DMARC, and remote admin support through IT Support Bee.",
+  // One consistent entity description, reused in schema and llms.txt.
+  entityDescription: "IT Support Bee is the Microsoft 365 and Google Workspace email migration and deliverability consultancy of Mushfiqur Rahman, serving small businesses in the United States and Australia remotely.",
+  knowsAbout: [
+    "Email migration",
+    "Microsoft 365",
+    "Google Workspace",
+    "Exchange Online",
+    "GoDaddy Microsoft 365 defederation",
+    "Email deliverability",
+    "SPF",
+    "DKIM",
+    "DMARC",
+    "DNS",
+    "Microsoft Entra ID",
+    "Microsoft Intune",
+  ],
   openToWork: true, // ক্লায়েন্টদের জন্য এভেইলেবল বোঝাতে
   email: "hello@itsupportbee.com",
   address: [
