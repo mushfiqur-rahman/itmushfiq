@@ -4,7 +4,7 @@ description: "Plan a mailbox migration around a representative pilot, explicit c
 pubDate: 2026-07-01
 author: "Mushfiqur Rahman"
 category: "Email Migration"
-image: "/blog/business-email-migration-checkli/st-field-guide.png"
+image: "/blog/business-email-migration-checklist-field-guide.png"
 ---
 
 A business email migration needs an inventory, a tested transfer method, a routing plan, and an acceptance checklist. Copying messages is only one part of moving a team to a new provider. Use this planning guide to define the work before agreeing a cutover date.

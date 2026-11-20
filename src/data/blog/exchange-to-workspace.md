@@ -5,7 +5,7 @@ pubDate: "October 10, 2026"
 updatedDate: "2026-10-30"
 author: "Mushfiqur Rahman"
 category: "Cloud Migration"
-image: "/blog/exchange-to-work/space.png"
+image: "/blog/exchange-to-workspace.png"
 ---
 
 Moving business email from Exchange Online to Google Workspace requires more than copying messages. The work includes identifying accounts and sending applications, planning mail routing, transferring supported data, and checking that people can use the new system.

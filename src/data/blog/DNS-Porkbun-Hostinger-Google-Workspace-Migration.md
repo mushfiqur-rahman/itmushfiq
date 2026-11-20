@@ -4,7 +4,7 @@ description: "Discover how I migrated business emails from InMotion Hosting to G
 pubDate: 2026-06-10
 author: "Mushfiqur Rahman"
 category: "Email Migration"
-image: "/blog/DNS-Porkbun-Hostinger-Google-Work/space-Migration.png"
+image: "/blog/DNS-Porkbun-Hostinger-Google-Workspace-Migration.png"
 ---
 
 Managing business emails across multiple domains can become complicated, especially when several addresses need to deliver messages to the same person while maintaining separate business identities.

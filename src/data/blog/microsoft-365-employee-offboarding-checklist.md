@@ -4,7 +4,7 @@ description: "Block account access, preserve customer mail and OneDrive files, a
 pubDate: 2026-07-22
 author: "Mushfiqur Rahman"
 category: "IT Support"
-image: "/blog/microsoft-365-employee-offboarding-checkli/st-field-guide.png"
+image: "/blog/microsoft-365-employee-offboarding-checklist-field-guide.png"
 ---
 
 Microsoft 365 offboarding should remove a departing employee's access while preserving business information for an authorized owner. Decide who approves the work, when access must end, and what information the business needs before deleting an account or removing licenses.

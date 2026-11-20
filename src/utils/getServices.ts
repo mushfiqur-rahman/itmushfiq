@@ -24,7 +24,8 @@ export async function getDynamicServices() {
         // টাইটেল বের করা
         let title = file.frontmatter?.title;
         if (!title && path) {
-          const slug = path.split("/").pop();
+          // Paths end in "/", so take the last non-empty segment.
+          const slug = path.split("/").filter(Boolean).pop();
           title = slug
             ?.replace(/-/g, " ")
             .replace(/\b\w/g, (c) => c.toUpperCase());
