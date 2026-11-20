@@ -4,7 +4,6 @@ export const site = {
   bio: "Helping businesses set up, migrate, and manage reliable email systems. Specializing in Google Workspace, Microsoft 365, email deliverability, and remote IT support at IT Support Bee.",
   openToWork: true, // ক্লায়েন্টদের জন্য এভেইলেবল বোঝাতে
   email: "hello@itsupportbee.com",
-  telephone: "+447988585324",
   address: [
     {
       "@type": "PostalAddress",
@@ -12,13 +11,11 @@ export const site = {
       addressLocality: "Jashore",
       addressCountry: "BD",
     },
-    {
-      "@type": "PostalAddress",
-      streetAddress: "9 New Change",
-      addressLocality: "London",
-      postalCode: "EC4M 9AG",
-      addressCountry: "GB",
-    },
+  ],
+  // Target markets, used for schema.org areaServed.
+  areaServed: [
+    { "@type": "Country", name: "United States", identifier: "US" },
+    { "@type": "Country", name: "Australia", identifier: "AU" },
   ],
   website: "https://itsupportbee.com",
   socials: [

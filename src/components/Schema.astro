@@ -7,7 +7,7 @@ const origin = "https://itsupportbee.com";
 const schemaData = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Organization", "@id": origin + "/#organization", name: "IT Support Bee", url: origin, description: site.bio, logo: origin + "/favicon.svg", email: site.email, telephone: site.telephone, address: site.address, sameAs: site.socials.filter(s => s.label === "X (Twitter)").map(s => s.url), founder: { "@id": origin + "/#founder" }, contactPoint: { "@type": "ContactPoint", email: site.email, telephone: site.telephone, contactType: "customer support", url: origin + "/contact/", availableLanguage: "English" } },
+    { "@type": "Organization", "@id": origin + "/#organization", name: "IT Support Bee", url: origin, description: site.bio, logo: origin + "/favicon.svg", email: site.email, address: site.address, areaServed: site.areaServed, sameAs: site.socials.filter(s => s.label === "X (Twitter)").map(s => s.url), founder: { "@id": origin + "/#founder" }, contactPoint: { "@type": "ContactPoint", email: site.email, contactType: "customer support", url: origin + "/contact/", availableLanguage: "English" } },
     { "@type": "Person", "@id": origin + "/#founder", name: site.name, jobTitle: site.role, url: origin + "/about/", sameAs: site.socials.filter(s => !["Agency", "X (Twitter)"].includes(s.label)).map(s => s.url), worksFor: { "@id": origin + "/#organization" } },
     { "@type": "WebSite", "@id": origin + "/#website", url: origin, name: "IT Support Bee", publisher: { "@id": origin + "/#organization" }, inLanguage: "en" },
     { "@type": "WebPage", "@id": url + "#webpage", url, name: title, description, isPartOf: { "@id": origin + "/#website" }, inLanguage: "en" },

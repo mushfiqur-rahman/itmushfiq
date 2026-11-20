@@ -44,10 +44,10 @@ const organization = {
   name: "IT Support Bee",
   url: "https://itsupportbee.com",
   email: "hello@itsupportbee.com",
-  telephone: site.telephone,
   description:
     "Remote IT support, Microsoft 365 and Google Workspace management, email migration, email deliverability, and business automation.",
   address: site.address,
+  areaServed: site.areaServed,
   sameAs: socials.map((social) => social.url),
 };
 ---
@@ -70,8 +70,8 @@ const organization = {
             name="lucide:arrow-up-right"
             aria-hidden="true"
           /></a
-        ><a class="secondary" href="https://wa.me/447988585324"
-          ><Icon name="lucide:message-circle" aria-hidden="true" /> Or chat on WhatsApp
+        ><a class="secondary" href="/contact/" data-open-chat
+          ><Icon name="lucide:message-circle" aria-hidden="true" /> Or start a live chat
           <span aria-hidden="true">↗</span></a>
       </div>
       <div class="orbital" aria-hidden="true"></div>
@@ -140,16 +140,14 @@ const organization = {
               name="lucide:arrow-up-right"
               aria-hidden="true"
             /></a
-          ><a class="phone" href="tel:+447988585324"
-            ><Icon name="lucide:phone" aria-hidden="true" /> +44 7988 585324</a>
+          >
         </div><div class="offices">
           <address>
             <span>Jashore, Bangladesh</span>Software Technology Park<br
             />Jashore, Bangladesh
-          </address><address>
-            <span>London, United Kingdom</span>9 New Change<br />London EC4M
-            9AG, UK
-          </address>
+          </address><p class="service-area">
+            <span>Serving</span>United States<br />Australia
+          </p>
         </div>
       </section>
     </div>
@@ -360,12 +358,12 @@ const organization = {
     display: grid;
     gap: 12px;
   }
-  address {
+  address, .service-area {
     font-style: normal;
     font-size: 0.875rem;
     color: var(--muted);
   }
-  address span {
+  address span, .service-area span {
     display: block;
     color: #e1d3f3;
     font-weight: 500;

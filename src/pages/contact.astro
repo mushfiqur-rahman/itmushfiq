@@ -22,13 +22,13 @@ const socials = [{name:'LinkedIn',url:'https://www.linkedin.com/in/itmushfiq/',i
 <div class="meeting-visual" aria-hidden="true"><div class="meeting-line"><span class="meeting-dot"></span> A conversation with IT Support Bee</div><div class="meeting-agenda"><span>YOUR CHALLENGE</span><span class="agenda-arrow">→</span><span>A CLEAR NEXT STEP</span></div><div class="meeting-bottom"><Icon name="lucide:video"/> Connect from wherever you work.</div></div>
 <span class="action">Choose a time <Icon name="lucide:arrow-up-right" aria-hidden="true"/></span><span class="booking-note">View availability and book on Calendly</span>
 </a>
-<a href="https://wa.me/447988585324" class="glass chat whatsapp-card">
-<div class="card-top"><span class="tile"><Icon name="lucide:message-circle"/></span><span class="kicker">LET’S TALK</span><Icon name="lucide:arrow-up-right"/></div>
-<h2>A real person.<br/>A clearer way forward.</h2><p>Skip the ticket queue. Start a conversation<br/>with our team on WhatsApp.</p><span class="action">Chat with an IT expert <Icon name="lucide:arrow-right"/></span><div class="orbit" aria-hidden="true"></div>
+<a href="mailto:hello@itsupportbee.com" class="glass chat live-chat-card" data-open-chat>
+<div class="card-top"><span class="tile"><Icon name="lucide:message-circle"/></span><span class="kicker">LIVE CHAT</span><Icon name="lucide:arrow-up-right"/></div>
+<h2>A real person.<br/>A clearer way forward.</h2><p>Skip the ticket queue. Start a live chat<br/>with our team right here on the site.</p><span class="action">Chat with an IT expert <Icon name="lucide:arrow-right"/></span><div class="orbit" aria-hidden="true"></div>
 </a>
 <div class="direct">
 <a class="glass mini" href="mailto:hello@itsupportbee.com"><Icon name="lucide:mail"/><h2>Prefer email?</h2><p>Give us the bigger picture.</p><span>hello@itsupportbee.com ↗</span></a>
-<a class="glass mini" href="tel:+447988585324"><Icon name="lucide:phone"/><h2>Let’s talk it through.</h2><p>Sometimes a call is easier.</p><span>+44 7988 585324 ↗</span></a>
+<a class="glass mini" href={bookingUrl}><Icon name="lucide:video"/><h2>Let’s talk it through.</h2><p>Sometimes a call is easier.</p><span>Book a video call ↗</span></a>
 </div>
 <section class="glass next" aria-labelledby="next-title"><p class="kicker">GOOD TO KNOW</p><h2 id="next-title">What happens next?</h2><ol>
 <li><span>01</span><div><h3>We listen first.</h3><p>We get to know your business and the challenge.</p></div></li>
@@ -38,9 +38,9 @@ const socials = [{name:'LinkedIn',url:'https://www.linkedin.com/in/itmushfiq/',i
 </div>
 
 </div>
-<section class="locations" aria-labelledby="locations-title"><div class="location-intro"><p class="kicker">LOCAL ROOTS. GLOBAL REACH.</p><h2 id="locations-title">Near or far,<br/>we’re on your team.</h2><p>Based in Bangladesh and the UK.<br/>Connected to your business, wherever you work.</p></div>
+<section class="locations" aria-labelledby="locations-title"><div class="location-intro"><p class="kicker">LOCAL ROOTS. GLOBAL REACH.</p><h2 id="locations-title">Near or far,<br/>we’re on your team.</h2><p>Remote IT support for businesses in the USA and Australia.<br/>Connected to your business, wherever you work.</p></div>
 <a class="glass office" href="https://maps.app.goo.gl/xMpanDiXEeTepe7D8" target="_blank" rel="noopener noreferrer"><div class="office-top">BD / 01 <Icon name="lucide:arrow-up-right"/></div><Icon name="lucide:map-pin"/><h3>Jashore, Bangladesh</h3><p>Software Technology Park<br/>Jashore, Bangladesh</p><span>View on Google Maps <span class="sr-only">(opens in a new tab)</span></span></a>
-<a class="glass office" href="https://maps.app.goo.gl/chnU3DmxJvgfsiRs6" target="_blank" rel="noopener noreferrer"><div class="office-top">UK / 02 <Icon name="lucide:arrow-up-right"/></div><Icon name="lucide:map-pin"/><h3>London, United Kingdom</h3><p>9 New Change<br/>London EC4M 9AG, UK</p><span>View on Google Maps <span class="sr-only">(opens in a new tab)</span></span></a>
+<div class="glass office"><div class="office-top">SERVING / 02</div><Icon name="lucide:globe"/><h3>USA &amp; Australia</h3><p>Remote support across<br/>US and Australian time zones</p><span>Remote-first service</span></div>
 </section>
 <div class="socials"><p>Good connections start with a hello.</p><nav aria-label="Social media">{socials.map(s=><a href={s.url} target="_blank" rel="noopener noreferrer" aria-label={`${s.name} (opens in a new tab)`}><Icon name={`lucide:${s.icon}`}/></a>)}</nav></div>
 </div>
@@ -72,8 +72,8 @@ const socials = [{name:'LinkedIn',url:'https://www.linkedin.com/in/itmushfiq/',i
 .action { font-size: 1rem; }
 .booking-card .action { justify-content: space-between; padding: 13px 18px; min-height: 50px; border-radius: 10px; background: #90ee02; color: #2d058a; font-weight: 700; }
 .booking-note { display: block; margin-top: 12px; text-align: center; font-size: .875rem; color: #d3c7e5; }
-.whatsapp-card { background: radial-gradient(ellipse at 100% 0,#90ee020b,transparent 70%),#151422; }
-.whatsapp-card .tile,.whatsapp-card .action { color: #90ee02; }
+.live-chat-card { background: radial-gradient(ellipse at 100% 0,#90ee020b,transparent 70%),#151422; }
+.live-chat-card .tile,.live-chat-card .action { color: #90ee02; }
 .direct { gap: 18px; }
 .mini { padding: 24px 20px; }
 .mini h2 { font-size: 1.125rem; }

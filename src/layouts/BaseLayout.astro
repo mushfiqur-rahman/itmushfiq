@@ -3,7 +3,6 @@ import "../styles/global.css";
 import Header from "../components/HeaderRedesign.astro";
 import Footer from "../components/Footer.astro";
 import Schema from "../components/Schema.astro";
-import WhatsAppButton from "../components/WhatsAppButton.astro";
 
 import "@fontsource/poppins/400.css"; // Regular
 import "@fontsource/poppins/500.css"; // Medium
@@ -71,7 +70,6 @@ const currentUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).h
     <Header />
     <main id="main-content" tabindex="-1" class="grow">
       <slot />
-      <WhatsAppButton />
     </main>
     <Footer />
 
@@ -128,6 +126,14 @@ const currentUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).h
         s1.setAttribute("crossorigin", "*");
         s0.parentNode.insertBefore(s1, s0);
       })();
+      // Links marked data-open-chat open the Tawk.to widget; if it has not
+      // loaded (blocked or offline), the link's own href is the fallback.
+      document.addEventListener("click", function (event) {
+        var link = event.target.closest && event.target.closest("[data-open-chat]");
+        if (!link || !window.Tawk_API || typeof Tawk_API.maximize !== "function") return;
+        event.preventDefault();
+        Tawk_API.maximize();
+      });
     </script>
   </body>
 </html>

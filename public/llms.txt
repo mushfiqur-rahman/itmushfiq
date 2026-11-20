@@ -4,7 +4,7 @@
 
 Website: https://itsupportbee.com
 Contact: hello@itsupportbee.com
-Delivery: Remote support for businesses and distributed teams.
+Delivery: Remote support for businesses and distributed teams in the United States and Australia.
 
 This file is a concise guide to the public website. Service pages describe the available work; project scope, pricing, timelines, licensing, and support availability are confirmed during consultation. Migration outcomes depend on the source and destination systems. Email authentication helps establish sender identity but does not guarantee inbox placement.
 

@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
 
 const title = "Remote IT Support for Small Businesses | IT Support Bee";
-const description = "Remote IT support and helpdesk for small businesses and remote teams: email, Microsoft 365, Google Workspace, account access, software, and device issues fixed remotely.";
+const description = "Remote IT support for small businesses in the USA and Australia: email, Microsoft 365, Google Workspace, account access, and device issues fixed remotely.";
 const currentUrl = Astro.url.href;
 
 const faqs = [
@@ -32,7 +33,7 @@ const faqs = [
     "@type": "Service",
     "name": "Remote IT Support Services",
     "serviceType": "Remote IT support and helpdesk",
-    "areaServed": "Worldwide",
+    "areaServed": site.areaServed,
     "audience": { "@type": "BusinessAudience", "audienceType": "Small businesses and remote teams" },
     "provider": { "@type": "Organization", "@id": "https://itsupportbee.com/#organization", "name": "IT Support Bee" },
     "description": description,
