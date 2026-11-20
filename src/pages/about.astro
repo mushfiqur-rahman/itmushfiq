@@ -183,6 +183,19 @@ const skills = ["Microsoft 365 Administration", "Google Workspace Administration
   @media(max-width:1000px){.hero{gap:35px}.hero-visual{padding:0 8px}.portrait{height:430px}.floating{left:-12px;padding:12px}.platforms>div{gap:20px}.bento{grid-template-columns:1fr 1fr}.story{grid-row:span 2}.purpose{grid-column:span 1;padding-right:28px!important}.signal{display:none}.principles{grid-column:span 2;display:flex;align-items:center;gap:25px}.principles>div{margin-top:0}.principles>.eyebrow{max-width:100px}.final-cta{padding:32px}.final-cta h2{font-size:28px}}
   @media(max-width:720px){.shell{padding:40px 20px 55px}.hero{grid-template-columns:1fr;padding:18px 0 44px;gap:42px}h1{font-size:clamp(42px,10vw,66px)}.hero-copy{max-width:550px}.hero-visual{max-width:420px;width:calc(100% - 16px);margin:auto}.portrait{height:420px}.hero .eyebrow{font-size:8px}.platforms{align-items:flex-start;flex-direction:column;gap:18px}.platforms>span{max-width:none}.platforms>div{gap:18px}.platforms>div>span{font-size:11px}.platforms [data-icon]{width:17px}.section{padding-top:58px}.section-heading{flex-direction:column;align-items:flex-start;gap:18px}.section-heading>p br{display:none}.bento,.services,.cert-grid{grid-template-columns:1fr}.story{grid-row:auto}.principles{grid-column:auto;display:block}.principles>.eyebrow{max-width:none}.principles>div{margin-top:24px}.purpose{padding-right:130px!important}.signal{display:grid;right:12px;width:100px;height:100px;top:75px}.bento article{padding:25px}.final-cta{flex-direction:column;align-items:flex-start;margin-top:58px;padding:28px}.final-cta .eyebrow{font-size:8px}.final-cta h2{font-size:29px}.cta-actions{align-items:flex-start}.education{align-items:flex-start;padding:20px}.education h3{font-size:14px}.education>.icon-tile{width:35px;height:35px}.hero-notes{gap:16px}.actions{gap:20px}.eyebrow{font-size:9px}}
   @media(prefers-reduced-motion:reduce){.about *{animation:none!important;transition:none!important}}
+  /* Keep the About page content aligned with the shared max-w-7xl layout. */
+  .shell{max-width:1280px}
+  /* Match the homepage's deep-blue grid and atmospheric background. */
+  .about{
+    background-color:#071225;
+    background-image:
+      radial-gradient(ellipse at 0% 12%,#22d3ee33,transparent 45%),
+      radial-gradient(ellipse at 100% 0%,#8b5cf640,transparent 50%),
+      radial-gradient(ellipse at 50% 100%,#a3ff1212,transparent 45%),
+      linear-gradient(#94a3b80d 1px,transparent 1px),
+      linear-gradient(90deg,#94a3b80d 1px,transparent 1px);
+    background-size:auto,auto,auto,64px 64px,64px 64px;
+  }
 </style>
 <script>
   document.querySelectorAll<HTMLButtonElement>('[data-cert-open]').forEach(button => {
