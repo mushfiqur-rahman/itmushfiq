@@ -18,6 +18,16 @@ export const site = {
     { "@type": "Country", name: "Australia", identifier: "AU" },
   ],
   website: "https://itsupportbee.com",
+  // IT Support Bee's own profiles: footer icons and Organization schema sameAs.
+  companySocials: [
+    { name: "LinkedIn", url: "https://www.linkedin.com/company/itsupportbee", icon: "simple-icons:linkedin" },
+    { name: "Facebook", url: "https://www.facebook.com/itsupportbee", icon: "simple-icons:facebook" },
+    { name: "X", url: "https://x.com/itsupportbee", icon: "simple-icons:x" },
+    { name: "YouTube", url: "https://www.youtube.com/@itsupportbee", icon: "simple-icons:youtube" },
+    { name: "Instagram", url: "https://www.instagram.com/itsupportbee", icon: "simple-icons:instagram" },
+    { name: "TikTok", url: "https://www.tiktok.com/@itsupportbee", icon: "simple-icons:tiktok" },
+  ],
+  // Founder's personal profiles: blog author box and Person schema sameAs.
   socials: [
     { label: "GitHub", url: "https://github.com/mushfiqur-rahman" },
     { label: "LinkedIn", url: "https://linkedin.com/in/itmushfiq" },
