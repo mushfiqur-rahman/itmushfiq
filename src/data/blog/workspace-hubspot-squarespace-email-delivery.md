@@ -50,6 +50,6 @@ Consider a customer enquiry that starts on a website. There may be several diffe
 
 For your own acceptance test, submit a uniquely labelled enquiry from a controlled external address. Record which notifications you expect and who should receive each one. Compare the application’s event history with what reached each mailbox. If a message is missing, preserve the timestamp and message ID so support can investigate the specific step. This is a suggested test for a similar setup; the client did not publish her original test procedure.
 
-For a diagnostic worksheet, use the [email spam troubleshooting guide](/blog/business-emails-going-to-spam). If you need someone to trace a failing message across providers, see [email deliverability support](/services/email-deliverability).
+For a diagnostic worksheet, use the [email spam troubleshooting guide](/blog/business-emails-going-to-spam/). If you need someone to trace a failing message across providers, see [email deliverability support](/services/email-deliverability/).
 
-To trace one missing enquiry across your website, CRM and mailbox, email **hello@itsupportbee.com** or [book a strategy call with IT Support Bee](https://itsupportbee.com/contact).
+To trace one missing enquiry across your website, CRM and mailbox, email **hello@itsupportbee.com** or [book a strategy call with IT Support Bee](https://itsupportbee.com/contact/).

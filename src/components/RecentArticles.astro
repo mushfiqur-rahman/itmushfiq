@@ -21,7 +21,7 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString("en-US", 
         <span class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[.16em] text-[#90ee02]">Useful insights</span>
         <h2 class="mt-4 text-4xl font-semibold leading-[1.04] tracking-tighter text-white sm:text-5xl">Practical IT guidance,<br /><span class="text-[#90ee02]">without the jargon.</span></h2>
       </div>
-      <a href="/blog" class="group inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-[#90ee02]">View all articles <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></a>
+      <a href="/blog/" class="group inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-[#90ee02]">View all articles <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></a>
     </header>
 
     <div class="grid gap-6 lg:grid-cols-3">
@@ -33,7 +33,7 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString("en-US", 
           </div>
           <div class="p-6">
             <div class="flex items-center gap-3 text-[11px] font-medium text-slate-400"><span class="inline-flex items-center gap-2 font-bold uppercase tracking-[.08em] text-[#90ee02]"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M7.2 2.4H3.8a1.4 1.4 0 0 0-1.4 1.4v3.4l5.9 6 5-5-6.1-5.8Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="5.2" cy="5.2" r=".8" fill="currentColor"/></svg>{post.data.category}</span><time datetime={new Date(post.data.pubDate).toISOString()}>{formatDate(post.data.pubDate)}</time><span>·</span><span>{readingTime(post.body)} min read</span></div>
-            <h3 class="mt-5 text-2xl font-semibold leading-[1.35] tracking-[-.035em] text-white"><a href={`/blog/${post.id}`} class="before:absolute before:inset-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#90ee02]">{post.data.title}</a></h3>
+            <h3 class="mt-5 text-2xl font-semibold leading-[1.35] tracking-[-.035em] text-white"><a href={`/blog/${post.id}/`} class="before:absolute before:inset-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#90ee02]">{post.data.title}</a></h3>
             <p class="mt-4 text-[15px] leading-7 text-slate-400">{post.data.description}</p>
             <span class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#90ee02]">Read article <span class="text-lg transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></span>
           </div>

@@ -4,7 +4,7 @@ description: "Block account access, preserve customer mail and OneDrive files, a
 pubDate: 2026-07-22
 author: "Mushfiqur Rahman"
 category: "IT Support"
-image: "/blog/microsoft-365-employee-offboarding-checklist-field-guide.png"
+image: "/blog/microsoft-365-employee-offboarding-checkli/st-field-guide.png"
 ---
 
 Microsoft 365 offboarding should remove a departing employee's access while preserving business information for an authorized owner. Decide who approves the work, when access must end, and what information the business needs before deleting an account or removing licenses.
@@ -93,6 +93,6 @@ Decide preservation, ownership, and licensing dependencies first. Deletion is no
 
 It is one part of access removal. Review sessions, devices, separate application accounts, and shared credentials as appropriate to your environment.
 
-For an organized process, see [Microsoft 365 management](/services/microsoft-365-management) or [remote IT support](/services/remote-it-support). If the departure is part of a provider change, coordinate it with the [email migration checklist](/blog/business-email-migration-checklist).
+For an organized process, see [Microsoft 365 management](/services/microsoft-365-management/) or [remote IT support](/services/remote-it-support/). If the departure is part of a provider change, coordinate it with the [email migration checklist](/blog/business-email-migration-checklist/).
 
-To plan the next employee handover, email **hello@itsupportbee.com** or [book a strategy call with IT Support Bee](https://itsupportbee.com/contact).
+To plan the next employee handover, email **hello@itsupportbee.com** or [book a strategy call with IT Support Bee](https://itsupportbee.com/contact/).

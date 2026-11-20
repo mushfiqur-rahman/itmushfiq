@@ -5,7 +5,7 @@ pubDate: "October 10, 2026"
 updatedDate: "2026-10-30"
 author: "Mushfiqur Rahman"
 category: "Cloud Migration"
-image: "/blog/exchange-to-workspace.png"
+image: "/blog/exchange-to-work/space.png"
 ---
 
 Moving business email from Exchange Online to Google Workspace requires more than copying messages. The work includes identifying accounts and sending applications, planning mail routing, transferring supported data, and checking that people can use the new system.
@@ -97,6 +97,6 @@ Only if that behavior is intentional and appropriate for the business. A domain-
 
 ## Planning a similar email migration?
 
-IT Support Bee provides [business email migration services](/services/email-migration), with related [Google Workspace administration](/services/workspace-management) and [email deliverability support](/services/email-deliverability).
+IT Support Bee provides [business email migration services](/services/email-migration/), with related [Google Workspace administration](/services/workspace-management/) and [email deliverability support](/services/email-deliverability/).
 
-[Discuss your migration](/contact) with your current provider, target platform, approximate user count and data size, and preferred timing. Those details make it possible to scope the work around your team's needs.
+[Discuss your migration](/contact/) with your current provider, target platform, approximate user count and data size, and preferred timing. Those details make it possible to scope the work around your team's needs.

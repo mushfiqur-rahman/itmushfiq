@@ -21,14 +21,14 @@ export async function getStaticPaths() {
         index > 0
           ? {
               title: sortedPosts[index - 1].data.title,
-              url: `/blog/${sortedPosts[index - 1].id}`,
+              url: `/blog/${sortedPosts[index - 1].id}/`,
             }
           : null,
       prevPost:
         index + 1 < sortedPosts.length
           ? {
               title: sortedPosts[index + 1].data.title,
-              url: `/blog/${sortedPosts[index + 1].id}`,
+              url: `/blog/${sortedPosts[index + 1].id}/`,
             }
           : null,
     },

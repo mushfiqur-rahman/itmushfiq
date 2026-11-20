@@ -98,4 +98,4 @@ Ask the person who books customer meetings to run the final test. Have them crea
 
 The business result is concrete: the account manager knows which calendar to trust before joining the next customer call, and support knows where to look if an update goes missing.
 
-**Book a strategy call with IT Support Bee** if your team depends on both Outlook and Google Calendar. Bring one affected meeting time, the two platforms involved, and what each person saw. I’ll help you trace the update and choose a setup your team can maintain. Email **hello@itsupportbee.com** or [book your strategy call](https://itsupportbee.com/contact).
+**Book a strategy call with IT Support Bee** if your team depends on both Outlook and Google Calendar. Bring one affected meeting time, the two platforms involved, and what each person saw. I’ll help you trace the update and choose a setup your team can maintain. Email **hello@itsupportbee.com** or [book your strategy call](https://itsupportbee.com/contact/).

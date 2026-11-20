@@ -15,11 +15,11 @@ export async function getDynamicServices() {
         const file: any = serviceFiles[filePath];
 
         // ফাইল প্যাথ থেকে URL তৈরি করা
-        // '../pages/services/email-migration.astro' -> '/services/email-migration'
+        // '../pages/services/email-migration.astro' -> '/services/email-migration/'
         const path = filePath
           .replace("../pages", "")
           .replace(/\.(astro|md|mdx)$/, "")
-          .replace(/\/index$/, ""); // index.astro হ্যান্ডেল করা
+          .replace(/\/index$/, "") + "/"; // index.astro হ্যান্ডেল করা; trailing slash matches canonical URLs
 
         // টাইটেল বের করা
         let title = file.frontmatter?.title;
@@ -32,7 +32,7 @@ export async function getDynamicServices() {
 
         return { name: title || "Service", path };
       })
-      .filter((s) => s.path && s.path !== "/services");
+      .filter((s) => s.path && s.path !== "/services/");
   } catch (e) {
     console.warn("No service pages found in src/pages/services/");
   }

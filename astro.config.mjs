@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import { rename } from "node:fs/promises";
+import { readdir, rename, rm } from "node:fs/promises";
 import tailwindcss from "@tailwindcss/vite";
 
 import sitemap from "@astrojs/sitemap";
@@ -22,8 +22,11 @@ export default defineConfig({
       name: "sitemap-public-url",
       hooks: {
         "astro:build:done": async ({ dir }) => {
-          // Run after sitemap generation and preserve its chunk references.
-          await rename(new URL("sitemap-index.xml", dir), new URL("sitemap.xml", dir));
+          // Publish every URL directly in /sitemap.xml (a <urlset>, not an index).
+          const chunks = (await readdir(dir)).filter(name => /^sitemap-\d+\.xml$/.test(name));
+          if (chunks.length !== 1) throw new Error(`Expected one sitemap chunk, found ${chunks.length}`);
+          await rename(new URL(chunks[0], dir), new URL("sitemap.xml", dir));
+          await rm(new URL("sitemap-index.xml", dir));
         },
       },
     },

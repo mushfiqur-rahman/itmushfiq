@@ -10,16 +10,16 @@ This file is a concise guide to the public website. Service pages describe the a
 
 ## Business email services
 
-- [Email migration](https://itsupportbee.com/services/email-migration): Move business email between Microsoft 365, Exchange Online, Google Workspace, and legacy cPanel or webmail systems. Covers migration planning, supported mailbox data, DNS cutover, tenant consolidation, and GoDaddy Microsoft 365 defederation. Relevant when changing providers, combining tenants, or seeking direct Microsoft 365 administration.
-- [Email deliverability and authentication](https://itsupportbee.com/services/email-deliverability): Investigate business emails going to spam, authentication failures, sender reputation, and blocklist issues. Includes SPF, DKIM, DMARC, sending-domain configuration, and delisting assistance. Relevant when customer messages, CRM emails, or campaigns are being rejected or filtered.
-- [Google Workspace management](https://itsupportbee.com/services/workspace-management): Administer Gmail, user accounts, Google Groups, Drive access, account security, and employee onboarding and offboarding. Relevant when a business needs ongoing Workspace administration or help with its email setup.
-- [Microsoft 365 management](https://itsupportbee.com/services/microsoft-365-management): Administer Microsoft 365 accounts, licenses, identity, access policies, and supported devices using Microsoft Intune and Entra ID. Relevant when a business needs ongoing Microsoft cloud administration and secure access for its team.
-- [Email marketing automation](https://itsupportbee.com/services/email-marketing): Set up lead capture, audience segmentation, welcome and nurture sequences, and abandoned-cart email workflows. Relevant when a business needs the technical setup and automation behind its customer email marketing.
+- [Email migration](https://itsupportbee.com/services/email-migration/): Move business email between Microsoft 365, Exchange Online, Google Workspace, and legacy cPanel or webmail systems. Covers migration planning, supported mailbox data, DNS cutover, tenant consolidation, and GoDaddy Microsoft 365 defederation. Relevant when changing providers, combining tenants, or seeking direct Microsoft 365 administration.
+- [Email deliverability and authentication](https://itsupportbee.com/services/email-deliverability/): Investigate business emails going to spam, authentication failures, sender reputation, and blocklist issues. Includes SPF, DKIM, DMARC, sending-domain configuration, and delisting assistance. Relevant when customer messages, CRM emails, or campaigns are being rejected or filtered.
+- [Google Workspace management](https://itsupportbee.com/services/workspace-management/): Administer Gmail, user accounts, Google Groups, Drive access, account security, and employee onboarding and offboarding. Relevant when a business needs ongoing Workspace administration or help with its email setup.
+- [Microsoft 365 management](https://itsupportbee.com/services/microsoft-365-management/): Administer Microsoft 365 accounts, licenses, identity, access policies, and supported devices using Microsoft Intune and Entra ID. Relevant when a business needs ongoing Microsoft cloud administration and secure access for its team.
+- [Email marketing automation](https://itsupportbee.com/services/email-marketing/): Set up lead capture, audience segmentation, welcome and nurture sequences, and abandoned-cart email workflows. Relevant when a business needs the technical setup and automation behind its customer email marketing.
 
 ## Related IT services
 
-- [Remote IT support](https://itsupportbee.com/services/remote-it-support): Remote troubleshooting for email, software, account access, and everyday workplace technology, with ongoing support arrangements discussed during consultation.
-- [Business automation](https://itsupportbee.com/services/business-automation): Connect business applications and automate repetitive tasks such as client onboarding, lead routing, and moving information between email, CRM, and billing workflows.
+- [Remote IT support](https://itsupportbee.com/services/remote-it-support/): Remote troubleshooting for email, software, account access, and everyday workplace technology, with ongoing support arrangements discussed during consultation.
+- [Business automation](https://itsupportbee.com/services/business-automation/): Connect business applications and automate repetitive tasks such as client onboarding, lead routing, and moving information between email, CRM, and billing workflows.
 
 ## Common customer questions
 
@@ -34,23 +34,23 @@ This file is a concise guide to the public website. Service pages describe the a
 ## Company, evidence, and contact
 
 - [Home](https://itsupportbee.com/): Overview of email and IT services, customer testimonials, and frequently asked questions.
-- [About Mushfiqur Rahman and IT Support Bee](https://itsupportbee.com/about): Professional background, experience, and linked training credentials.
-- [Exchange to Google Workspace migration case study](https://itsupportbee.com/blog/exchange-to-workspace): A published account of a 23-hour migration project, including routing and cutover work. This describes one project, not a standard completion time for every migration.
-- [Contact IT Support Bee](https://itsupportbee.com/contact): Discuss an email problem, migration, or ongoing support requirement. For migration enquiries, include the current and target platforms, approximate mailbox count and size, and preferred timing. Do not send passwords or recovery codes.
+- [About Mushfiqur Rahman and IT Support Bee](https://itsupportbee.com/about/): Professional background, experience, and linked training credentials.
+- [Exchange to Google Workspace migration case study](https://itsupportbee.com/blog/exchange-to-workspace/): A published account of a 23-hour migration project, including routing and cutover work. This describes one project, not a standard completion time for every migration.
+- [Contact IT Support Bee](https://itsupportbee.com/contact/): Discuss an email problem, migration, or ongoing support requirement. For migration enquiries, include the current and target platforms, approximate mailbox count and size, and preferred timing. Do not send passwords or recovery codes.
 
 ## Optional
 
 - [Homepage as Markdown](https://itsupportbee.com/index.md): Services, FAQs, and contact links. The homepage also negotiates Markdown with `Accept: text/markdown`.
 - [MCP server card](https://itsupportbee.com/.well-known/mcp/server-card.json): Discovery for the read-only public guide MCP endpoint at `https://itsupportbee.com/mcp`. Supports service-guide lookup and public resources; no bookings or account access.
 
-- [Insights and case studies](https://itsupportbee.com/blog): Technical guides and project write-ups.
-- [LMS deployment case study](https://itsupportbee.com/blog/lms-docker-vps-deployment-case-study): Related infrastructure experience deploying an application with Docker and HTTPS.
-- [Privacy policy](https://itsupportbee.com/privacy-policy): Information about handling personal data.
-- [Terms of service](https://itsupportbee.com/terms): Website and service terms.
+- [Insights and case studies](https://itsupportbee.com/blog/): Technical guides and project write-ups.
+- [LMS deployment case study](https://itsupportbee.com/blog/lms-docker-vps-deployment-case-study/): Related infrastructure experience deploying an application with Docker and HTTPS.
+- [Privacy policy](https://itsupportbee.com/privacy-policy/): Information about handling personal data.
+- [Terms of service](https://itsupportbee.com/terms/): Website and service terms.
 - [Sitemap](https://itsupportbee.com/sitemap.xml): Machine-readable discovery of published pages.
 
 ## Practical troubleshooting guides
 
-- [Why Are Business Emails Going to Spam? A Troubleshooting Checklist](https://itsupportbee.com/blog/business-emails-going-to-spam): Diagnose business emails going to spam with message headers, SPF, DKIM, DMARC, sending reputation, and practical tests before changing DNS.
-- [Business Email Migration Checklist: Before and After Cutover](https://itsupportbee.com/blog/business-email-migration-checklist): Plan a business email migration with mailbox discovery, a pilot, DNS preparation, cutover ownership, validation, and a clear source-retirement decision.
-- [Microsoft 365 Employee Offboarding Checklist for Small Teams](https://itsupportbee.com/blog/microsoft-365-employee-offboarding-checklist): Plan Microsoft 365 offboarding around account access, sessions, mailbox ownership, business files, connected apps, and a documented handover.
+- [Why Are Business Emails Going to Spam? A Troubleshooting Checklist](https://itsupportbee.com/blog/business-emails-going-to-spam/): Diagnose business emails going to spam with message headers, SPF, DKIM, DMARC, sending reputation, and practical tests before changing DNS.
+- [Business Email Migration Checklist: Before and After Cutover](https://itsupportbee.com/blog/business-email-migration-checklist/): Plan a business email migration with mailbox discovery, a pilot, DNS preparation, cutover ownership, validation, and a clear source-retirement decision.
+- [Microsoft 365 Employee Offboarding Checklist for Small Teams](https://itsupportbee.com/blog/microsoft-365-employee-offboarding-checklist/): Plan Microsoft 365 offboarding around account access, sessions, mailbox ownership, business files, connected apps, and a documented handover.

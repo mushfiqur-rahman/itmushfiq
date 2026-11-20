@@ -34,7 +34,7 @@ const schema = {
     "@type": "Person",
     // 👈 যদি ফ্রন্টম্যাটারে author না থাকে, তবে site.name ব্যবহার করবে
     name: author || site.name,
-    url: new URL("/about", siteUrl).href,
+    url: new URL("/about/", siteUrl).href,
   },
   datePublished: new Date(pubDate).toISOString(),
   ...(updatedDate && { dateModified: new Date(updatedDate).toISOString() }),
@@ -69,7 +69,7 @@ const schema = {
           class="flex flex-wrap items-center justify-center gap-4 text-slate-600 dark:text-slate-400 font-medium"
         >
           <!-- 👈 ডাইনামিক Author Name -->
-          <span>By <a href="/about" class="underline underline-offset-4">{author || site.name}</a></span>
+          <span>By <a href="/about/" class="underline underline-offset-4">{author || site.name}</a></span>
           <span>•</span>
           <span>Published <time datetime={new Date(pubDate).toISOString()}>{formatDate(pubDate)}</time></span>
           {updatedDate && <span>Updated <time datetime={new Date(updatedDate).toISOString()}>{formatDate(updatedDate)}</time></span>}

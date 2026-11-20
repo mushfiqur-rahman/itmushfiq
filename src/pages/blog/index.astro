@@ -42,7 +42,7 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString("en-US", 
             </div>
             <div class="flex grow flex-col p-6 sm:p-8">
               <div class="flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-[.14em] text-slate-400"><time datetime={new Date(post.data.pubDate).toISOString()}>{formatDate(post.data.pubDate)}</time><span class="h-1 w-1 rounded-full bg-[#90ee02]"></span><span>{post.data.author}</span><span class="h-1 w-1 rounded-full bg-[#90ee02]"></span><span>{readingTime(post.body)} min read</span></div>
-              <h2 class="mt-5 text-xl font-semibold leading-[1.15] tracking-[-.04em] text-white sm:text-2xl"><a href={`/blog/${post.id}`} class="before:absolute before:inset-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#90ee02]">{post.data.title}</a></h2>
+              <h2 class="mt-5 text-xl font-semibold leading-[1.15] tracking-[-.04em] text-white sm:text-2xl"><a href={`/blog/${post.id}/`} class="before:absolute before:inset-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#90ee02]">{post.data.title}</a></h2>
               <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-300">{post.data.description}</p>
             </div>
           </article>

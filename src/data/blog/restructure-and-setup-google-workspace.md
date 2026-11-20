@@ -4,7 +4,7 @@ description: "Discover how IT Support Bee consolidated two Google Workspace envi
 pubDate: "August 10, 2026"
 author: "Mushfiqur Rahman"
 category: "Email Migration"
-image: "/blog/restructure-and-setup-google-workspace.png"
+image: "/blog/restructure-and-setup-google-work/space.png"
 ---
 
 Managing multiple brands across separate Google Workspace environments can increase subscription costs, complicate administration, and create unnecessary IT overhead. For businesses operating several brands under one corporate structure, consolidating Google Workspace tenants can simplify operations without sacrificing access to business-critical data.
@@ -433,5 +433,5 @@ If you are planning a **Google Workspace migration**, consolidating multiple bra
 **Book a strategy call to plan a more secure, cost-efficient, and manageable IT environment.**
 
 - Email: hello@itsupportbee.com
-- Website: [Contact IT Support Bee](https://itsupportbee.com/contact)
+- Website: [Contact IT Support Bee](https://itsupportbee.com/contact/)
 - Google Chat archive viewer: [google-chat-viewer.vercel.app](https://google-chat-viewer.vercel.app/)

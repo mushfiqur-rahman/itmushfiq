@@ -345,8 +345,8 @@ cloud services, DNS, SSL/TLS, and remote IT infrastructure.
 
 - **Email:** [hello@itsupportbee.com](mailto:hello@itsupportbee.com)
 - **Contact:**
-  [itsupportbee.com/contact](https://itsupportbee.com/contact)
+  [itsupportbee.com/contact](https://itsupportbee.com/contact/)
 
-Explore our [remote IT support](/services/remote-it-support), or send an enquiry
+Explore our [remote IT support](/services/remote-it-support/), or send an enquiry
 with your stack, hosting environment, and the issue you need to resolve.
 We can then discuss whether the work fits our support scope.

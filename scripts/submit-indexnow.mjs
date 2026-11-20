@@ -8,8 +8,10 @@ if(!keyResponse.ok || (await keyResponse.text()).trim()!==key) throw new Error('
 const sitemapIndex=await fetch(`${base}/sitemap.xml`);
 if(!sitemapIndex.ok) throw new Error('Cannot retrieve live sitemap index');
 const locations=xml=>[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1].replaceAll('&amp;','&'));
-const sitemapUrls=locations(await sitemapIndex.text());
-const urlList=[];
+const sitemapXml=await sitemapIndex.text();
+const isIndex=/<sitemapindex[\s>]/.test(sitemapXml);
+const sitemapUrls=isIndex?locations(sitemapXml):[];
+const urlList=isIndex?[]:locations(sitemapXml);
 for(const url of sitemapUrls){
  if(new URL(url).origin!==base) throw new Error('Unexpected sitemap origin');
  const response=await fetch(url);if(!response.ok) throw new Error(`Cannot retrieve ${url}`);

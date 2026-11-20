@@ -4,7 +4,7 @@ description: "Moving Pro or Max accounts into a Claude Team or Enterprise organi
 pubDate: 2026-11-14
 author: "Mushfiqur Rahman"
 category: "Cloud Automation"
-image: "/blog/migrate-personal-claude-account-to-team.png"
+image: "/blog/migrate-per/sonal-claude-account-to-team.png"
 ---
 
 Your team started on personal Claude Pro and Max accounts. Now you want one **Claude Team** or **Enterprise** organization with central billing, admin control and shared policy. The catch: the built-in migration moves a lot, but not everything. Custom skills, Docs, Sheets, connectors, scheduled tasks and Claude Code cloud sessions do not come along for the ride.
@@ -207,4 +207,4 @@ A Claude Team migration is not hard. It is unforgiving. The built-in tool does t
 
 Want this handled without disrupting your team? IT Support Bee plans the audit, configures the organization, runs the live migration session over screen share and hands you a clear summary. No passwords shared. Everything is done in the admin console or on screen share, with your permission.
 
-Email **hello@itsupportbee.com** or visit [itsupportbee.com/contact](https://itsupportbee.com/contact) to book a strategy call and bulletproof your IT infrastructure.
+Email **hello@itsupportbee.com** or visit [itsupportbee.com/contact](https://itsupportbee.com/contact/) to book a strategy call and bulletproof your IT infrastructure.

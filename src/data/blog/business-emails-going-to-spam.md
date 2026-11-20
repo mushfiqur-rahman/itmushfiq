@@ -4,7 +4,7 @@ description: "Compare real message headers to isolate spam placement, diagnose S
 pubDate: 2026-11-13
 author: "Mushfiqur Rahman"
 category: "Deliverability"
-image: "/blog/Why-Business-Emails-Go-to-Spam.png"
+image: "/blog/Why-Business-Email/s-Go-to-Spam.png"
 ---
 
 When business emails land in spam, start with a real failed message. Identify the sending application, inspect authentication results, and compare delivery across recipients before changing DNS. A passing authentication check is useful evidence, but it does not guarantee inbox placement.
@@ -90,6 +90,6 @@ First establish which systems legitimately send for your domain and check alignm
 
 Share the domain, affected application, approximate start time, redacted headers, and bounce details. Never send passwords or recovery codes.
 
-For help interpreting the results, see [email deliverability support](/services/email-deliverability). Planning a provider change? Use the [email migration checklist](/blog/business-email-migration-checklist) before altering mail routing.
+For help interpreting the results, see [email deliverability support](/services/email-deliverability/). Planning a provider change? Use the [email migration checklist](/blog/business-email-migration-checklist/) before altering mail routing.
 
-To diagnose mail that customers find in junk, email **hello@itsupportbee.com** or [book a strategy call with IT Support Bee](https://itsupportbee.com/contact).
+To diagnose mail that customers find in junk, email **hello@itsupportbee.com** or [book a strategy call with IT Support Bee](https://itsupportbee.com/contact/).

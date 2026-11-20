@@ -4,7 +4,7 @@ description: "Plan a mailbox migration around a representative pilot, explicit c
 pubDate: 2026-07-01
 author: "Mushfiqur Rahman"
 category: "Email Migration"
-image: "/blog/business-email-migration-checklist-field-guide.png"
+image: "/blog/business-email-migration-checkli/st-field-guide.png"
 ---
 
 A business email migration needs an inventory, a tested transfer method, a routing plan, and an acceptance checklist. Copying messages is only one part of moving a team to a new provider. Use this planning guide to define the work before agreeing a cutover date.
@@ -44,7 +44,7 @@ Agree a change window, communication channel, go/no-go criteria, and escalation 
 
 ## Validate delivery and reconcile remaining data
 
-After cutover, test external inbound mail, external outbound mail, replies, aliases, shared resources, and application-generated messages. Inspect authentication on new outgoing messages. Use the [spam troubleshooting checklist](/blog/business-emails-going-to-spam) if mail is filtered.
+After cutover, test external inbound mail, external outbound mail, replies, aliases, shared resources, and application-generated messages. Inspect authentication on new outgoing messages. Use the [spam troubleshooting checklist](/blog/business-emails-going-to-spam/) if mail is filtered.
 
 Review migration errors and run any supported final synchronization. Have business owners check representative historical messages and critical workflows. Document unresolved differences and decide who will handle them.
 
@@ -89,6 +89,6 @@ A careful plan can reduce disruption, but results depend on the systems, routing
 
 ### What information is needed for a quote?
 
-Provide the source and destination, mailbox count and size, required data types, shared resources, DNS provider, and preferred timing. See [email migration services](/services/email-migration) and the [Exchange-to-Workspace project account](/blog/exchange-to-workspace) for related context.
+Provide the source and destination, mailbox count and size, required data types, shared resources, DNS provider, and preferred timing. See [email migration services](/services/email-migration/) and the [Exchange-to-Workspace project account](/blog/exchange-to-workspace/) for related context.
 
-To test your migration before the change window, email **hello@itsupportbee.com** or [book a strategy call with IT Support Bee](https://itsupportbee.com/contact).
+To test your migration before the change window, email **hello@itsupportbee.com** or [book a strategy call with IT Support Bee](https://itsupportbee.com/contact/).

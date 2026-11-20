@@ -3,24 +3,24 @@ import { Icon } from "astro-icon/components";
 import { site } from "../data/site";
 const currentYear = new Date().getFullYear();
 const solutions = [
-  { name: "Remote IT support", path: "/services/remote-it-support" },
+  { name: "Remote IT support", path: "/services/remote-it-support/" },
   {
     name: "Microsoft 365 management",
-    path: "/services/microsoft-365-management",
+    path: "/services/microsoft-365-management/",
   },
   {
     name: "Google Workspace management",
-    path: "/services/workspace-management",
+    path: "/services/workspace-management/",
   },
-  { name: "Email migration", path: "/services/email-migration" },
-  { name: "Email deliverability", path: "/services/email-deliverability" },
-  { name: "Email marketing automation", path: "/services/email-marketing" },
-  { name: "Business automation", path: "/services/business-automation" },
+  { name: "Email migration", path: "/services/email-migration/" },
+  { name: "Email deliverability", path: "/services/email-deliverability/" },
+  { name: "Email marketing automation", path: "/services/email-marketing/" },
+  { name: "Business automation", path: "/services/business-automation/" },
 ];
 const company = [
-  { name: "About the team", path: "/about" },
-  { name: "Insights & guides", path: "/blog" },
-  { name: "Get in touch", path: "/contact" },
+  { name: "About the team", path: "/about/" },
+  { name: "Insights & guides", path: "/blog/" },
+  { name: "Get in touch", path: "/contact/" },
   { name: "Service guide for AI tools", path: "/llms.txt" },
 ];
 const socials = [
@@ -65,7 +65,7 @@ const organization = {
         </p>
       </div>
       <div class="cta-actions">
-        <a class="primary" href="/contact"
+        <a class="primary" href="/contact/"
           >Talk to an IT expert <Icon
             name="lucide:arrow-up-right"
             aria-hidden="true"
@@ -157,7 +157,7 @@ const organization = {
       <p>&copy; {currentYear} IT Support Bee. All rights reserved.</p><nav
         aria-label="Legal"
       >
-        <a href="/privacy-policy">Privacy policy</a><a href="/terms"
+        <a href="/privacy-policy/">Privacy policy</a><a href="/terms/"
           >Terms of service</a>
       </nav><a class="back-top" href="#main-content"
         >Back to content <Icon name="lucide:arrow-up" aria-hidden="true" /></a>

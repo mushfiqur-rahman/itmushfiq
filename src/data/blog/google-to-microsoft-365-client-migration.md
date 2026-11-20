@@ -69,6 +69,6 @@ These are acceptance criteria for planning another migration. The public client 
 
 Ask two people to sign off: the administrator who can confirm where incoming mail is routed, and someone who uses the mailbox every day. Have the second person find a known historical thread, receive a new message from an external account and reply from the address customers recognise. Record those results separately so a successful mail-flow test cannot hide missing history.
 
-Use the [business email migration checklist](/blog/business-email-migration-checklist) to prepare your acceptance tests, or see what is covered by [email migration support](/services/email-migration).
+Use the [business email migration checklist](/blog/business-email-migration-checklist/) to prepare your acceptance tests, or see what is covered by [email migration support](/services/email-migration/).
 
-To scope a Google-to-Microsoft 365 cutover, email **hello@itsupportbee.com** or [book a strategy call with IT Support Bee](https://itsupportbee.com/contact).
+To scope a Google-to-Microsoft 365 cutover, email **hello@itsupportbee.com** or [book a strategy call with IT Support Bee](https://itsupportbee.com/contact/).

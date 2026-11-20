@@ -8,15 +8,15 @@ const dynamicServices = await getDynamicServices();
 // Error Fix: Services এর ভেতরে path: '/services' যোগ করা হয়েছে
 const navLinks = [
   { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
+  { name: 'About', path: '/about/' },
   { 
     name: 'Services', 
     path: '/services',
     isDropdown: true,
     children: dynamicServices 
   },
-  { name: 'Blog', path: '/blog' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Blog', path: '/blog/' },
+  { name: 'Contact', path: '/contact/' },
 ];
 ---
 
@@ -115,7 +115,7 @@ const navLinks = [
             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
           </svg>
         </button>
-        <a href="/contact" class="px-6 py-2 bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-black uppercase tracking-widest text-sm border-2 border-[#2D058A] dark:border-[#90ee02] rounded-lg shadow-[4px_4px_0px_0px_rgba(144,238,2,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all outline-none focus-visible:ring-4 focus-visible:ring-[#90ee02]/50">
+        <a href="/contact/" class="px-6 py-2 bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-black uppercase tracking-widest text-sm border-2 border-[#2D058A] dark:border-[#90ee02] rounded-lg shadow-[4px_4px_0px_0px_rgba(144,238,2,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all outline-none focus-visible:ring-4 focus-visible:ring-[#90ee02]/50">
           Book Call
         </a>
       </div>
@@ -192,7 +192,7 @@ const navLinks = [
         );
       })}
       
-      <a href="/contact" class="block mt-8 px-4 py-3 text-center bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-black uppercase tracking-widest text-lg border-2 border-[#2D058A] dark:border-[#90ee02] rounded-lg shadow-[4px_4px_0px_0px_rgba(144,238,2,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.4)]">
+      <a href="/contact/" class="block mt-8 px-4 py-3 text-center bg-[#2D058A] dark:bg-[#90ee02] text-white dark:text-[#2D058A] font-black uppercase tracking-widest text-lg border-2 border-[#2D058A] dark:border-[#90ee02] rounded-lg shadow-[4px_4px_0px_0px_rgba(144,238,2,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.4)]">
         Book Strategy Call
       </a>
     </div>
