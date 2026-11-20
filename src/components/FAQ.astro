@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import faqs from "../data/faqs.json";
 ---
 
@@ -45,7 +46,7 @@ import faqs from "../data/faqs.json";
             </details>
           ))}
         </div>
-        <div class="answers-footer"><span class="footer-mark" aria-hidden="true">✳</span><p>From the first conversation to ongoing support.<br /><span>IT that works with you.</span></p></div>
+        <div class="answers-footer"><Icon name="lucide:headset" class="footer-mark" aria-hidden="true" /><p>From the first conversation to ongoing support.<br /><span>IT that works with you.</span></p></div>
       </div>
     </div>
     <div class="section-footer"><span>IT SUPPORT BEE</span><span>Built around your team. Wherever you work.</span></div>
@@ -120,7 +121,7 @@ import faqs from "../data/faqs.json";
   .answer { padding: 0 46px 24px 32px; }
   .answer p { color: #aebdd1; font-size: 13px; line-height: 1.95; }
   .answers-footer { display: flex; align-items: center; gap: 13px; border-top: 1px solid #d4e6ff16; padding-block: 22px; }
-  .footer-mark { font-size: 27px; color: #acd4d5; }
+  .footer-mark { width: 27px; height: 27px; flex-shrink: 0; color: #acd4d5; }
   .answers-footer p { font-size: 11px; color: #aebdd1; line-height: 1.9; }
   .answers-footer p span { color: #d6e4ef; }
   .section-footer { display: flex; justify-content: space-between; gap: 16px; margin-top: 25px; color: #8fa5be; font-size: 9px; }
