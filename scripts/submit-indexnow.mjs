@@ -5,7 +5,7 @@ const base=`https://${host}`;
 const keyLocation=`${base}/${key}.txt`;
 const keyResponse=await fetch(keyLocation);
 if(!keyResponse.ok || (await keyResponse.text()).trim()!==key) throw new Error('Deploy the build first: public IndexNow key is not yet verifiable. No submission sent.');
-const sitemapIndex=await fetch(`${base}/sitemap-index.xml`);
+const sitemapIndex=await fetch(`${base}/sitemap.xml`);
 if(!sitemapIndex.ok) throw new Error('Cannot retrieve live sitemap index');
 const locations=xml=>[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1].replaceAll('&amp;','&'));
 const sitemapUrls=locations(await sitemapIndex.text());

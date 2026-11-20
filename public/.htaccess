@@ -4,6 +4,7 @@ ErrorDocument 404 /404.html
 
 # Hostinger Apache/LiteSpeed with PHP 8+. Match only these exact public routes.
 RewriteEngine On
+RewriteRule ^sitemap-index\.xml$ /sitemap.xml [R=301,L]
 RewriteRule ^(?:index\.html)?$ agent-home.php [END]
 RewriteRule ^mcp/?$ mcp.php [END]
 

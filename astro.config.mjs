@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import { rename } from "node:fs/promises";
 import tailwindcss from "@tailwindcss/vite";
 
 import sitemap from "@astrojs/sitemap";
@@ -15,5 +16,17 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [sitemap({ serialize: item => ({ ...item, lastmod: sitemapLastmod(item.url) }) }), icon()],
+  integrations: [
+    sitemap({ serialize: item => ({ ...item, lastmod: sitemapLastmod(item.url) }) }),
+    {
+      name: "sitemap-public-url",
+      hooks: {
+        "astro:build:done": async ({ dir }) => {
+          // Run after sitemap generation and preserve its chunk references.
+          await rename(new URL("sitemap-index.xml", dir), new URL("sitemap.xml", dir));
+        },
+      },
+    },
+    icon(),
+  ],
 });

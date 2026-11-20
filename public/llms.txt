@@ -47,7 +47,7 @@ This file is a concise guide to the public website. Service pages describe the a
 - [LMS deployment case study](https://itsupportbee.com/blog/lms-docker-vps-deployment-case-study): Related infrastructure experience deploying an application with Docker and HTTPS.
 - [Privacy policy](https://itsupportbee.com/privacy-policy): Information about handling personal data.
 - [Terms of service](https://itsupportbee.com/terms): Website and service terms.
-- [Sitemap](https://itsupportbee.com/sitemap-index.xml): Machine-readable discovery of published pages.
+- [Sitemap](https://itsupportbee.com/sitemap.xml): Machine-readable discovery of published pages.
 
 ## Practical troubleshooting guides
 

@@ -6,4 +6,4 @@ Content-Signal: search=yes, ai-train=no
 # Disallow: /admin/
 # Disallow: /private/
 
-Sitemap: https://itsupportbee.com/sitemap-index.xml
+Sitemap: https://itsupportbee.com/sitemap.xml
