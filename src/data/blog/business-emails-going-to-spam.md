@@ -1,5 +1,6 @@
 ---
 title: "Why Are Business Emails Going to Spam? A Troubleshooting Checklist"
+metaTitle: "Why Business Emails Go to Spam | IT Support Bee"
 description: "Compare real message headers to isolate spam placement, diagnose SPF and DKIM alignment, and verify repairs in the application that sends the mail."
 pubDate: 2026-11-13
 updatedDate: "2026-11-20"

@@ -1,5 +1,6 @@
 ---
 title: "Outlook and Google Calendar Sync: Fixing Missed Meeting Updates"
+metaTitle: "Outlook and Google Calendar Sync Fixes | IT Support Bee"
 description: "Trace a stale calendar event across Outlook and Google, identify its owner, and test recurring meetings, reschedules and delegated access."
 pubDate: 2026-11-13
 author: "Mushfiqur Rahman"

@@ -1,6 +1,7 @@
 ---
 caseStudy: true
 title: "Email delivery repair across Google Workspace, HubSpot and Squarespace"
+metaTitle: "Workspace, HubSpot & Squarespace Email Fix | IT Support Bee"
 description: "Trace a missing Squarespace enquiry through HubSpot and Google Workspace, from form submission to the reply that reaches the customer."
 pubDate: 2026-11-13
 author: "Mushfiqur Rahman"

@@ -16,7 +16,12 @@ for (const type of ['Organization', 'Person', 'WebSite', 'WebPage', 'Service', '
 }
 assert(schemas.find(s => [].concat(s['@type']).includes('Organization')).sameAs.length > 0);
 assert.equal(schemas.filter(s => s['@type'] === 'Service').length, 7);
-assert.match(read('robots.txt'), /Content-Signal: search=yes, ai-train=yes/);
+// robots.txt allows all crawlers and lists the sitemap. No Content-Signal line:
+// Bing Webmaster Tools reports it as an error.
+const robots = read('robots.txt');
+assert.match(robots, /^User-agent: \*\r?\nAllow: \/$/m);
+assert.match(robots, /^Sitemap: https:\/\/itsupportbee\.com\/sitemap\.xml$/m);
+assert.doesNotMatch(robots, /Content-Signal/);
 assert.match(read('llms.txt'), /https:\/\/itsupportbee.com\/contact/);
 const markdown = read('index.md');
 assert.match(markdown, /^# Business Email Support/);

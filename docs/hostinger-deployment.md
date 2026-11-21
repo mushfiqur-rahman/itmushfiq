@@ -50,8 +50,8 @@ before any catch-all rewrites. `mod_headers` supplies server-card CORS headers.
 - Sitemap lastmod comes from Git/source modification dates, including shared
   layout data. Preserve Git history in build checkouts; source archives fall
   back to file modification times. Do not replace these with every build's date.
-- Content Signals declare `search=yes, ai-train=no`; this is a usage preference,
-  not a technical access control.
+- `robots.txt` allows all crawlers and lists the sitemap. Do not add a
+  `Content-Signal` line: Bing Webmaster Tools reports it as an error.
 
 Run `node scripts/check-agent-readiness.mjs` after the build. With PHP installed,
 run `node scripts/check-agent-http.mjs` (or supply a PHP executable path as the

@@ -16,6 +16,8 @@ const blogCollection = defineCollection({
     image: z.string(),
     imageAlt: z.string().optional(),
     citation: z.string().url().optional(),
+    // Optional shorter <title> for search results; the on-page H1 keeps `title`.
+    metaTitle: z.string().optional(),
   }),
 });
 

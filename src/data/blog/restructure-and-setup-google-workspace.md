@@ -1,6 +1,7 @@
 ---
 caseStudy: true
 title: "Restructure and Setup Google Workspace: Multi-Brand Consolidation"
+metaTitle: "Google Workspace Consolidation Case Study | IT Support Bee"
 description: "Discover how IT Support Bee consolidated two Google Workspace environments, migrated Gmail and Drive, restructured business domains, and built a browser-based Google Chat archive to avoid expensive migration fees."
 pubDate: "August 10, 2026"
 author: "Mushfiqur Rahman"

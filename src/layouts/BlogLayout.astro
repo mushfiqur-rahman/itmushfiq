@@ -47,7 +47,7 @@ const schema = {
 };
 ---
 
-<BaseLayout title={`${title} | IT Support Bee`} description={description} image={image} type="Article" articleDate={pubDate} modifiedDate={updatedDate}>
+<BaseLayout title={frontmatter.metaTitle ?? `${title} | IT Support Bee`} description={description} image={image} type="Article" articleDate={pubDate} modifiedDate={updatedDate}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, "\\u003c")} />
   </Fragment>

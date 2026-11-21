@@ -1,5 +1,6 @@
 ---
 title: "Migrate Your Personal Claude Account to a Team or Enterprise Org Without Losing Work"
+metaTitle: "Personal Claude Account to Team Plan | IT Support Bee"
 description: "Moving Pro or Max accounts into a Claude Team or Enterprise organization? Here is exactly what moves, what breaks, and the zero-surprise order to do it in."
 pubDate: 2026-11-14
 author: "Mushfiqur Rahman"

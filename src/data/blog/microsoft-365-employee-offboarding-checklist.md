@@ -1,5 +1,6 @@
 ---
 title: "Microsoft 365 Employee Offboarding Checklist for Small Teams"
+metaTitle: "Microsoft 365 Offboarding Checklist | IT Support Bee"
 description: "Block account access, preserve customer mail and OneDrive files, and test the handover from the successor’s account in Microsoft 365."
 pubDate: 2026-07-22
 author: "Mushfiqur Rahman"

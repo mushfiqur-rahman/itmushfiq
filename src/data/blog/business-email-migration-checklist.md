@@ -1,5 +1,6 @@
 ---
 title: "Business Email Migration Checklist: Before and After Cutover"
+metaTitle: "Business Email Migration Checklist | IT Support Bee"
 description: "Plan a mailbox migration around a representative pilot, explicit cutover criteria, external delivery tests and reconciliation of late mail."
 pubDate: 2026-07-01
 author: "Mushfiqur Rahman"
