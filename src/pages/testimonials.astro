@@ -3,7 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { videoTestimonials, getYoutubeId } from '../data/videoTestimonials';
 
 ---
-<BaseLayout title="Video Testimonials | IT Support Bee" description="Client video stories about business email, migrations, and IT support from IT Support Bee.">
+<!-- noindex while placeholder cards are on the page; remove it (and the sitemap filter in astro.config.mjs) once real client videos replace them. -->
+<BaseLayout noindex={true} title="Video Testimonials | IT Support Bee" description="Client video stories about business email, migrations, and IT support from IT Support Bee.">
   <section class="testimonial-page">
     <header class="testimonial-intro">
       <span class="testimonial-eyebrow">Client experiences</span>

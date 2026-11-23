@@ -1,6 +1,7 @@
 ---
 caseStudy: true
 title: "Google to Microsoft 365: a migration with DNS changes"
+metaTitle: "Google to Microsoft 365 Case Study | IT Support Bee"
 description: "Inside a Google-to-Microsoft 365 migration with DNS changes, plus practical tests for shared addresses, historical mail and external delivery."
 pubDate: 2026-11-13
 author: "Mushfiqur Rahman"

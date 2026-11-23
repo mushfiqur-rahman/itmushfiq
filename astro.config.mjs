@@ -17,7 +17,11 @@ export default defineConfig({
   },
 
   integrations: [
-    sitemap({ serialize: item => ({ ...item, lastmod: sitemapLastmod(item.url) }) }),
+    sitemap({
+      // /testimonials/ is noindex while it shows placeholder cards.
+      filter: page => !page.endsWith('/testimonials/'),
+      serialize: item => ({ ...item, lastmod: sitemapLastmod(item.url) }),
+    }),
     {
       name: "sitemap-public-url",
       hooks: {

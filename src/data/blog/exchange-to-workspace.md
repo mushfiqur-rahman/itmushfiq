@@ -2,25 +2,27 @@
 caseStudy: true
 title: "Exchange Online to Google Workspace in 23 Hours: Case Study"
 metaTitle: "Exchange to Google Workspace in 23 Hours | IT Support Bee"
-description: "Lessons from an Exchange Online to Google Workspace migration: mailbox discovery, routing, synchronization, DNS checks, and post-migration validation."
+description: "How I defederated a 25-user GoDaddy Microsoft 365 tenant and moved it to Google Workspace: discovery, dual delivery, a 23-hour sync, and DNS cutover."
 pubDate: "October 10, 2026"
-updatedDate: "2026-10-30"
+updatedDate: "2026-11-23"
 author: "Mushfiqur Rahman"
 category: "Cloud Migration"
 image: "/blog/exchange-to-workspace.png"
+imageAlt: "GoDaddy Microsoft 365 defederation for 25 users and migration to Google Workspace"
 ---
 
 Moving business email from Exchange Online to Google Workspace requires more than copying messages. The work includes identifying accounts and sending applications, planning mail routing, transferring supported data, and checking that people can use the new system.
 
-This case study describes a project in which I used mailbox discovery, dual delivery, data synchronization, and authentication changes. The initial data synchronization took **23 hours**. That is a result from this project, not a standard migration timeline or a guarantee of uninterrupted service.
+This case study describes a project for a **25-user** business whose Microsoft 365 tenant had been bought through GoDaddy. The work included defederating the tenant from GoDaddy, then mailbox discovery, dual delivery, data synchronization, and authentication changes. The initial data synchronization took **23 hours**. That is a result from this project, not a standard migration timeline or a guarantee of uninterrupted service.
 
 ## What this case study covers
 
-- Source: Microsoft Exchange Online.
+- Source: Microsoft Exchange Online in a Microsoft 365 tenant bought through GoDaddy, defederated from GoDaddy.
 - Destination: Google Workspace.
+- Size: 25 users.
 - Main concerns: continued mail delivery, synchronization, and unwanted messages reaching secondary alias domains.
 - Reported milestone: a 23-hour initial synchronization, followed by additional synchronization and cutover work.
-- Scope limits: mailbox count, total data volume, migration tool, and detailed validation records are not included in this public account. The duration alone is not enough to estimate another project.
+- Scope limits: total data volume, migration tool, and detailed validation records are not included in this public account. The duration alone is not enough to estimate another project.
 
 For business owners, the key question is whether the migration plan covers the way the team actually uses email. For administrators, the important work is mapping dependencies and verifying the result of each change.
 

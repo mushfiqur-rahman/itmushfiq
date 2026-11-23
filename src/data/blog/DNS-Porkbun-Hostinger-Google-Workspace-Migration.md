@@ -1,7 +1,8 @@
 ---
 caseStudy: true
-title: "DNS Porkbun Hostinger Google Workspace Migration"
-description: "Discover how I migrated business emails from InMotion Hosting to Google Workspace, consolidated multiple domains, and organized Gmail with aliases, labels, and Groups."
+title: "InMotion to Google Workspace Migration: Case Study"
+metaTitle: "InMotion to Google Workspace Migration | IT Support Bee"
+description: "How I moved business email from InMotion Hosting to Google Workspace, consolidated several domains, and organized Gmail with aliases, labels and Groups."
 pubDate: 2026-06-10
 author: "Mushfiqur Rahman"
 category: "Email Migration"
